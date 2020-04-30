@@ -7,3 +7,7 @@
 [submodule "themes/simple-style"]
 	path = themes/simple-style
 	url = https://github.com/yanlinlin82/simple-style.git
+[submodule "public"]
+	path = public
+	url = git@github.com:AngeloR/angelor.github.io.git
+	branch = master
