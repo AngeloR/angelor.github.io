@@ -23,12 +23,12 @@
   </url>
   
   <url>
-    <loc>http://example.org/docs/</loc>
+    <loc>http://example.org/tags/explanation/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/explanation/</loc>
+    <loc>http://example.org/posts/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
   </url>
   
@@ -38,12 +38,12 @@
   </url>
   
   <url>
-    <loc>http://example.org/docs/the-disk-is-slow/</loc>
+    <loc>http://example.org/posts/the-disk-is-slow/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/docs/what-the-heck-is-a-database-index/</loc>
+    <loc>http://example.org/posts/what-the-heck-is-a-database-index/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
   </url>
   
