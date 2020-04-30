@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Xangelo.ca</title>
+    <link>http://example.org/page/</link>
+    <description>Recent content in Pages on Xangelo.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2011 - 2020</copyright>
+    <lastBuildDate>Wed, 29 Apr 2020 23:38:37 -0400</lastBuildDate>
+    
+	<atom:link href="http://example.org/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://example.org/page/about/</link>
+      <pubDate>Wed, 29 Apr 2020 23:38:37 -0400</pubDate>
+      
+      <guid>http://example.org/page/about/</guid>
+      <description>Thanks for checking this out! It&amp;rsquo;s been a number of years since I really changed by blog and this time I&amp;rsquo;ve decided to move to an all markdown blog since that&amp;rsquo;s the way I do all my notes.
+Projects:
+ This site Sketchy Heroes BitBums  </description>
+    </item>
+    
+  </channel>
+</rss>
