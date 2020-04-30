@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the heck is a Database Index? - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="http://example.org/">Xangelo.ca</a></h1><h2><a href="http://example.org/">Technical musings and other tidbits</a></h2>
+  </div>
+  <nav><a href="/page/about">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>What the heck is a Database Index?</h1>
+  </div>
+<div class="meta">
+  <div>2020-04-29 16:21</div>
+  </div>
+<div class="content">
+  <p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
+<pre><code>+-------------------+
+|       users       |
++-------------------+
+|                   |
+| id (int)          |
+| username (string) |
+| password (string) |
+|                   |
++-------------------+
+</code></pre><p>In this scenario there are a couple different uses of this table .</p>
+<ol>
+<li>We are registering a user (inserting a row)</li>
+<li>A user might be changing their password (updating a row)</li>
+<li>A user is logging in (reading a row)</li>
+</ol>
+<p>In a table without any indices when logging in we only know the users username and password. We have to run a <code>select * from users where username = ?</code> on the database. Even if we add a <code>limit 1</code> to our query, the database still needs to scan through every single row in our database until it finds one (or more) that matches our filter.</p>
+<p>If you create an index on a particular column in the table, it serves as a lookup. If you look for a row where a particular indexed column matches a value.. the database doesn&rsquo;t need to scan the table, it can look at the index. You can think of an index exactly the same as as you would an index in a book. If you want to know where a word in the book occurs you have two choices.</p>
+<ol>
+<li>You can either flip through the entire book until you see what you&rsquo;re looking for</li>
+<li>Consult the index, which tells you which page in the book you need to look at.</li>
+</ol>
+<p>Once you tell the database that you want a particular column to have an index, you don&rsquo;t need to do anything else. The database will ensure that the index is kept up to date (as you modify the data in the table). You also don&rsquo;t need to change anything about how you&rsquo;re accessing the data - (IE: you don&rsquo;t need to modify your queries).</p>
+<p>Ok - so it sounds like indexes are pretty awesome right? If it speeds up looking things up, why don&rsquo;t we create an index on every column?</p>
+<p>Well, like everything - there&rsquo;s a caveat. READING data from the table is very quick with an index.. but Creating, Updating, and Deleting data becomes a bit slower. This is because the database needs some additional time to update the index with the new data. So it&rsquo;s a bit of a balancing act. The more indices you have on a table.. the slower it becomes to write data to that table (insert/update/delete). You want to take a look at your table and how you&rsquo;re using the data in your table and create the index carefully.</p>
+<p>Because of this, you can&rsquo;t really have a &ldquo;rule&rdquo; on when to create an index - you&rsquo;ll want to monitor your database and create them based on your investigations. Of course, it&rsquo;s never that easy - the more data IN the table when you create the index the longer it will take to create. It doesn&rsquo;t sound too bad - but if you have hundreds of thousands of rows in a table.. it can take a few minutes to create the index, during which your application will need to be down. So you need to be somewhat pre-emptive in creating your indices.. but also you can&rsquo;t go overboard.. but also there isn&rsquo;t really a guide on when to create an index. How wonderful.</p>
+<p>As you progress in your database tuning/development life you&rsquo;ll find use-cases where it makes sense to have an index from the start. For example, most &ldquo;user&rdquo; tables will have an index on the username column. This is something that you can then take and implement on your next project!</p>
+<h2 id="further-reading">Further Reading:</h2>
+<p>I really recommend you peruse this documentation from mysql on what an index is. While you may be using Postgres/MSSQL - the core concepts of what an index is remains the same.https://dev.mysql.com/doc/refman/5.7/en/mysql-indexes.html</p>
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2020</div>
+  </div>
+</footer>
+</body>
+</html>

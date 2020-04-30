@@ -1,0 +1,21 @@
+baseURL = "http://example.org/"
+theme = "simple-style"
+title = "Xangelo.ca"
+author = "Angelo R"
+copyright = "Copyright © 2011 - 2020"
+paginate = 15
+languageCode = "en-us"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+[params]
+subtitle = "Technical musings and other tidbits"
+
+[markup]
+[markup.highlight]
+lineNos = true
+lineNumbersInTable = true
+[markup.tableOfContents]
+    endLevel = 3
+    ordered = true
+    startLevel = 2
