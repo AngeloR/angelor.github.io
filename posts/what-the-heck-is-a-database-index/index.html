@@ -9,7 +9,9 @@
 <body>
 <header>
   <div>
-    <h1><a href="http://example.org/">Xangelo.ca</a></h1><h2><a href="http://example.org/">Technical musings and other tidbits</a></h2>
+    <h1>
+		<a href="http://example.org/">Xangelo.ca</a> - <a href="http://example.org/" class="tagline">Technical musings and other tidbits</a>
+	</h1>
   </div>
   <nav></nav>
 </header>
@@ -26,11 +28,13 @@
     </div>
   </div>
 <div class="content">
+  <h3>Table of Contents</h3>
   <aside class="toc"><nav id="TableOfContents">
   <ol>
     <li><a href="#further-reading">Further Reading</a></li>
   </ol>
 </nav></aside>
+  <hr />
   <p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
 <pre><code>+-------------------+
 |       users       |

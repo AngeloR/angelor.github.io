@@ -1,4 +1,4 @@
-body{margin:16px auto;max-width:677px;padding:0 10px;color:#333;line-height:1.6}
+body{margin:18px auto;max-width:677px;padding:0 10px;color:#333;line-height:1.7rem}
 h1{line-height:2;font-size:160%}
 h2{line-height:1.6;font-size:120%}
 h3,h4,h5,h6{line-height:1.2;font-size:100%}
@@ -17,9 +17,9 @@ nav a{padding-left:15px}
 table{border-collapse:collapse;font-size:.8em;margin:10px auto}
 th,td{border:1px solid gray;padding:2px 5px}
 code{border:1px dotted #999;background-color:#f0f0f0;padding:1px 2px;line-height:200%;word-wrap:break-word}
-pre{border:1px solid #999;background-color:#f0f0f0;padding:5px;overflow:auto}
+pre{border:1px solid #999;background-color:#f0f0f0;padding:5px;overflow:auto;font-size:1.2rem}
 pre code{border:0;background:none;padding:0;font-size:.8em}
-blockquote{margin:0;padding:0 0 0 20px;border-left:solid 5px #ccc;font-size:.8em}
+blockquote{margin:1.5rem;padding:0 0 0 20px;border-left:solid 5px #ccc;}
 ul.pagination{list-style-type:none;text-align:center}
 li.page-item{display:inline;padding-right:15px}
 svg.permalink{color:#666;fill:currentColor}
@@ -29,11 +29,11 @@ svg:hover.permalink{color:#f00;fill:currentColor}
 .title h1,.title h2{padding:0}
 .meta div{padding:0}
 .content h1{padding:0;margin:25px 0 0}
-.content h2{padding:0;margin:20px 0 0}
-.content h3{padding:0;margin:20px 0 0}
-.content h4{padding:0;margin:15px 0 0}
+.content h2{padding:0;margin:20px 0 0;font-size:1.4rem}
+.content h3{padding:0;margin:20px 0 0;font-size:1.2rem}
+.content h4{padding:0;margin:15px 0 0;font-size:1.1rem}
 .content h5{padding:0;margin:10px 0 0}
 .content h6{padding:0;margin:10px 0 0}
-.content p{padding:0;margin:10px 0}
-.content .toc {border:solid 1px #877;display:inline-block;float:right;margin:0 0 20px 10px;}
-#TableOfContents li{text-align:left;padding-right:30px;}
+.content p{padding:0;margin:10px 0;font-size:1.1rem}
+#TableOfContents li{text-align:left;}
+.tagline{font-size:1.2rem;}
