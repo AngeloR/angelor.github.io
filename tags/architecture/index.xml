@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>architecture on Xangelo.ca</title>
+    <link>http://example.org/tags/architecture/</link>
+    <description>Recent content in architecture on Xangelo.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2011 - 2020</copyright>
+    <lastBuildDate>Thu, 07 May 2020 17:31:57 -0400</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What Is LootCap</title>
+      <link>http://example.org/posts/what-is-lootcap/</link>
+      <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
+      
+      <guid>http://example.org/posts/what-is-lootcap/</guid>
+      <description>What is LootCap? Last week we (Adam Cochran and myself) launched LootCap. The goal is to provide tracking on a new class of tokens called Loot. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself.</description>
+    </item>
+    
+  </channel>
+</rss>

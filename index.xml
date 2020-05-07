@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Wed, 29 Apr 2020 23:38:37 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2020 17:31:57 -0400</lastBuildDate>
     
 	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What Is LootCap</title>
+      <link>http://example.org/posts/what-is-lootcap/</link>
+      <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
+      
+      <guid>http://example.org/posts/what-is-lootcap/</guid>
+      <description>What is LootCap? Last week we (Adam Cochran and myself) launched LootCap. The goal is to provide tracking on a new class of tokens called Loot. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself.</description>
+    </item>
     
     <item>
       <title>About</title>

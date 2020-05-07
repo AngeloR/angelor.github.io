@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is LootCap - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>
+		<a href="http://example.org/">Xangelo.ca</a> - <a href="http://example.org/" class="tagline">Technical musings and other tidbits</a>
+	</h1>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>What Is LootCap</h1>
+  </div>
+<div class="meta">
+  <div>2020-05-07 17:31</div>
+  <div>
+    <span><a href="/tags/architecture">#architecture</a></span>
+    <span><a href="/tags/lootcap">#lootcap</a></span>
+    </div>
+  </div>
+<div class="content">
+  <h3>Table of Contents</h3>
+  <aside class="toc"><nav id="TableOfContents">
+  <ol>
+    <li><a href="#what-is-lootcap">What is LootCap?</a></li>
+    <li><a href="#planning">Planning</a>
+      <ol>
+        <li><a href="#database-design">Database Design</a></li>
+        <li><a href="#application-architecture">Application Architecture</a></li>
+      </ol>
+    </li>
+    <li><a href="#going-live">Going Live</a>
+      <ol>
+        <li><a href="#heroku">Heroku</a></li>
+        <li><a href="#serverless">Serverless?</a></li>
+        <li><a href="#cloudflare-workers-and-kv">CloudFlare Workers and KV</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav></aside>
+  <hr />
+  <h2 id="what-is-lootcap">What is LootCap?</h2>
+<p>Last week we (<a href="https://twitter.com/AdamScochran">Adam Cochran</a> and myself) launched <a href="https://lootcap">LootCap</a>. The goal is to provide tracking on a new class of tokens called <a href="https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749">Loot</a>. It&rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself. It never provided any value. It felt like most coins out there were focused on trying to re-create the trajectory of Bitcoin rather than trying to DO anything. Ethereum was different. It was different enough to force me to pay attention. It allows you to run <a href="https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract">Smart Contracts</a>. In recent years you&rsquo;ve likely seen &ldquo;Tokens&rdquo; suddenly gain popularity. Well those are primarily powered by Ethereum. Again, however, it felt like tokens were just trying to recreate the Bitcoin boom.</p>
+<p>Recently however, Loot tokens have become a thing. To condense Adam&rsquo;s <a href="https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749">article</a> (which you should read if you&rsquo;re interested in this stuff)</p>
+<blockquote>
+<p>Loot tokens are earned by contributing to communities.</p>
+</blockquote>
+<p>What that means is, instead of you buying the token, the community you belong to gives you the token because your contributions to the community have some merit. It&rsquo;s a way to reward content creators for utilizing your community platform.</p>
+<p>When Adam first approached me about the idea for <a href="https://lootcap.com">LootCap</a> I was on board - this was the first time I saw a use for Crypto that wasn&rsquo;t being sold as &ldquo;Well it&rsquo;s crypto so it&rsquo;s just better!&quot;. My task was to build a simple Market Cap site targeting a select number of these tokens that actually qualify as &ldquo;Loot&rdquo;.</p>
+<h2 id="planning">Planning</h2>
+<p>The first step in any project is to have a plan. This doesn&rsquo;t mean that I have some giant design document sitting on my computer, or is it scrawled on a napkit. It varies for every project. In this case, a markdown document with some relatively simple diagrams via mermaidjs was more than enough. In fact, the goal of the site could be expressed in a single sentence.</p>
+<blockquote>
+<p>Display relevant market-cap information quickly to everyone</p>
+</blockquote>
+<p>I&rsquo;m also a firm believer in starting application development from the data side of things. The data is the only constant in your application. Everything is just abstracting away queries for your users to display the data in ways that make sense. So that&rsquo;s where I begin.</p>
+<h3 id="database-design">Database Design</h3>
+<p>Whenever I start a project I do the same thing, from the technical side.</p>
+<ol>
+<li>What will be UI look like?</li>
+<li>What data do I need to make this happen?</li>
+<li>How do I store the data?</li>
+</ol>
+<p>Weird right? The hard thing about database design, traditionally, is that the original wisdom is normalization. That is, data should be split apart into smaller isolated pieces. This idea is one that we use in software development all the time - Don&rsquo;t Repeat Yourself (DRY). By splitting the data into smaller units we&rsquo;re not storing more data than we need to store. When your databases start getting to the 10s of millions of rows storing unnecessary data can get expensive. Expensive because it&rsquo;s a lot of work to keep the same piece of data updated across different tables, but also expensive because storage is expensive.</p>
+<p>I&rsquo;ve always believed that the reason that normalization existed is two fold</p>
+<ol>
+<li>Resources were expensive. Going from 8GB to 16GB HDDs were a huge financial leap.</li>
+<li>Development was segmented. DBAs worked in isolation, and often against, developers.</li>
+</ol>
+<p>As a database designer, you already know all the normalization rules. So take a look at how the application is being designed. What pieces if information are always shown together. What is important and what isn&rsquo;t? These questions can help you better shape your database design.</p>
+<p>With these things in mind, I took a look at my UI, drawing inspiration from the many market-cap sites devoted to crypto currencies. After all, while Tokens aren&rsquo;t Coins, they&rsquo;re treated quite similarly. This wasn&rsquo;t something I did in isolation - Adam has been a part of the crypto community for much longer than I have and I heavily relied on his expertise in defining what data we want to showcase.</p>
+<p>Knowing what data I had to display for a first pass, and how my data was organized I opted to skip a database entirely.</p>
+<p>See it turns out I can assemble most of the information I need from various 3rd parties, cache it in memory, and when that cache expires, grab the information from the sources and assemble it again.</p>
+<p>This worked because the scope of the initial launch is small. I only need to display fairly static data (may change every few minutes) that&rsquo;s simultaneously general. I don&rsquo;t need real-time precision at the moment. This means that I had a lot more flexibility in my architecture design, but also it meant that apart from the cache load/reload events, serving this data would be as fast as I can possible make it.</p>
+<h3 id="application-architecture">Application Architecture</h3>
+<h4 id="api">API</h4>
+<p>When designing any application I always start with my API. It allows me to define my endpoints and figure out how I&rsquo;m going to breaking up the data so that I can return the most relevant data for an endpoint. That is, now that I&rsquo;ve broken down how I&rsquo;m going to store my data, what&rsquo;s the best way to create my endpoints so that I have the flexibility to compose the UI that I have envisioned, but also allows me to change that front end as necessary.</p>
+<p>It&rsquo;s a tough nut to craft. If you pop open your console on <a href="https://lootcap.com">LootCap</a> you&rsquo;ll see that we make requests to 2 different endpoints:</p>
+<pre><code>/api/v1/contracts/[contract-address]/price
+
+/api/v1/coin/ethereum/price
+</code></pre><p>For us, that&rsquo;s enough to render the entire first page and also preload some data so that if you click on any Token for more information, that data is already loaded and ready for you. I also made sure to version the end-points. The reason for this is to differentiate between deployment/releases. We can roll out new functionality to the API endpoints and test them to our hearts content before releasing front-end changes and deprecating the old API versions. We can also split test UI designs if we are interested in such a thing. Versioning your API endpoints is vital.</p>
+<p>In original dev versions, you could actually supply multiple contract addresses, comma separated, and it would return all the data at once. It was a way to reduce 7 or 8 calls to load the page into 2.</p>
+<p>Obviously that&rsquo;s not what happened in production, but we&rsquo;lll get to that later.</p>
+<h4 id="front-end">Front end</h4>
+<p>The front-end for the app is actually just a SPA. We load some minimal HTML and dynamically populate the data as soon as we can. The idea behind this is that once we hit production, we can cache the static content for much longer periods of time improving response times which would help us achieve our original goal of Displaying relevant market-cap information quickly for everyone.</p>
+<p>We are using a two different 3rd party libraries on the front-end.</p>
+<ul>
+<li>Mvp.css - <a href="https://andybrewer.github.io/mvp/:">https://andybrewer.github.io/mvp/:</a> because we wanted a simple, classless, css framework as a base</li>
+<li>BigNumber - <a href="https://mikemcl.github.io/bignumber.js">https://mikemcl.github.io/bignumber.js</a> - because dealing with crypto numbers in JS can be challenging.</li>
+</ul>
+<p>We aren&rsquo;t using React, and so for the times where we have to update the Dom we&rsquo;re using this function and interacting directly with the Element nodes.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">selector</span>, <span style="color:#a6e22e">root</span>) =&gt; {
+    <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">||</span> document;
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>We&rsquo;re also relying on <code>fetch</code> since all our endpoints are very simple <code>GET</code> based requests.</p>
+<p>We are also using a very rudimentary SPA router that relies on css classes to define routes. We&rsquo;re only able to do this because we have 2 routes.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">route</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routeTable</span> <span style="color:#f92672">=</span> [
+        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;route-name&#39;</span>, <span style="color:#a6e22e">route</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">REGEX_MATCH</span>, <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fn</span>}
+    ];
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.route.active&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">requestedRoute</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;#&#39;</span>)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;/&#39;</span>;
+
+    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">routeTable</span>.<span style="color:#a6e22e">some</span>(<span style="color:#a6e22e">route</span> =&gt; {
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">requestedRoute</span>)) {
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">handler</span>)
+                <span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">requestedRoute</span>));
+            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">`#route-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+        }
+    })) {
+        <span style="color:#75715e">// clear the info page
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#route-info&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.route.default&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="going-live">Going Live</h2>
+<h3 id="heroku">Heroku</h3>
+<p>Once I had a copy working locally it was time to deploy it. <a href="https://heroku.com">Heroku</a> has long been my dpeloyment strategy of choice for projects that are undergoing rapid development. I always use git, but I don&rsquo;t always use a git hosting provider (GitLab/GitHub). Since heroku supports deploying from git, so I&rsquo;m able to deploy from my dev env to share.</p>
+<p>If you haven&rsquo;t had a chance to mess with Heroku for yourself, I high recommend you do. It&rsquo;s a wonderful service that allows you virtually unlimited free applications, and you can easily build your PoC without concern.</p>
+<p>They also offer numerous paid plans that you can use to take your service from PoC to live by clicking a few buttons. My initial thoughts on architecture were pretty standard. Perhaps two &ldquo;dynos&rdquo; or servers+load-balancer would be more than enough. We have no state, just in-mem caches, I don&rsquo;t care if the caches are repliced for eahc node. Base price like 20$ a month easy.</p>
+<h3 id="serverless">Serverless?</h3>
+<p>However this is somethign we&rsquo;re launching for fun. While spending 20$ for infrastructure (bandwidth might cause some overage) is certainly doable.. is it the best option for us?</p>
+<p>For one thing, with any cloud provider, if I&rsquo;m running a container or vm, I&rsquo;m stuck to a paricular data-center. That&rsquo;s not very helpful if someone in Japan wants to take a look at my site. Remember, our goal was to provide this information quickly for everyone.</p>
+<p>So maybe we look at <strong>SERVERLESS</strong></p>
+<p>The idea behind server less infrastructure is simply: You write apps that are designed as &ldquo;functions&rdquo;. These functions are deployed and spun up/down as necessary. Scale becomes pretty straight-forward. The infrastructure is available, it&rsquo;s just a matter of</p>
+<ul>
+<li>How much do you want to pay?</li>
+<li>What&rsquo;s the cold-start time on your app?</li>
+</ul>
+<p>The payment is pretty straight foward. Since these serverless tends to be small apps that cater well to &ldquo;bursty&rdquo; applications in terms of requests, they tend to be cheaper to run.</p>
+<p>Most of these providers will take your app out of the pool if you don&rsquo;t get any requests for a preset amount of time. This is to free up compute space for other apps. The time to start for an app NOT currently pre-loaded is what&rsquo;s refered to as &ldquo;cold start&rdquo;. That varies, mostly reliant on the size of the application you&rsquo;re starting, but there is a baseline cost regardless.</p>
+<p>And of course, all &ldquo;Serverless&rdquo; is really server-based. They just abstract that away from you. That means I&rsquo;m still on the hook for running these in multiple data centers around the world to hit my goals.</p>
+<h3 id="cloudflare-workers-and-kv">CloudFlare Workers and KV</h3>
+<p>Then I ran across CloudFlare Workers. I remember seeing the announcement post some time back, and thought &ldquo;hey that&rsquo;s neat&rdquo; but quickly pushed it out of my mind. I returned to CloudFlare workers and did some more investigation.</p>
+<p>Oh My. I think CloudFlare Workers are the only TRUE serverless mechanism out there.</p>
+<p>CloudFlare workers are essentially serverless functions.. except they run at every CloudFlare Point-of-Presence (PoP). They have milliseconds of cold-start time, and they run globally. They do have way more restrictions than traditional serverless offerings</p>
+<ul>
+<li>1MB compressed filesize</li>
+<li>50ms CPU time</li>
+<li>max 30 workers</li>
+<li>&lt; 50 subrequests per worker (redirects count!)</li>
+</ul>
+<p>But I felt that if we COULD work within their limits, it would bring us closest to what we needed. They also offered an eventually consistent KV store that was accessible from the workers. Since our data was cached anyway, we didn&rsquo;t care about the eventual consistency - worst case we served stale data for a minute more than we expected.</p>
+<p>After a couple of days of fiddling with their tooling and documentation, I was able to convert our regular API into a bunch of &ldquo;serverless&rdquo; functions that worked with the KV store and were deployed to all CloudFlare PoP.</p>
+<p>Today, when you load <a href="https://lootcap.com">LootCap</a> you&rsquo;re loading data from 3 different workers</p>
+<ol>
+<li>Two running API endpoints</li>
+<li>1 Running a static site</li>
+</ol>
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2020</div>
+  </div>
+</footer>
+</body>
+</html>
