@@ -1,26 +1,33 @@
 body {
 	width: 600px;
 	font-family: monospace;
+	counter-reset: h2;
 }
 body * {
 	font-size: 12px;
 	line-height: 1.1rem;
 }
+h2 {counter-reset: h3}
+h3 {counter-reset: h4}
+h4 {counter-reset: h5}
+h5 {counter-reset: h6}
+h2:before {counter-increment: h2; content: counter(h2) ". "}
+h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
+h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
+h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
+h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before {content: ""; counter-increment: none;} 
 header {
 	margin: 20px 0 40px;
 }
-header h1 a {
+header > div *{
 	font-size: 1.3rem;
-}
-header h1::before {
-	content: '';
 }
 .title::before {
 	content: '----------';
 }
 .title h1 {
 	margin: 0;
-	font-size: 1.1rem;
 }
 .meta {
 	margin-bottom: 40px;
@@ -31,26 +38,8 @@ header h1::before {
 main h1,main h2,main h3,main h4,main h5,main h6 {
 	font-size: 1.1rem;
 }
-main h1::before, main h2::before, main h3::before, main h4::before, main h5::before, main h6::before {
-	margin-right: 5px;
-}
-main h1::before {
-	content: '#';
-}
-main h2::before {
-	content: '##';
-}
-main h3::before {
-	content: '###';
-}
-main h4::before {
-	content: '####';
-}
-main h5::before {
-	content: '#####';
-}
-main h6::before {
-	content: '######';
+.content p, .content pre, .content blockquote {
+	margin-left: 15px;
 }
 img {
 	width: 100%;
@@ -61,6 +50,17 @@ blockquote {
 	border-width: 0 0 0 4px;
 	padding-left: 1rem;
 	font-style: italic;
+}
+.toc ol {
+	counter-reset: item;
+	padding-left: 20px;
+}
+.toc li {
+	display: block
+}
+.toc li:before {
+	content: counters(item, ".") " ";
+	counter-increment: item;
 }
 footer {
 	margin-top: 1.5rem;
