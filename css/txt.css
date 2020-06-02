@@ -1,0 +1,68 @@
+body {
+	width: 600px;
+	font-family: monospace;
+}
+body * {
+	font-size: 12px;
+	line-height: 1.1rem;
+}
+header {
+	margin: 20px 0 40px;
+}
+header h1 a {
+	font-size: 1.3rem;
+}
+header h1::before {
+	content: '';
+}
+.title::before {
+	content: '----------';
+}
+.title h1 {
+	margin: 0;
+	font-size: 1.1rem;
+}
+.meta {
+	margin-bottom: 40px;
+}
+.meta::after {
+	content: '----------';
+}
+main h1,main h2,main h3,main h4,main h5,main h6 {
+	font-size: 1.1rem;
+}
+main h1::before, main h2::before, main h3::before, main h4::before, main h5::before, main h6::before {
+	margin-right: 5px;
+}
+main h1::before {
+	content: '#';
+}
+main h2::before {
+	content: '##';
+}
+main h3::before {
+	content: '###';
+}
+main h4::before {
+	content: '####';
+}
+main h5::before {
+	content: '#####';
+}
+main h6::before {
+	content: '######';
+}
+img {
+	width: 100%;
+	margin: 0 auto;
+}
+blockquote {
+	border: solid #aaa;
+	border-width: 0 0 0 4px;
+	padding-left: 1rem;
+	font-style: italic;
+}
+footer {
+	margin-top: 1.5rem;
+	text-align: center;
+}

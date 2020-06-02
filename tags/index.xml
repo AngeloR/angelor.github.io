@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Xangelo.ca</title>
-    <link>http://example.org/tags/</link>
+    <link>https://xangelo.ca/tags/</link>
     <description>Recent content in Tags on Xangelo.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
     <lastBuildDate>Thu, 07 May 2020 17:31:57 -0400</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>architecture</title>
-      <link>http://example.org/tags/architecture/</link>
+      <link>https://xangelo.ca/tags/architecture/</link>
       <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
       
-      <guid>http://example.org/tags/architecture/</guid>
+      <guid>https://xangelo.ca/tags/architecture/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lootcap</title>
-      <link>http://example.org/tags/lootcap/</link>
+      <link>https://xangelo.ca/tags/lootcap/</link>
       <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
       
-      <guid>http://example.org/tags/lootcap/</guid>
+      <guid>https://xangelo.ca/tags/lootcap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>database</title>
-      <link>http://example.org/tags/database/</link>
+      <link>https://xangelo.ca/tags/database/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
       
-      <guid>http://example.org/tags/database/</guid>
+      <guid>https://xangelo.ca/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
       <title>explanation</title>
-      <link>http://example.org/tags/explanation/</link>
+      <link>https://xangelo.ca/tags/explanation/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
       
-      <guid>http://example.org/tags/explanation/</guid>
+      <guid>https://xangelo.ca/tags/explanation/</guid>
       <description></description>
     </item>
     

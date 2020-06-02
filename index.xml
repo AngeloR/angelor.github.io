@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xangelo.ca</title>
-    <link>http://example.org/</link>
+    <link>https://xangelo.ca/</link>
     <description>Recent content on Xangelo.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
     <lastBuildDate>Thu, 07 May 2020 17:31:57 -0400</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>What Is LootCap</title>
-      <link>http://example.org/posts/what-is-lootcap/</link>
+      <link>https://xangelo.ca/posts/what-is-lootcap/</link>
       <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
       
-      <guid>http://example.org/posts/what-is-lootcap/</guid>
+      <guid>https://xangelo.ca/posts/what-is-lootcap/</guid>
       <description>What is LootCap? Last week we (Adam Cochran and myself) launched LootCap. The goal is to provide tracking on a new class of tokens called Loot. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://example.org/page/about/</link>
+      <link>https://xangelo.ca/page/about/</link>
       <pubDate>Wed, 29 Apr 2020 23:38:37 -0400</pubDate>
       
-      <guid>http://example.org/page/about/</guid>
+      <guid>https://xangelo.ca/page/about/</guid>
       <description>Thanks for checking this out! It&amp;rsquo;s been a number of years since I really changed by blog and this time I&amp;rsquo;ve decided to move to an all markdown blog since that&amp;rsquo;s the way I do all my notes.
 Projects:
  This site Sketchy Heroes BitBums  </description>
@@ -34,20 +34,20 @@ Projects:
     
     <item>
       <title>The Disk Is Slow</title>
-      <link>http://example.org/posts/the-disk-is-slow/</link>
+      <link>https://xangelo.ca/posts/the-disk-is-slow/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
       
-      <guid>http://example.org/posts/the-disk-is-slow/</guid>
+      <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
       <description>&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.
 What is slow? For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute.</description>
     </item>
     
     <item>
       <title>What the heck is a Database Index?</title>
-      <link>http://example.org/posts/what-the-heck-is-a-database-index/</link>
+      <link>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
       
-      <guid>http://example.org/posts/what-the-heck-is-a-database-index/</guid>
+      <guid>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</guid>
       <description>When you do a standard select * from table_name where columns=some_value from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&amp;rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&amp;rsquo;t know where/how-many instances of a particular value it might find.</description>
     </item>
     

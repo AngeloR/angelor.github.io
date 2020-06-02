@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What Is LootCap - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/txt.css">
 </head>
 <body>
 <header>
   <div>
     <h1>
-		<a href="http://example.org/">Xangelo.ca</a> - <a href="http://example.org/" class="tagline">Technical musings and other tidbits</a>
+		<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
 	</h1>
   </div>
   <nav></nav>
@@ -21,8 +21,9 @@
   <h1>What Is LootCap</h1>
   </div>
 <div class="meta">
-  <div>2020-05-07 17:31</div>
+  <div>pub: 2020-05-07 17:31</div>
   <div>
+	  tags: 
     <span><a href="/tags/architecture">#architecture</a></span>
     <span><a href="/tags/lootcap">#lootcap</a></span>
     </div>
@@ -48,6 +49,7 @@
   </ol>
 </nav></aside>
   <hr />
+  <br />
   <h2 id="what-is-lootcap">What is LootCap?</h2>
 <p>Last week we (<a href="https://twitter.com/AdamScochran">Adam Cochran</a> and myself) launched <a href="https://lootcap">LootCap</a>. The goal is to provide tracking on a new class of tokens called <a href="https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749">Loot</a>. It&rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself. It never provided any value. It felt like most coins out there were focused on trying to re-create the trajectory of Bitcoin rather than trying to DO anything. Ethereum was different. It was different enough to force me to pay attention. It allows you to run <a href="https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract">Smart Contracts</a>. In recent years you&rsquo;ve likely seen &ldquo;Tokens&rdquo; suddenly gain popularity. Well those are primarily powered by Ethereum. Again, however, it felt like tokens were just trying to recreate the Bitcoin boom.</p>
 <p>Recently however, Loot tokens have become a thing. To condense Adam&rsquo;s <a href="https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749">article</a> (which you should read if you&rsquo;re interested in this stuff)</p>
@@ -94,7 +96,7 @@
 <p>The front-end for the app is actually just a SPA. We load some minimal HTML and dynamically populate the data as soon as we can. The idea behind this is that once we hit production, we can cache the static content for much longer periods of time improving response times which would help us achieve our original goal of Displaying relevant market-cap information quickly for everyone.</p>
 <p>We are using a two different 3rd party libraries on the front-end.</p>
 <ul>
-<li>Mvp.css - <a href="https://andybrewer.github.io/mvp/:">https://andybrewer.github.io/mvp/:</a> because we wanted a simple, classless, css framework as a base</li>
+<li>Mvp.css - <a href="https://andybrewer.github.io/mvp/">https://andybrewer.github.io/mvp/</a> - because we wanted a simple, classless, css framework as a base</li>
 <li>BigNumber - <a href="https://mikemcl.github.io/bignumber.js">https://mikemcl.github.io/bignumber.js</a> - because dealing with crypto numbers in JS can be challenging.</li>
 </ul>
 <p>We aren&rsquo;t using React, and so for the times where we have to update the Dom we&rsquo;re using this function and interacting directly with the Element nodes.</p>
