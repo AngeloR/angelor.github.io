@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LootCap, Market Cap on Loot Tokens - Xangelo.ca</title>
+<title>Serverless with CloudFlare Workers - Xangelo.ca</title>
 <link rel="stylesheet" type="text/css" href="/css/txt.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
   <article>
     <div class="front-block">
 	<div class="title">
-		<h1 class="nocount">LootCap, Market Cap on Loot Tokens</h1>
+		<h1 class="nocount">Serverless with CloudFlare Workers</h1>
 		<span class="divider"></span>
 		<div>Pub: 2020-05-07</div>
 		</div>
@@ -104,25 +104,25 @@
 <li>BigNumber - <a href="https://mikemcl.github.io/bignumber.js">https://mikemcl.github.io/bignumber.js</a> - because dealing with crypto numbers in JS can be challenging.</li>
 </ul>
 <p>We aren&rsquo;t using React, and so for the times where we have to update the Dom we&rsquo;re using this function and interacting directly with the Element nodes.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">selector</span>, <span style="color:#a6e22e">root</span>) =&gt; {
-    <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">||</span> document;
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#00f">const</span> $ = (selector, root) =&gt; {
+    root = root || document;
+    <span style="color:#00f">return</span> root.querySelectorAll(selector);
 }
 </code></pre></td></tr></table>
 </div>
 </div><p>We&rsquo;re also relying on <code>fetch</code> since all our endpoints are very simple <code>GET</code> based requests.</p>
 <p>We are also using a very rudimentary SPA router that relies on css classes to define routes. We&rsquo;re only able to do this because we have 2 routes.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -144,24 +144,24 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">route</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routeTable</span> <span style="color:#f92672">=</span> [
-        {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;route-name&#39;</span>, <span style="color:#a6e22e">route</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">REGEX_MATCH</span>, <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fn</span>}
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#00f">function</span> route() {
+    <span style="color:#00f">const</span> routeTable = [
+        {name: <span style="color:#a31515">&#39;route-name&#39;</span>, route: REGEX_MATCH, handler: fn}
     ];
-    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.route.active&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">requestedRoute</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;#&#39;</span>)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;/&#39;</span>;
+    $(<span style="color:#a31515">&#39;.route.active&#39;</span>)[0].classList.remove(<span style="color:#a31515">&#39;active&#39;</span>);
+    <span style="color:#00f">const</span> requestedRoute = window.location.hash.split(<span style="color:#a31515">&#39;#&#39;</span>)[1] || <span style="color:#a31515">&#39;/&#39;</span>;
 
-    <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">routeTable</span>.<span style="color:#a6e22e">some</span>(<span style="color:#a6e22e">route</span> =&gt; {
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">requestedRoute</span>)) {
-            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">handler</span>)
-                <span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">handler</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">requestedRoute</span>));
-            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">`#route-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+    <span style="color:#00f">if</span>(!routeTable.some(route =&gt; {
+        <span style="color:#00f">if</span>(route.route.test(requestedRoute)) {
+            <span style="color:#00f">if</span>(route.handler)
+                route.handler(route.route.exec(requestedRoute));
+            $(<span style="color:#a31515">`#route-</span><span style="color:#a31515">${</span>route.name<span style="color:#a31515">}</span><span style="color:#a31515">`</span>)[0].classList.add(<span style="color:#a31515">&#39;active&#39;</span>);
+            <span style="color:#00f">return</span> <span style="color:#00f">true</span>;
         }
     })) {
-        <span style="color:#75715e">// clear the info page
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#route-info&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
-        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.route.default&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;active&#39;</span>);
+        <span style="color:#008000">// clear the info page
+</span><span style="color:#008000"></span>        $(<span style="color:#a31515">&#39;#route-info&#39;</span>)[0].innerHTML = <span style="color:#a31515">&#39;&#39;</span>;
+        $(<span style="color:#a31515">&#39;.route.default&#39;</span>)[0].classList.add(<span style="color:#a31515">&#39;active&#39;</span>);
     }
 }
 </code></pre></td></tr></table>
