@@ -15,27 +15,29 @@
 </header>
 <main>
   <article>
-    <div class="title">
-  <h1>What the heck is a Database Index?</h1>
-  </div>
-<div class="meta">
-  <div>pub: 2020-04-29 16:21</div>
-  <div>
-	  tags: 
-    <span><a href="/tags/explanation">#explanation</a></span>
-    <span><a href="/tags/database">#database</a></span>
-    </div>
-  </div>
-<div class="content">
-  <h2 class="nocount">Table of Contents</h2>
-  <aside class="toc"><nav id="TableOfContents">
+    <div class="front-block">
+	<div class="title">
+		<h1 class="nocount">What the heck is a Database Index?</h1>
+		</div>
+	<div class="meta">
+		<div>pub: 2020-04-29 16:21</div>
+		<div class="tags">
+			tags: 
+			<span class="tag"><a href="/tags/explanation">#explanation</a></span>
+			<span class="tag"><a href="/tags/database">#database</a></span>
+			</div>
+		</div>
+	<div class="toc-block">
+		<h2 class="nocount">Table of Contents</h2>
+		<aside class="toc"><nav id="TableOfContents">
   <ol>
     <li><a href="#further-reading">Further Reading</a></li>
   </ol>
 </nav></aside>
-  <hr />
-  <br />
-  <p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
+	</div>
+</div>
+<div class="content">
+	<p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
 <pre><code>+-------------------+
 |       users       |
 +-------------------+

@@ -23,22 +23,31 @@ header {
 header > div *{
 	font-size: 1.3rem;
 }
-.title::before {
-	content: '----------';
+.front-block {
+	margin-bottom: 30px;
+	border: solid 0 #999;
+	border-width: 1px 0;
+	padding: 20px 0 10px;
+}
+.front-block .meta {
+	margin-bottom: 20px;
 }
 .title h1 {
-	margin: 0;
+	margin: 0 0 5px;
 }
-.meta {
-	margin-bottom: 40px;
+.tag:after {
+	content: ', ';
 }
-.meta::after {
-	content: '----------';
+.tag:last-child:after {
+	content: '';
+}
+.toc-block h2 {
+	font-size: 0.9rem;
 }
 main h1,main h2,main h3,main h4,main h5,main h6 {
 	font-size: 1.1rem;
 }
-.content p, .content pre, .content blockquote {
+.content p, .content pre, .content blockquote, .content div {
 	margin-left: 15px;
 }
 img {
@@ -66,3 +75,4 @@ footer {
 	margin-top: 1.5rem;
 	text-align: center;
 }
+
