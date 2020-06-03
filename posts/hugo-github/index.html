@@ -111,42 +111,42 @@
 <p>I&rsquo;m not going to go into too much detail, because both Hugo and GitHub have very good introductions, but this should be enough to get a site running.</p>
 <h3 id="installing-hugo">Installing Hugo</h3>
 <p>Installing Hugo can be done from a terminal in your chosen operating system. There are alternate installation instructions available if you don&rsquo;t have brew installed or if you don&rsquo;t have a mac<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">brew install hugo
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">brew install hugo
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="setup-hugo">Setup Hugo</h3>
 <p>Open up your terminal, and navigate to the place you want to store your website. Then you can run the following command:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">hugo new site mysite
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">hugo new site mysite
 </code></pre></td></tr></table>
 </div>
 </div><p>This creates a new folder called <code>mysite</code> that contains the raw files for your static site. At this point you don&rsquo;t have anything generated just the files that will eventually be compiled into your static site.</p>
 <p>You can install a theme by doing the following:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git init
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git init
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 </code></pre></td></tr></table>
 </div>
 </div><p>You can actually choose whatever theme you would like from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>  <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>and just replace the <code>git submodule</code> line with the instructions from your theme.</p>
 <p>Line 1 creates a git repository in the <code>mysite</code> directory. We want this because themes in Hugo are installed via <code>git submodule</code> which clones a particular repository into the current one. It also allows you to save the raw site (before static generation) to git!</p>
 <p>Now it&rsquo;s time to head over to your <code>config.toml</code> file and set up the defaults for your website. My config file looks like this. You only really need the configurations on the first 9 lines. The rest are just further configurations<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> that I&rsquo;ve made.</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -171,39 +171,39 @@ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/anan
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-toml" data-lang="toml">baseURL = <span style="color:#a31515">&#34;https://xangelo.ca&#34;</span>
-theme = <span style="color:#a31515">&#34;plain&#34;</span>
-title = <span style="color:#a31515">&#34;Xangelo.ca&#34;</span>
-author = <span style="color:#a31515">&#34;Angelo R&#34;</span>
-copyright = <span style="color:#a31515">&#34;Copyright © 2011 - 2020&#34;</span>
-paginate = 15
-languageCode = <span style="color:#a31515">&#34;en-us&#34;</span>
-enableInlineShortcodes = <span style="color:#00f">true</span>
-footnoteReturnLinkContents = <span style="color:#a31515">&#34;^&#34;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://xangelo.ca&#34;</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;plain&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Xangelo.ca&#34;</span>
+<span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;Angelo R&#34;</span>
+<span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;Copyright © 2011 - 2020&#34;</span>
+<span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">15</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
+<span style="color:#a6e22e">enableInlineShortcodes</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">footnoteReturnLinkContents</span> = <span style="color:#e6db74">&#34;^&#34;</span>
 
-[params]
-subtitle = <span style="color:#a31515">&#34;Technical musings and other tidbits&#34;</span>
+[<span style="color:#a6e22e">params</span>]
+<span style="color:#a6e22e">subtitle</span> = <span style="color:#e6db74">&#34;Technical musings and other tidbits&#34;</span>
 
-[markup]
-[markup.highlight]
-lineNos = <span style="color:#00f">true</span>
-lineNumbersInTable = <span style="color:#00f">true</span>
-style = <span style="color:#a31515">&#34;vs&#34;</span>
-tabWidth = 2
-[markup.tableOfContents]
-endLevel = 3
-ordered = <span style="color:#00f">true</span>
-startLevel = 2
+[<span style="color:#a6e22e">markup</span>]
+[<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">highlight</span>]
+<span style="color:#a6e22e">lineNos</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">lineNumbersInTable</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">style</span> = <span style="color:#e6db74">&#34;vs&#34;</span>
+<span style="color:#a6e22e">tabWidth</span> = <span style="color:#ae81ff">2</span>
+[<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">tableOfContents</span>]
+<span style="color:#a6e22e">endLevel</span> = <span style="color:#ae81ff">3</span>
+<span style="color:#a6e22e">ordered</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">startLevel</span> = <span style="color:#ae81ff">2</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="create-and-test">Create and test!</h3>
 <p>Hugo ships with a built in server that allows you to preview what your site will end up looking like, you can start it up with:</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">hugo server -w
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">hugo server -w
 </code></pre></td></tr></table>
 </div>
 </div><p>This creates the server and the <code>-w</code> flag sets it to &ldquo;watch&rdquo;. Any changes that are made will automatically reload the server and also reload the site. You can visit this site by navigating to <code>https://localhost:1313</code> in your browser.</p>

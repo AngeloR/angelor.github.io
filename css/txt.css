@@ -1,3 +1,10 @@
+html {
+	--default-text-color: black;
+	--darkmode-background-color: #181e25;
+	--darkmode-text-color: #949ea8;
+	--primary-color: #1a6fda;
+	--secondary-color: #5f4d82;
+}
 body {
 	width: 600px;
 	font-family: monospace;
@@ -6,6 +13,12 @@ body {
 body * {
 	font-size: 14px;
 	line-height: 1.2rem;
+}
+a {
+	color: var(--primary-color);
+}
+a:visited {
+	color: var(--secondary-color);
 }
 .article-list {
 	margin: 0 40px;
@@ -129,4 +142,12 @@ footer {
 	margin-top: 1.5rem;
 	text-align: center;
 }
-
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #181e25;
+        color: #949ea8;
+	}
+	.article-list .divider {
+		border-color: var(--darkmode-text-color);
+	}
+}
