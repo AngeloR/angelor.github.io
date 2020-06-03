@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving to Hugo and GitHub Pages - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/txt.css">
+</head>
+<body>
+<header>
+  <div>
+	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <div class="front-block">
+	<div class="title">
+		<h1 class="nocount">Moving to Hugo and GitHub Pages</h1>
+		<span class="divider"></span>
+		<div>Pub: 2020-06-03</div>
+		</div>
+	<div class="meta">
+		<div class="tags">
+			Tags: <span class="tag"><a href="/tags/general">#general</a></span>
+			<span class="tag"><a href="/tags/hugo">#hugo</a></span>
+			<span class="tag"><a href="/tags/github">#github</a></span>
+			</div>
+		<span class="divider"></span>
+		<div>
+			Author: Angelo R.
+		</div>
+	</div>
+	<div class="toc-block">
+		<h2 class="nocount">Table of Contents</h2>
+		<aside class="toc"><nav id="TableOfContents">
+  <ol>
+    <li><a href="#goal">Goal</a></li>
+    <li><a href="#hugo">Hugo</a>
+      <ol>
+        <li><a href="#dynamic-blogging-platforms">Dynamic Blogging Platforms</a></li>
+        <li><a href="#static-site-generators">Static Site Generators</a></li>
+      </ol>
+    </li>
+    <li><a href="#github-pages">GitHub Pages</a></li>
+    <li><a href="#project-configuration">Project Configuration</a>
+      <ol>
+        <li><a href="#installing-hugo">Installing Hugo</a></li>
+        <li><a href="#setup-hugo">Setup Hugo</a></li>
+        <li><a href="#create-and-test">Create and test!</a></li>
+        <li><a href="#publish-your-site">Publish your site!</a></li>
+      </ol>
+    </li>
+    <li><a href="#wrapping-up">Wrapping Up</a></li>
+    <li><a href="#footnotes">Footnotes</a></li>
+  </ol>
+</nav></aside>
+	</div>
+</div>
+<div class="content">
+	<h2 id="goal">Goal</h2>
+<p>I&rsquo;ve been running my blog over on Ghost<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> for a few years now. I really don&rsquo;t have a lot of issues with it, except for the fact that I have to manage the server itself. I&rsquo;ve been running a small Digital Ocean VPS for a number of years where I host my blog. Ghost itself goes through a lot of updates and keeping the application up to date was starting to become a hassle.</p>
+<p>I was keen to move to a solution where I could</p>
+<ul>
+<li>Write my posts in markdown</li>
+<li>Not have to worry about hosting/management</li>
+</ul>
+<p>After looking at a few different solutions I ended up settling on a static site that was hosted through GitHub. The benefits of this was that</p>
+<ul>
+<li>I could have all my content stored on GitHub.</li>
+<li>I could utilize GitHub pages to serve the site with a custom domain name (with SSL)</li>
+<li>I wouldn&rsquo;t need to keep everything up to date</li>
+<li>I could re-purpose my VPS for other things</li>
+</ul>
+<p>Of course, not all static sites are created the same. I specifically settled on Hugo to power my static site.</p>
+<h2 id="hugo">Hugo</h2>
+<p>Unlike more traditional blogging software (WordPress, Ghost, etc.) which saves your posts in a database, Hugo<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> generates a bunch of static files (HTML) for each post. By doing this you&rsquo;re still able to have the more complex features (tagging, drafts, pagination, themeing, etc.) but because Hugo pre-processes everything, you&rsquo;re just left with a bunch of HTML files that represent your site. Once you&rsquo;re happy, you can just sync the generated files with your server. In my case, I&rsquo;m simply able to <code>git add</code> and <code>git push</code> my content to GitHub.</p>
+<h3 id="dynamic-blogging-platforms">Dynamic Blogging Platforms</h3>
+<p>Lets look at Wordpress to contrast Hugo. WordPress is the most used blogging software in the world and has the following requirements:</p>
+<ul>
+<li>PHP</li>
+<li>MySQL</li>
+</ul>
+<p>The implicit requirement is also a server that supports these two. That means you are either relying on a 3rd party host that manages the server and just exposes the Wordpress interface&hellip; or you are managing that server yourself.</p>
+<p>Most blogging systems work this way - Some language requirement, and some database system for storing the data you create.</p>
+<p>However, there&rsquo;s lots of additional caveats that you aren&rsquo;t normally aware of, that tend to bite you later:</p>
+<ul>
+<li>You need to run a web server, either Apache or Nginx</li>
+<li>You need to keep the server itself up to date (security patches)</li>
+<li>You need to keep Apache|Nginx/PHP/MySQL up to date (security patches)</li>
+<li>You need to manage database backups (what happens if your server crashes)</li>
+<li>You need to keep WordPress up to date.</li>
+</ul>
+<p>That&rsquo;s a heck of a lot of stuff for something that&rsquo;s supposed to be easy. And I just picked WordPress because it&rsquo;s popular. Almost every blogging system is the same way.</p>
+<p>Except for static site generators.</p>
+<h3 id="static-site-generators">Static Site Generators</h3>
+<p>Static Site Generators are a different way to approach blogging that merges more recent tooling with traditional delivery methods. That&rsquo;s just a fancy way of saying Static Site Generators give you some tooling to generate a bunch of HTML documents that represent your site.</p>
+<p>With Hugo, I install hugo locally.. write some markdown for my posts, and then use Hugo to generate the HTML for my site. With this, we bring our &ldquo;management&rdquo; layer down to:</p>
+<ul>
+<li>Hugo</li>
+<li>Web server (nginx/apache)</li>
+<li>The hosting server</li>
+</ul>
+<p>Hugo runs locally, so the surface of attack is pretty minimal. There&rsquo;s nothing really wrong with running an outdated version of Hugo except you won&rsquo;t get the most recent features/bug fixes. But there&rsquo;s no security implications of doing so.</p>
+<p>Since the output from Static Site Generators is just .. static content it can be hosted anywhere. You can use a hosting provider, a VPS, S3+CloudFront, or.. GitHub Pages!</p>
+<h2 id="github-pages">GitHub Pages</h2>
+<p>GitHub pages is a feature of GitHub that is available to all accounts, regardless of subscription. GitHub pages allows you to serve static content from any repository you&rsquo;d like. They have some rules around how you need to organize your code and how to configure your site (project vs. main) but it&rsquo;s all relatively straight forward.</p>
+<p>I haven&rsquo;t really hosted much on GitHub pages, but it&rsquo;s very easy - They also have a great walkthrough page<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> that shows you how to configure the kind of Static Site you want to host.</p>
+<h2 id="project-configuration">Project Configuration</h2>
+<p>I&rsquo;m not going to go into too much detail, because both Hugo and GitHub have very good introductions, but this should be enough to get a site running.</p>
+<h3 id="installing-hugo">Installing Hugo</h3>
+<p>Installing Hugo can be done from a terminal in your chosen operating system. There are alternate installation instructions available if you don&rsquo;t have brew installed or if you don&rsquo;t have a mac<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="setup-hugo">Setup Hugo</h3>
+<p>Open up your terminal, and navigate to the place you want to store your website. Then you can run the following command:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">hugo new site mysite
+</code></pre></td></tr></table>
+</div>
+</div><p>This creates a new folder called <code>mysite</code> that contains the raw files for your static site. At this point you don&rsquo;t have anything generated just the files that will eventually be compiled into your static site.</p>
+<p>You can install a theme by doing the following:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git init
+git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+</code></pre></td></tr></table>
+</div>
+</div><p>You can actually choose whatever theme you would like from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>  <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>and just replace the <code>git submodule</code> line with the instructions from your theme.</p>
+<p>Line 1 creates a git repository in the <code>mysite</code> directory. We want this because themes in Hugo are installed via <code>git submodule</code> which clones a particular repository into the current one. It also allows you to save the raw site (before static generation) to git!</p>
+<p>Now it&rsquo;s time to head over to your <code>config.toml</code> file and set up the defaults for your website. My config file looks like this. You only really need the configurations on the first 9 lines. The rest are just further configurations<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> that I&rsquo;ve made.</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-toml" data-lang="toml">baseURL = <span style="color:#a31515">&#34;https://xangelo.ca&#34;</span>
+theme = <span style="color:#a31515">&#34;plain&#34;</span>
+title = <span style="color:#a31515">&#34;Xangelo.ca&#34;</span>
+author = <span style="color:#a31515">&#34;Angelo R&#34;</span>
+copyright = <span style="color:#a31515">&#34;Copyright © 2011 - 2020&#34;</span>
+paginate = 15
+languageCode = <span style="color:#a31515">&#34;en-us&#34;</span>
+enableInlineShortcodes = <span style="color:#00f">true</span>
+footnoteReturnLinkContents = <span style="color:#a31515">&#34;^&#34;</span>
+
+[params]
+subtitle = <span style="color:#a31515">&#34;Technical musings and other tidbits&#34;</span>
+
+[markup]
+[markup.highlight]
+lineNos = <span style="color:#00f">true</span>
+lineNumbersInTable = <span style="color:#00f">true</span>
+style = <span style="color:#a31515">&#34;vs&#34;</span>
+tabWidth = 2
+[markup.tableOfContents]
+endLevel = 3
+ordered = <span style="color:#00f">true</span>
+startLevel = 2
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="create-and-test">Create and test!</h3>
+<p>Hugo ships with a built in server that allows you to preview what your site will end up looking like, you can start it up with:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">hugo server -w
+</code></pre></td></tr></table>
+</div>
+</div><p>This creates the server and the <code>-w</code> flag sets it to &ldquo;watch&rdquo;. Any changes that are made will automatically reload the server and also reload the site. You can visit this site by navigating to <code>https://localhost:1313</code> in your browser.</p>
+<p>You can create a new post by using <code>hugo new posts/welcome.md</code>. This creates a new Markdown file in the <code>posts/</code> directory.</p>
+<p>You can go ahead and edit that file - saving it will cause Hugo to live reload the website.</p>
+<h3 id="publish-your-site">Publish your site!</h3>
+<p>Once you&rsquo;re happy with your stuff, you can turn off the live-reloading server and run the <code>hugo</code> command. This parses all your information and generates the static files for your website. It will then put all this content in the <code>public/</code> directory. If you followed the instructions from earlier around setting up GitHub Pages, you can <code>cd</code> into the <code>public/</code> directory and set it up as another git repository.</p>
+<p>then running <code>git push </code>will publish your static files to whatever GitHub repository you configured to host the site.</p>
+<h2 id="wrapping-up">Wrapping Up</h2>
+<p>I haven&rsquo;t really dug too much into setting up GitHub pages because it&rsquo;s mostly clicking around the interface and the instructions for that are kept up to date <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. I highly recommend GitHub pages because of the ease of setting up</p>
+<ul>
+<li>Custom domain names (if you have your own domain it&rsquo;s trivial to point it to your GitHub pages site)</li>
+<li>Custom domain name SSL certificafte. Most places only allow you custom SSL certs if you use a subdomain, but GitHub lets you use a custom domain name.</li>
+</ul>
+<p>I also highly suggest you spend some time going through the themes<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> on Hugo to find one that you really like. There are so many and it&rsquo;s so easy to make new themes that you&rsquo;ll definitely find one you like.</p>
+<h2 id="footnotes">Footnotes</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Ghost, a node.js based blogging engine: <a href="https://ghost.org/">https://ghost.org/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Hugo, static site generatror: <a href="https://gohugo.io">https://gohugo.io</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>GitHub Pages setup:  <a href="https://pages.github.com/">https://pages.github.com/</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Hugo installation: <a href="https://gohugo.io/getting-started/installing">https://gohugo.io/getting-started/installing</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>Hugo themes: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>Hugo configuration options: <a href="https://gohugo.io/getting-started/configuration-markup">https://gohugo.io/getting-started/configuration-markup</a> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2020</div>
+  </div>
+</footer>
+</body>
+</html>

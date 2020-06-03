@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Thu, 07 May 2020 17:31:57 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2020 14:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>general</title>
+      <link>https://xangelo.ca/tags/general/</link>
+      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://xangelo.ca/tags/github/</link>
+      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://xangelo.ca/tags/hugo/</link>
+      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>architecture</title>
