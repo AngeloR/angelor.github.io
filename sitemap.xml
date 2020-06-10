@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://xangelo.ca/tags/blog/</loc>
+    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xangelo.ca/tags/devlog/</loc>
+    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xangelo.ca/tags/devlog-blog/</loc>
+    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xangelo.ca/posts/devlog/blog/1/</loc>
+    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xangelo.ca/posts/</loc>
+    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xangelo.ca/tags/</loc>
+    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xangelo.ca/</loc>
+    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://xangelo.ca/tags/general/</loc>
     <lastmod>2020-06-03T14:00:00-04:00</lastmod>
   </url>
@@ -19,21 +54,6 @@
   
   <url>
     <loc>https://xangelo.ca/posts/hugo-github/</loc>
-    <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xangelo.ca/posts/</loc>
-    <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xangelo.ca/tags/</loc>
-    <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xangelo.ca/</loc>
     <lastmod>2020-06-03T14:00:00-04:00</lastmod>
   </url>
   

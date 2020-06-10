@@ -15,7 +15,7 @@
 </header>
 <main>
   <article>
-    <div class="front-block">
+    <section class="front-block">
 	<div class="title">
 		<h1 class="nocount">What the heck is a Database Index?</h1>
 		<span class="divider"></span>
@@ -39,8 +39,8 @@
   </ol>
 </nav></aside>
 	</div>
-</div>
-<div class="content">
+</section>
+<section class="content">
 	<p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
 <pre><code>+-------------------+
 |       users       |
@@ -70,7 +70,18 @@
 <p>As you progress in your database tuning/development life you&rsquo;ll find use-cases where it makes sense to have an index from the start. For example, most &ldquo;user&rdquo; tables will have an index on the username column. This is something that you can then take and implement on your next project!</p>
 <h2 id="further-reading">Further Reading</h2>
 <p>I really recommend you peruse this documentation from mysql on what an index is. While you may be using Postgres/MSSQL - the core concepts of what an index is remains the same. <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql-indexes.html">https://dev.mysql.com/doc/refman/5.7/en/mysql-indexes.html</a></p>
-</div>
+</section>
+<section class="comments">
+	<h2 class="nocount">Comments</h2>
+	<script src="https://utteranc.es/client.js"
+			repo=AngeloR/angelor.github.io
+			issue-term=pathname
+			label=comment
+			theme=preferred-color-scheme
+			crossorigin="anonymous"
+			async>
+	</script>
+</section>
 
   </article>
 </main>
