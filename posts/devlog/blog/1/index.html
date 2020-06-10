@@ -41,6 +41,7 @@
         <li><a href="#numbered-headers">Numbered Headers</a></li>
         <li><a href="#flexible-visual-line-up">Flexible visual line-up</a></li>
         <li><a href="#darklight-mode">Dark/Light mode</a></li>
+        <li><a href="#support-for-utterances">Support for Utteranc.es</a></li>
       </ol>
     </li>
     <li><a href="#downloadinstall">Download/Install</a></li>
@@ -51,13 +52,12 @@
 </section>
 <section class="content">
 	<p>I&rsquo;ve started working on a custom theme for Hugo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> where possible.</p>
-<p>The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile.</p>
-<p>One thing I did was modify the default colors of links (visited/unvisited) so that I could utilize the exact same colors for both light and dark themes.</p>
+<p>The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> who helped me adjust the colors for both dark and light modes to make them a bit more legible.</p>
 <p>The two complicated components and 1 simple component are outlined below.</p>
 <h2 id="features">Features</h2>
 <h3 id="numbered-headers">Numbered Headers</h3>
 <p>I wanted to ensure that each heading would have a number associated with it that matched the number that it was automatically assigned by Hugo during the Table of Contents generation. I didn&rsquo;t want to have to update numbers as I added/remove header tags and I didn&rsquo;t want to utilize any JavaScript on the site, so I was left with CSS only.</p>
-<p>I ended up utilizing counters<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> to achieve this.</p>
+<p>I ended up utilizing counters<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> to achieve this.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -114,7 +114,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>I set the <code>&lt;li&gt;</code> tag to utilize flex <code>display: flex</code> and tell it to align the items to the center</p>
-<p>I then set the <code>.divider</code> to <code>flex-grow: 1</code> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> and don&rsquo;t set the property on the <code>&lt;a&gt;</code> or <code>.pubdate</code> elements. This causes the divider to grow to take up the entirety of space within the list element, subtracting the side of the title/date tags.</p>
+<p>I then set the <code>.divider</code> to <code>flex-grow: 1</code> <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> and don&rsquo;t set the property on the <code>&lt;a&gt;</code> or <code>.pubdate</code> elements. This causes the divider to grow to take up the entirety of space within the list element, subtracting the side of the title/date tags.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -161,6 +161,26 @@
 <p>Where I&rsquo;m not 100% happy is on color choices. Where possible I attmpted to tweak things so that they would look the same in light or dark mode. I tweaked the original colors of links (new/visited) and also settled on a particular code-highlighting style.</p>
 <p>Where I&rsquo;m not 100% happy, is with the default font color. In light mode it&rsquo;s browser defaults, but in dark mode it&rsquo;s a blue/grey and I think it might be a tad too dark. It&rsquo;s something that I&rsquo;ll continue tweaking in small batches until I find something that works well.</p>
 <p>I also faded out images just a bit so that they&rsquo;re not so jaring. The idea is if you hover/touch the images they&rsquo;ll fade in to full color, but if you&rsquo;re just scrolling through you won&rsquo;t run into any weirdness.</p>
+<h3 id="support-for-utterances">Support for Utteranc.es</h3>
+<p>This<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> is something that I recently stumbled across - the ability to utilize GitHub issues to track comments on a site. I really love the idea - especially since I&rsquo;m hosting my blog on GitHub Pages. By adding some params to your <code>config.toml</code> file you&rsquo;ll be able to turn on support for utterances.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">utterances</span>]
+<span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#34;AngeloR/angelor.github.io&#34;</span>
+<span style="color:#a6e22e">issue_term</span>=<span style="color:#e6db74">&#34;pathname&#34;</span>
+<span style="color:#a6e22e">label</span>=<span style="color:#e6db74">&#34;comment&#34;</span>
+<span style="color:#a6e22e">theme</span>=<span style="color:#e6db74">&#34;preferred-color-scheme&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The settings match exactly the configuration options provided by utteranc.es, so you should be able to see the mapping quite easiy. The only thing I changed was making it <code>issue_term</code> instead of <code>issue-term</code>.</p>
+<p>If you don&rsquo;t add this configuration, it&rsquo;ll just hide the comment block and you won&rsquo;t even load the utteranc.es client js.</p>
 <h2 id="downloadinstall">Download/Install</h2>
 <p>If you&rsquo;re interested in this theme, you can grab it here <a href="https://github.com/AngeloR/plain-hugo-theme">https://github.com/AngeloR/plain-hugo-theme</a></p>
 <p>Up to date installation instructions can be found on the readme, but I&rsquo;ve included a snapshot of what they were at this point:</p>
@@ -190,7 +210,13 @@ theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plai
 <p><a href="https://tools.ietf.org/rfc/rfc7993.txt">https://tools.ietf.org/rfc/rfc7993.txt</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow">https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="http://westleysz.com/">http://westleysz.com/</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow">https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p><a href="https://utteranc.es/">https://utteranc.es/</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
