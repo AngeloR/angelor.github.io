@@ -1,5 +1,6 @@
 ---
-title: "What Is LootCap"
+title: "Serverless with CloudFlare Workers"
+Description: Building LootCap with CloudFlare Workers
 date: 2020-05-07T17:31:57-04:00
 draft: false
 tags: ["architecture", "lootcap"]
@@ -7,7 +8,7 @@ tags: ["architecture", "lootcap"]
 
 ## What is LootCap?
 
-Last week we ([Adam Cochran](https://twitter.com/AdamScochran) and myself) launched [LootCap](https://lootcap). The goal is to provide tracking on a new class of tokens called [Loot](https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749). It's been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself. It never provided any value. It felt like most coins out there were focused on trying to re-create the trajectory of Bitcoin rather than trying to DO anything. Ethereum was different. It was different enough to force me to pay attention. It allows you to run [Smart Contracts](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract). In recent years you've likely seen "Tokens" suddenly gain popularity. Well those are primarily powered by Ethereum. Again, however, it felt like tokens were just trying to recreate the Bitcoin boom. 
+Last week we ([Adam Cochran](https://twitter.com/AdamScochran) and myself) launched [LootCap](https://lootcap.com). The goal is to provide tracking on a new class of tokens called [Loot](https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749). It's been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself. It never provided any value. It felt like most coins out there were focused on trying to re-create the trajectory of Bitcoin rather than trying to DO anything. Ethereum was different. It was different enough to force me to pay attention. It allows you to run [Smart Contracts](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract). In recent years you've likely seen "Tokens" suddenly gain popularity. Well those are primarily powered by Ethereum. Again, however, it felt like tokens were just trying to recreate the Bitcoin boom. 
 
 Recently however, Loot tokens have become a thing. To condense Adam's [article](https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749) (which you should read if you're interested in this stuff) 
 
@@ -15,7 +16,7 @@ Recently however, Loot tokens have become a thing. To condense Adam's [article](
 
 What that means is, instead of you buying the token, the community you belong to gives you the token because your contributions to the community have some merit. It's a way to reward content creators for utilizing your community platform. 
 
-When Adam first approached me about the idea for [LootCap](https://lootcap.com) I was on board - this was the first time I saw a use for Crypto that wasn't being sold as "Well it's crypto so it's just better!". My task was to build a simple Market Cap site targeting a select number of these tokens that actually qualify as "Loot".
+When Adam first approached me about the idea for [LootCap](https://lootcap.com) I was on board - this was the first timssse I saw a use for Crypto that wasn't being sold as "Well it's crypto so it's just better!". My task was to build a simple Market Cap site targeting a select number of these tokens that actually qualify as "Loot".
 
 ## Planning
 
@@ -76,7 +77,7 @@ The front-end for the app is actually just a SPA. We load some minimal HTML and 
 
 We are using a two different 3rd party libraries on the front-end.
 
-- Mvp.css - https://andybrewer.github.io/mvp/: because we wanted a simple, classless, css framework as a base
+- Mvp.css - https://andybrewer.github.io/mvp/ - because we wanted a simple, classless, css framework as a base
 - BigNumber - https://mikemcl.github.io/bignumber.js - because dealing with crypto numbers in JS can be challenging.
 
 We aren't using React, and so for the times where we have to update the Dom we're using this function and interacting directly with the Element nodes.
