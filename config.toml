@@ -1,5 +1,5 @@
-baseURL = "http://example.org/"
-theme = "simple-style"
+baseURL = "https://xangelo.ca"
+theme = "plain"
 title = "Xangelo.ca"
 author = "Angelo R"
 copyright = "Copyright © 2011 - 2020"
@@ -7,14 +7,23 @@ paginate = 15
 languageCode = "en-us"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
+rssLimit = 15
 
 [params]
 subtitle = "Technical musings and other tidbits"
+[params.utterances]
+repo = "AngeloR/angelor.github.io"
+issue_term="pathname"
+label="comment"
+theme="preferred-color-scheme"
+
 
 [markup]
 [markup.highlight]
 lineNos = true
 lineNumbersInTable = true
+style = "monokai"
+tabWidth = 2
 [markup.tableOfContents]
     endLevel = 3
     ordered = true
