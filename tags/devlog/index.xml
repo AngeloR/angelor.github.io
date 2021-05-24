@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Wed, 10 Jun 2020 12:00:00 -0400</lastBuildDate>
-    
-	<atom:link href="https://xangelo.ca/tags/devlog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 10 Jun 2020 12:00:00 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/devlog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DEVLOG: Custom Theme for Hugo</title>
       <link>https://xangelo.ca/posts/devlog/blog/1/</link>

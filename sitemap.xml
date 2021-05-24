@@ -1,114 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://xangelo.ca/posts/devlog/newsriver/intro/</loc>
     <lastmod>2020-11-10T09:43:04-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/posts/</loc>
     <lastmod>2020-11-10T09:43:04-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/</loc>
     <lastmod>2020-11-10T09:43:04-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/blog/</loc>
     <lastmod>2020-06-10T12:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/devlog/</loc>
     <lastmod>2020-06-10T12:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/devlog-blog/</loc>
     <lastmod>2020-06-10T12:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/posts/devlog/blog/1/</loc>
     <lastmod>2020-06-10T12:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/</loc>
     <lastmod>2020-06-10T12:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/general/</loc>
     <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/github/</loc>
     <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/hugo/</loc>
     <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/posts/hugo-github/</loc>
     <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/architecture/</loc>
     <lastmod>2020-05-07T17:31:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/lootcap/</loc>
     <lastmod>2020-05-07T17:31:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/posts/what-is-lootcap/</loc>
     <lastmod>2020-05-07T17:31:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/page/about/</loc>
     <lastmod>2020-04-29T23:38:37-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/page/</loc>
     <lastmod>2020-04-29T23:38:37-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/database/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/tags/explanation/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/posts/the-disk-is-slow/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</loc>
     <lastmod>2020-04-29T16:21:29-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://xangelo.ca/categories/</loc>
   </url>
-  
 </urlset>

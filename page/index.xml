@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Wed, 29 Apr 2020 23:38:37 -0400</lastBuildDate>
-    
-	<atom:link href="https://xangelo.ca/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 29 Apr 2020 23:38:37 -0400</lastBuildDate><atom:link href="https://xangelo.ca/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://xangelo.ca/page/about/</link>
