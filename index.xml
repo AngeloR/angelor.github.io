@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Tue, 10 Nov 2020 09:43:04 -0500</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 09:44:35 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dungeon Generation in Roguelikes</title>
+      <link>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</link>
+      <pubDate>Fri, 23 Apr 2021 09:44:35 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
+      <description>Intro As always, I&amp;rsquo;ve been working on a terrible browser-based game. This time, it will be revolving around gameplay mechanics from roguelikes(or roguelites technically)+jrpgs.
+The thing I specifically want to look at today is the topic of Dungeon Generation - both in and out of code.
+Roguelikes all tend to share one mechanic: Procedurally Generated Dungeons. The idea is that every play-through is different, every floor of a dungeon is completely unique.</description>
+    </item>
+    
     <item>
       <title>DEVLOG: NewsRiver Updates</title>
       <link>https://xangelo.ca/posts/devlog/newsriver/intro/</link>

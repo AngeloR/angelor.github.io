@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+<title>Dungeon Generation in Roguelikes - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/txt.css" />
+</head>
+<body>
+<header>
+  <div>
+	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <section class="front-block">
+	<div class="title">
+		<h1 class="nocount">Dungeon Generation in Roguelikes</h1>
+		<span class="divider"></span>
+		<div>Pub: 2021-04-23</div>
+		</div>
+	<div class="meta">
+		<div class="tags">
+			Tags: <span class="tag"><a href="/tags/roguelike">#roguelike</a></span>
+			<span class="tag"><a href="/tags/explanation">#explanation</a></span>
+			</div>
+		<span class="divider"></span>
+		<div>
+			Author: Angelo R.
+		</div>
+	</div>
+	<div class="toc-block">
+		<h2 class="nocount">Table of Contents</h2>
+		<aside class="toc"><nav id="TableOfContents">
+  <ol>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#random">Random</a>
+      <ol>
+        <li><a href="#on-demand-generation">On-demand generation</a></li>
+        <li><a href="#pseudo-random-fabrication">Pseudo-random Fabrication</a></li>
+      </ol>
+    </li>
+    <li><a href="#standard-dungeons-connected-squares">Standard Dungeons (Connected Squares)</a></li>
+    <li><a href="#drunk-walking">Drunk Walking</a></li>
+  </ol>
+</nav></aside>
+	</div>
+</section>
+<section class="content">
+	<h2 id="intro">Intro</h2>
+<p>As always, I&rsquo;ve been working on a terrible browser-based game. This time, it
+will be revolving around gameplay mechanics from roguelikes(or roguelites
+technically)+jrpgs.</p>
+<p>The thing I specifically want to look at today is the topic of Dungeon
+Generation - both in and out of code.</p>
+<p>Roguelikes all tend to share one mechanic: Procedurally Generated Dungeons. The
+idea is that every play-through is different, every floor of a dungeon is
+completely unique. As a result, it requires the player to learn the mechanics of
+the game over multiple runs as most roguelikes also include perma-death as a
+required feature.</p>
+<p>Dungeon Generation in roguelikes are a very interesting topic for two reasons.
+There is a definite technical component to being able to generate &ldquo;good&rdquo;
+dungeons quickly. Dungeons that are large enough, with enough rooms/pathways to
+be interesting, but that don&rsquo;t take forever to generate. The goal is each floor
+is generated randomly when the player enters - we don&rsquo;t want load times
+equivalent to stepping into a room in Morrowind. The second reason is one that I
+think roguelikes can miss out on - dungeon generation must fit the environment.</p>
+<p>Most roguelikes have a generation alorithm that gets assigned to every single
+floor. But that&rsquo;s not really that helpful. Dungeons should reflect the
+environment the player is in. Having square rooms in a castle dungeon makes
+sense. Having square rooms in a cave, not so much.</p>
+<p>A lot of dungeon generation information you find online tend to focus on the
+techtechnical component: HOW do you generate a dungeon. I&rsquo;m hoping to also cover
+the second bit here.</p>
+<h2 id="random">Random</h2>
+<p>The easiest to explain algorithm is the &ldquo;Random&rdquo; one, but it&rsquo;s probably the
+hardest to get right. Random dungeons are exactly what you&rsquo;d think -&gt; just
+randomly place obstacles and interaction points around the dungeon. As a result
+it&rsquo;s very easy to actually MAKE the dungeon.</p>
+<p>It also has the added benefit that the &ldquo;random&rdquo; look works really well for open
+fields. Think areas that are strewn with trees or rocks or something like that.
+It could also work really well for large underground caverns since you would be
+peppering the inside with obstances.</p>
+<p>But we&rsquo;re not just making a dungeon - we&rsquo;re making a game. And truly-random
+dungeons are hard to tune. How do you ensure that every chest you place is
+actually reachable by the player? How about the one set of stairs? How do you
+ensure that the player doesn&rsquo;t spawn in a box, closed off from the rest of the
+dungeon. How do you ensure that they don&rsquo;t spawn right next to some stairs?</p>
+<p>Each of these questions (and many many more) result in you tuning you random
+generation more and more. You&rsquo;ll never get it 100% right. There&rsquo;ll always be
+edge cases reported by your places that you didn&rsquo;t even think about (did a
+monster spawn in deep water so the player didn&rsquo;t even know it was there and is
+now reporting that they didn&rsquo;t get an achievement for killing all the monsters
+on a foor?).</p>
+<p>I started with a purly random dungeon generation system myeself. It&rsquo;s definitely
+not a bad call to make - but you just have to be aware of the edge cases. But I
+kept having to tune/adjust things and I&rsquo;d still end up with play testers saying
+they got spawned in a box, or couldn&rsquo;t reach the stairs. That&rsquo;s frustrating
+enough to probably just stop playing.</p>
+<p>The nice thing about random, however, is that you don&rsquo;t NEED to generate the map
+in its entirety. Nor do you need it to be entirely random.</p>
+<h3 id="on-demand-generation">On-demand generation</h3>
+<p>So you have the container for your map.. and your character is spawned in a
+particular point <code>(x,y)</code>. Given a field of view (<code>v</code>) really you only need to
+generate a box defined by the points <code>(x-v, y-v)</code>, <code>(x+v, y-v)</code>, <code>(x-v, y+v)</code>,
+and <code>(x+v, y+v)</code>.</p>
+<p>If the player steps in a direction, you only need to expand the generated
+portion of the map by 1 tile (or whatever your fov is). In this way, your entire
+dungeon is being generated as the player discovers it. You get a few benefits
+like not needing to store the entirety of the map if the player doesn&rsquo;t visit
+it. You can tune drop rates for everything just by how much of the map is
+discovered vs. isn&rsquo;t. You can also almost guarantee that EVERY point on the map is
+reachable by the player and that they&rsquo;ll discover the stairs exactly when you&rsquo;d
+like them to.</p>
+<h3 id="pseudo-random-fabrication">Pseudo-random Fabrication</h3>
+<p>Now, lets get the pedantics out of the way - nothing we&rsquo;re doing is random, it&rsquo;s
+all pseudo-random. The difference is that in this generation mechanic we&rsquo;re
+actually building the map from pre-defined map parts.</p>
+<p>The downside, of course, is that you have to spend a bunch of time generating
+the pieces of map and you do have to have to have some guidelines. But, being
+able to tune each individual section of map gives you a ton of control over the
+actual gameplay. It also allows you to use non-standard map shapes (get outta
+here square rooms) and generate really unique looking maps.</p>
+<p>You would need to rotate the location of interactables, but with enough of these
+map pieces being put together in random orders it gives you a lot of variation
+for your players. And if the unlikely event that they end up getting the EXACT
+same map somehow (you know, cause random), the locations of all the interactable
+items will be randomized.</p>
+<h2 id="standard-dungeons-connected-squares">Standard Dungeons (Connected Squares)</h2>
+<p>There are a million of these tutorials as this is the standard look for
+dungeons. I think they work wonderfully when you&rsquo;re actually exploring a dungeon
+in a castle or something - but otherwise they seem out of place</p>
+<p>The premise is pretty simplem but it involves iterating over the map numerous
+times to achieve the look you want. The steps themselves are pretty
+straight-foward.</p>
+<ol>
+<li>First go over the map and generate rooms (squares or rectangles, whatever you
+want).</li>
+<li>Then go over the map again and connect the rooms together via pathways.</li>
+</ol>
+<p>Normally you&rsquo;ll make multiple passes over the map to generate the appropriate
+room density that you want. The more rooms, the easier it is to connect them
+all.</p>
+<p>The connection part CAN be confusing, but the easiest way is to actually look at
+various path-finding algorithms. Since the map doesn&rsquo;t actually exist, any
+pathfinding algorithms will find the straightest line possible between your
+rooms.</p>
+<p>Simply iterate over each pair of rooms and connect them using your chosen
+path-finding algorithm. <a href="https://csis.pace.edu/~benjamin/teaching/cs627/webfiles/Astar.pdf">A*</a>
+is always a good choice to understand the real basics of the algorithm so that
+you can implement it yourself. Or at least so you understand what&rsquo;s happening
+before using whatever package in your programming language of choice.</p>
+<p>The pro&rsquo;s of this technique is that it&rsquo;s a very well documented approach. You
+can adjust the density of the map very easily.</p>
+<p>So easily, in fact, that you can ramp up the density to the point that all of
+the rooms overlap. The iterate to remove random sections of obstacles (walls)
+that are inside the room. That will allow you to generate LARGE rooms where
+everything is accessible.</p>
+<h2 id="drunk-walking">Drunk Walking</h2>
+<p>The Drunkards Walk is a very simple algorithm and one that I stumbled upon
+without really knowing about it. The idea is simple and is based on these requirements:</p>
+<ol>
+<li>You want to generate organic looking maps</li>
+<li>You want to ensure that all sections of the map are reachable</li>
+</ol>
+<p>The organic maps requirement is probably the most interesting one to me. The
+ability to random generate maps that don&rsquo;t look like a bunch of pre-defined
+shapes. You could, technically, achieve that same look a myriad of ways, but
+this seems the easiest.</p>
+<p>The method is as follows:</p>
+<ol>
+<li>Create a &ldquo;walker&rdquo; on your map of some size (maybe 4 tiles? maybe 9? whatever
+you feel like)</li>
+<li>Start them on one side of the map, with their edges being walls, and their
+interiors being walkable floors.</li>
+<li>Make them march to the opposite side, adding some jitter along the other
+axis.</li>
+</ol>
+<p>The size of the &ldquo;walker&rdquo; dictates the minimum width of the space you&rsquo;re
+generating. If you want something to feel more open, make it larger. But if
+you&rsquo;re making caves or something, just make them smaller.</p>
+<p>The &ldquo;drunken walk&rdquo; step sounds confusing, but it&rsquo;s pretty straight-forward. If,
+for example, we start the walker on the west side of the map, they will be
+walking to the east. Every step they take to the east should be coupled with
+them randomly shifting north/south by a MAX of the size of the walker.</p>
+<p>That&rsquo;s it.</p>
+<p>When you&rsquo;re done, you have a single corridor. To build a map, add more walkers
+all moving along the same plane (west-&gt;east for example), and then add one or
+two walkers moving from the perpendiclar plane (north-&gt;south in this case). This
+ensures that all corridors will be connected, and gives you really neat looking
+maps. To me, they work wonderfully for caves/pathways.</p>
+<p>But, by playing with the size of the walker you can change the entire look of
+the map. Really wide players give you huge open spaces!</p>
+<p>the only thing this DOESN&rsquo;T do, is actual square looking rooms like if you were
+in a real dungeon..</p>
+</section>
+<section class="comments">
+	<h2 class="nocount">Comments</h2>
+	<script src="https://utteranc.es/client.js"
+			repo=AngeloR/angelor.github.io
+			issue-term=pathname
+			label=comment
+			theme=preferred-color-scheme
+			crossorigin="anonymous"
+			async>
+	</script>
+</section>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2020</div>
+  </div>
+</footer>
+</body>
+</html>
