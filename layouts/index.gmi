@@ -1,0 +1,9 @@
+## List of posts
+
+{{ range .Site.RegularPages.GroupByDate "2006" }}
+### {{ .Key }}
+{{ range .Pages.ByDate.Reverse }}
+=> {{ replace .Permalink "xangelo.ca/gemini" "gemini.xangelo.ca" 1}} {{ .Title }}
+{{- end }}
+{{ end }}
+

@@ -28,3 +28,21 @@ tabWidth = 2
     endLevel = 3
     ordered = true
     startLevel = 2
+
+[mediaTypes]
+  [mediaTypes."text/gemini"]
+    suffixes = ["gmi"]
+
+[outputFormats]
+[outputFormats.Gemini]
+name = "GEMINI"
+mediaType = "text/gemini"
+isPlainText = true
+isHTML = false
+protocol = "gemini://"
+permalinkable = true
+path = "gemini/"
+
+[outputs]
+home = ["HTML", "RSS", "GEMINI"]
+page = ["HTML", "GEMINI"]
