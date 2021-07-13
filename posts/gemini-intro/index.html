@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+<title>Gemini, an HTTP alternative - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/txt.css" />
+</head>
+<body>
+<header>
+  <div>
+	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <section class="front-block">
+	<div class="title">
+		<h1 class="nocount">Gemini, an HTTP alternative</h1>
+		<span class="divider"></span>
+		<div>Pub: 2021-06-21</div>
+		</div>
+	<div class="meta">
+		<div class="tags">
+			Tags: <span class="tag"><a href="/tags/gemini">#gemini</a></span>
+			</div>
+		<span class="divider"></span>
+		<div>
+			Author: Angelo R.
+		</div>
+	</div>
+	<div class="toc-block">
+		<h2 class="nocount">Table of Contents</h2>
+		<aside class="toc"><nav id="TableOfContents">
+  <ol>
+    <li><a href="#what-is-gemini">What is Gemini</a></li>
+    <li><a href="#accessing-gemini">Accessing Gemini</a></li>
+    <li><a href="#why-im-interested-in-gemini">Why I&rsquo;m interested in Gemini</a>
+      <ol>
+        <li><a href="#a-sidenote-on-ssl-and-authentication">A sidenote on SSL and Authentication</a></li>
+      </ol>
+    </li>
+    <li><a href="#updating-hugo-to-output-gemini-valid-content">Updating Hugo to output Gemini valid content</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</nav></aside>
+	</div>
+</section>
+<section class="content">
+	<p>For the last few months now I&rsquo;ve started embracing my weird love for text and text-related user interfaces. From email to irc, I&rsquo;m moving more and more of my social interactions away from traditional websites/apps and over to my terminal. A big part of this move is a step back from 3rd party applications to things that I have a bit more control over - but there are many reasons.</p>
+<ul>
+<li>Privacy: Text only platforms make it very hard for trackers. Most email nowdays include &ldquo;tracking pixels&rdquo; that allow the sender to know when you opened the email and to gather information about the device what opened the email itself.</li>
+<li>No ads: When everything is text, there&rsquo;s 0 need to include the ability to deal with images. As such advertisements just can&rsquo;t happen in a traditional format. The closest you can get is what you think of when you look at global chat in MMOs - people just spamming whatever they want. As a result it makes it easier to deal with (blocking).</li>
+<li>Faster: As we&rsquo;ve added more and more compute power to devices, the tools and applications that we use have just gotten larger and less efficient. It&rsquo;s very common for websites loaded to be 1mb in size - that&rsquo;s kinda terrible. By moving to a text-only interface, you lose the ability to include a bunch of extra things and you end up with what matters - Just The Content.</li>
+<li>Interoperability: When everything is text, it&rsquo;s much easier to wire up multiple tools together. Think of the unix interface philosophy. Every tool does one thing well, and the input/output is text. So you have the ability to wire up a chain of tools that the original authors don&rsquo;t need to know/care about.</li>
+</ul>
+<p>The hard part is that you need to find alternatives to a lot of traditional apps that you have come to rely on. For some things (email for example) it&rsquo;s very easy. For others, like web browsers, it&rsquo;s basically impossible. There are things like <a href="https://lynx.invisible-island.net/">lynx</a> that you can utilize, but it&rsquo;s just not the same. So many websites now days are designed around the fact that the user is going to have a full GUI browser. And, honestly, that&rsquo;s a very reasonable expectation.</p>
+<p>But I still found myself looking for an alternative. And I found Gemini.</p>
+<h2 id="what-is-gemini">What is Gemini</h2>
+<p><a href="https://gemini.circumlunar.space">Gemini</a> is an alternative to the HTTP protocol. It&rsquo;s definitely not going to replace HTTP, nor does it want to. Instead it aims to operate alongside. It&rsquo;s a very stripped down subset of markdown to enable easy implementations of parsing. A lot of the complexity of modern browser systems is around parsing HTML/CSS effectively and gemini just does away with that whole idea.</p>
+<p>This means that documents in Gemini are very light-weight, and are readable without any parsing. You could just read the raw text that makes up a gemini doc (called gemtext) and be just fine. Any styling choices are entirely up to the renderer (browser mostly) and are irrelevant to the document itself. There is no way to view images in-line, there is no JS, there is nothing but text.</p>
+<p>I really recommend you check out the gemini home page and do a bit of reading up on it.</p>
+<h2 id="accessing-gemini">Accessing Gemini</h2>
+<p>Since gemini is a completely different protocol you can&rsquo;t access it with a regular web-browser that deals in HTTP. Instead you have to find an alternative browser that deals with the gemini:// protocol. There are <a href="https://gemini.circumlunar.space/software/">numerous</a> owing to the simplicitly of the parser implementation. The one I&rsquo;ve been using most is a terminal based one called <a href="https://github.com/makeworld-the-better-one/amfora">amfora</a>, but if you&rsquo;re looking for something graphical I highly recommend <a href="https://gmi.skyjake.fi/lagrange/">Lagrange</a> which is wonderful.</p>
+<p>Obviously this is just a browser, so you need to go somewhere. I recommend starting at <a href="gemini://geminispace.info">geminispace.info</a>.</p>
+<p>One thing I should caution you - don&rsquo;t expect a full replacement for what you consider &ldquo;the internet&rdquo;. Gemini is very simplistic and focuses on ease of content consumption. It doesn&rsquo;t make content creation hard, but because of the focus on content itself, &ldquo;interactions&rdquo; are minimal. Some capsules (the gemini equivalent of a website) have &ldquo;comment&rdquo; sections, which harken back to the guestbooks of the 90s.</p>
+<h2 id="why-im-interested-in-gemini">Why I&rsquo;m interested in Gemini</h2>
+<p>The thing that attracts me to Gemini is the same thing that attracts me to most projects: putting data privacy/ownership above all else.</p>
+<p>Getting technical, Gemini foces TLS connections. Nothing is transmitted un-encrypted. It also brings to the forefront client certificates in SSL. The original spec for certs already supports this and it&rsquo;s crazy that it never took off. It honestly resolves the whole account identification/password problem in a really neat way.</p>
+<h3 id="a-sidenote-on-ssl-and-authentication">A sidenote on SSL and Authentication</h3>
+<p>This is, I think, one of my favourite features of gemini. SSL certs have two sides, and most people are only familiar with one. Servers generate certs to identify themselves. But since anyone can just generate a cert, there is really no way of knowing that the server you are connecting to is who they say they are. That is, I can generate a cert for duckduckgo.com, and you would have no way of knowing I&rsquo;m NOT the actual owner of that site. One way that we currently resolve this problem is &ldquo;Certificate Authorities&rdquo;.</p>
+<p>Certificate Authorities (CA) are just a collection of companies that at SOME POINT were declared trustworthy. You had no say in that process, and despite numerous hacks of the CAs, they&rsquo;re still considered &ldquo;trustworthy&rdquo;. You pay these companies to certify that you are who you say you are. There are various levels of &ldquo;validation&rdquo; that you can do, but the end goal is that your browser trusts a bunch of these CAs. When they see a cert from your website signed by a CA, they trust it.</p>
+<p>Don&rsquo;t get me wrong, trust in certs is a hard problem to solve and one that has been around for a long time.</p>
+<p>Gemini utilizies the idea of &ldquo;Trust on First Use (TOFU)&rdquo;. The idea is similar to how ssh manages your known hosts. The first time you visit a site in gemini that provides you a key, you just believe that they are who they say they are and record the key/site pair. Next time you visit, they simply match the cert recieved with what they have stored.</p>
+<p>This is naive. The rational is, once you connect to a site you&rsquo;ll won&rsquo;t be able to connect to anyone else impersonating that site unless you forget the original key/site mapping. Of course, the reverse is also true -&gt; if you connect to a site that is already impersonating a different one, you&rsquo;ll need to forget the original mapping before you can navigate to the actual site.</p>
+<p>On the server side, it definitely feels a bit weird. But this works wonderfully for the client!</p>
+<p>As a user, you can generate a single certificate that&rsquo;s YOU. You can then provide the public key for that cert to the server to identify it as you. If the server implements TOFU (which is how every authentication system ever works) then you are mapped to that cert on that server. Going to another server? Provide the same signature. Nothing to remember. You just need to keep your private key safe.</p>
+<p>The &ldquo;certification generation&rdquo; part is the tricky part and is why this never caught on for authentication on the web. But in Gemini, which is currentyly a more technical audience, it&rsquo;s a bit more feasible as a solution. What it means is, as a user, I can generate a single &ldquo;account&rdquo; and reuse it everywhere.</p>
+<h2 id="updating-hugo-to-output-gemini-valid-content">Updating Hugo to output Gemini valid content</h2>
+<p>I&rsquo;m interested enough in Gemini to put some time into modifying my website to output docs in gemtext so that I can serve my site over gemini as well as http. There are a few steps here (including getting off github pages so that both domains can be served over the xangelo.ca root) but that&rsquo;s ok.</p>
+<p>The first thing I had to do was figure out how to get my content into gemtext. The easiest way was just to utilize hugo and add a new gemini output. There are a couple resources on this, but the two that were the most helpful were <a href="https://sylvaindurand.org/gemini-and-hugo/">this article by Sylvain Durand</a> and <a href="https://brainbaking.com/post/2021/04/using-hugo-to-launch-a-gemini-capsule/">this one by Wouter Groenveld</a>. I won&rsquo;t re-hash what these are but the final configurations for my site can be found here:</p>
+<ul>
+<li><a href="https://github.com/AngeloR/xangelo.ca/blob/88c61cd88bd2228dc7f2e46871f5e5ea6e2fcfdc/config.toml#L36">config.toml</a>: The config file to declare the gemini output</li>
+<li><a href="https://github.com/AngeloR/xangelo.ca/blob/88c61cd88bd2228dc7f2e46871f5e5ea6e2fcfdc/layouts/index.gmi">index.gmi</a> - The layout file for the main page</li>
+<li><a href="https://github.com/AngeloR/xangelo.ca/blob/88c61cd88bd2228dc7f2e46871f5e5ea6e2fcfdc/layouts/_default/single.gmi">single.gmi</a> - The layout file for a single post</li>
+</ul>
+<p>I&rsquo;m including them because I mostly cannibalized Wouter/Sylvain&rsquo;s docs. Wouter made the decision to get off Gemini due to the earlyness of the protocol (it is very early) and as such dropped the original config links that he had up. I just went through git history and found them and made a few tweaks and put them up in my repo.</p>
+<p>At the moment I&rsquo;m mostly doing what Wouter is - a &ldquo;build&rdquo; on my site involves me generating some hugo and usign scp to move it over to my gemini server. I&rsquo;m then running <a href="https://github.com/mbrubeck/agate">agate</a> a bit manually while testing. This command just starts agate, tells it where my content folder is located, the addresses to bind to, and the hostname and language.</p>
+<p>Agate will happily generate the keys for you on first run, or you can provide them yourself.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"> ./agate.x86_64-unknown-linux-gnu --content ./gemini/ --addr <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:1965 --addr 0.0.0.0:1965 --hostname gemini.xangelo.ca --lang en-US
+</code></pre></td></tr></table>
+</div>
+</div><p>For now, scp is fine - but I&rsquo;ll probably just set up a gemini submodule/repo and deploy that to my server instead. That way I don&rsquo;t have to worry too much about transferring the entirety of the site.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Overall, I&rsquo;m pretty excited about Gemini. The ease of getting into the ecosystem as a consumer and publisher is amazing. There are some awesome projects to really ease that gap. But there&rsquo;s also plenty of room for growth and a small enough community that you can get involved in. The best place to get into it is <a href="gemini://gemini.circumlunar.space">gemini space</a>. I think the thing that excites me most about it is just the fact that there&rsquo;s such a big focus on privacy and small contributors. I think that&rsquo;s something that&rsquo;s missing from the web today, that we used to have at some point.</p>
+</section>
+<section class="comments">
+	<h2 class="nocount">Comments</h2>
+	<script src="https://utteranc.es/client.js"
+			repo=AngeloR/angelor.github.io
+			issue-term=pathname
+			label=comment
+			theme=preferred-color-scheme
+			crossorigin="anonymous"
+			async>
+	</script>
+</section>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2020</div>
+  </div>
+</footer>
+</body>
+</html>

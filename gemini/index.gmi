@@ -1,0 +1,19 @@
+## List of posts
+
+
+### 2021
+
+=> gemini://gemini.xangelo.ca/posts/gemini-intro/index.gmi Gemini, an HTTP alternative
+=> gemini://gemini.xangelo.ca/posts/devlog/roguelike/dungeon-generation/index.gmi Dungeon Generation in Roguelikes
+
+### 2020
+
+=> gemini://gemini.xangelo.ca/posts/devlog/newsriver/intro/index.gmi DEVLOG: NewsRiver Updates
+=> gemini://gemini.xangelo.ca/posts/devlog/blog/1/index.gmi DEVLOG: Custom Theme for Hugo
+=> gemini://gemini.xangelo.ca/posts/hugo-github/index.gmi Moving to Hugo and GitHub Pages
+=> gemini://gemini.xangelo.ca/posts/what-is-lootcap/index.gmi Serverless with CloudFlare Workers
+=> gemini://gemini.xangelo.ca/page/about/index.gmi About
+=> gemini://gemini.xangelo.ca/posts/the-disk-is-slow/index.gmi The Disk Is Slow
+=> gemini://gemini.xangelo.ca/posts/what-the-heck-is-a-database-index/index.gmi What the heck is a Database Index?
+
+

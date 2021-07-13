@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gemini on Xangelo.ca</title>
+    <link>https://xangelo.ca/tags/gemini/</link>
+    <description>Recent content in gemini on Xangelo.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2011 - 2020</copyright>
+    <lastBuildDate>Mon, 21 Jun 2021 17:11:57 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/gemini/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gemini, an HTTP alternative</title>
+      <link>https://xangelo.ca/posts/gemini-intro/</link>
+      <pubDate>Mon, 21 Jun 2021 17:11:57 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/gemini-intro/</guid>
+      <description>For the last few months now I&amp;rsquo;ve started embracing my weird love for text and text-related user interfaces. From email to irc, I&amp;rsquo;m moving more and more of my social interactions away from traditional websites/apps and over to my terminal. A big part of this move is a step back from 3rd party applications to things that I have a bit more control over - but there are many reasons.</description>
+    </item>
+    
+  </channel>
+</rss>

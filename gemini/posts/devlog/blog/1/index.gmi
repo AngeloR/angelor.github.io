@@ -1,0 +1,144 @@
+# DEVLOG: Custom Theme for Hugo
+
+
+=> gemini://gemini.xangelo.ca/posts/devlog/newsriver/intro/index.gmi ← Newer: DEVLOG: NewsRiver Updates
+=> gemini://gemini.xangelo.ca/posts/hugo-github/index.gmi → Older: Moving to Hugo and GitHub Pages
+
+I've started working on a custom theme for Hugo that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file where possible. 
+
+The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend who helped me adjust the colors for both dark and light modes to make them a bit more legible. 
+
+The two complicated components and 1 simple component are outlined below.
+
+## Features
+
+### Numbered Headers
+
+I wanted to ensure that each heading would have a number associated with it that matched the number that it was automatically assigned by Hugo during the Table of Contents generation. I didn't want to have to update numbers as I added/remove header tags and I didn't want to utilize any JavaScript on the site, so I was left with CSS only. 
+
+I ended up utilizing counters to achieve this.
+
+
+
+```css
+body {counter-reset: h2;}
+h2 {counter-reset: h3;} 
+h3 {counter-reset: h4;}
+h4 {counter-reset: h5;}
+h5 {counter-reset: h6;}
+
+h2:before {counter-increment: h2; content: counter(h2) ". ";}
+h3:before {counter-increment: h3; content: counter(h2) "."counter(h3) ". ";}
+h4:before {counter-increment: h4; content: counter(h2) "."counter(h3) "."counter(h4) ". ";}
+h5:before {counter-increment: h5; content: counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) ". ";}
+h6:before {counter-increment: h6; content: counter(h2) "."counter(h3) "."counter(h4) "."counter(h5) "."counter(h6) ". "; }
+h2.nocount:before,h3.nocount:before,h4.nocount:before,h5.nocount:before,h6.nocount:before {content: ""; counter-increment: none;}
+```
+
+
+
+I only have a single `<h1>` tag in my document which is for the title of the post, which I don't want numbered. The code above it ensures that every time we run across an `<h2>` tag it will reset the counter for `<h3>` tags to 0, increment the counter for `<h2>` tags, and then display the current value of the counter. 
+
+It repeats this for all header tags appending the counter for each subsequent tag level. 
+
+I've also included provisions for ensuring that you can skip incrementing the counters if you add a `.nocount` class to any header.
+
+
+
+### Flexible visual line-up 
+
+This was probably the hardest part.
+
+=> /img/devlog/blog/flexible-line.png Embedded Image: /img/devlog/blog/flexible-line.png
+
+That dashed line that lets you link a post with the corresponding date. Both elements are positioned at the exterior of their boxes, and the titles have a varying width. 
+
+In order to accomplish this I ended up needing to introduce a 3rd element, the line itself. However, I can't actually use an `<hr />` tag because I want to work towards supporting screen readers.. and those tags get interpreted as dividers between content. 
+
+The article list is an unordered list, so the HTML code looks like this:
+
+```html
+
+	Post Title [2]
+	</span>
+	YYYY-MM-DD
+</li>
+```
+
+I set the `<li>` tag to utilize flex `display: flex` and tell it to align the items to the center
+
+I then set the `.divider` to `flex-grow: 1`  and don't set the property on the `<a>` or `.pubdate` elements. This causes the divider to grow to take up the entirety of space within the list element, subtracting the side of the title/date tags. 
+
+```css
+.article-list li {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+.article-list .divider {
+	flex-grow: 1;
+	border-bottom: 1px dashed black;
+	margin: 0.3rem;
+}
+```
+
+### Dark/Light mode
+One of the things that I ended up implementing, that I'm not 100% sold on is the auto dark/light mode. Utilizing CSS we can adjust things to account for if the user is utilizing a light or dark mode on their browser:
+```css
+@media (prefers-color-scheme: dark) {
+	/* your stuff goes here */
+}
+```
+It's a very simple technique and given the minimalist nature of this site it works rather perfectly. 
+
+Where I'm not 100% happy is on color choices. Where possible I attmpted to tweak things so that they would look the same in light or dark mode. I tweaked the original colors of links (new/visited) and also settled on a particular code-highlighting style.
+
+Where I'm not 100% happy, is with the default font color. In light mode it's browser defaults, but in dark mode it's a blue/grey and I think it might be a tad too dark. It's something that I'll continue tweaking in small batches until I find something that works well.
+
+I also faded out images just a bit so that they're not so jaring. The idea is if you hover/touch the images they'll fade in to full color, but if you're just scrolling through you won't run into any weirdness.
+
+### Support for Utteranc.es
+This is something that I recently stumbled across - the ability to utilize GitHub issues to track comments on a site. I really love the idea - especially since I'm hosting my blog on GitHub Pages. By adding some params to your `config.toml` file you'll be able to turn on support for utterances.
+
+```toml
+[params.utterances]
+repo = "AngeloR/angelor.github.io"
+issue_term="pathname"
+label="comment"
+theme="preferred-color-scheme"
+```
+
+The settings match exactly the configuration options provided by utteranc.es, so you should be able to see the mapping quite easiy. The only thing I changed was making it `issue_term` instead of `issue-term`.
+
+If you don't add this configuration, it'll just hide the comment block and you won't even load the utteranc.es client js.
+
+## Download/Install
+If you're interested in this theme, you can grab it here https://github.com/AngeloR/plain-hugo-theme
+
+Up to date installation instructions can be found on the readme, but I've included a snapshot of what they were at this point:
+
+```bash
+git clone https://github.com/AngeloR/plain-hugo-theme /path/to/hugo/themes/plain/
+
+Edit your config.toml to add the following line:
+theme = "plain"
+```
+
+If you do end up using it and come across any bugs, please let me know over on GitHub! 
+
+## Footnotes
+
+ https://github.com/AngeloR/plain-hugo-theme
+ https://tools.ietf.org/rfc/rfc7993.txt
+ http://westleysz.com/
+ https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
+ https://utteranc.es/
+
+---
+## References
+
+=> /link/to/post [2] Post Title (/link/to/post)
+
+
+---
