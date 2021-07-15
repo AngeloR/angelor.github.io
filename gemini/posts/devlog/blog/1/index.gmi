@@ -2,7 +2,7 @@
 
 
 => gemini://gemini.xangelo.ca/posts/devlog/newsriver/intro/index.gmi ← Newer: DEVLOG: NewsRiver Updates
-=> gemini://gemini.xangelo.ca/posts/devlog/sketchy-heroes/1/index.gmi → Older: DEVLOG: Infinite Clicker, with a story
+=> gemini://gemini.xangelo.ca/posts/hugo-github/index.gmi → Older: Moving to Hugo and GitHub Pages
 
 I've started working on a custom theme for Hugo that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file where possible. 
 
@@ -141,7 +141,4 @@ If you do end up using it and come across any bugs, please let me know over on G
 => /link/to/post [2] Post Title (/link/to/post)
 
 
-## Related articles
-
-=> /gemini/posts/devlog/sketchy-heroes/1/index.gmi DEVLOG: Infinite Clicker, with a story: <no value>
 ---

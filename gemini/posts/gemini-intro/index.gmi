@@ -1,7 +1,7 @@
 # Gemini, an HTTP alternative
 
 
-=> gemini://gemini.xangelo.ca/posts/git-workflows/index.gmi ← Newer: Git Workflows Suck
+
 => gemini://gemini.xangelo.ca/posts/devlog/roguelike/dungeon-generation/index.gmi → Older: Dungeon Generation in Roguelikes
 
 For the last few months now I've started embracing my weird love for text and text-related user interfaces. From email to irc, I'm moving more and more of my social interactions away from traditional websites/apps and over to my terminal. A big part of this move is a step back from 3rd party applications to things that I have a bit more control over - but there are many reasons.
