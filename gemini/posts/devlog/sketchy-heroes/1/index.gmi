@@ -1,0 +1,18 @@
+# DEVLOG: Infinite Clicker, with a story
+
+
+=> gemini://gemini.xangelo.ca/posts/devlog/blog/1/index.gmi ← Newer: DEVLOG: Custom Theme for Hugo
+=> gemini://gemini.xangelo.ca/posts/hugo-github/index.gmi → Older: Moving to Hugo and GitHub Pages
+
+## Introduction
+I've been working on Sketchy Heroes for a few years now
+
+---
+## References
+
+
+
+## Related articles
+
+=> /gemini/posts/devlog/blog/1/index.gmi DEVLOG: Custom Theme for Hugo: <no value>
+---
