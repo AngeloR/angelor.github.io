@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Mon, 21 Jun 2021 17:11:57 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 12:16:45 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>development</title>
+      <link>https://xangelo.ca/tags/development/</link>
+      <pubDate>Thu, 15 Jul 2021 12:16:45 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://xangelo.ca/tags/git/</link>
+      <pubDate>Thu, 15 Jul 2021 12:16:45 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/git/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>gemini</title>
       <link>https://xangelo.ca/tags/gemini/</link>
@@ -63,6 +81,24 @@
     </item>
     
     <item>
+      <title>devlog-sketchy-heroes</title>
+      <link>https://xangelo.ca/tags/devlog-sketchy-heroes/</link>
+      <pubDate>Sun, 07 Jun 2020 12:09:04 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/devlog-sketchy-heroes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sketchy-heroes</title>
+      <link>https://xangelo.ca/tags/sketchy-heroes/</link>
+      <pubDate>Sun, 07 Jun 2020 12:09:04 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/sketchy-heroes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>general</title>
       <link>https://xangelo.ca/tags/general/</link>
       <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
@@ -104,15 +140,6 @@
       <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/lootcap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>https://xangelo.ca/tags/database/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/database/</guid>
       <description></description>
     </item>
     

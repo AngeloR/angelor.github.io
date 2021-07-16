@@ -1,7 +1,7 @@
 # Moving to Hugo and GitHub Pages
 
 
-=> gemini://gemini.xangelo.ca/posts/devlog/blog/1/index.gmi ← Newer: DEVLOG: Custom Theme for Hugo
+=> gemini://gemini.xangelo.ca/posts/devlog/sketchy-heroes/1/index.gmi ← Newer: DEVLOG: Infinite Clicker, with a story
 => gemini://gemini.xangelo.ca/posts/what-is-lootcap/index.gmi → Older: Serverless with CloudFlare Workers
 
 ## Goal
