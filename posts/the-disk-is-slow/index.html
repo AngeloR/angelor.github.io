@@ -57,7 +57,7 @@
 </ul>
 <p>These disks are where the data is actually stored, and when you see a number like &ldquo;7,200 rpm&rdquo; what you are seeing is how quickly these disks can spin. In a simplified manner, what happens when you &ldquo;write something to disk&rdquo;, is that the disk spins to an empty point, and the head beings to write. Likewise, when you &ldquo;read&rdquo; data from the disk, it spins to a designated point (the &ldquo;start&rdquo; of the data) and the head begins to &ldquo;read&rdquo; the data until it is done.</p>
 <p>Let&rsquo;s walk through a theoretical &ldquo;disk&rdquo;. Your &ldquo;disk&rdquo; can hold 8 units (00000000) of storage. We are going to perform a few actions on this disk.</p>
-<pre><code>You write 'a' twice - aa000000  
+<pre tabindex="0"><code>You write 'a' twice - aa000000  
 You write 'b' 3 times - aabbb000 
 You delete the two 'a'   - 00bbb000 
 You write 'c' 4 to,es - ccbbbcc0
@@ -74,7 +74,7 @@ You write 'c' 4 to,es - ccbbbcc0
 <li>repeat</li>
 </ul>
 <p>Lets go back to our previous scenario, and see how defragmentation could work:</p>
-<pre><code>Initial State: ccbbbcc0
+<pre tabindex="0"><code>Initial State: ccbbbcc0
 
 Step 1:        cc0bbccb
 Step 2:        cccbbc0b
@@ -86,12 +86,12 @@ Step 5:        cccc0bbb
 <h2 id="blocks-and-pages">Blocks and Pages</h2>
 <p>The first step in ensuring data is kept close together is the idea of &ldquo;blocks&rdquo;. Basically the filesystem that actually interacts with the hard-drive will define a &ldquo;block-size&rdquo;. The block size is basically a measure of how much data will fix in a block, and the filesystem reads/writes in blocks instead of individual bytes. Think of it this way: If your hard-drive was a piece of lined paper, we were originally writing things down one word per line. With blocks, we basically said &ldquo;well, we&rsquo;ll just write until we reach the horizontal end of this line&rdquo;. So now instead of one word per line, we have a few words per line. Perhaps, we could say, we have have one sentence per line.</p>
 <p>Using our previous 8 unit drive example, we could sub-divide that into blocks of 2 units, making it look like this:</p>
-<pre><code>Drive State: [c,c][c,c][b,b][b,0]
+<pre tabindex="0"><code>Drive State: [c,c][c,c][b,b][b,0]
 </code></pre><p>Now when we want to read all the c values, we have two seeks instead of 1 per record. This is already a big improvement (we&rsquo;ve reduced seeks by 50%), but we could probably reduce it even more. Since the filesystem has to expose a standard block size to all applications, systems that have to have a high amount of HDD I/O need an alternative. The easiest thing to do, is take the concept of a block containing records and create another abstraction: a page containing blocks.</p>
 <p>At its &ldquo;lowest&rdquo; level, a relational database deals with &ldquo;pages&rdquo;. Pages are really  just collections of the data that you are storing. Relational databases (non-relational databases might as well, but I haven&rsquo;t really dug into the internals of a lot of them) utilize this concept of a &ldquo;page&rdquo; to further decrease IO latency with the disk. Rather than dealing with the storage of individual records or information, it groups records together into a &ldquo;page&rdquo; and uses that. It will read/write a  whole page. This allows them to capitalize on the assumption that when you are reading/writing data the data you are accessing is probably next to other data that you also require.</p>
 <p>They even go so far as to let you customize this via &ldquo;clustered keys&rdquo;. A clustered key is just a mechanism to allow you, the database administrator, to define HOW the database orders the data within pages. As the administrator, you know the data you are trying to store, and the primary ways that it might be accessed. Databases give you the ability to say &ldquo;well, group all these records together on the disk by the values in this column&rdquo;. This creates pages that are grouped around a particular value (a userID for example), so that all records with that same value are near each other.</p>
 <p>Think of a database where you want to associate a list of items with a user. You have two tabes, <code>users</code> and <code>items</code>.</p>
-<pre><code>+-------+    +---------+
+<pre tabindex="0"><code>+-------+    +---------+
 | users |    |  items  |
 +-------+    +---------+
 | id    |    | id      |
@@ -102,7 +102,7 @@ Step 5:        cccc0bbb
 <p>Databases are very intricate systems, and I don&rsquo;t want you leaving thinking there isn&rsquo;t a whole lot more to this whole concept. This is a HUGE simplification of what the database is actually doing, but it should provide you with an understanding of why it is doing some of that at a storage level.</p>
 <h2 id="the-problem-with-blocks">The problem with blocks</h2>
 <p>The block system, however, is not without its own problems. By using &ldquo;blocks&rdquo; we&rsquo;ve introduced a bit of wasted space into our storage. Lets go back to our block example:</p>
-<pre><code>Drive State: [c,c][c,c][b,b][b,0]
+<pre tabindex="0"><code>Drive State: [c,c][c,c][b,b][b,0]
 </code></pre><p>That trailing 0 in block 4 will remain empty unless we add more b data. We will be unable to add any more c values but we&rsquo;ll be able to add more b. In fact, your drive will appear full to you because at the operating system level, it has no idea about the intricacies of your data storage. It just knows that these blocks are in use. So your 8 unit drive, has suddenly become 7 units.</p>
 <p>That kind of sucks, and is actually a fundamental problem with &ldquo;blocks&rdquo;. As long as you have data to write, blocks are great, but they will almost always result in the LAST block in a segment not being completely filled. This is natural of course, since whatever application is using that space generally doesn&rsquo;t care to know (nor should it!) about the block size it needs to be using. The result of this is that the more &ldquo;small files&rdquo; you have on your drive, the more &ldquo;slack space&rdquo; you have on the drive - space that isn&rsquo;t being used for anything, but is still seen as &ldquo;used&rdquo;.</p>
 <p>So now we come to a decision, either we just leave that space empty and accept it as part of the operating costs, or we try and figure out how to utilize it. Engineers, (un)fortunately, are quite obsessed with performance. These &ldquo;tails&rdquo; (the last block) are inefficient, and could probably be removed with a bit of smart thinking. This results in two possible ways to resolve this problem.:</p>

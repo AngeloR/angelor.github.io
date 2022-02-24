@@ -1,7 +1,7 @@
 # Git Branching Strategies
 
 
-
+=> gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi ← Newer: Code Reviews Are Failure
 => gemini://gemini.xangelo.ca/posts/git-workflows/index.gmi → Older: Git Workflows Suck
 
 In a previous [1] post, I talked about git workflows and I outlined the two big problems I see with git workflows:  
@@ -82,5 +82,6 @@ These branching strategies sound great - but branching strategies aren't an isol
 
 ## Related articles
 
+=> /gemini/posts/code-reviews-are-failure/index.gmi Code Reviews Are Failure: <no value>
 => /gemini/posts/git-workflows/index.gmi Git Workflows Suck: <no value>
 ---

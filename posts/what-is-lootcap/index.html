@@ -92,7 +92,7 @@
 <h4 id="api">API</h4>
 <p>When designing any application I always start with my API. It allows me to define my endpoints and figure out how I&rsquo;m going to breaking up the data so that I can return the most relevant data for an endpoint. That is, now that I&rsquo;ve broken down how I&rsquo;m going to store my data, what&rsquo;s the best way to create my endpoints so that I have the flexibility to compose the UI that I have envisioned, but also allows me to change that front end as necessary.</p>
 <p>It&rsquo;s a tough nut to craft. If you pop open your console on <a href="https://lootcap.com">LootCap</a> you&rsquo;ll see that we make requests to 2 different endpoints:</p>
-<pre><code>/api/v1/contracts/[contract-address]/price
+<pre tabindex="0"><code>/api/v1/contracts/[contract-address]/price
 
 /api/v1/coin/ethereum/price
 </code></pre><p>For us, that&rsquo;s enough to render the entire first page and also preload some data so that if you click on any Token for more information, that data is already loaded and ready for you. I also made sure to version the end-points. The reason for this is to differentiate between deployment/releases. We can roll out new functionality to the API endpoints and test them to our hearts content before releasing front-end changes and deprecating the old API versions. We can also split test UI designs if we are interested in such a thing. Versioning your API endpoints is vital.</p>
@@ -108,13 +108,13 @@
 <p>We aren&rsquo;t using React, and so for the times where we have to update the Dom we&rsquo;re using this function and interacting directly with the Element nodes.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">selector</span>, <span style="color:#a6e22e">root</span>) =&gt; {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">selector</span>, <span style="color:#a6e22e">root</span>) =&gt; {
     <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">||</span> document;
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">selector</span>);
 }
@@ -124,7 +124,7 @@
 <p>We are also using a very rudimentary SPA router that relies on css classes to define routes. We&rsquo;re only able to do this because we have 2 routes.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -146,7 +146,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">route</span>() {
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">route</span>() {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">routeTable</span> <span style="color:#f92672">=</span> [
         {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;route-name&#39;</span>, <span style="color:#a6e22e">route</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">REGEX_MATCH</span>, <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fn</span>}
     ];

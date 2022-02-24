@@ -63,7 +63,7 @@
 <p>The two main branching strategies people tend to advocate for are &ldquo;Environment Branching&rdquo; and &ldquo;Feature Branching&rdquo; so lets talk about the strategy itself, and then see how it affects your org.</p>
 <h2 id="environment-branching">Environment Branching</h2>
 <p>Environment branching models the fact that the software at your org has some kind of &ldquo;release cycle&rdquo; where a series of patches (in the git sense) are first in a &ldquo;development&rdquo; environment where the developers involved can work on the feature without impacting others. We then merge the dev branch into a &ldquo;staging&rdquo;/&ldquo;testing&rdquo;/&ldquo;integration&rdquo; environment where a patch or series of patches are released for other people in the org to test. Often this involves a QA team looking at the changes and validating that there aren&rsquo;t any regression tests. Finally once everyone is happy we merge staging into production and deploy it.</p>
-<pre><code class="language-Environment" data-lang="Environment">┌┬──────┐    ┌┬───────┐    ┌┬──────┐
+<pre tabindex="0"><code class="language-Environment" data-lang="Environment">┌┬──────┐    ┌┬───────┐    ┌┬──────┐
 ││ Dev  │    ││ Stage │    ││ Prod │
 └┴──┬───┘    └┴──┬────┘    └┴──┬───┘
     │            │             │

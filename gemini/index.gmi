@@ -1,6 +1,10 @@
 ## List of posts
 
 
+### 2022
+
+=> gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi Code Reviews Are Failure
+
 ### 2021
 
 => gemini://gemini.xangelo.ca/posts/git-branching-strategies/index.gmi Git Branching Strategies

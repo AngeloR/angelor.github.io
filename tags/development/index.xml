@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Fri, 16 Jul 2021 16:14:40 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Feb 2022 11:05:34 -0500</lastBuildDate><atom:link href="https://xangelo.ca/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code Reviews Are Failure</title>
+      <link>https://xangelo.ca/posts/code-reviews-are-failure/</link>
+      <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
+      
+      <guid>https://xangelo.ca/posts/code-reviews-are-failure/</guid>
+      <description>Code Reviews are a Failure As a new startup with one or two engineers on staff, you&amp;rsquo;re very likely not doing code reviews. Engineers at this stage have a very deep understanding of the code - after all, they&amp;rsquo;ve probably written most of it. When it&amp;rsquo;s time for a new feature, these initial developers know exactly how they&amp;rsquo;re going to implement it given the architecture of their code base. Chances are, they keep their own work in a branch, and open a Pull Request or Merge Request, but they aren&amp;rsquo;t asking someone to take a look at it.</description>
+    </item>
+    
     <item>
       <title>Git Branching Strategies</title>
       <link>https://xangelo.ca/posts/git-branching-strategies/</link>
