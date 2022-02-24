@@ -11,3 +11,6 @@
 	path = public
 	url = git@github.com:AngeloR/angelor.github.io.git
 	branch = master
+[submodule "themes/plain"]
+	path = themes/plain
+	url = git@github.com:AngeloR/plain-hugo-theme.git
