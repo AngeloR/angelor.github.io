@@ -1,7 +1,7 @@
 # Git Workflows Suck
 
 
-
+=> gemini://gemini.xangelo.ca/posts/git-branching-strategies/index.gmi ← Newer: Git Branching Strategies
 => gemini://gemini.xangelo.ca/posts/gemini-intro/index.gmi → Older: Gemini, an HTTP alternative
 
 I'm tired of all the git workflows. I'm tired of talking about the best way to craft commit messages. I'm tired of how people pile on the best way to do PRs. I'm sick of people picking apart architectural decisions in a PR. I'm tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I'm over the fact that I don't think I've ever seen a single person clone a PR locally and actually verify that it does what it says it does.
@@ -98,4 +98,7 @@ This was a lot of text - but thinking about development workflows/optimizations 
 => https://git-rebase.io/ [5] this website being one of the better ones (https://git-rebase.io/)
 
 
+## Related articles
+
+=> /gemini/posts/git-branching-strategies/index.gmi Git Branching Strategies: <no value>
 ---

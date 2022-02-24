@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+<title>Git Branching Strategies - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/txt.css" />
+</head>
+<body>
+<header>
+  <div>
+	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <section class="front-block">
+	<div class="title">
+		<div class="tags">
+			Tags: <span class="tag"><a href="/tags/git">#git</a></span>
+			<span class="tag"><a href="/tags/development">#development</a></span>
+			<span class="tag"><a href="/tags/dev-workflow">#dev workflow</a></span>
+			</div>
+		<span class="divider"></span>
+		<div>
+			Author: Angelo R.
+		</div>
+	</div>
+	<div class="meta">
+		<div>Pub: 2021-07-16</div>
+		<span class="divider"></span>
+		<div>
+			1562 words
+		</div>
+	</div>
+	<div class="toc-block">
+		<h1 class="nocount">Git Branching Strategies</h1>
+		<aside class="toc"><nav id="TableOfContents">
+  <ol>
+    <li><a href="#environment-branching">Environment Branching</a>
+      <ol>
+        <li><a href="#it-forces-a-release-cadence">It forces a release cadence</a></li>
+        <li><a href="#its-very-easy-for-the-branches-to-get-out-of-sync">It&rsquo;s very easy for the branches to get out of sync</a></li>
+        <li><a href="#its-easy-for-broken-things-to-get-out">It&rsquo;s easy for broken things to get out</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ol>
+    </li>
+    <li><a href="#feature-branches">Feature Branches</a></li>
+    <li><a href="#branching-strategies-affect-everything">Branching Strategies Affect Everything</a></li>
+  </ol>
+</nav></aside>
+	</div>
+</section>
+<section class="content">
+	<p>In a <a href="/posts/git-workflows/">previous</a> post, I talked about git workflows and I outlined the two big problems I see with git workflows:</p>
+<ul>
+<li>Pull Requests/Reviews</li>
+<li>Branching Strategies</li>
+</ul>
+<p>I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.</p>
+<p>The reason I think branching strategies are such a complicated topic is because it touches more than just git. As an industry we&rsquo;ve mostly settled on the idea of Continuous Integration and Continuous Deployment (CI/CD). These processes tend to tie directly into git and have deep ties to your branching strategies. In addition branching strategies tend to reflect the testing architecture and experience level of the engineering organization itself. It&rsquo;s not the simple strategy that workflows like GitHub Flow like to pretend it is. Whether you like it or not, your git branching strategy is already embedded in your organiztion and reflected in your development process. It&rsquo;s your job to discover what that is and then decide if it&rsquo;s even worth it to change. Sometimes, unfortunately, even though it may not be what you consider ideal, the strategy the team is currently using is MOSTLY one that works for them. At that point it&rsquo;s just a matter of uncovering bottlenecks (oh don&rsquo;t worry, the engineers will tell you what those are) and mitigating them.</p>
+<p>The two main branching strategies people tend to advocate for are &ldquo;Environment Branching&rdquo; and &ldquo;Feature Branching&rdquo; so lets talk about the strategy itself, and then see how it affects your org.</p>
+<h2 id="environment-branching">Environment Branching</h2>
+<p>Environment branching models the fact that the software at your org has some kind of &ldquo;release cycle&rdquo; where a series of patches (in the git sense) are first in a &ldquo;development&rdquo; environment where the developers involved can work on the feature without impacting others. We then merge the dev branch into a &ldquo;staging&rdquo;/&ldquo;testing&rdquo;/&ldquo;integration&rdquo; environment where a patch or series of patches are released for other people in the org to test. Often this involves a QA team looking at the changes and validating that there aren&rsquo;t any regression tests. Finally once everyone is happy we merge staging into production and deploy it.</p>
+<pre><code class="language-Environment" data-lang="Environment">┌┬──────┐    ┌┬───────┐    ┌┬──────┐
+││ Dev  │    ││ Stage │    ││ Prod │
+└┴──┬───┘    └┴──┬────┘    └┴──┬───┘
+    │            │             │
+   ┌┼┐           │             │
+   └┼┴───────────┤             │
+    │            │             │
+   ┌┼┐          ┌┼┐            │
+   └┼┘          └┼┘            │
+    │            │             │
+   ┌┼┐           ▼             │
+   └┼┴───────────┐             │
+    │            │             │
+   ┌┼┐          ┌▼┐            │
+   └┴┘          └─┴────────────┤
+    ▼                          │
+                              ┌┼┐
+                              └─┘
+</code></pre><p>Note that not every commit to the dev branch results in an equivalent merge to the staging branch. Infact sometimes there&rsquo;ll be plenty of back/forth on the dev branch. Finally a set of features is selected and deployed to staging. Once it&rsquo;s been debugged, it goes off to production. Of course, this is when everything goes smoothly. Most times you&rsquo;ll have hotfixes that you&rsquo;ll need to make to prod to fix additional bugs.</p>
+<p>Different orgs deal with that differently. Sometimes we&rsquo;ll have &ldquo;hotfixes&rdquo;, which bypass the branching model entirely. It allows us to take whatever is it prod, branch from it to fi xa bug and merge it straight back into prod without going through the other branches. That hotfix is then ported back to development.</p>
+<p>This model, of course, has its pros/cons. But if it works for your org then it&rsquo;s right for your org. I&rsquo;ve outlined  some caveats and things to think about if you decide to go with the environment branching model.</p>
+<h3 id="it-forces-a-release-cadence">It forces a release cadence</h3>
+<p>When you have a single team working in this model it&rsquo;s very easy. It also maps so cleanly to traditional engineering pipelines that it doesn&rsquo;t require a lot of explanation or documentation. But this requires that each team working has its own &ldquo;dev&rdquo; branch/environment to ensure that they&rsquo;re not impacting others testing. But this is expensive, so there&rsquo;s a tradeoff. Often you&rsquo;ll find &ldquo;shared&rdquo; dev environments, which are really just a very broken integration environment where you can&rsquo;t really trust what&rsquo;s happening, and a less broken integration environment. Just the inclusion of an environment that&rsquo;s considering &ldquo;integration&rdquo; requires scheduled releases.</p>
+<p>You need to ensure that your features aren&rsquo;t impacting other developers and so you need to coordinate between internal teams. This takes time. It means while your changes can be tested in tandem in &ldquo;dev&rdquo;, eventually you&rsquo;ll need to settle on what&rsquo;s going out to production adn only those patches get moved into staging. Those patches get tested on for some time and then move into production. There you have a release cadence. Your cadence might be a day, or it might be two weeks. It doesn&rsquo;t matter - that is your cadence. That is the minimal amount of time, on average, that it takes for a change to make it to production.</p>
+<p>There are always ways to mitigate this problem, but I&rsquo;d argue that it isn&rsquo;t a real problem. Having a release cadence is perfectly fine once you have a product that has paying users. It ensures that releases can happen during low-volume traffic times and doesn&rsquo;t impact as many users. It also ensures that users know when they can expect new features.</p>
+<ul>
+<li>Have dedicated dev environments for each team with no shared resources to speed up the development time. Keep the &ldquo;staging&rdquo;/&ldquo;integration&rdquo; environment the only place where multiple features/bug-fixes are tested in tandem.</li>
+<li>Declare your cadence officially so that everyone knows when the cutoff for a release is. Stick to this. No last minute sneaking in of changes allowed. This allows internal/external expectations for when new features will be rolled out.</li>
+<li>Understand that there is a difference between deploying a change and releasing it to users.</li>
+</ul>
+<h3 id="its-very-easy-for-the-branches-to-get-out-of-sync">It&rsquo;s very easy for the branches to get out of sync</h3>
+<p>Since you now have multiple teams working it&rsquo;s easy for features that everyone thinks is ready to make it to integration.. only to discover that they are quite broken. So we need to pull them out so that they&rsquo;re not impacting anything else. But how do you do that? You can&rsquo;t just muck with staging directly since merges from dev-&gt;staging will then break. So you need to actually back the change out in dev, then merge dev-&gt;staging to remove the change. But are you using squash+merge or rebase functionality? That can affect the method of resolution you decide on. Regardless, you can expect dev/staging/prod branches to get out of sync and you&rsquo;ll need to manually intervene to sort that nonsense out.</p>
+<h3 id="its-easy-for-broken-things-to-get-out">It&rsquo;s easy for broken things to get out</h3>
+<p>The dev environment will probably be mostly broken - with working state only conveyed via some internal communication among devs. Merging that right into staging will cause unexpected bugs or broken features to make it out. The best way to deal with this is to have each team working on a single feature/code-base and having dedicated development environments for each team. This way you ensure that a team is able to test what they are working on in isolation. Once they&rsquo;re sure it&rsquo;s working they&rsquo;ll be able to merge their fixes into the integration environment. This is suspiciously close to the other model of branching.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I&rsquo;m really not a fan of environment branching, but I do concur that when there are processes/releases cadences already in place that are immovable (imagine you have a 3rd party group that needs to do testing on releases before they go out) then this can be a good way to handle dependencies. Personally I think environment branching is easy for SREs/devops teams to think about and they map very cleanly to how software orgs traditionally worked. It provides the lowest barrier to adoption - but it has enough problems that it can seem like the new process doesn&rsquo;t work as well as the old one.</p>
+<p>I would be wary about moving an org TO this model as there&rsquo;s just a lot of things that can go wrong that will result in certain individuals spending time rectifying process problems rather than business ones.</p>
+<h2 id="feature-branches">Feature Branches</h2>
+<p>This is the other model of branching that I think attempts to tackle some of the major problems with environment branching (while offering up a few of its own). In feature branches you don&rsquo;t have a single dev branch.. instead every thing you work on gets its own &ldquo;dev&rdquo; branch. It&rsquo;s expected that while you&rsquo;re working on your thing your feature branch is probably in a &ldquo;broken&rdquo; state. You keep adding commits to it and eventually when you&rsquo;re happy you merge it to your integration environment branch. Once it&rsquo;s tested, the integration environment gets deployed to production.</p>
+<p>Feature branches aim to solve the problem of environment branches by integrating the &ldquo;staging&rdquo; and &ldquo;production&rdquo; branches. Devs work on feature branches, and then merge their features into &ldquo;integration&rdquo; environments. When people are happy with that, the features get moved into production environments. There&rsquo;s a lot less moving parts (on the surface) and so this is normally the process that people go with.</p>
+<h2 id="branching-strategies-affect-everything">Branching Strategies Affect Everything</h2>
+<p>These branching strategies sound great - but branching strategies aren&rsquo;t an isolated problem that can be solved without affecting anything else. Environment branches require you to have multiple environments for your code. It requires you to have &ldquo;development&rdquo; and &ldquo;staging&rdquo; and &ldquo;production&rdquo; environments. All branching strategies require you to differentiate between &ldquo;code&rdquo; and &ldquo;build artifacts&rdquo; which are actually what you should be deploying.</p>
+</section>
+<section class="comments">
+	<h2 class="nocount">Comments</h2>
+	<script src="https://utteranc.es/client.js"
+			repo=AngeloR/angelor.github.io
+			issue-term=pathname
+			label=comment
+			theme=preferred-color-scheme
+			crossorigin="anonymous"
+			async>
+	</script>
+</section>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2020</div>
+  </div>
+</footer>
+</body>
+</html>
