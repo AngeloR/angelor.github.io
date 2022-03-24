@@ -57,10 +57,10 @@
 </ul>
 <p>These disks are where the data is actually stored, and when you see a number like &ldquo;7,200 rpm&rdquo; what you are seeing is how quickly these disks can spin. In a simplified manner, what happens when you &ldquo;write something to disk&rdquo;, is that the disk spins to an empty point, and the head beings to write. Likewise, when you &ldquo;read&rdquo; data from the disk, it spins to a designated point (the &ldquo;start&rdquo; of the data) and the head begins to &ldquo;read&rdquo; the data until it is done.</p>
 <p>Let&rsquo;s walk through a theoretical &ldquo;disk&rdquo;. Your &ldquo;disk&rdquo; can hold 8 units (00000000) of storage. We are going to perform a few actions on this disk.</p>
-<pre tabindex="0"><code>You write 'a' twice - aa000000  
-You write 'b' 3 times - aabbb000 
-You delete the two 'a'   - 00bbb000 
-You write 'c' 4 to,es - ccbbbcc0
+<pre tabindex="0"><code>You write &#39;a&#39; twice - aa000000  
+You write &#39;b&#39; 3 times - aabbb000 
+You delete the two &#39;a&#39;   - 00bbb000 
+You write &#39;c&#39; 4 to,es - ccbbbcc0
 </code></pre><p>See your drive is smart enough to know that, even though there isn&rsquo;t enough &ldquo;contiguous&rdquo; space, there is still enough space scattered around on the drive to store your 4 units of &lsquo;c&rsquo;. What happens is that your drive will spin to a free location, and let you start writing. When you run out of contiguous space, it will spin to a new location. This results in your data actually spread out all over your drive instead of next to each other. This is a good thing, of course. It means that you can use all the space on your drive without worrying about WHERE things are stored.</p>
 <p>But, it also means that instead of the disk spinning just ONCE to get to the start of your data, it actually needs to spin twice.</p>
 <p>As we grow our disk size from &ldquo;8 units&rdquo; to hundreds of gigabytes as most modern drives today have, we run into a problem - there is no guarantee that the data we need will be next to each other. In actuality, there is a high probability that we will need to keep jumping about on the disk to be able to read ALL the data we want. Our data ends up &ldquo;fragmented&rdquo;.</p>
@@ -136,7 +136,7 @@ Follow the conversation at HackerNews <a href="https://news.ycombinator.com/item
 </main>
 <footer>
   <div>
-    <div>Copyright © 2011 - 2020</div>
+    <div>Copyright © 2011 - 2022</div>
   </div>
 </footer>
 </body>

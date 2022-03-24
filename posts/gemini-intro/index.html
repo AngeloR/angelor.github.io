@@ -90,13 +90,13 @@
 <p>I&rsquo;m including them because I mostly cannibalized Wouter/Sylvain&rsquo;s docs. Wouter made the decision to get off Gemini due to the earlyness of the protocol (it is very early) and as such dropped the original config links that he had up. I just went through git history and found them and made a few tweaks and put them up in my repo.</p>
 <p>At the moment I&rsquo;m mostly doing what Wouter is - a &ldquo;build&rdquo; on my site involves me generating some hugo and usign scp to move it over to my gemini server. I&rsquo;m then running <a href="https://github.com/mbrubeck/agate">agate</a> a bit manually while testing. This command just starts agate, tells it where my content folder is located, the addresses to bind to, and the hostname and language.</p>
 <p>Agate will happily generate the keys for you on first run, or you can provide them yourself.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"> ./agate.x86_64-unknown-linux-gnu --content ./gemini/ --addr <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:1965 --addr 0.0.0.0:1965 --hostname gemini.xangelo.ca --lang en-US
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> ./agate.x86_64-unknown-linux-gnu --content ./gemini/ --addr <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:1965 --addr 0.0.0.0:1965 --hostname gemini.xangelo.ca --lang en-US
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>For now, scp is fine - but I&rsquo;ll probably just set up a gemini submodule/repo and deploy that to my server instead. That way I don&rsquo;t have to worry too much about transferring the entirety of the site.</p>
 <h2 id="conclusion">Conclusion</h2>
@@ -118,7 +118,7 @@
 </main>
 <footer>
   <div>
-    <div>Copyright © 2011 - 2020</div>
+    <div>Copyright © 2011 - 2022</div>
   </div>
 </footer>
 </body>

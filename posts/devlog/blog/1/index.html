@@ -60,35 +60,35 @@
 <h3 id="numbered-headers">Numbered Headers</h3>
 <p>I wanted to ensure that each heading would have a number associated with it that matched the number that it was automatically assigned by Hugo during the Table of Contents generation. I didn&rsquo;t want to have to update numbers as I added/remove header tags and I didn&rsquo;t want to utilize any JavaScript on the site, so I was left with CSS only.</p>
 <p>I ended up utilizing counters<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> to achieve this.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span> {<span style="color:#66d9ef">counter-reset</span>: h2;}
-<span style="color:#f92672">h2</span> {<span style="color:#66d9ef">counter-reset</span>: h3;} 
-<span style="color:#f92672">h3</span> {<span style="color:#66d9ef">counter-reset</span>: h4;}
-<span style="color:#f92672">h4</span> {<span style="color:#66d9ef">counter-reset</span>: h5;}
-<span style="color:#f92672">h5</span> {<span style="color:#66d9ef">counter-reset</span>: h6;}
-
-<span style="color:#f92672">h2</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h2; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;. &#34;</span>;}
-<span style="color:#f92672">h3</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h3; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;. &#34;</span>;}
-<span style="color:#f92672">h4</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h4; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;.&#34;</span>counter(h4) <span style="color:#e6db74">&#34;. &#34;</span>;}
-<span style="color:#f92672">h5</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h5; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;.&#34;</span>counter(h4) <span style="color:#e6db74">&#34;.&#34;</span>counter(h5) <span style="color:#e6db74">&#34;. &#34;</span>;}
-<span style="color:#f92672">h6</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h6; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;.&#34;</span>counter(h4) <span style="color:#e6db74">&#34;.&#34;</span>counter(h5) <span style="color:#e6db74">&#34;.&#34;</span>counter(h6) <span style="color:#e6db74">&#34;. &#34;</span>; }
-<span style="color:#f92672">h2</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h3</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h4</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h5</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h6</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>; <span style="color:#66d9ef">counter-increment</span>: <span style="color:#66d9ef">none</span>;}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">body</span> {<span style="color:#66d9ef">counter-reset</span>: h2;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h2</span> {<span style="color:#66d9ef">counter-reset</span>: h3;} 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h3</span> {<span style="color:#66d9ef">counter-reset</span>: h4;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h4</span> {<span style="color:#66d9ef">counter-reset</span>: h5;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h5</span> {<span style="color:#66d9ef">counter-reset</span>: h6;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h2</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h2; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;. &#34;</span>;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h3</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h3; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;. &#34;</span>;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h4</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h4; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;.&#34;</span>counter(h4) <span style="color:#e6db74">&#34;. &#34;</span>;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h5</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h5; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;.&#34;</span>counter(h4) <span style="color:#e6db74">&#34;.&#34;</span>counter(h5) <span style="color:#e6db74">&#34;. &#34;</span>;}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h6</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">counter-increment</span>: h6; <span style="color:#66d9ef">content</span>: counter(h2) <span style="color:#e6db74">&#34;.&#34;</span>counter(h3) <span style="color:#e6db74">&#34;.&#34;</span>counter(h4) <span style="color:#e6db74">&#34;.&#34;</span>counter(h5) <span style="color:#e6db74">&#34;.&#34;</span>counter(h6) <span style="color:#e6db74">&#34;. &#34;</span>; }
+</span></span><span style="display:flex;"><span><span style="color:#f92672">h2</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h3</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h4</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h5</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span><span style="color:#f92672">,</span><span style="color:#f92672">h6</span>.<span style="color:#a6e22e">nocount</span>:<span style="color:#a6e22e">before</span> {<span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>; <span style="color:#66d9ef">counter-increment</span>: <span style="color:#66d9ef">none</span>;}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I only have a single <code>&lt;h1&gt;</code> tag in my document which is for the title of the post, which I don&rsquo;t want numbered. The code above it ensures that every time we run across an <code>&lt;h2&gt;</code> tag it will reset the counter for <code>&lt;h3&gt;</code> tags to 0, increment the counter for <code>&lt;h2&gt;</code> tags, and then display the current value of the counter.</p>
 <p>It repeats this for all header tags appending the counter for each subsequent tag level.</p>
@@ -99,65 +99,65 @@
 <p>That dashed line that lets you link a post with the corresponding date. Both elements are positioned at the exterior of their boxes, and the titles have a varying width.</p>
 <p>In order to accomplish this I ended up needing to introduce a 3rd element, the line itself. However, I can&rsquo;t actually use an <code>&lt;hr /&gt;</code> tag because I want to work towards supporting screen readers.. and those tags get interpreted as dividers between content.</p>
 <p>The article list is an unordered list, so the HTML code looks like this:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">li</span>&gt;
-	&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/link/to/post&#34;</span>&gt;Post Title&lt;/<span style="color:#f92672">a</span>&gt;
-	&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;divider&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-	&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pubdate&#34;</span>&gt;YYYY-MM-DD&lt;/<span style="color:#f92672">span</span>&gt;
-&lt;/<span style="color:#f92672">li</span>&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/link/to/post&#34;</span>&gt;Post Title&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;divider&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pubdate&#34;</span>&gt;YYYY-MM-DD&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>I set the <code>&lt;li&gt;</code> tag to utilize flex <code>display: flex</code> and tell it to align the items to the center</p>
 <p>I then set the <code>.divider</code> to <code>flex-grow: 1</code> <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> and don&rsquo;t set the property on the <code>&lt;a&gt;</code> or <code>.pubdate</code> elements. This causes the divider to grow to take up the entirety of space within the list element, subtracting the side of the title/date tags.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">article-list</span> <span style="color:#f92672">li</span> {
-	<span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;
-	<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
-	<span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
-}
-
-.<span style="color:#a6e22e">article-list</span> .<span style="color:#a6e22e">divider</span> {
-	<span style="color:#66d9ef">flex-grow</span>: <span style="color:#ae81ff">1</span>;
-	<span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">dashed</span> <span style="color:#66d9ef">black</span>;
-	<span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">rem</span>;
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">article-list</span> <span style="color:#f92672">li</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">article-list</span> .<span style="color:#a6e22e">divider</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">flex-grow</span>: <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">border-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">dashed</span> <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="darklight-mode">Dark/Light mode</h3>
 <p>One of the things that I ended up implementing, that I&rsquo;m not 100% sold on is the auto dark/light mode. Utilizing CSS we can adjust things to account for if the user is utilizing a light or dark mode on their browser:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">prefers-color-scheme</span><span style="color:#f92672">:</span> <span style="color:#f92672">dark</span><span style="color:#f92672">)</span> {
-	<span style="color:#75715e">/* your stuff goes here */</span>
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">prefers-color-scheme</span><span style="color:#f92672">:</span> <span style="color:#f92672">dark</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* your stuff goes here */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>It&rsquo;s a very simple technique and given the minimalist nature of this site it works rather perfectly.</p>
 <p>Where I&rsquo;m not 100% happy is on color choices. Where possible I attmpted to tweak things so that they would look the same in light or dark mode. I tweaked the original colors of links (new/visited) and also settled on a particular code-highlighting style.</p>
@@ -165,40 +165,40 @@
 <p>I also faded out images just a bit so that they&rsquo;re not so jaring. The idea is if you hover/touch the images they&rsquo;ll fade in to full color, but if you&rsquo;re just scrolling through you won&rsquo;t run into any weirdness.</p>
 <h3 id="support-for-utterances">Support for Utteranc.es</h3>
 <p>This<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> is something that I recently stumbled across - the ability to utilize GitHub issues to track comments on a site. I really love the idea - especially since I&rsquo;m hosting my blog on GitHub Pages. By adding some params to your <code>config.toml</code> file you&rsquo;ll be able to turn on support for utterances.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">utterances</span>]
-<span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#34;AngeloR/angelor.github.io&#34;</span>
-<span style="color:#a6e22e">issue_term</span>=<span style="color:#e6db74">&#34;pathname&#34;</span>
-<span style="color:#a6e22e">label</span>=<span style="color:#e6db74">&#34;comment&#34;</span>
-<span style="color:#a6e22e">theme</span>=<span style="color:#e6db74">&#34;preferred-color-scheme&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">utterances</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">repo</span> = <span style="color:#e6db74">&#34;AngeloR/angelor.github.io&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">issue_term</span>=<span style="color:#e6db74">&#34;pathname&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">label</span>=<span style="color:#e6db74">&#34;comment&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span>=<span style="color:#e6db74">&#34;preferred-color-scheme&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The settings match exactly the configuration options provided by utteranc.es, so you should be able to see the mapping quite easiy. The only thing I changed was making it <code>issue_term</code> instead of <code>issue-term</code>.</p>
 <p>If you don&rsquo;t add this configuration, it&rsquo;ll just hide the comment block and you won&rsquo;t even load the utteranc.es client js.</p>
 <h2 id="downloadinstall">Download/Install</h2>
 <p>If you&rsquo;re interested in this theme, you can grab it here <a href="https://github.com/AngeloR/plain-hugo-theme">https://github.com/AngeloR/plain-hugo-theme</a></p>
 <p>Up to date installation instructions can be found on the readme, but I&rsquo;ve included a snapshot of what they were at this point:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git clone https://github.com/AngeloR/plain-hugo-theme /path/to/hugo/themes/plain/
-
-Edit your config.toml to add the following line:
-theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plain&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/AngeloR/plain-hugo-theme /path/to/hugo/themes/plain/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Edit your config.toml to add the following line:
+</span></span><span style="display:flex;"><span>theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plain&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>If you do end up using it and come across any bugs, please let me know over on GitHub!</p>
 <h2 id="footnotes">Footnotes</h2>
@@ -239,7 +239,7 @@ theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;plai
 </main>
 <footer>
   <div>
-    <div>Copyright © 2011 - 2020</div>
+    <div>Copyright © 2011 - 2022</div>
   </div>
 </footer>
 </body>

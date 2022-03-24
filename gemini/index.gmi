@@ -3,6 +3,7 @@
 
 ### 2022
 
+=> gemini://gemini.xangelo.ca/posts/gitweb/index.gmi gitweb - a GitHub/GitLab alternative
 => gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi Code Reviews Are Failure
 
 ### 2021

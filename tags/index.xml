@@ -6,12 +6,21 @@
     <description>Recent content in Tags on Xangelo.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright © 2011 - 2020</copyright>
-    <lastBuildDate>Thu, 24 Feb 2022 11:05:34 -0500</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2011 - 2022</copyright>
+    <lastBuildDate>Thu, 24 Mar 2022 01:29:37 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dev tools</title>
+      <link>https://xangelo.ca/tags/dev-tools/</link>
+      <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/dev-tools/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>development</title>
       <link>https://xangelo.ca/tags/development/</link>
-      <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
+      <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/development/</guid>
       <description></description>
@@ -20,9 +29,18 @@
     <item>
       <title>git</title>
       <link>https://xangelo.ca/tags/git/</link>
-      <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
+      <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitweb</title>
+      <link>https://xangelo.ca/tags/gitweb/</link>
+      <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/gitweb/</guid>
       <description></description>
     </item>
     
@@ -122,24 +140,6 @@
       <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lootcap</title>
-      <link>https://xangelo.ca/tags/lootcap/</link>
-      <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/lootcap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>https://xangelo.ca/tags/database/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/database/</guid>
       <description></description>
     </item>
     
