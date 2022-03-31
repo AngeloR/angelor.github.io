@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Xangelo.ca</title>
-    <link>https://xangelo.ca/posts/</link>
+    <link>https://xangelo.ca</link>
     <description>Recent content in Posts on Xangelo.ca</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,7 +11,7 @@
     <item>
       <title>Removing the Default Font</title>
       <link>https://xangelo.ca/posts/default-font/</link>
-      <pubDate>Thu, 31 Mar 2022 00:07:57 -0400</pubDate>
+      <pubDate>Thu, 31 Mar 2022 00:07:57 -0700</pubDate>
       
       <guid>https://xangelo.ca/posts/default-font/</guid>
       <description>&lt;p&gt;This is a small change that I&amp;rsquo;ve made to the site that I&amp;rsquo;ve actually been thinking about for quite some time. I&amp;rsquo;ve always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.&lt;/p&gt;
@@ -40,7 +40,7 @@
     <item>
       <title>gitweb - a GitHub/GitLab alternative</title>
       <link>https://xangelo.ca/posts/gitweb/</link>
-      <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
+      <pubDate>Thu, 24 Mar 2022 01:29:37 -2900</pubDate>
       
       <guid>https://xangelo.ca/posts/gitweb/</guid>
       <description>&lt;h2 id=&#34;owning-your-digital-space&#34;&gt;Owning Your Digital Space&lt;/h2&gt;
@@ -268,7 +268,7 @@ up.&lt;/p&gt;
     <item>
       <title>Git Branching Strategies</title>
       <link>https://xangelo.ca/posts/git-branching-strategies/</link>
-      <pubDate>Fri, 16 Jul 2021 16:14:40 -0400</pubDate>
+      <pubDate>Fri, 16 Jul 2021 16:14:40 -1400</pubDate>
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
       <description>&lt;p&gt;In a &lt;a href=&#34;https://xangelo.ca/posts/git-workflows/&#34;&gt;previous&lt;/a&gt; post, I talked about git workflows and I outlined the two big problems I see with git workflows:&lt;/p&gt;
@@ -329,7 +329,7 @@ up.&lt;/p&gt;
     <item>
       <title>Git Workflows Suck</title>
       <link>https://xangelo.ca/posts/git-workflows/</link>
-      <pubDate>Thu, 15 Jul 2021 12:16:45 -0400</pubDate>
+      <pubDate>Thu, 15 Jul 2021 12:16:45 -1600</pubDate>
       
       <guid>https://xangelo.ca/posts/git-workflows/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m tired of all the git workflows. I&amp;rsquo;m tired of talking about the best way to craft commit messages. I&amp;rsquo;m tired of how people pile on the best way to do PRs. I&amp;rsquo;m sick of people picking apart architectural decisions in a PR. I&amp;rsquo;m tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I&amp;rsquo;m over the fact that I don&amp;rsquo;t think I&amp;rsquo;ve ever seen a single person clone a PR locally and actually verify that it does what it says it does.&lt;/p&gt;
@@ -394,7 +394,7 @@ up.&lt;/p&gt;
     <item>
       <title>Gemini, an HTTP alternative</title>
       <link>https://xangelo.ca/posts/gemini-intro/</link>
-      <pubDate>Mon, 21 Jun 2021 17:11:57 -0400</pubDate>
+      <pubDate>Mon, 21 Jun 2021 17:11:57 -1100</pubDate>
       
       <guid>https://xangelo.ca/posts/gemini-intro/</guid>
       <description>&lt;p&gt;For the last few months now I&amp;rsquo;ve started embracing my weird love for text and text-related user interfaces. From email to irc, I&amp;rsquo;m moving more and more of my social interactions away from traditional websites/apps and over to my terminal. A big part of this move is a step back from 3rd party applications to things that I have a bit more control over - but there are many reasons.&lt;/p&gt;
@@ -454,7 +454,7 @@ up.&lt;/p&gt;
     <item>
       <title>Dungeon Generation in Roguelikes</title>
       <link>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</link>
-      <pubDate>Fri, 23 Apr 2021 09:44:35 -0400</pubDate>
+      <pubDate>Fri, 23 Apr 2021 09:44:35 -4400</pubDate>
       
       <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
@@ -609,7 +609,7 @@ in a real dungeon..&lt;/p&gt;
     <item>
       <title>DEVLOG: NewsRiver Updates</title>
       <link>https://xangelo.ca/posts/devlog/newsriver/intro/</link>
-      <pubDate>Tue, 10 Nov 2020 09:43:04 -0500</pubDate>
+      <pubDate>Tue, 10 Nov 2020 09:43:04 -4300</pubDate>
       
       <guid>https://xangelo.ca/posts/devlog/newsriver/intro/</guid>
       <description>&lt;h2 id=&#34;what-is-news-river&#34;&gt;What is News River?&lt;/h2&gt;
@@ -626,7 +626,7 @@ in a real dungeon..&lt;/p&gt;
     <item>
       <title>DEVLOG: Custom Theme for Hugo</title>
       <link>https://xangelo.ca/posts/devlog/blog/1/</link>
-      <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
+      <pubDate>Wed, 10 Jun 2020 12:00:00 -0000</pubDate>
       
       <guid>https://xangelo.ca/posts/devlog/blog/1/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve started working on a custom theme for Hugo&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; where possible.&lt;/p&gt;
@@ -804,7 +804,7 @@ in a real dungeon..&lt;/p&gt;
     <item>
       <title>Moving to Hugo and GitHub Pages</title>
       <link>https://xangelo.ca/posts/hugo-github/</link>
-      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
+      <pubDate>Wed, 03 Jun 2020 14:00:00 -0000</pubDate>
       
       <guid>https://xangelo.ca/posts/hugo-github/</guid>
       <description>&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;
@@ -997,7 +997,7 @@ in a real dungeon..&lt;/p&gt;
     <item>
       <title>Serverless with CloudFlare Workers</title>
       <link>https://xangelo.ca/posts/what-is-lootcap/</link>
-      <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
+      <pubDate>Thu, 07 May 2020 17:31:57 -3100</pubDate>
       
       <guid>https://xangelo.ca/posts/what-is-lootcap/</guid>
       <description>&lt;h2 id=&#34;what-is-lootcap&#34;&gt;What is LootCap?&lt;/h2&gt;
@@ -1152,7 +1152,7 @@ in a real dungeon..&lt;/p&gt;
     <item>
       <title>The Disk Is Slow</title>
       <link>https://xangelo.ca/posts/the-disk-is-slow/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
+      <pubDate>Wed, 29 Apr 2020 16:21:29 -2100</pubDate>
       
       <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
       <description>&lt;p&gt;&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.&lt;/p&gt;
@@ -1234,7 +1234,7 @@ Follow the conversation at HackerNews &lt;a href=&#34;https://news.ycombinator.c
     <item>
       <title>What the heck is a Database Index?</title>
       <link>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
+      <pubDate>Wed, 29 Apr 2020 16:21:29 -2100</pubDate>
       
       <guid>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</guid>
       <description>&lt;p&gt;When you do a standard &lt;code&gt;select * from table_name where columns=some_value&lt;/code&gt; from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&amp;rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&amp;rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard &lt;code&gt;users&lt;/code&gt; table&lt;/p&gt;
