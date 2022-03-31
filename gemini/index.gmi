@@ -3,6 +3,7 @@
 
 ### 2022
 
+=> gemini://gemini.xangelo.ca/posts/default-font/index.gmi Removing the Default Font
 => gemini://gemini.xangelo.ca/posts/gitweb/index.gmi gitweb - a GitHub/GitLab alternative
 => gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi Code Reviews Are Failure
 

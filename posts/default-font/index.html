@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+<title>Removing the Default Font - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/txt.css" />
+</head>
+<body>
+<header>
+  <div>
+	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <section class="front-block">
+	<div class="title">
+		<div class="tags">
+			Tags: <span class="tag"><a href="/tags/upkeep">#upkeep</a></span>
+			<span class="tag"><a href="/tags/fonts">#fonts</a></span>
+			</div>
+		<span class="divider"></span>
+		<div>
+			Author: Angelo R.
+		</div>
+	</div>
+	<div class="meta">
+		<div>Pub: 2022-03-31</div>
+		<span class="divider"></span>
+		<div>
+			616 words
+		</div>
+	</div>
+	<div class="toc-block">
+		<h1 class="nocount">Removing the Default Font</h1>
+		<aside class="toc"><nav id="TableOfContents">
+  <ol>
+    <li><a href="#monospaced-font">Monospaced Font</a></li>
+    <li><a href="#proportional-font">Proportional Font</a></li>
+    <li><a href="#why-does-any-of-this-matter">Why does any of this matter?</a></li>
+    <li><a href="#appendix">Appendix</a></li>
+  </ol>
+</nav></aside>
+	</div>
+</section>
+<section class="content">
+	<p>This is a small change that I&rsquo;ve made to the site that I&rsquo;ve actually been thinking about for quite some time. I&rsquo;ve always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.</p>
+<p>Personally I like monospaced fonts - but then again, I spend a lot of my time looking at them so it&rsquo;s only inevitable.</p>
+<p>However, monospaced fonts arose to solve a technical problem that original typesetters had long since solved.</p>
+<h2 id="monospaced-font">Monospaced Font</h2>
+<p>A monospaced font is a font that has a &ldquo;fixed with&rdquo;. When you look at a word in a monospaced font, it&rsquo;s not that each character is the same size, but rather the area that contains each character is the same size.</p>
+<p><img src="/img/monospace.png" alt="Font Spaces"></p>
+<p>In this image we can see how a monospace font is &ldquo;set&rdquo;. Whenever a character appears on the screen, these &ldquo;boxes&rdquo; surrounding them denote their bounds. In a monospace&rsquo;f font, the bounding box for each character is the same size. The size of the character and its placement within the box may vary - but by standardizing on the bounding box size it will appear that each character is the same &ldquo;width&rdquo;.</p>
+<p>This is very cool stuff.</p>
+<p>Since each character has a bounding box that&rsquo;s the same size as every other character we actually run into a very specific instance of a cool typography side-effect known as <a href="https://en.wikipedia.org/wiki/River_(typography)">Rivers</a>. Each character aligns itself perfectly with the character above and below it, creating a giant grid of characters on your screen.</p>
+<p>But this isn&rsquo;t always the best for reading.</p>
+<h2 id="proportional-font">Proportional Font</h2>
+<p>A proportional font is one that allows the bounding box for any individual character to vary. This has the side-effect of allowing for much narrow kerning (the space between letters) and does 100% lead to improved legibility (see <a href="https://journals.sagepub.com/doi/pdf/10.1177/001872088302500303">this study here</a>).</p>
+<p><img src="/img/proportional.png" alt="Proportional Font"></p>
+<p>By varying the kerning and allowing each character to use as much space as it needs, font designers can really tweak the legibility of the font.</p>
+<h2 id="why-does-any-of-this-matter">Why does any of this matter?</h2>
+<p>We know that monospaced fonts improve the legibility of text in SOME cases, like reading code or if the reader has a disability like dyslexia. In all other cases, proportional fonts improve legibility. Serifs in generally tend to be chosen by popular type users (newspapers for example) because of their legibility.</p>
+<p>All of this means that&hellip; me setting the default font to be a monospace font is actually a problem for legibility. By leaving this setting blank and using the browser defaults, I can ensure that you are reading the content of this site how you would best consume it. I&rsquo;ve taken a lot of time to ensure that things like dark/light modes respect user settings. I&rsquo;ve spent longer than I would have liked getting the right shades of blue/purple (the default unvisited/visited link colors) so that they are the same in dark/light modes. The only thing I didn&rsquo;t do was think about the font - I just set it to monospaced since I like it and went about my day.</p>
+<p>I&rsquo;ve since decided to remove that setting, allowing your browser/system defaults to set the primary font on the site. After all, what matters on this site is the content and you should be able to view that as you&rsquo;d like.</p>
+<h2 id="appendix">Appendix</h2>
+<p>The study linked looks specifically at fixed vs. variable letter width (monospace vs. proportional) for televised text. This is particularly relevant since we&rsquo;re talking about screens rather than print. The differences cited are also quite marginal - but that&rsquo;s the point of this font change. To the majority of users it won&rsquo;t make a difference, but to a small few it will matter a lot.</p>
+</section>
+<section class="comments">
+	<h2 class="nocount">Comments</h2>
+	<script src="https://utteranc.es/client.js"
+			repo=AngeloR/angelor.github.io
+			issue-term=pathname
+			label=comment
+			theme=preferred-color-scheme
+			crossorigin="anonymous"
+			async>
+	</script>
+</section>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2022</div>
+  </div>
+</footer>
+</body>
+</html>
