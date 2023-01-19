@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 31 Mar 2022 00:07:57 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Sep 2022 22:36:23 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>engineering</title>
+      <link>https://xangelo.ca/tags/engineering/</link>
+      <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineering org</title>
+      <link>https://xangelo.ca/tags/engineering-org/</link>
+      <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/engineering-org/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>fonts</title>
       <link>https://xangelo.ca/tags/fonts/</link>
@@ -122,24 +140,6 @@
       <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/devlog-blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>general</title>
-      <link>https://xangelo.ca/tags/general/</link>
-      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://xangelo.ca/tags/github/</link>
-      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/github/</guid>
       <description></description>
     </item>
     

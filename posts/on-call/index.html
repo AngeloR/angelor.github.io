@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
+<title>Designing On-Call - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/txt.css" />
+</head>
+<body>
+<header>
+  <div>
+	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <section class="front-block">
+	<div class="title">
+		<div class="tags">
+			Tags: <span class="tag"><a href="/tags/engineering">#engineering</a></span>
+			<span class="tag"><a href="/tags/engineering-org">#engineering org</a></span>
+			</div>
+		<span class="divider"></span>
+		<div>
+			Author: Angelo R.
+		</div>
+	</div>
+	<div class="meta">
+		<div>Pub: 2022-09-21</div>
+		<span class="divider"></span>
+		<div>
+			3131 words
+		</div>
+	</div>
+	<div class="toc-block">
+		<h1 class="nocount">Designing On-Call</h1>
+		<aside class="toc"><nav id="TableOfContents">
+  <ol>
+    <li><a href="#why-do-devs-go-on-call">Why do devs go on-call?</a></li>
+    <li><a href="#lets-walk-through-the-standard-on-call-process">Let&rsquo;s walk through the standard on-call process</a>
+      <ol>
+        <li><a href="#something-breaks">Something breaks</a></li>
+        <li><a href="#you-find-out-that-something-is-broken">You find out that something is broken</a></li>
+        <li><a href="#you-bash-at-your-keyboard-until-it-works-again">You bash at your keyboard until it works again</a></li>
+        <li><a href="#you-put-in-some-metrics-so-that-if-thing-happens-again-youll-know">You put in some metrics so that if &ldquo;thing&rdquo; happens again, you&rsquo;ll know</a></li>
+      </ol>
+    </li>
+    <li><a href="#compensation">Compensation</a></li>
+    <li><a href="#your-on-call-process">Your On-Call Process</a></li>
+    <li><a href="#your-on-call-process-in-practice">Your On-Call Process in Practice</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ol>
+</nav></aside>
+	</div>
+</section>
+<section class="content">
+	<p>On-call is one of those things that all developers end up doing at some point. My goal isn&rsquo;t to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I&rsquo;m going to start at the very beginning because chances are you&rsquo;re already doing it wrong. I should also note that I&rsquo;m looking at this specifically from a SaaS point of view.</p>
+<h2 id="why-do-devs-go-on-call">Why do devs go on-call?</h2>
+<p>The point of on-call is simple: People use your app 24/7 relative to you. They may be using it from Italy or Australia or Thailand while you&rsquo;re tucked up in bed in Wisconsin. But for them, it&rsquo;s working hours and they expect your site to be available. But, of course, that&rsquo;s not always possible. Things happen that will inevitably take your project down. In these situations &ldquo;on-call&rdquo; is vital for several reasons: The least of which is solving the problem.</p>
+<p>Normally you go on-call because your founders or manager or a customer noticed that your service was offline when it wasn&rsquo;t supposed to be. People start complaining, it makes some rounds internally, and then eventually ends up at the desks of whoever deployed it. Often that ends up being some kind of &ldquo;infrastructure&rdquo; team (You probably call them DevOps or SREs - why that&rsquo;s wrong is an issue for another time). These folk hear about it, fix the problem, and then go about setting up some alerts to let them know when the issue happens again. Bam, you&rsquo;ve just enabled on-call without any of the good parts. You can all but guarantee that your on-call team is going to end up angry and upset about on-call which will manifest in the worst ways possible.</p>
+<h2 id="lets-walk-through-the-standard-on-call-process">Let&rsquo;s walk through the standard on-call process</h2>
+<p>Let&rsquo;s walk through a very high-level on-call process and then we can break it down.</p>
+<ol>
+<li>Something breaks</li>
+<li>You find out that something is broken</li>
+<li>You bash at your keyboard until it works again</li>
+<li>You put in some metrics so that if &ldquo;thing&rdquo; happens again, you&rsquo;ll know</li>
+</ol>
+<p>It&rsquo;s wrong.</p>
+<p>Ok, it&rsquo;s not wrong - it&rsquo;s just a subset of what &ldquo;on-call&rdquo; really is.</p>
+<p>See the thing that you&rsquo;re REALLY missing is that nowhere in this process have you actually figured out what&rsquo;s going on. Sure you solved a symptom - maybe that symptom is synonymous with the cause. But you don&rsquo;t know, because your process doesn&rsquo;t encompass that.</p>
+<p>To have a good on-call process you have to understand a fundamental truth of on-call: on-call isn&rsquo;t just about engineering. on-call is the culmination of a bunch of different business, product, and culture decisions.</p>
+<p>Here&rsquo;s the truth of each step in your process</p>
+<h3 id="something-breaks">Something breaks</h3>
+<h4 id="something">Something</h4>
+<p>The first thing we need to define is what &ldquo;something&rdquo; is. The easiest thing to do is to take a look at your code repositories. If you’ve broken things down into services, you likely have one repo/service. That’s an easy way to define the boundaries of “something”. But it’s also probably wrong.</p>
+<p>If you have a monolithic codebase in a single repository this is a much harder step for you, and you’ll probably do a better job.</p>
+<p>It’s very easy to define “something” by engineering components - but this isn’t always answering “what” broke, but “how” and “why”. A user doesn’t care that your lambda was opening too many connections to RDS causing a spike in memory which caused your API to lag. They care that they weren’t able to send a cat picture.</p>
+<p>When defining your “something” start with user flows. Look at your application and define “core” actions that your user can take. From there, simplify until you have a handful of actions that you want a user to be able to do All the Time.</p>
+<h4 id="broke">Broke</h4>
+<p>Defining the &ldquo;something&rdquo; is relatively easy compared to defining &ldquo;broken&rdquo;. We know a thing is broken if it&rsquo;s not starting, but:</p>
+<ul>
+<li>What if it works but 1% of the requests are resulting in an error?</li>
+<li>What if it works but 1% of the time it crashes and restarts?</li>
+<li>What if it works but is very slow?</li>
+<li>What if it works, is not slow, and doesn&rsquo;t crash, but your API docs don&rsquo;t match what the endpoint is returning?</li>
+<li>What if it works, but your database is being crushed by a sudden increase in traffic?</li>
+</ul>
+<p>Defining our “something” first is important because it helps us to set bounds on what we consider “broke” and what is “degraded” and what is “fine”.</p>
+<p>Perhaps we don&rsquo;t care if 1% of requests fail.. maybe we don&rsquo;t care if 0.1% of requests fail. Defining these thresholds is tough because it requires realistically looking at our application and deciding what is &ldquo;acceptable&rdquo; and what is not. Sometimes we have to make difficult choices here. Maybe we want 0.1% to be considered broken.. but actually, 1% is broken. This is where we impact your actual application.</p>
+<p>Deciding 0.1% of errors is &ldquo;broken&rdquo; where your application is currently sitting at 1% may seem like a good thing. 0.1% is where we want to be and so letting devs know when that isn&rsquo;t the case is good. We can work toward 0.1%. But this involves much larger product considerations.</p>
+<ul>
+<li>When these alerts happen overnight - are devs tasked with a complete resolution during work hours?</li>
+<li>Does that mean feature work will suffer?</li>
+<li>How will you buffer your sprint to make time for these interruptions?</li>
+<li>Do you have the ability to buffer your sprint given product launch dates?</li>
+<li>What happens when a dev is up all night dealing with issues, do they take the next day off?</li>
+<li>Do you offload the task to a different team (Ops/Infra/SRE) since feature work is so important?</li>
+<li>What happens when those teams get burnt out and leave?</li>
+</ul>
+<p>On the flip side setting your alerts at 1% is accepting that this is the current state.. but now it becomes a decision on whether or not a 0.1% error rate is more important than the next feature you&rsquo;re supposed to get out.</p>
+<p>Defining the state of &ldquo;broken&rdquo; is hard because it is the intersection of the current and future state of our application, while simultaneously being the fulcrum that will help tip the scales between &ldquo;acceptable&rdquo; and &ldquo;unacceptable&rdquo;.</p>
+<p>There&rsquo;s no right answer here - just an answer for your team, for right now. Whatever you decide today, the most important thing is that you re-evaluate it and allow those that are on-call to provide feedback on if this was a reasonable level of &ldquo;broken&rdquo;.</p>
+<h4 id="service-level-objectives">Service Level Objectives</h4>
+<p>By defining what broken means you&rsquo;ve now set a baseline stat for your systems. You&rsquo;ve defined your first Service Level Objective (SLO). Yay!</p>
+<p>In the nutshell, SLOs form the baseline for your Service Level Agreements (SLA) with customers. Your SLA can&rsquo;t be better than your SLO or you&rsquo;re going to have to sacrifice on feature development to bring them up to speed. Now we can talk about all kinds of marketing tricks you can do (mainly playing with the measurement period) but the truth is if your SLO defines a particular flow as &ldquo;broken&rdquo; it sets the floor for your SLA. You can only promise less than that until you invest in improving that SLO.</p>
+<p>Let&rsquo;s move on to the 2<!-- raw HTML omitted -->nd<!-- raw HTML omitted --> step.</p>
+<h3 id="you-find-out-that-something-is-broken">You find out that something is broken</h3>
+<h4 id="whats-on-first">What&rsquo;s on first?</h4>
+<p>Ok. something is definitely broken. How do you find out?</p>
+<p>This is probably the most technically straightforward piece, but the one that has the most impact on people.</p>
+<p>When something is broken, an alert is generated you get notified.</p>
+<p>The first step is figuring out how you get data out of your system into a place that can perform some analysis and generate these alerts. The two big products here are Datadog and NewRelic. These are all-in-one solutions that allow you to instrument your application and gather metrics+logs+events and put them somewhere you can visualize them. These systems also allow you to create “alerts” that get generated based on the data you’ve been feeding it.</p>
+<p>Given that you now know what you consider critical user flows your goal is to go through your application and ensure that everything that supports these flows is properly instrumented. This is where we start looking at the different infrastructure components. This is where we learn how/why our system broke. This is an important step - it&rsquo;s easy to think that devs should just &ldquo;go through and instrument everything&rdquo;, but that makes things harder to reason about. You&rsquo;re increasing your &ldquo;noise&rdquo; and when you&rsquo;re looking at a Signal vs. Noise ratio, you want to keep your noise to a minimum.</p>
+<p>Take a look at your SLOs -&gt; and then define your Service Level Indicators (SLI).</p>
+<h4 id="service-level-indicators">Service Level Indicators</h4>
+<p>These are the metrics that you can look at to identify that you&rsquo;re meeting your SLOs. They&rsquo;re often aggregate metrics. If your objective is a 1% error rate, your SLI will likely ensure that you are getting an accurate count of errors vs. successful requests across your system. That will involve you going through various systems and making sure that your code base is sending appropriate logs. It&rsquo;ll also be going through your monitoring tooling and creating dashboards/alerts so you can view your SLI and all the subcomponents that make up your SLI easily.</p>
+<p>Now that we have these metrics, and we know what we consider “broken” we can tune our alarms. When one of these components is in a state that impacts our user flow - thats an alert.</p>
+<p>That alert is going to be sent to whomever is on-call.</p>
+<h4 id="whos-on-first">Who’s on first?</h4>
+<p>Everyone in Engineering that is responsible for writing code that could end up affecting a user.</p>
+<p>Bam. Easiest decision ever.</p>
+<p>But you&rsquo;ll likely face some pushback from teams that don&rsquo;t normally see themselves as &ldquo;needing to be in rotation&rdquo;. Doesn&rsquo;t matter - at some point you have to make a decision and this is one hill you must die on as a manager.</p>
+<p>Traditionally on-call was reserved for infrastructure/devops/sre groups and developers weren&rsquo;t required to be on-call. This is a silly separation of concerns. The people who wrote the code that likely resulted in user impacts are often not from your infrastructure/platform team -&gt; they&rsquo;re likely from the application team. This should be your first tier of on-call when thinking about SLOs from the product.</p>
+<p>Often you&rsquo;ll end up with a rotation of engineers, probably daily, with multiple tiers.</p>
+<ol>
+<li>The primary: They&rsquo;re the first ones to get alerted about an issue</li>
+<li>The secondary: If alerts to the primary don&rsquo;t get acknowledged, it goes to this person</li>
+<li>The backup: If primary AND secondary are not responding -&gt; this person is here.</li>
+</ol>
+<p>You may decide to have different schedules for weekdays/weekends but in the end the goal is to cycle through all developers without making it feel like anyones &ldquo;job&rdquo; is to be on-call.</p>
+<p>Now that you have your schedule, you must know that</p>
+<ol>
+<li>Everyone should feel empowered to schedule alternates if they&rsquo;re busy. If I&rsquo;m scheduled tomorrow night and something comes up - I should feel comfortable addressing the engineering team as a whole and asking someone to trade with me. Likewise, you should feel comfortable saying no.</li>
+<li>No one should treat on-call as being stuck at the computer. This does end up personal preference for engineers, but if you&rsquo;re on-call you should be able to take your laptop/phone with you where you go. If your company is not technically ready for this, then you better be compensating your employees well for tying them to their homes outside of work hours.</li>
+</ol>
+<h3 id="you-bash-at-your-keyboard-until-it-works-again">You bash at your keyboard until it works again</h3>
+<p>Alright. It&rsquo;s 3 am, something broke, you were paged. You hop on your computer, bleary-eyed and upset because it&rsquo;s chillier than you expected because you forgot your pants in the rush to deal with this situation.</p>
+<p>Relax.</p>
+<p>Your job is not to solve the problem - your job is to ensure that your application is performing as expected.</p>
+<p>Solving the problem is a task that is best left to those on full nights of sleep. When it&rsquo;s 3 am and you finally manage to log into your laptop, &ldquo;solving&rdquo; the problem should be the furthest thing from your mind. The goal is to mitigate the outage and restore acceptable functionality based on your SLOs.</p>
+<p>In some cases simply restarting a process is enough to get things back to working. Sometimes you may need to upsize a database.</p>
+<p>What you should NOT be required to do, is:</p>
+<ul>
+<li>figure out where your application code is crashing</li>
+<li>optimize that weird nested join that you&rsquo;re supposed to tackle next sprint</li>
+</ul>
+<p>Your job at 3 am is problem mitigation. Maybe nothing can be done except throw on a status message so that users know what&rsquo;s happening.</p>
+<p>Perhaps this alert is fine, this level of error is acceptable.. so you can just adjust your alerting and call it a night.</p>
+<p>Don&rsquo;t attempt to be smart at 3 am because when you get paged at 6 am you&rsquo;ll be much worse off trying to decipher what you did.</p>
+<p>This is often where we run into issues. Engineers like to solve problems. When we get an alert we dig in. We want to fully understand what&rsquo;s happening because we can easily over/under complicate an issue. Oh is CPU on the DB at 100%? Do we need to just upsize the database? Are we locking something? Is there some periodic system running?</p>
+<p>Sometimes the problem is obvious and fixing the symptom is the same as fixing the problem. It&rsquo;s much harder when the problem isn&rsquo;t obvious. Rememeber that while you&rsquo;re &ldquo;digging in&rdquo; this is impacting users - otherwise it wouldn&rsquo;t be alerting you right? As unnatural and silly as it seems, at 3 am -&gt; solve the symptom for immediate relief. Then when you&rsquo;re not stressed, solve the problem.</p>
+<p>Again: Solving the problem at 3 am is not your job.</p>
+<p>Once you fix the symptom causing the alert and verify that things are working again - leave notes in a public place. Explain what you did and why. The why is the most important part. This is that when you or whomever else logs in the following day and looks over what happened &ldquo;on-call&rdquo; you can easily decipher your thought process and areas that you should begin looking to resolve the underlying problem.</p>
+<h3 id="you-put-in-some-metrics-so-that-if-thing-happens-again-youll-know">You put in some metrics so that if &ldquo;thing&rdquo; happens again, you&rsquo;ll know</h3>
+<p>This is the easiest part: Once you identify the &ldquo;root cause&rdquo; of your problem, get some metrics/logs in place so that you know. Don&rsquo;t forget to include the metric in any SLI calculations that you might need.</p>
+<h2 id="compensation">Compensation</h2>
+<p>Your propensity for compensation is entirely dependent on your org and the legalities of where you reside. In some situations you will have to pay engineers overtime for on-call. In some you can get away it.</p>
+<p>Don&rsquo;t be a jerk.</p>
+<p>Whatever you decide to do understand that your team will leave if they think they&rsquo;re getting a bad deal. on-call is requesting something of your team outside of normal working hours. It doesn&rsquo;t matter if you put it in a contract, it doesn&rsquo;t matter if it was on the job description. You are requesting something of your team that is above their work day.</p>
+<p>If an on-call night was rough, let them take the following day off. If they&rsquo;ve been having a bad week personally, remind them that its&rsquo; ok if they want to move their on-call.</p>
+<h2 id="your-on-call-process">Your On-Call Process</h2>
+<p>Finally, you&rsquo;ve ready all that and are ready to implement a real &ldquo;on-call&rdquo; process. Here&rsquo;s what it should look like:</p>
+<ol>
+<li>Identify your SLOs</li>
+<li>Identify your SLIs</li>
+<li>Work to track metrics/logs that relate to your SLIs</li>
+<li>Create an on-call rotation</li>
+<li>Something breaks</li>
+<li>You find out that something is broken</li>
+<li>You mitigate the problem</li>
+<li>You put in some metrics so that if &ldquo;thing&rdquo; happens again, you&rsquo;ll know</li>
+<li>You revisit the alert the morning after to figure out root cause</li>
+<li>You resolve the actual problem.</li>
+</ol>
+<h2 id="your-on-call-process-in-practice">Your On-Call Process in Practice</h2>
+<p>The truth is, there&rsquo;s a huge difference from the &ldquo;ideal&rdquo; process and what you end up with in practice. So much of this is up to the people involved and the culture of the workplace. Chances are you already have some of this implemented and it kinda works for you mostly.</p>
+<p>That&rsquo;s ok.</p>
+<p>The goal here is that you understand ideal, and you understand where you are. And now you have the information to be able to make trade-offs. Expending your entire development capital on the first 3 items on this process before getting to the next is silly.</p>
+<p>Instead this process is more of a &ldquo;Flow&rdquo;. If you understand ther flow, you can understand how each thing feeds into the next. When you know that you can better break down your approach.</p>
+<p>You probably have Service Level Agreements (SLAs) with your customers. And you likely have some rough SLOs/SLIs that track that. Solidify them. Make them available to the team on demand and make sure that they&rsquo;re accurate.</p>
+<p>The on-call process is a larger movement within your engineering organization that pushes the whole team toward excellence: Both technical in being able to understand the inner-workings of your application and all the components, but also of your product. If your SLAs are at 99% uptime, but you&rsquo;re sitting at 99.9% uptime -&gt; that&rsquo;s an excellent way to upsell. Likewise, if your uptime is actually at 98% you now know exactly the area your team will need to focus on next.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Understand that no matter your best efforts, pages will be missed. Bugs will go undetected. Users will be upset. But these are short-term issues. You can fix bugs. You can explain to users. You can tell your devs that this push is temporary.</p>
+<p>Do understand the difference between pages being missed and pages being ignored - call your team out on it however you need. Missing a page isn&rsquo;t just letting customers down, it&rsquo;s letting your team down. If it happens frequently enough the team will either think that the alert isn&rsquo;t important or that an individual is above the on-call rotation. It&rsquo;ll foster all kinds of interpersonal problems.</p>
+<p>Don&rsquo;t treat on-call as the solution to your stability and reliability issues. Reacting is not being proactive. When alerts happen overnight, ensure that there is SOME mechanism to address the root cause reasonably.</p>
+<p>If you are running into issues with this, reach out - I&rsquo;d love to chat. I&rsquo;ve been doing this for a long time and I love to help out. I set aside a few hours a week to donate to help companies and individuals make sense of these kinds of larger scale engineering problems. My email is at the bottom of every page.</p>
+</section>
+
+<section class="comments">
+  <blockquote>
+    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
+  </blockquote>
+</section>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2022</div>
+    <div>
+      <a href="/posts/index.xml">RSS Feed</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

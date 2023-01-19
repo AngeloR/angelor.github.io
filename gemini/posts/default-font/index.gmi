@@ -1,7 +1,7 @@
 # Removing the Default Font
 
 
-
+=> gemini://gemini.xangelo.ca/posts/on-call/index.gmi ← Newer: Designing On-Call
 => gemini://gemini.xangelo.ca/posts/gitweb/index.gmi → Older: gitweb - a GitHub/GitLab alternative
 
 This is a small change that I've made to the site that I've actually been thinking about for quite some time. I've always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.

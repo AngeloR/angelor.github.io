@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 31 Mar 2022 00:07:57 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Sep 2022 22:36:23 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing On-Call</title>
+      <link>https://xangelo.ca/posts/on-call/</link>
+      <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/on-call/</guid>
+      <description>On-call is one of those things that all developers end up doing at some point. My goal isn&amp;rsquo;t to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I&amp;rsquo;m going to start at the very beginning because chances are you&amp;rsquo;re already doing it wrong. I should also note that I&amp;rsquo;m looking at this specifically from a SaaS point of view.</description>
+    </item>
+    
     <item>
       <title>Removing the Default Font</title>
       <link>https://xangelo.ca/posts/default-font/</link>
@@ -45,7 +54,7 @@ The more I dive into development processes the more I find that they are all cen
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
       <description>In a previous post, I talked about git workflows and I outlined the two big problems I see with git workflows:
- Pull Requests/Reviews Branching Strategies  I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.
+Pull Requests/Reviews Branching Strategies I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.
 The reason I think branching strategies are such a complicated topic is because it touches more than just git.</description>
     </item>
     
@@ -123,7 +132,7 @@ The theme itself contains a light/dark mode as well as a small variation of the 
       <guid>https://xangelo.ca/page/about/</guid>
       <description>Thanks for checking this out! It&amp;rsquo;s been a number of years since I really changed by blog and this time I&amp;rsquo;ve decided to move to an all markdown blog since that&amp;rsquo;s the way I do all my notes.
 Projects:
- This site Sketchy Heroes BitBums  </description>
+This site Sketchy Heroes BitBums </description>
     </item>
     
     <item>

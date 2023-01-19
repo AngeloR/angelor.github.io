@@ -7,7 +7,147 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 31 Mar 2022 00:07:57 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Sep 2022 22:36:23 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing On-Call</title>
+      <link>https://xangelo.ca/posts/on-call/</link>
+      <pubDate>Wed, 21 Sep 2022 22:36:23 -3600</pubDate>
+      
+      <guid>https://xangelo.ca/posts/on-call/</guid>
+      <description>&lt;p&gt;On-call is one of those things that all developers end up doing at some point. My goal isn&amp;rsquo;t to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I&amp;rsquo;m going to start at the very beginning because chances are you&amp;rsquo;re already doing it wrong. I should also note that I&amp;rsquo;m looking at this specifically from a SaaS point of view.&lt;/p&gt;
+&lt;h2 id=&#34;why-do-devs-go-on-call&#34;&gt;Why do devs go on-call?&lt;/h2&gt;
+&lt;p&gt;The point of on-call is simple: People use your app 24/7 relative to you. They may be using it from Italy or Australia or Thailand while you&amp;rsquo;re tucked up in bed in Wisconsin. But for them, it&amp;rsquo;s working hours and they expect your site to be available. But, of course, that&amp;rsquo;s not always possible. Things happen that will inevitably take your project down. In these situations &amp;ldquo;on-call&amp;rdquo; is vital for several reasons: The least of which is solving the problem.&lt;/p&gt;
+&lt;p&gt;Normally you go on-call because your founders or manager or a customer noticed that your service was offline when it wasn&amp;rsquo;t supposed to be. People start complaining, it makes some rounds internally, and then eventually ends up at the desks of whoever deployed it. Often that ends up being some kind of &amp;ldquo;infrastructure&amp;rdquo; team (You probably call them DevOps or SREs - why that&amp;rsquo;s wrong is an issue for another time). These folk hear about it, fix the problem, and then go about setting up some alerts to let them know when the issue happens again. Bam, you&amp;rsquo;ve just enabled on-call without any of the good parts. You can all but guarantee that your on-call team is going to end up angry and upset about on-call which will manifest in the worst ways possible.&lt;/p&gt;
+&lt;h2 id=&#34;lets-walk-through-the-standard-on-call-process&#34;&gt;Let&amp;rsquo;s walk through the standard on-call process&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s walk through a very high-level on-call process and then we can break it down.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Something breaks&lt;/li&gt;
+&lt;li&gt;You find out that something is broken&lt;/li&gt;
+&lt;li&gt;You bash at your keyboard until it works again&lt;/li&gt;
+&lt;li&gt;You put in some metrics so that if &amp;ldquo;thing&amp;rdquo; happens again, you&amp;rsquo;ll know&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It&amp;rsquo;s wrong.&lt;/p&gt;
+&lt;p&gt;Ok, it&amp;rsquo;s not wrong - it&amp;rsquo;s just a subset of what &amp;ldquo;on-call&amp;rdquo; really is.&lt;/p&gt;
+&lt;p&gt;See the thing that you&amp;rsquo;re REALLY missing is that nowhere in this process have you actually figured out what&amp;rsquo;s going on. Sure you solved a symptom - maybe that symptom is synonymous with the cause. But you don&amp;rsquo;t know, because your process doesn&amp;rsquo;t encompass that.&lt;/p&gt;
+&lt;p&gt;To have a good on-call process you have to understand a fundamental truth of on-call: on-call isn&amp;rsquo;t just about engineering. on-call is the culmination of a bunch of different business, product, and culture decisions.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s the truth of each step in your process&lt;/p&gt;
+&lt;h3 id=&#34;something-breaks&#34;&gt;Something breaks&lt;/h3&gt;
+&lt;h4 id=&#34;something&#34;&gt;Something&lt;/h4&gt;
+&lt;p&gt;The first thing we need to define is what &amp;ldquo;something&amp;rdquo; is. The easiest thing to do is to take a look at your code repositories. If you’ve broken things down into services, you likely have one repo/service. That’s an easy way to define the boundaries of “something”. But it’s also probably wrong.&lt;/p&gt;
+&lt;p&gt;If you have a monolithic codebase in a single repository this is a much harder step for you, and you’ll probably do a better job.&lt;/p&gt;
+&lt;p&gt;It’s very easy to define “something” by engineering components - but this isn’t always answering “what” broke, but “how” and “why”. A user doesn’t care that your lambda was opening too many connections to RDS causing a spike in memory which caused your API to lag. They care that they weren’t able to send a cat picture.&lt;/p&gt;
+&lt;p&gt;When defining your “something” start with user flows. Look at your application and define “core” actions that your user can take. From there, simplify until you have a handful of actions that you want a user to be able to do All the Time.&lt;/p&gt;
+&lt;h4 id=&#34;broke&#34;&gt;Broke&lt;/h4&gt;
+&lt;p&gt;Defining the &amp;ldquo;something&amp;rdquo; is relatively easy compared to defining &amp;ldquo;broken&amp;rdquo;. We know a thing is broken if it&amp;rsquo;s not starting, but:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What if it works but 1% of the requests are resulting in an error?&lt;/li&gt;
+&lt;li&gt;What if it works but 1% of the time it crashes and restarts?&lt;/li&gt;
+&lt;li&gt;What if it works but is very slow?&lt;/li&gt;
+&lt;li&gt;What if it works, is not slow, and doesn&amp;rsquo;t crash, but your API docs don&amp;rsquo;t match what the endpoint is returning?&lt;/li&gt;
+&lt;li&gt;What if it works, but your database is being crushed by a sudden increase in traffic?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Defining our “something” first is important because it helps us to set bounds on what we consider “broke” and what is “degraded” and what is “fine”.&lt;/p&gt;
+&lt;p&gt;Perhaps we don&amp;rsquo;t care if 1% of requests fail.. maybe we don&amp;rsquo;t care if 0.1% of requests fail. Defining these thresholds is tough because it requires realistically looking at our application and deciding what is &amp;ldquo;acceptable&amp;rdquo; and what is not. Sometimes we have to make difficult choices here. Maybe we want 0.1% to be considered broken.. but actually, 1% is broken. This is where we impact your actual application.&lt;/p&gt;
+&lt;p&gt;Deciding 0.1% of errors is &amp;ldquo;broken&amp;rdquo; where your application is currently sitting at 1% may seem like a good thing. 0.1% is where we want to be and so letting devs know when that isn&amp;rsquo;t the case is good. We can work toward 0.1%. But this involves much larger product considerations.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When these alerts happen overnight - are devs tasked with a complete resolution during work hours?&lt;/li&gt;
+&lt;li&gt;Does that mean feature work will suffer?&lt;/li&gt;
+&lt;li&gt;How will you buffer your sprint to make time for these interruptions?&lt;/li&gt;
+&lt;li&gt;Do you have the ability to buffer your sprint given product launch dates?&lt;/li&gt;
+&lt;li&gt;What happens when a dev is up all night dealing with issues, do they take the next day off?&lt;/li&gt;
+&lt;li&gt;Do you offload the task to a different team (Ops/Infra/SRE) since feature work is so important?&lt;/li&gt;
+&lt;li&gt;What happens when those teams get burnt out and leave?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On the flip side setting your alerts at 1% is accepting that this is the current state.. but now it becomes a decision on whether or not a 0.1% error rate is more important than the next feature you&amp;rsquo;re supposed to get out.&lt;/p&gt;
+&lt;p&gt;Defining the state of &amp;ldquo;broken&amp;rdquo; is hard because it is the intersection of the current and future state of our application, while simultaneously being the fulcrum that will help tip the scales between &amp;ldquo;acceptable&amp;rdquo; and &amp;ldquo;unacceptable&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s no right answer here - just an answer for your team, for right now. Whatever you decide today, the most important thing is that you re-evaluate it and allow those that are on-call to provide feedback on if this was a reasonable level of &amp;ldquo;broken&amp;rdquo;.&lt;/p&gt;
+&lt;h4 id=&#34;service-level-objectives&#34;&gt;Service Level Objectives&lt;/h4&gt;
+&lt;p&gt;By defining what broken means you&amp;rsquo;ve now set a baseline stat for your systems. You&amp;rsquo;ve defined your first Service Level Objective (SLO). Yay!&lt;/p&gt;
+&lt;p&gt;In the nutshell, SLOs form the baseline for your Service Level Agreements (SLA) with customers. Your SLA can&amp;rsquo;t be better than your SLO or you&amp;rsquo;re going to have to sacrifice on feature development to bring them up to speed. Now we can talk about all kinds of marketing tricks you can do (mainly playing with the measurement period) but the truth is if your SLO defines a particular flow as &amp;ldquo;broken&amp;rdquo; it sets the floor for your SLA. You can only promise less than that until you invest in improving that SLO.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s move on to the 2&lt;!-- raw HTML omitted --&gt;nd&lt;!-- raw HTML omitted --&gt; step.&lt;/p&gt;
+&lt;h3 id=&#34;you-find-out-that-something-is-broken&#34;&gt;You find out that something is broken&lt;/h3&gt;
+&lt;h4 id=&#34;whats-on-first&#34;&gt;What&amp;rsquo;s on first?&lt;/h4&gt;
+&lt;p&gt;Ok. something is definitely broken. How do you find out?&lt;/p&gt;
+&lt;p&gt;This is probably the most technically straightforward piece, but the one that has the most impact on people.&lt;/p&gt;
+&lt;p&gt;When something is broken, an alert is generated you get notified.&lt;/p&gt;
+&lt;p&gt;The first step is figuring out how you get data out of your system into a place that can perform some analysis and generate these alerts. The two big products here are Datadog and NewRelic. These are all-in-one solutions that allow you to instrument your application and gather metrics+logs+events and put them somewhere you can visualize them. These systems also allow you to create “alerts” that get generated based on the data you’ve been feeding it.&lt;/p&gt;
+&lt;p&gt;Given that you now know what you consider critical user flows your goal is to go through your application and ensure that everything that supports these flows is properly instrumented. This is where we start looking at the different infrastructure components. This is where we learn how/why our system broke. This is an important step - it&amp;rsquo;s easy to think that devs should just &amp;ldquo;go through and instrument everything&amp;rdquo;, but that makes things harder to reason about. You&amp;rsquo;re increasing your &amp;ldquo;noise&amp;rdquo; and when you&amp;rsquo;re looking at a Signal vs. Noise ratio, you want to keep your noise to a minimum.&lt;/p&gt;
+&lt;p&gt;Take a look at your SLOs -&amp;gt; and then define your Service Level Indicators (SLI).&lt;/p&gt;
+&lt;h4 id=&#34;service-level-indicators&#34;&gt;Service Level Indicators&lt;/h4&gt;
+&lt;p&gt;These are the metrics that you can look at to identify that you&amp;rsquo;re meeting your SLOs. They&amp;rsquo;re often aggregate metrics. If your objective is a 1% error rate, your SLI will likely ensure that you are getting an accurate count of errors vs. successful requests across your system. That will involve you going through various systems and making sure that your code base is sending appropriate logs. It&amp;rsquo;ll also be going through your monitoring tooling and creating dashboards/alerts so you can view your SLI and all the subcomponents that make up your SLI easily.&lt;/p&gt;
+&lt;p&gt;Now that we have these metrics, and we know what we consider “broken” we can tune our alarms. When one of these components is in a state that impacts our user flow - thats an alert.&lt;/p&gt;
+&lt;p&gt;That alert is going to be sent to whomever is on-call.&lt;/p&gt;
+&lt;h4 id=&#34;whos-on-first&#34;&gt;Who’s on first?&lt;/h4&gt;
+&lt;p&gt;Everyone in Engineering that is responsible for writing code that could end up affecting a user.&lt;/p&gt;
+&lt;p&gt;Bam. Easiest decision ever.&lt;/p&gt;
+&lt;p&gt;But you&amp;rsquo;ll likely face some pushback from teams that don&amp;rsquo;t normally see themselves as &amp;ldquo;needing to be in rotation&amp;rdquo;. Doesn&amp;rsquo;t matter - at some point you have to make a decision and this is one hill you must die on as a manager.&lt;/p&gt;
+&lt;p&gt;Traditionally on-call was reserved for infrastructure/devops/sre groups and developers weren&amp;rsquo;t required to be on-call. This is a silly separation of concerns. The people who wrote the code that likely resulted in user impacts are often not from your infrastructure/platform team -&amp;gt; they&amp;rsquo;re likely from the application team. This should be your first tier of on-call when thinking about SLOs from the product.&lt;/p&gt;
+&lt;p&gt;Often you&amp;rsquo;ll end up with a rotation of engineers, probably daily, with multiple tiers.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The primary: They&amp;rsquo;re the first ones to get alerted about an issue&lt;/li&gt;
+&lt;li&gt;The secondary: If alerts to the primary don&amp;rsquo;t get acknowledged, it goes to this person&lt;/li&gt;
+&lt;li&gt;The backup: If primary AND secondary are not responding -&amp;gt; this person is here.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You may decide to have different schedules for weekdays/weekends but in the end the goal is to cycle through all developers without making it feel like anyones &amp;ldquo;job&amp;rdquo; is to be on-call.&lt;/p&gt;
+&lt;p&gt;Now that you have your schedule, you must know that&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Everyone should feel empowered to schedule alternates if they&amp;rsquo;re busy. If I&amp;rsquo;m scheduled tomorrow night and something comes up - I should feel comfortable addressing the engineering team as a whole and asking someone to trade with me. Likewise, you should feel comfortable saying no.&lt;/li&gt;
+&lt;li&gt;No one should treat on-call as being stuck at the computer. This does end up personal preference for engineers, but if you&amp;rsquo;re on-call you should be able to take your laptop/phone with you where you go. If your company is not technically ready for this, then you better be compensating your employees well for tying them to their homes outside of work hours.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;you-bash-at-your-keyboard-until-it-works-again&#34;&gt;You bash at your keyboard until it works again&lt;/h3&gt;
+&lt;p&gt;Alright. It&amp;rsquo;s 3 am, something broke, you were paged. You hop on your computer, bleary-eyed and upset because it&amp;rsquo;s chillier than you expected because you forgot your pants in the rush to deal with this situation.&lt;/p&gt;
+&lt;p&gt;Relax.&lt;/p&gt;
+&lt;p&gt;Your job is not to solve the problem - your job is to ensure that your application is performing as expected.&lt;/p&gt;
+&lt;p&gt;Solving the problem is a task that is best left to those on full nights of sleep. When it&amp;rsquo;s 3 am and you finally manage to log into your laptop, &amp;ldquo;solving&amp;rdquo; the problem should be the furthest thing from your mind. The goal is to mitigate the outage and restore acceptable functionality based on your SLOs.&lt;/p&gt;
+&lt;p&gt;In some cases simply restarting a process is enough to get things back to working. Sometimes you may need to upsize a database.&lt;/p&gt;
+&lt;p&gt;What you should NOT be required to do, is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;figure out where your application code is crashing&lt;/li&gt;
+&lt;li&gt;optimize that weird nested join that you&amp;rsquo;re supposed to tackle next sprint&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Your job at 3 am is problem mitigation. Maybe nothing can be done except throw on a status message so that users know what&amp;rsquo;s happening.&lt;/p&gt;
+&lt;p&gt;Perhaps this alert is fine, this level of error is acceptable.. so you can just adjust your alerting and call it a night.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t attempt to be smart at 3 am because when you get paged at 6 am you&amp;rsquo;ll be much worse off trying to decipher what you did.&lt;/p&gt;
+&lt;p&gt;This is often where we run into issues. Engineers like to solve problems. When we get an alert we dig in. We want to fully understand what&amp;rsquo;s happening because we can easily over/under complicate an issue. Oh is CPU on the DB at 100%? Do we need to just upsize the database? Are we locking something? Is there some periodic system running?&lt;/p&gt;
+&lt;p&gt;Sometimes the problem is obvious and fixing the symptom is the same as fixing the problem. It&amp;rsquo;s much harder when the problem isn&amp;rsquo;t obvious. Rememeber that while you&amp;rsquo;re &amp;ldquo;digging in&amp;rdquo; this is impacting users - otherwise it wouldn&amp;rsquo;t be alerting you right? As unnatural and silly as it seems, at 3 am -&amp;gt; solve the symptom for immediate relief. Then when you&amp;rsquo;re not stressed, solve the problem.&lt;/p&gt;
+&lt;p&gt;Again: Solving the problem at 3 am is not your job.&lt;/p&gt;
+&lt;p&gt;Once you fix the symptom causing the alert and verify that things are working again - leave notes in a public place. Explain what you did and why. The why is the most important part. This is that when you or whomever else logs in the following day and looks over what happened &amp;ldquo;on-call&amp;rdquo; you can easily decipher your thought process and areas that you should begin looking to resolve the underlying problem.&lt;/p&gt;
+&lt;h3 id=&#34;you-put-in-some-metrics-so-that-if-thing-happens-again-youll-know&#34;&gt;You put in some metrics so that if &amp;ldquo;thing&amp;rdquo; happens again, you&amp;rsquo;ll know&lt;/h3&gt;
+&lt;p&gt;This is the easiest part: Once you identify the &amp;ldquo;root cause&amp;rdquo; of your problem, get some metrics/logs in place so that you know. Don&amp;rsquo;t forget to include the metric in any SLI calculations that you might need.&lt;/p&gt;
+&lt;h2 id=&#34;compensation&#34;&gt;Compensation&lt;/h2&gt;
+&lt;p&gt;Your propensity for compensation is entirely dependent on your org and the legalities of where you reside. In some situations you will have to pay engineers overtime for on-call. In some you can get away it.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t be a jerk.&lt;/p&gt;
+&lt;p&gt;Whatever you decide to do understand that your team will leave if they think they&amp;rsquo;re getting a bad deal. on-call is requesting something of your team outside of normal working hours. It doesn&amp;rsquo;t matter if you put it in a contract, it doesn&amp;rsquo;t matter if it was on the job description. You are requesting something of your team that is above their work day.&lt;/p&gt;
+&lt;p&gt;If an on-call night was rough, let them take the following day off. If they&amp;rsquo;ve been having a bad week personally, remind them that its&amp;rsquo; ok if they want to move their on-call.&lt;/p&gt;
+&lt;h2 id=&#34;your-on-call-process&#34;&gt;Your On-Call Process&lt;/h2&gt;
+&lt;p&gt;Finally, you&amp;rsquo;ve ready all that and are ready to implement a real &amp;ldquo;on-call&amp;rdquo; process. Here&amp;rsquo;s what it should look like:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Identify your SLOs&lt;/li&gt;
+&lt;li&gt;Identify your SLIs&lt;/li&gt;
+&lt;li&gt;Work to track metrics/logs that relate to your SLIs&lt;/li&gt;
+&lt;li&gt;Create an on-call rotation&lt;/li&gt;
+&lt;li&gt;Something breaks&lt;/li&gt;
+&lt;li&gt;You find out that something is broken&lt;/li&gt;
+&lt;li&gt;You mitigate the problem&lt;/li&gt;
+&lt;li&gt;You put in some metrics so that if &amp;ldquo;thing&amp;rdquo; happens again, you&amp;rsquo;ll know&lt;/li&gt;
+&lt;li&gt;You revisit the alert the morning after to figure out root cause&lt;/li&gt;
+&lt;li&gt;You resolve the actual problem.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;your-on-call-process-in-practice&#34;&gt;Your On-Call Process in Practice&lt;/h2&gt;
+&lt;p&gt;The truth is, there&amp;rsquo;s a huge difference from the &amp;ldquo;ideal&amp;rdquo; process and what you end up with in practice. So much of this is up to the people involved and the culture of the workplace. Chances are you already have some of this implemented and it kinda works for you mostly.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s ok.&lt;/p&gt;
+&lt;p&gt;The goal here is that you understand ideal, and you understand where you are. And now you have the information to be able to make trade-offs. Expending your entire development capital on the first 3 items on this process before getting to the next is silly.&lt;/p&gt;
+&lt;p&gt;Instead this process is more of a &amp;ldquo;Flow&amp;rdquo;. If you understand ther flow, you can understand how each thing feeds into the next. When you know that you can better break down your approach.&lt;/p&gt;
+&lt;p&gt;You probably have Service Level Agreements (SLAs) with your customers. And you likely have some rough SLOs/SLIs that track that. Solidify them. Make them available to the team on demand and make sure that they&amp;rsquo;re accurate.&lt;/p&gt;
+&lt;p&gt;The on-call process is a larger movement within your engineering organization that pushes the whole team toward excellence: Both technical in being able to understand the inner-workings of your application and all the components, but also of your product. If your SLAs are at 99% uptime, but you&amp;rsquo;re sitting at 99.9% uptime -&amp;gt; that&amp;rsquo;s an excellent way to upsell. Likewise, if your uptime is actually at 98% you now know exactly the area your team will need to focus on next.&lt;/p&gt;
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
+&lt;p&gt;Understand that no matter your best efforts, pages will be missed. Bugs will go undetected. Users will be upset. But these are short-term issues. You can fix bugs. You can explain to users. You can tell your devs that this push is temporary.&lt;/p&gt;
+&lt;p&gt;Do understand the difference between pages being missed and pages being ignored - call your team out on it however you need. Missing a page isn&amp;rsquo;t just letting customers down, it&amp;rsquo;s letting your team down. If it happens frequently enough the team will either think that the alert isn&amp;rsquo;t important or that an individual is above the on-call rotation. It&amp;rsquo;ll foster all kinds of interpersonal problems.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t treat on-call as the solution to your stability and reliability issues. Reacting is not being proactive. When alerts happen overnight, ensure that there is SOME mechanism to address the root cause reasonably.&lt;/p&gt;
+&lt;p&gt;If you are running into issues with this, reach out - I&amp;rsquo;d love to chat. I&amp;rsquo;ve been doing this for a long time and I love to help out. I set aside a few hours a week to donate to help companies and individuals make sense of these kinds of larger scale engineering problems. My email is at the bottom of every page.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Removing the Default Font</title>
       <link>https://xangelo.ca/posts/default-font/</link>
@@ -692,7 +832,7 @@ in a real dungeon..&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;I set the &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; tag to utilize flex &lt;code&gt;display: flex&lt;/code&gt; and tell it to align the items to the center&lt;/p&gt;
-&lt;p&gt;I then set the &lt;code&gt;.divider&lt;/code&gt; to &lt;code&gt;flex-grow: 1&lt;/code&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; and don&amp;rsquo;t set the property on the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; or &lt;code&gt;.pubdate&lt;/code&gt; elements. This causes the divider to grow to take up the entirety of space within the list element, subtracting the side of the title/date tags.&lt;/p&gt;
+&lt;p&gt;I then set the &lt;code&gt;.divider&lt;/code&gt; to &lt;code&gt;flex-grow: 1&lt;/code&gt; &lt;sup id=&#34;fnref1:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; and don&amp;rsquo;t set the property on the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; or &lt;code&gt;.pubdate&lt;/code&gt; elements. This causes the divider to grow to take up the entirety of space within the list element, subtracting the side of the title/date tags.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
@@ -778,26 +918,26 @@ in a real dungeon..&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;If you do end up using it and come across any bugs, please let me know over on GitHub!&lt;/p&gt;
 &lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/AngeloR/plain-hugo-theme&#34;&gt;https://github.com/AngeloR/plain-hugo-theme&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/rfc/rfc7993.txt&#34;&gt;https://tools.ietf.org/rfc/rfc7993.txt&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;http://westleysz.com/&#34;&gt;http://westleysz.com/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://utteranc.es/&#34;&gt;https://utteranc.es/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -961,36 +1101,36 @@ in a real dungeon..&lt;/p&gt;
 &lt;p&gt;Once you&amp;rsquo;re happy with your stuff, you can turn off the live-reloading server and run the &lt;code&gt;hugo&lt;/code&gt; command. This parses all your information and generates the static files for your website. It will then put all this content in the &lt;code&gt;public/&lt;/code&gt; directory. If you followed the instructions from earlier around setting up GitHub Pages, you can &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;public/&lt;/code&gt; directory and set it up as another git repository.&lt;/p&gt;
 &lt;p&gt;then running &lt;code&gt;git push &lt;/code&gt;will publish your static files to whatever GitHub repository you configured to host the site.&lt;/p&gt;
 &lt;h2 id=&#34;wrapping-up&#34;&gt;Wrapping Up&lt;/h2&gt;
-&lt;p&gt;I haven&amp;rsquo;t really dug too much into setting up GitHub pages because it&amp;rsquo;s mostly clicking around the interface and the instructions for that are kept up to date &lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. I highly recommend GitHub pages because of the ease of setting up&lt;/p&gt;
+&lt;p&gt;I haven&amp;rsquo;t really dug too much into setting up GitHub pages because it&amp;rsquo;s mostly clicking around the interface and the instructions for that are kept up to date &lt;sup id=&#34;fnref1:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. I highly recommend GitHub pages because of the ease of setting up&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Custom domain names (if you have your own domain it&amp;rsquo;s trivial to point it to your GitHub pages site)&lt;/li&gt;
 &lt;li&gt;Custom domain name SSL certificafte. Most places only allow you custom SSL certs if you use a subdomain, but GitHub lets you use a custom domain name.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I also highly suggest you spend some time going through the themes&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; on Hugo to find one that you really like. There are so many and it&amp;rsquo;s so easy to make new themes that you&amp;rsquo;ll definitely find one you like.&lt;/p&gt;
+&lt;p&gt;I also highly suggest you spend some time going through the themes&lt;sup id=&#34;fnref1:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; on Hugo to find one that you really like. There are so many and it&amp;rsquo;s so easy to make new themes that you&amp;rsquo;ll definitely find one you like.&lt;/p&gt;
 &lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;Ghost, a node.js based blogging engine: &lt;a href=&#34;https://ghost.org/&#34;&gt;https://ghost.org/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;Hugo, static site generatror: &lt;a href=&#34;https://gohugo.io&#34;&gt;https://gohugo.io&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;GitHub Pages setup:  &lt;a href=&#34;https://pages.github.com/&#34;&gt;https://pages.github.com/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;GitHub Pages setup:  &lt;a href=&#34;https://pages.github.com/&#34;&gt;https://pages.github.com/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;Hugo installation: &lt;a href=&#34;https://gohugo.io/getting-started/installing&#34;&gt;https://gohugo.io/getting-started/installing&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Hugo themes: &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Hugo themes: &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
 &lt;p&gt;Hugo configuration options: &lt;a href=&#34;https://gohugo.io/getting-started/configuration-markup&#34;&gt;https://gohugo.io/getting-started/configuration-markup&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </description>
     </item>
     

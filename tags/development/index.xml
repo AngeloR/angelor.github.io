@@ -34,7 +34,7 @@ The more I dive into development processes the more I find that they are all cen
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
       <description>In a previous post, I talked about git workflows and I outlined the two big problems I see with git workflows:
- Pull Requests/Reviews Branching Strategies  I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.
+Pull Requests/Reviews Branching Strategies I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.
 The reason I think branching strategies are such a complicated topic is because it touches more than just git.</description>
     </item>
     

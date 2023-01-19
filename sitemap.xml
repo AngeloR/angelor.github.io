@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://xangelo.ca/tags/fonts/</loc>
-    <lastmod>2022-03-31T00:07:57-04:00</lastmod>
+    <loc>https://xangelo.ca/posts/on-call/</loc>
+    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/engineering/</loc>
+    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/engineering-org/</loc>
+    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/posts/</loc>
+    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/</loc>
+    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/</loc>
+    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/fonts/</loc>
     <lastmod>2022-03-31T00:07:57-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/posts/default-font/</loc>
     <lastmod>2022-03-31T00:07:57-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/</loc>
-    <lastmod>2022-03-31T00:07:57-04:00</lastmod>
-  </url><url>
     <loc>https://xangelo.ca/tags/upkeep/</loc>
-    <lastmod>2022-03-31T00:07:57-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/</loc>
     <lastmod>2022-03-31T00:07:57-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/dev-tools/</loc>
