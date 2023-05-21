@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
+<title> Now Powered by Outlines - Xangelo.ca</title>
+<link rel="stylesheet" type="text/css" href="/css/txt.css" />
+</head>
+<body>
+<header>
+  <div>
+	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
+  </div>
+  <nav></nav>
+</header>
+<main>
+  <article>
+    <section class="front-block">
+	<div class="title">
+		<div class="tags">
+			Tags: <span class="tag"><a href="/tags/outliner">#outliner</a></span>
+			<span class="tag"><a href="/tags/blog">#blog</a></span>
+			</div>
+		<span class="divider"></span>
+		<div>
+			Author: Angelo R.
+		</div>
+	</div>
+	<div class="meta">
+		<div>Pub: 2023-05-20</div>
+		<span class="divider"></span>
+		<div>
+			528 words
+		</div>
+	</div>
+	<div class="toc-block">
+		<h1 class="nocount"> Now Powered by Outlines</h1>
+		<aside class="toc"><nav id="TableOfContents"></nav></aside>
+	</div>
+</section>
+<section class="content">
+	<h1 id="now-powered-by-outlines">Now Powered by Outlines</h1>
+<p>One of the things that I do every so often is completely re-write the backend of my blog. I&rsquo;ve mostly hit upon a UI that I like, but I&rsquo;ve swapped out the backend over the years between various custom iterations, wordpress, ghost, and now finally Hugo. This time, I&rsquo;ve swapped out how I write my blog posts - but kept everything else the same.</p>
+<p>The current system allows me to write markdown in vim. I&rsquo;m normally running <code>hugo serve -w</code> at the same time so I can watch the rendered version of what I&rsquo;m doing as I go. It&rsquo;s sort of like a hacked-together live preview. It works well enough.</p>
+<p>However, for the last 10 years (maybe more?) I&rsquo;ve been a huge fan of outliners. I original started with various projects by <a href="https://scripting.com">Dave Winer</a> and I used almost everything he&rsquo;s written around them for a number of years. I&rsquo;ve also tried tooling like <a href="https://workflowy.com">Workflowy</a> and almost every other infinite-bullet-list tool that came after them. They were all.. fine? I had no real problems with them except that they never really stuck around for very long. They were in a tab in my browser, and my browser has like 100 tabs open at any given time. </p>
+<p>For the last 6 months or so, however, I&rsquo;ve been working on my own outliner. It started as an in-browser tool&hellip; and I quickly moved it to an offline-first desktop app via <a href="https://tauri.app">Tauri</a>. Having it offline first meant a few big things.</p>
+<ol>
+<li>
+<p>All the syncing tools just work. Dropbox, rsync, backblaze, s3 as a filesystem. Whatever. It works. All nodes in the outliner are individual json files on your computer. There&rsquo;s an &ldquo;outline&rdquo; file that stitches the nodes together into a tree.  <!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Building desktop first allowed me to bypass the need for user accounts and passwords. It allowed me to skip out on the complexities of providing reliable encrypted storage to users. I don&rsquo;t need to run a collection of servers and databases and object stores to power this thing.</p>
+</li>
+</ol>
+<p>Since I use this tool across operating systems all day long it slowly ended up being where most of my thoughts for blog ideas end up. And so what I hope to be the final feature of this project was realized: I&rsquo;d love to be able to write my whole blog post in here, and then hit a button to have it publish to my hugo deploy.</p>
+<p>This first iteration uses a lot of hard-coded stuff.. and I&rsquo;ll probably take some time to iron out some of the edge cases around rendering.. but it honestly came together pretty quickly. Since every node in the outliner is markdown it was trivial to put it together. As of right now, I can write my blog post in my outliner, press <code>shift+p</code> and have it write out a markdown file to my local hugo instance.</p>
+<p>For now, I do some manual reviewing before officially publishing it. For now there&rsquo;s a few more usability things that need to be added like </p>
+<ul>
+<li>
+<p>differentiating which posts are published vs. un-published</p>
+</li>
+<li>
+<p>being able to &lsquo;unpublish&rsquo; a node</p>
+</li>
+</ul>
+<p>But honestly? I&rsquo;m kind of enjoying this right now.</p>
+</section>
+
+<section class="comments">
+  <blockquote>
+    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
+  </blockquote>
+</section>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>Copyright © 2011 - 2022</div>
+    <div>
+      <a href="/posts/index.xml">RSS Feed</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

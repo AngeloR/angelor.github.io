@@ -1,6 +1,10 @@
 ## List of posts
 
 
+### 2023
+
+=> gemini://gemini.xangelo.ca/posts/outliner_blog_update/index.gmi  Now Powered by Outlines
+
 ### 2022
 
 => gemini://gemini.xangelo.ca/posts/on-call/index.gmi Designing On-Call

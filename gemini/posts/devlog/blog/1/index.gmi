@@ -141,4 +141,7 @@ If you do end up using it and come across any bugs, please let me know over on G
 => /link/to/post [2] Post Title (/link/to/post)
 
 
+## Related articles
+
+=> /gemini/posts/outliner_blog_update/index.gmi  Now Powered by Outlines: <no value>
 ---

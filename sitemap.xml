@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xangelo.ca/posts/outliner_blog_update/</loc>
+    <lastmod>2023-05-20T23:36:42-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/blog/</loc>
+    <lastmod>2023-05-20T23:36:42-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/outliner/</loc>
+    <lastmod>2023-05-20T23:36:42-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/posts/</loc>
+    <lastmod>2023-05-20T23:36:42-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/</loc>
+    <lastmod>2023-05-20T23:36:42-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/</loc>
+    <lastmod>2023-05-20T23:36:42-04:00</lastmod>
+  </url><url>
     <loc>https://xangelo.ca/posts/on-call/</loc>
     <lastmod>2022-09-21T22:36:23-04:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2022-09-21T22:36:23-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/engineering-org/</loc>
-    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/posts/</loc>
-    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/</loc>
-    <lastmod>2022-09-21T22:36:23-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/</loc>
     <lastmod>2022-09-21T22:36:23-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/fonts/</loc>
@@ -73,9 +82,6 @@
   </url><url>
     <loc>https://xangelo.ca/posts/devlog/newsriver/intro/</loc>
     <lastmod>2020-11-10T09:43:04-05:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/blog/</loc>
-    <lastmod>2020-06-10T12:00:00-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/devlog/</loc>
     <lastmod>2020-06-10T12:00:00-04:00</lastmod>

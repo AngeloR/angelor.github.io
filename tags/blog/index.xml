@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 10 Jun 2020 12:00:00 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 May 2023 23:36:42 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Now Powered by Outlines</title>
+      <link>https://xangelo.ca/posts/outliner_blog_update/</link>
+      <pubDate>Sat, 20 May 2023 23:36:42 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/outliner_blog_update/</guid>
+      <description>Now Powered by Outlines One of the things that I do every so often is completely re-write the backend of my blog. I&amp;rsquo;ve mostly hit upon a UI that I like, but I&amp;rsquo;ve swapped out the backend over the years between various custom iterations, wordpress, ghost, and now finally Hugo. This time, I&amp;rsquo;ve swapped out how I write my blog posts - but kept everything else the same.
+The current system allows me to write markdown in vim.</description>
+    </item>
+    
     <item>
       <title>DEVLOG: Custom Theme for Hugo</title>
       <link>https://xangelo.ca/posts/devlog/blog/1/</link>

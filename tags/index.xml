@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 21 Sep 2022 22:36:23 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 May 2023 23:36:42 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://xangelo.ca/tags/blog/</link>
+      <pubDate>Sat, 20 May 2023 23:36:42 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outliner</title>
+      <link>https://xangelo.ca/tags/outliner/</link>
+      <pubDate>Sat, 20 May 2023 23:36:42 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/outliner/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>engineering</title>
       <link>https://xangelo.ca/tags/engineering/</link>
@@ -117,29 +135,11 @@
     </item>
     
     <item>
-      <title>blog</title>
-      <link>https://xangelo.ca/tags/blog/</link>
-      <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>devlog</title>
       <link>https://xangelo.ca/tags/devlog/</link>
       <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/devlog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devlog-blog</title>
-      <link>https://xangelo.ca/tags/devlog-blog/</link>
-      <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/devlog-blog/</guid>
       <description></description>
     </item>
     
