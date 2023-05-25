@@ -52,6 +52,16 @@ What the heck is a Database Index? | Xangelo.ca
     <main>
       
 <h2>What the heck is a Database Index?</h2>
+
+<div class="tag-list">
+  
+  [ <a href="../../tags/explanation">explanation</a> ]
+  
+  [ <a href="../../tags/database">database</a> ]
+  
+</div>
+
+
 <p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
 <pre tabindex="0"><code>+-------------------+
 |       users       |

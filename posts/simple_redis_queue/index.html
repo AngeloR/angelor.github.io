@@ -52,6 +52,16 @@ Simple Redis Job Queue | Xangelo.ca
     <main>
       
 <h2>Simple Redis Job Queue</h2>
+
+<div class="tag-list">
+  
+  [ <a href="../../tags/redis">redis</a> ]
+  
+  [ <a href="../../tags/architecture">architecture</a> ]
+  
+</div>
+
+
 <p>A common pattern in most software projects is the &ldquo;queue&rdquo;. You&rsquo;ll throw some stuff on there and eventually get around to sorting it all out. In some cases, you may not even really care about that.</p>
 <p>I recent ran into a situation in node.js where I needed to offload some CPU intensive out of the main http request handling process. Originally I thought about just forking the process, but I due to the fact that this endpoint is public facing (albeit authenticated and paid for), I was wary. Instead I figured I&rsquo;d rope in a quick job queue.</p>
 <h3 id="caveats">Caveats:</h3>
