@@ -14,9 +14,7 @@
       <pubDate>Fri, 23 Apr 2021 09:44:35 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
-      <description>Intro As always, I&amp;rsquo;ve been working on a terrible browser-based game. This time, it will be revolving around gameplay mechanics from roguelikes(or roguelites technically)+jrpgs.
-The thing I specifically want to look at today is the topic of Dungeon Generation - both in and out of code.
-Roguelikes all tend to share one mechanic: Procedurally Generated Dungeons. The idea is that every play-through is different, every floor of a dungeon is completely unique.</description>
+      <description>A simple dungeon generation algorithm for organic rooms</description>
     </item>
     
     <item>

@@ -87,7 +87,7 @@ How fun.
 
 ## Related articles
 
+=> /gemini/posts/on-call/index.gmi Designing On-Call: <no value>
 => /gemini/posts/gitweb/index.gmi gitweb - a GitHub/GitLab alternative: <no value>
 => /gemini/posts/git-branching-strategies/index.gmi Git Branching Strategies: <no value>
-=> /gemini/posts/git-workflows/index.gmi Git Workflows Suck: <no value>
 ---

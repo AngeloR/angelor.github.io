@@ -1,0 +1,7 @@
+.breakdowns {
+  display: flex;
+  justify-content: space-between;
+}
+.breakdowns > div {
+  width: 30%;
+}

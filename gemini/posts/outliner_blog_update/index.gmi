@@ -1,9 +1,9 @@
-#  Now Powered by Outlines
+# Now Powered by Outlines
 
 
 
 => gemini://gemini.xangelo.ca/posts/on-call/index.gmi → Older: Designing On-Call
-# Now Powered by Outlines
+
 
 One of the things that I do every so often is completely re-write the backend of my blog. I've mostly hit upon a UI that I like, but I've swapped out the backend over the years between various custom iterations, wordpress, ghost, and now finally Hugo. This time, I've swapped out how I write my blog posts - but kept everything else the same.
 
@@ -36,6 +36,7 @@ But honestly? I'm kind of enjoying this right now.
 
 
     
+
 
 ---
 ## References

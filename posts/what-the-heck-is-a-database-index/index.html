@@ -1,50 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang ="en-US">
+  <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
-<title>What the heck is a Database Index? - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/txt.css" />
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+What the heck is a Database Index? | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
 <header>
-  <div>
-	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
-  </div>
-  <nav></nav>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
 </header>
-<main>
-  <article>
-    <section class="front-block">
-	<div class="title">
-		<div class="tags">
-			Tags: <span class="tag"><a href="/tags/explanation">#explanation</a></span>
-			<span class="tag"><a href="/tags/database">#database</a></span>
-			</div>
-		<span class="divider"></span>
-		<div>
-			Author: Angelo R.
-		</div>
-	</div>
-	<div class="meta">
-		<div>Pub: 2020-04-29</div>
-		<span class="divider"></span>
-		<div>
-			730 words
-		</div>
-	</div>
-	<div class="toc-block">
-		<h1 class="nocount">What the heck is a Database Index?</h1>
-		<aside class="toc"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#further-reading">Further Reading</a></li>
-  </ol>
-</nav></aside>
-	</div>
-</section>
-<section class="content">
-	<p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
+
+
+    <main>
+      
+<h2>What the heck is a Database Index?</h2>
+<p>When you do a standard <code>select * from table_name where columns=some_value</code> from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard <code>users</code> table</p>
 <pre tabindex="0"><code>+-------------------+
 |       users       |
 +-------------------+
@@ -73,23 +81,31 @@
 <p>As you progress in your database tuning/development life you&rsquo;ll find use-cases where it makes sense to have an index from the start. For example, most &ldquo;user&rdquo; tables will have an index on the username column. This is something that you can then take and implement on your next project!</p>
 <h2 id="further-reading">Further Reading</h2>
 <p>I really recommend you peruse this documentation from mysql on what an index is. While you may be using Postgres/MSSQL - the core concepts of what an index is remains the same. <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql-indexes.html">https://dev.mysql.com/doc/refman/5.7/en/mysql-indexes.html</a></p>
-</section>
 
-<section class="comments">
-  <blockquote>
-    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
-  </blockquote>
-</section>
 
-  </article>
-</main>
+    </main>
+    
 <footer>
-  <div>
-    <div>Copyright © 2011 - 2022</div>
-    <div>
-      <a href="/posts/index.xml">RSS Feed</a>
-    </div>
-  </div>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
 </footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/what-the-heck-is-a-database-index/>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</a>, 2020-04-29</p>
+
+
+
 </body>
-</html>
+     
+ 

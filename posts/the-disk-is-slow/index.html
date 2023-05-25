@@ -1,54 +1,59 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang ="en-US">
+  <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
-<title>The Disk Is Slow - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/txt.css" />
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+The Disk Is Slow | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
 <header>
-  <div>
-	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
-  </div>
-  <nav></nav>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
 </header>
-<main>
-  <article>
-    <section class="front-block">
-	<div class="title">
-		<div class="tags">
-			Tags: <span class="tag"><a href="/tags/explanation">#explanation</a></span>
-			</div>
-		<span class="divider"></span>
-		<div>
-			Author: Angelo R.
-		</div>
-	</div>
-	<div class="meta">
-		<div>Pub: 2020-04-29</div>
-		<span class="divider"></span>
-		<div>
-			2322 words
-		</div>
-	</div>
-	<div class="toc-block">
-		<h1 class="nocount">The Disk Is Slow</h1>
-		<aside class="toc"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#what-is-slow">What is slow?</a></li>
-    <li><a href="#data-fragmentation">Data Fragmentation</a></li>
-    <li><a href="#blocks-and-pages">Blocks and Pages</a></li>
-    <li><a href="#the-problem-with-blocks">The problem with blocks</a></li>
-    <li><a href="#changing-the-game">Changing the game</a></li>
-  </ol>
-</nav></aside>
-	</div>
-</section>
-<section class="content">
-	<p>&ldquo;The disk is slow&rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.</p>
-<p><img src="/img/silver-hard-drive-internals.jpg" alt="Disk"></p>
+
+
+    <main>
+      
+<h2>The Disk Is Slow</h2>
+<p>&ldquo;The disk is slow&rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.</p>
+<p><img src="../../img/silver-hard-drive-internals.jpg" alt="Disk"></p>
 <h2 id="what-is-slow">What is slow?</h2>
 <p>For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute. This is an indication of how quickly the disk can spin. It is common now-days to see drives advertising 7,200 rpm, or 10,000 rpm or even 15,000 rpm. How fancy.</p>
 <p>Now, the disk itself is split into a couple major components:</p>
@@ -120,23 +125,31 @@ Step 5:        cccc0bbb
 <p>How interesting</p>
 <p>It&rsquo;s crazy to think of all that we&rsquo;ve accomplished because of that little mechanical hard-drive. But what&rsquo;s crazier is that we are only able to see this in retrospect. No one was able to see what the result of spinning disk drives would be. No would thought that we would invent so many different file systems to solve the problems. That we would make so many advancements in technology just to store MORE data on the drives. At the time, they were just better than tape. They were simply a step in the chain, that in retrospect, was pretty cool.
 Follow the conversation at HackerNews <a href="https://news.ycombinator.com/item?id=13091192">https://news.ycombinator.com/item?id=13091192</a></p>
-</section>
 
-<section class="comments">
-  <blockquote>
-    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
-  </blockquote>
-</section>
 
-  </article>
-</main>
+    </main>
+    
 <footer>
-  <div>
-    <div>Copyright © 2011 - 2022</div>
-    <div>
-      <a href="/posts/index.xml">RSS Feed</a>
-    </div>
-  </div>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
 </footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/the-disk-is-slow/>https://xangelo.ca/posts/the-disk-is-slow/</a>, 2020-04-29</p>
+
+
+
 </body>
-</html>
+     
+ 

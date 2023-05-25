@@ -14,7 +14,7 @@
       <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/on-call/</guid>
-      <description>On-call is one of those things that all developers end up doing at some point. My goal isn&amp;rsquo;t to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I&amp;rsquo;m going to start at the very beginning because chances are you&amp;rsquo;re already doing it wrong. I should also note that I&amp;rsquo;m looking at this specifically from a SaaS point of view.</description>
+      <description>How to implement a successful on-call process for the first time</description>
     </item>
     
   </channel>

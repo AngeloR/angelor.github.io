@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang ="en-US">
+  <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
-<title>Git Workflows Suck - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/txt.css" />
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+Git Workflows Suck | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
 <header>
-  <div>
-	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
-  </div>
-  <nav></nav>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
 </header>
-<main>
-  <article>
-    <section class="front-block">
-	<div class="title">
-		<div class="tags">
-			Tags: <span class="tag"><a href="/tags/git">#git</a></span>
-			<span class="tag"><a href="/tags/development">#development</a></span>
-			</div>
-		<span class="divider"></span>
-		<div>
-			Author: Angelo R.
-		</div>
-	</div>
-	<div class="meta">
-		<div>Pub: 2021-07-15</div>
-		<span class="divider"></span>
-		<div>
-			2273 words
-		</div>
-	</div>
-	<div class="toc-block">
-		<h1 class="nocount">Git Workflows Suck</h1>
-		<aside class="toc"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#what-is-git">What is git?</a></li>
-    <li><a href="#what-are-forges">What are Forges?</a></li>
-    <li><a href="#the-big-git-workflow-problem">The Big Git Workflow Problem</a>
-      <ol>
-        <li><a href="#commits">Commits</a></li>
-        <li><a href="#pull-requests">Pull Requests</a></li>
-      </ol>
-    </li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ol>
-</nav></aside>
-	</div>
-</section>
-<section class="content">
-	<p>I&rsquo;m tired of all the git workflows. I&rsquo;m tired of talking about the best way to craft commit messages. I&rsquo;m tired of how people pile on the best way to do PRs. I&rsquo;m sick of people picking apart architectural decisions in a PR. I&rsquo;m tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I&rsquo;m over the fact that I don&rsquo;t think I&rsquo;ve ever seen a single person clone a PR locally and actually verify that it does what it says it does.</p>
+
+
+    <main>
+      
+<h2>Git Workflows Suck</h2>
+<p>I&rsquo;m tired of all the git workflows. I&rsquo;m tired of talking about the best way to craft commit messages. I&rsquo;m tired of how people pile on the best way to do PRs. I&rsquo;m sick of people picking apart architectural decisions in a PR. I&rsquo;m tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I&rsquo;m over the fact that I don&rsquo;t think I&rsquo;ve ever seen a single person clone a PR locally and actually verify that it does what it says it does.</p>
 <p>And I don&rsquo;t think I&rsquo;m alone in these problems. Almost every engineering team I&rsquo;ve ever worked with has their own slightly customized git workflow that &ldquo;works&rdquo; for them. And every one has had the same problems I mentioned above. Honestly I think it&rsquo;s just cause no one uses git properly.</p>
 <p>The problem, of course, is not &ldquo;using git&rdquo;. The problem is from all the interconnected bits around it. Writing a commit message is easy. Writing a commit message on code that no one at your company knows anything about, where you&rsquo;re pretty sure it does what you want, is much harder. In order to even talk about &ldquo;using git properly&rdquo; there&rsquo;s so much background that needs to be talked about.</p>
 <h2 id="what-is-git">What is git?</h2>
@@ -108,23 +108,31 @@
 <p>Then there&rsquo;s the Review process. After the code is complete sharing it with others and having them RETRIEVE YOUR CHANGES AND TEST THEM LOCALLY. Testing locally is important for many reasons - often the main one is that your test suite isn&rsquo;t robust enough, or it isn&rsquo;t trustworthy (then delete them, but that&rsquo;s another story). But also it highlights pain points in your development process that you may not deal with always. Missing documentation for how to run something, or how to set up some data for a test. Not being able to run your tests locally because they take too long. Having people really test your code is a great final step to getting your code reviewed.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>This was a lot of text - but thinking about development workflows/optimizations and really understanding where the problems/bottle-necks are is something I&rsquo;m really passionate about. This was also a very high-level introduction to these ideas. There will be a follup post on commits and rebasing itself that will hopefully make things a bit easier for people to understand. If you have any questions, don&rsquo;t hesitate to reach out to me.</p>
-</section>
 
-<section class="comments">
-  <blockquote>
-    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
-  </blockquote>
-</section>
 
-  </article>
-</main>
+    </main>
+    
 <footer>
-  <div>
-    <div>Copyright © 2011 - 2022</div>
-    <div>
-      <a href="/posts/index.xml">RSS Feed</a>
-    </div>
-  </div>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
 </footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/git-workflows/>https://xangelo.ca/posts/git-workflows/</a>, 2021-07-15</p>
+
+
+
 </body>
-</html>
+     
+ 

@@ -1,63 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang ="en-US">
+  <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
-<title>Serverless with CloudFlare Workers - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/txt.css" />
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+Serverless with CloudFlare Workers | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
 <header>
-  <div>
-	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
-  </div>
-  <nav></nav>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
 </header>
-<main>
-  <article>
-    <section class="front-block">
-	<div class="title">
-		<div class="tags">
-			Tags: <span class="tag"><a href="/tags/architecture">#architecture</a></span>
-			<span class="tag"><a href="/tags/lootcap">#lootcap</a></span>
-			</div>
-		<span class="divider"></span>
-		<div>
-			Author: Angelo R.
-		</div>
-	</div>
-	<div class="meta">
-		<div>Pub: 2020-05-07</div>
-		<span class="divider"></span>
-		<div>
-			2025 words
-		</div>
-	</div>
-	<div class="toc-block">
-		<h1 class="nocount">Serverless with CloudFlare Workers</h1>
-		<aside class="toc"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#what-is-lootcap">What is LootCap?</a></li>
-    <li><a href="#planning">Planning</a>
-      <ol>
-        <li><a href="#database-design">Database Design</a></li>
-        <li><a href="#application-architecture">Application Architecture</a></li>
-      </ol>
-    </li>
-    <li><a href="#going-live">Going Live</a>
-      <ol>
-        <li><a href="#heroku">Heroku</a></li>
-        <li><a href="#serverless">Serverless?</a></li>
-        <li><a href="#cloudflare-workers-and-kv">CloudFlare Workers and KV</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav></aside>
-	</div>
-</section>
-<section class="content">
-	<h2 id="what-is-lootcap">What is LootCap?</h2>
+
+
+    <main>
+      
+<h2>Serverless with CloudFlare Workers</h2>
+<h2 id="what-is-lootcap">What is LootCap?</h2>
 <p>Last week we (<a href="https://twitter.com/AdamScochran">Adam Cochran</a> and myself) launched <a href="https://lootcap.com">LootCap</a>. The goal is to provide tracking on a new class of tokens called <a href="https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749">Loot</a>. It&rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself. It never provided any value. It felt like most coins out there were focused on trying to re-create the trajectory of Bitcoin rather than trying to DO anything. Ethereum was different. It was different enough to force me to pay attention. It allows you to run <a href="https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract">Smart Contracts</a>. In recent years you&rsquo;ve likely seen &ldquo;Tokens&rdquo; suddenly gain popularity. Well those are primarily powered by Ethereum. Again, however, it felt like tokens were just trying to recreate the Bitcoin boom.</p>
 <p>Recently however, Loot tokens have become a thing. To condense Adam&rsquo;s <a href="https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749">article</a> (which you should read if you&rsquo;re interested in this stuff)</p>
 <blockquote>
@@ -203,23 +198,31 @@
 <li>Two running API endpoints</li>
 <li>1 Running a static site</li>
 </ol>
-</section>
 
-<section class="comments">
-  <blockquote>
-    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
-  </blockquote>
-</section>
 
-  </article>
-</main>
+    </main>
+    
 <footer>
-  <div>
-    <div>Copyright © 2011 - 2022</div>
-    <div>
-      <a href="/posts/index.xml">RSS Feed</a>
-    </div>
-  </div>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
 </footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/what-is-lootcap/>https://xangelo.ca/posts/what-is-lootcap/</a>, 2020-05-07</p>
+
+
+
 </body>
-</html>
+     
+ 

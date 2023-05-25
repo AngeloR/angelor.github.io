@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Sat, 20 May 2023 23:36:42 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2023 23:29:45 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title> Now Powered by Outlines</title>
+      <title>Now Powered by Outlines</title>
       <link>https://xangelo.ca/posts/outliner_blog_update/</link>
-      <pubDate>Sat, 20 May 2023 23:36:42 -0400</pubDate>
+      <pubDate>Sun, 21 May 2023 23:29:45 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/outliner_blog_update/</guid>
-      <description>Now Powered by Outlines One of the things that I do every so often is completely re-write the backend of my blog. I&amp;rsquo;ve mostly hit upon a UI that I like, but I&amp;rsquo;ve swapped out the backend over the years between various custom iterations, wordpress, ghost, and now finally Hugo. This time, I&amp;rsquo;ve swapped out how I write my blog posts - but kept everything else the same.
-The current system allows me to write markdown in vim.</description>
+      <description>An update to how I publish new posts</description>
     </item>
     
     <item>
@@ -24,7 +23,7 @@ The current system allows me to write markdown in vim.</description>
       <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/on-call/</guid>
-      <description>On-call is one of those things that all developers end up doing at some point. My goal isn&amp;rsquo;t to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I&amp;rsquo;m going to start at the very beginning because chances are you&amp;rsquo;re already doing it wrong. I should also note that I&amp;rsquo;m looking at this specifically from a SaaS point of view.</description>
+      <description>How to implement a successful on-call process for the first time</description>
     </item>
     
     <item>
@@ -33,9 +32,61 @@ The current system allows me to write markdown in vim.</description>
       <pubDate>Thu, 31 Mar 2022 00:07:57 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/default-font/</guid>
-      <description>This is a small change that I&amp;rsquo;ve made to the site that I&amp;rsquo;ve actually been thinking about for quite some time. I&amp;rsquo;ve always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.
-Personally I like monospaced fonts - but then again, I spend a lot of my time looking at them so it&amp;rsquo;s only inevitable.
-However, monospaced fonts arose to solve a technical problem that original typesetters had long since solved.</description>
+      <description>Where I spend too long talking about why I removed the default font temporarily</description>
+    </item>
+    
+    <item>
+      <title>For Online Reading Only</title>
+      <link>https://xangelo.ca/disclaimer/online-only/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/online-only/</guid>
+      <description>No downloadable version is available, this work is only for online reading.</description>
+    </item>
+    
+    <item>
+      <title>Given Publisher is Publisher of an Earlier Version</title>
+      <link>https://xangelo.ca/disclaimer/publisher-formerly/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/publisher-formerly/</guid>
+      <description>The publisher given is the publisher of an earlier version. The version referenced has probably been modified compared with the version originally published by the given publisher.</description>
+    </item>
+    
+    <item>
+      <title>Homepage not Available</title>
+      <link>https://xangelo.ca/disclaimer/homepage-na/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/homepage-na/</guid>
+      <description>There is no homepage available for this book/work. Please verify the copyright status by other means, like consulting the text frontmatter, searching for information using the search engine of your choice or obtain historical information from the wayback machine.</description>
+    </item>
+    
+    <item>
+      <title>No Direct Download Link</title>
+      <link>https://xangelo.ca/disclaimer/no-direct-download/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/no-direct-download/</guid>
+      <description>No direct download link can be provided. According to our understanding, the copyright holders or the authors require that you go via the item homepage.</description>
+    </item>
+    
+    <item>
+      <title>Verify Copyright Despite Direct Download Link</title>
+      <link>https://xangelo.ca/disclaimer/direct-download/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/direct-download/</guid>
+      <description>A direct download link is available, regardless it is strongly recommended that you verify the copyright status, e.g. by consulting the frontmatter or the homepage.</description>
+    </item>
+    
+    <item>
+      <title>Verify the Copyright</title>
+      <link>https://xangelo.ca/disclaimer/verify-copyright/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/verify-copyright/</guid>
+      <description>We are not making legally binding statements on the copright status of the linked work. It is necessary that you verify the copyright status yourself, e.g. by consulting the frontmatter or the homepage.</description>
     </item>
     
     <item>
@@ -44,8 +95,7 @@ However, monospaced fonts arose to solve a technical problem that original types
       <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/gitweb/</guid>
-      <description>Owning Your Digital Space Over the last year or so I&amp;rsquo;ve slowly pushed further and further into the idea of owning your digital space. Part of that has been re-evaluating all of the services online that I think of as &amp;ldquo;necessary&amp;rdquo;. One of these such services has been GitHub.
-The more I dive into development processes the more I find that they are all centered around the idea that in order for you to be a &amp;ldquo;developer&amp;rdquo; it mostly requires that you buy into the idea of centralized forges like GitHub/GitLab.</description>
+      <description>Setting up your own git repo browser</description>
     </item>
     
     <item>
@@ -54,7 +104,7 @@ The more I dive into development processes the more I find that they are all cen
       <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
       
       <guid>https://xangelo.ca/posts/code-reviews-are-failure/</guid>
-      <description>Code Reviews are a Failure As a new startup with one or two engineers on staff, you&amp;rsquo;re very likely not doing code reviews. Engineers at this stage have a very deep understanding of the code - after all, they&amp;rsquo;ve probably written most of it. When it&amp;rsquo;s time for a new feature, these initial developers know exactly how they&amp;rsquo;re going to implement it given the architecture of their code base. Chances are, they keep their own work in a branch, and open a Pull Request or Merge Request, but they aren&amp;rsquo;t asking someone to take a look at it.</description>
+      <description>Code Reviews are nothing more than a half-hearted attempt to avoid planning</description>
     </item>
     
     <item>
@@ -63,9 +113,7 @@ The more I dive into development processes the more I find that they are all cen
       <pubDate>Fri, 16 Jul 2021 16:14:40 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
-      <description>In a previous post, I talked about git workflows and I outlined the two big problems I see with git workflows:
-Pull Requests/Reviews Branching Strategies I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.
-The reason I think branching strategies are such a complicated topic is because it touches more than just git.</description>
+      <description>A topic that every developer in the world has an opinion about</description>
     </item>
     
     <item>
@@ -74,7 +122,7 @@ The reason I think branching strategies are such a complicated topic is because 
       <pubDate>Thu, 15 Jul 2021 12:16:45 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/git-workflows/</guid>
-      <description>I&amp;rsquo;m tired of all the git workflows. I&amp;rsquo;m tired of talking about the best way to craft commit messages. I&amp;rsquo;m tired of how people pile on the best way to do PRs. I&amp;rsquo;m sick of people picking apart architectural decisions in a PR. I&amp;rsquo;m tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I&amp;rsquo;m over the fact that I don&amp;rsquo;t think I&amp;rsquo;ve ever seen a single person clone a PR locally and actually verify that it does what it says it does.</description>
+      <description>Common pitfalls with everyones &amp;ldquo;git process&amp;rdquo;</description>
     </item>
     
     <item>
@@ -83,7 +131,7 @@ The reason I think branching strategies are such a complicated topic is because 
       <pubDate>Mon, 21 Jun 2021 17:11:57 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/gemini-intro/</guid>
-      <description>For the last few months now I&amp;rsquo;ve started embracing my weird love for text and text-related user interfaces. From email to irc, I&amp;rsquo;m moving more and more of my social interactions away from traditional websites/apps and over to my terminal. A big part of this move is a step back from 3rd party applications to things that I have a bit more control over - but there are many reasons.</description>
+      <description>An HTTP alternative</description>
     </item>
     
     <item>
@@ -92,67 +140,7 @@ The reason I think branching strategies are such a complicated topic is because 
       <pubDate>Fri, 23 Apr 2021 09:44:35 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
-      <description>Intro As always, I&amp;rsquo;ve been working on a terrible browser-based game. This time, it will be revolving around gameplay mechanics from roguelikes(or roguelites technically)+jrpgs.
-The thing I specifically want to look at today is the topic of Dungeon Generation - both in and out of code.
-Roguelikes all tend to share one mechanic: Procedurally Generated Dungeons. The idea is that every play-through is different, every floor of a dungeon is completely unique.</description>
-    </item>
-    
-    <item>
-      <title>DEVLOG: NewsRiver Updates</title>
-      <link>https://xangelo.ca/posts/devlog/newsriver/intro/</link>
-      <pubDate>Tue, 10 Nov 2020 09:43:04 -0500</pubDate>
-      
-      <guid>https://xangelo.ca/posts/devlog/newsriver/intro/</guid>
-      <description>What is News River? News River is an auto-updating stream of news that doesn&amp;rsquo;t need to clutter up your RSS feeds. It was based off ideas from Dave Winer. There are some sites that you don&amp;rsquo;t necessarily CARE about reading every single update. Sometimes you just want to see the most recent stuff and move on. Sites like HackerNews and some subreddits (/r/devops or /r/aws) are things that I&amp;rsquo;m curious about more recent things that get up there, but I don&amp;rsquo;t necessarily want to read every single item.</description>
-    </item>
-    
-    <item>
-      <title>DEVLOG: Custom Theme for Hugo</title>
-      <link>https://xangelo.ca/posts/devlog/blog/1/</link>
-      <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/devlog/blog/1/</guid>
-      <description>I&amp;rsquo;ve started working on a custom theme for Hugo1 that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file2 where possible.
-The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend3 who helped me adjust the colors for both dark and light modes to make them a bit more legible.</description>
-    </item>
-    
-    <item>
-      <title>Moving to Hugo and GitHub Pages</title>
-      <link>https://xangelo.ca/posts/hugo-github/</link>
-      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/hugo-github/</guid>
-      <description>Goal I&amp;rsquo;ve been running my blog over on Ghost1 for a few years now. I really don&amp;rsquo;t have a lot of issues with it, except for the fact that I have to manage the server itself. I&amp;rsquo;ve been running a small Digital Ocean VPS for a number of years where I host my blog. Ghost itself goes through a lot of updates and keeping the application up to date was starting to become a hassle.</description>
-    </item>
-    
-    <item>
-      <title>Serverless with CloudFlare Workers</title>
-      <link>https://xangelo.ca/posts/what-is-lootcap/</link>
-      <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/what-is-lootcap/</guid>
-      <description>What is LootCap? Last week we (Adam Cochran and myself) launched LootCap. The goal is to provide tracking on a new class of tokens called Loot. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://xangelo.ca/page/about/</link>
-      <pubDate>Wed, 29 Apr 2020 23:38:37 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/page/about/</guid>
-      <description>Thanks for checking this out! It&amp;rsquo;s been a number of years since I really changed by blog and this time I&amp;rsquo;ve decided to move to an all markdown blog since that&amp;rsquo;s the way I do all my notes.
-Projects:
-This site Sketchy Heroes BitBums </description>
-    </item>
-    
-    <item>
-      <title>The Disk Is Slow</title>
-      <link>https://xangelo.ca/posts/the-disk-is-slow/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
-      <description>&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.
-What is slow? For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute.</description>
+      <description>A simple dungeon generation algorithm for organic rooms</description>
     </item>
     
   </channel>

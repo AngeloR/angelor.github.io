@@ -1,60 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang ="en-US">
+  <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
-<title>DEVLOG: Custom Theme for Hugo - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/txt.css" />
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../../../css/custom.css">
+<title>
+DEVLOG: Custom Theme for Hugo | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
 <header>
-  <div>
-	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
-  </div>
-  <nav></nav>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../../../">Home</a>
+<a href="../../../../tags/">All Categories</a>
+<a href="../../../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
 </header>
-<main>
-  <article>
-    <section class="front-block">
-	<div class="title">
-		<div class="tags">
-			Tags: <span class="tag"><a href="/tags/devlog">#devlog</a></span>
-			<span class="tag"><a href="/tags/blog">#blog</a></span>
-			<span class="tag"><a href="/tags/devlog-blog">#devlog-blog</a></span>
-			</div>
-		<span class="divider"></span>
-		<div>
-			Author: Angelo R.
-		</div>
-	</div>
-	<div class="meta">
-		<div>Pub: 2020-06-10</div>
-		<span class="divider"></span>
-		<div>
-			963 words
-		</div>
-	</div>
-	<div class="toc-block">
-		<h1 class="nocount">DEVLOG: Custom Theme for Hugo</h1>
-		<aside class="toc"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#features">Features</a>
-      <ol>
-        <li><a href="#numbered-headers">Numbered Headers</a></li>
-        <li><a href="#flexible-visual-line-up">Flexible visual line-up</a></li>
-        <li><a href="#darklight-mode">Dark/Light mode</a></li>
-        <li><a href="#support-for-utterances">Support for Utteranc.es</a></li>
-      </ol>
-    </li>
-    <li><a href="#downloadinstall">Download/Install</a></li>
-    <li><a href="#footnotes">Footnotes</a></li>
-  </ol>
-</nav></aside>
-	</div>
-</section>
-<section class="content">
-	<p>I&rsquo;ve started working on a custom theme for Hugo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> where possible.</p>
+
+
+    <main>
+      
+<h2>DEVLOG: Custom Theme for Hugo</h2>
+<p>I&rsquo;ve started working on a custom theme for Hugo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> where possible.</p>
 <p>The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> who helped me adjust the colors for both dark and light modes to make them a bit more legible.</p>
 <p>The two complicated components and 1 simple component are outlined below.</p>
 <h2 id="features">Features</h2>
@@ -96,7 +94,7 @@
 <p>I&rsquo;ve also included provisions for ensuring that you can skip incrementing the counters if you add a <code>.nocount</code> class to any header.</p>
 <h3 id="flexible-visual-line-up">Flexible visual line-up</h3>
 <p>This was probably the hardest part.</p>
-<p><img src="/img/devlog/blog/flexible-line.png" alt="flexible-line"></p>
+<p><img src="../../../../img/devlog/blog/flexible-line.png" alt="flexible-line"></p>
 <p>That dashed line that lets you link a post with the corresponding date. Both elements are positioned at the exterior of their boxes, and the titles have a varying width.</p>
 <p>In order to accomplish this I ended up needing to introduce a 3rd element, the line itself. However, I can&rsquo;t actually use an <code>&lt;hr /&gt;</code> tag because I want to work towards supporting screen readers.. and those tags get interpreted as dividers between content.</p>
 <p>The article list is an unordered list, so the HTML code looks like this:</p>
@@ -223,23 +221,31 @@
 </li>
 </ol>
 </div>
-</section>
 
-<section class="comments">
-  <blockquote>
-    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
-  </blockquote>
-</section>
 
-  </article>
-</main>
+    </main>
+    
 <footer>
-  <div>
-    <div>Copyright © 2011 - 2022</div>
-    <div>
-      <a href="/posts/index.xml">RSS Feed</a>
-    </div>
-  </div>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
 </footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../../../posts/devlog/blog/1/>https://xangelo.ca/posts/devlog/blog/1/</a>, 2020-06-10</p>
+
+
+
 </body>
-</html>
+     
+ 

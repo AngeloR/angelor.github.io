@@ -95,4 +95,7 @@ For now, scp is fine - but I'll probably just set up a gemini submodule/repo and
 => gemini://gemini.circumlunar.space [14] gemini space (gemini://gemini.circumlunar.space)
 
 
+## Related articles
+
+=> /gemini/posts/default-font/index.gmi Removing the Default Font: <no value>
 ---

@@ -143,5 +143,5 @@ If you do end up using it and come across any bugs, please let me know over on G
 
 ## Related articles
 
-=> /gemini/posts/outliner_blog_update/index.gmi  Now Powered by Outlines: <no value>
+=> /gemini/posts/outliner_blog_update/index.gmi Now Powered by Outlines: <no value>
 ---

@@ -1,47 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang ="en-US">
+  <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
-<title>DEVLOG: NewsRiver Updates - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/txt.css" />
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../../../css/custom.css">
+<title>
+DEVLOG: NewsRiver Updates | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
 <header>
-  <div>
-	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
-  </div>
-  <nav></nav>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../../../">Home</a>
+<a href="../../../../tags/">All Categories</a>
+<a href="../../../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
 </header>
-<main>
-  <article>
-    <section class="front-block">
-	<div class="title">
-		<span class="divider"></span>
-		<div>
-			Author: Angelo R.
-		</div>
-	</div>
-	<div class="meta">
-		<div>Pub: 2020-11-10</div>
-		<span class="divider"></span>
-		<div>
-			502 words
-		</div>
-	</div>
-	<div class="toc-block">
-		<h1 class="nocount">DEVLOG: NewsRiver Updates</h1>
-		<aside class="toc"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#what-is-news-river">What is News River?</a></li>
-    <li><a href="#sqlite3">Sqlite3</a></li>
-  </ol>
-</nav></aside>
-	</div>
-</section>
-<section class="content">
-	<h2 id="what-is-news-river">What is News River?</h2>
+
+
+    <main>
+      
+<h2>DEVLOG: NewsRiver Updates</h2>
+<h2 id="what-is-news-river">What is News River?</h2>
 <p><a href="https://newsriver.xangelo.ca">News River</a> is an auto-updating stream of news that doesn&rsquo;t need to clutter up your RSS feeds. It was based off ideas from <a href="https://scripting.com">Dave Winer</a>. There are some sites that you don&rsquo;t necessarily CARE about reading every single update. Sometimes you just want to see the most recent stuff and move on. Sites like <a href="https://news.ycombinator.com">HackerNews</a> and some subreddits (<a href="https://reddit.com/r/devops">/r/devops</a> or <a href="https://reddit.com/r/aws">/r/aws</a>) are things that I&rsquo;m curious about more recent things that get up there, but I don&rsquo;t necessarily want to read every single item. Normally I&rsquo;m just skimming for interesting titles.</p>
 <p>I used to have these things synced up to my RSS reader, but the sheer number of updates to them caused me to go insane. There&rsquo;s no reasonable way to keep up with all of that stuff. So I had to pull them and then just.. remember to go there. Eventually I got tired of that and wrote the first News River system. You provide a list of sources (RSS or RedditJSON) and it will periodically scan them, download the items, save them, and serve them up for you to see in a simple little auto-updating front-end.</p>
 <p>It was a pretty handy tool that was written in Node.js and relied on Redis as the backend storage, with everything hosted on Heroku. It was written at a time when I was really digging into various Redis use cases and the free-form nature was a useful thing when trying to figure out the project. However, due to the nature of Redis I had to jump through quite a few loops to &ldquo;optimize&rdquo; queries. It had a strange bucketing system for the keys that allowed me to query all updates in the last 10 minutes by grouping all updates into sets where the key was in 5 minute intervals. It was a crazy system and honestly most of the code was handling the bucketing+tests for it.</p>
@@ -49,23 +60,31 @@
 <p>The latest version of NewsRiver actually rips out Redis and replaces it with Sqlite3. The crazy bucketing system no longer exists since I can just sort by rounded date values. By utilizing sqlite3 instead of Redis I was able to move the entire system over to a small VPS that I ran and eliminate the heroku requirement for running it. The move to sqlite3 was really pushed by the need to simplify the code base.</p>
 <p>NewsRiver is not a project I want to keep tinkering with. I&rsquo;d like it to be complete and to be able to use it daily without making a bunch of tweaks. But the date code had become unwieldy and as a result I spent most of time reviewing it to make sure I wasn&rsquo;t breaking it when fixing things. Moving to sqlite3 allowed me to drop that whole system, delete a ton of code, and just move to something that didn&rsquo;t really require a lot of explanation/documentation.</p>
 <p>Eventually we can replace the sqlite3 only setup by utilizing something like <code>knex</code> to allow for a swappable data storage layer.</p>
-</section>
 
-<section class="comments">
-  <blockquote>
-    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
-  </blockquote>
-</section>
 
-  </article>
-</main>
+    </main>
+    
 <footer>
-  <div>
-    <div>Copyright © 2011 - 2022</div>
-    <div>
-      <a href="/posts/index.xml">RSS Feed</a>
-    </div>
-  </div>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
 </footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../../../posts/devlog/newsriver/intro/>https://xangelo.ca/posts/devlog/newsriver/intro/</a>, 2020-11-10</p>
+
+
+
 </body>
-</html>
+     
+ 

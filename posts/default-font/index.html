@@ -1,65 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang ="en-US">
+  <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS Feed" href="https://xangelo.caposts/index.xml">
-<title>Removing the Default Font - Xangelo.ca</title>
-<link rel="stylesheet" type="text/css" href="/css/txt.css" />
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+Removing the Default Font | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
 <header>
-  <div>
-	<a href="https://xangelo.ca">Xangelo.ca</a> - <span class="tagline">Technical musings and other tidbits</span>
-  </div>
-  <nav></nav>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
 </header>
-<main>
-  <article>
-    <section class="front-block">
-	<div class="title">
-		<div class="tags">
-			Tags: <span class="tag"><a href="/tags/upkeep">#upkeep</a></span>
-			<span class="tag"><a href="/tags/fonts">#fonts</a></span>
-			</div>
-		<span class="divider"></span>
-		<div>
-			Author: Angelo R.
-		</div>
-	</div>
-	<div class="meta">
-		<div>Pub: 2022-03-31</div>
-		<span class="divider"></span>
-		<div>
-			616 words
-		</div>
-	</div>
-	<div class="toc-block">
-		<h1 class="nocount">Removing the Default Font</h1>
-		<aside class="toc"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#monospaced-font">Monospaced Font</a></li>
-    <li><a href="#proportional-font">Proportional Font</a></li>
-    <li><a href="#why-does-any-of-this-matter">Why does any of this matter?</a></li>
-    <li><a href="#appendix">Appendix</a></li>
-  </ol>
-</nav></aside>
-	</div>
-</section>
-<section class="content">
-	<p>This is a small change that I&rsquo;ve made to the site that I&rsquo;ve actually been thinking about for quite some time. I&rsquo;ve always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.</p>
+
+
+    <main>
+      
+<h2>Removing the Default Font</h2>
+<p>This is a small change that I&rsquo;ve made to the site that I&rsquo;ve actually been thinking about for quite some time. I&rsquo;ve always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.</p>
 <p>Personally I like monospaced fonts - but then again, I spend a lot of my time looking at them so it&rsquo;s only inevitable.</p>
 <p>However, monospaced fonts arose to solve a technical problem that original typesetters had long since solved.</p>
 <h2 id="monospaced-font">Monospaced Font</h2>
 <p>A monospaced font is a font that has a &ldquo;fixed with&rdquo;. When you look at a word in a monospaced font, it&rsquo;s not that each character is the same size, but rather the area that contains each character is the same size.</p>
-<p><img src="/img/monospace.png" alt="Font Spaces"></p>
+<p><img src="../../img/monospace.png" alt="Font Spaces"></p>
 <p>In this image we can see how a monospace font is &ldquo;set&rdquo;. Whenever a character appears on the screen, these &ldquo;boxes&rdquo; surrounding them denote their bounds. In a monospace&rsquo;f font, the bounding box for each character is the same size. The size of the character and its placement within the box may vary - but by standardizing on the bounding box size it will appear that each character is the same &ldquo;width&rdquo;.</p>
 <p>This is very cool stuff.</p>
 <p>Since each character has a bounding box that&rsquo;s the same size as every other character we actually run into a very specific instance of a cool typography side-effect known as <a href="https://en.wikipedia.org/wiki/River_(typography)">Rivers</a>. Each character aligns itself perfectly with the character above and below it, creating a giant grid of characters on your screen.</p>
 <p>But this isn&rsquo;t always the best for reading.</p>
 <h2 id="proportional-font">Proportional Font</h2>
 <p>A proportional font is one that allows the bounding box for any individual character to vary. This has the side-effect of allowing for much narrow kerning (the space between letters) and does 100% lead to improved legibility (see <a href="https://journals.sagepub.com/doi/pdf/10.1177/001872088302500303">this study here</a>).</p>
-<p><img src="/img/proportional.png" alt="Proportional Font"></p>
+<p><img src="../../img/proportional.png" alt="Proportional Font"></p>
 <p>By varying the kerning and allowing each character to use as much space as it needs, font designers can really tweak the legibility of the font.</p>
 <h2 id="why-does-any-of-this-matter">Why does any of this matter?</h2>
 <p>We know that monospaced fonts improve the legibility of text in SOME cases, like reading code or if the reader has a disability like dyslexia. In all other cases, proportional fonts improve legibility. Serifs in generally tend to be chosen by popular type users (newspapers for example) because of their legibility.</p>
@@ -67,23 +72,31 @@
 <p>I&rsquo;ve since decided to remove that setting, allowing your browser/system defaults to set the primary font on the site. After all, what matters on this site is the content and you should be able to view that as you&rsquo;d like.</p>
 <h2 id="appendix">Appendix</h2>
 <p>The study linked looks specifically at fixed vs. variable letter width (monospace vs. proportional) for televised text. This is particularly relevant since we&rsquo;re talking about screens rather than print. The differences cited are also quite marginal - but that&rsquo;s the point of this font change. To the majority of users it won&rsquo;t make a difference, but to a small few it will matter a lot.</p>
-</section>
 
-<section class="comments">
-  <blockquote>
-    <p>If you have a comment, feel free to send me an email: me@[hostname]</p>
-  </blockquote>
-</section>
 
-  </article>
-</main>
+    </main>
+    
 <footer>
-  <div>
-    <div>Copyright © 2011 - 2022</div>
-    <div>
-      <a href="/posts/index.xml">RSS Feed</a>
-    </div>
-  </div>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
 </footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/default-font/>https://xangelo.ca/posts/default-font/</a>, 2022-03-31</p>
+
+
+
 </body>
-</html>
+     
+ 

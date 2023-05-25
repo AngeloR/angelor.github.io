@@ -14,8 +14,7 @@
       <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/gitweb/</guid>
-      <description>Owning Your Digital Space Over the last year or so I&amp;rsquo;ve slowly pushed further and further into the idea of owning your digital space. Part of that has been re-evaluating all of the services online that I think of as &amp;ldquo;necessary&amp;rdquo;. One of these such services has been GitHub.
-The more I dive into development processes the more I find that they are all centered around the idea that in order for you to be a &amp;ldquo;developer&amp;rdquo; it mostly requires that you buy into the idea of centralized forges like GitHub/GitLab.</description>
+      <description>Setting up your own git repo browser</description>
     </item>
     
     <item>
@@ -24,7 +23,7 @@ The more I dive into development processes the more I find that they are all cen
       <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
       
       <guid>https://xangelo.ca/posts/code-reviews-are-failure/</guid>
-      <description>Code Reviews are a Failure As a new startup with one or two engineers on staff, you&amp;rsquo;re very likely not doing code reviews. Engineers at this stage have a very deep understanding of the code - after all, they&amp;rsquo;ve probably written most of it. When it&amp;rsquo;s time for a new feature, these initial developers know exactly how they&amp;rsquo;re going to implement it given the architecture of their code base. Chances are, they keep their own work in a branch, and open a Pull Request or Merge Request, but they aren&amp;rsquo;t asking someone to take a look at it.</description>
+      <description>Code Reviews are nothing more than a half-hearted attempt to avoid planning</description>
     </item>
     
     <item>
@@ -33,9 +32,7 @@ The more I dive into development processes the more I find that they are all cen
       <pubDate>Fri, 16 Jul 2021 16:14:40 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
-      <description>In a previous post, I talked about git workflows and I outlined the two big problems I see with git workflows:
-Pull Requests/Reviews Branching Strategies I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.
-The reason I think branching strategies are such a complicated topic is because it touches more than just git.</description>
+      <description>A topic that every developer in the world has an opinion about</description>
     </item>
     
     <item>
@@ -44,7 +41,7 @@ The reason I think branching strategies are such a complicated topic is because 
       <pubDate>Thu, 15 Jul 2021 12:16:45 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/git-workflows/</guid>
-      <description>I&amp;rsquo;m tired of all the git workflows. I&amp;rsquo;m tired of talking about the best way to craft commit messages. I&amp;rsquo;m tired of how people pile on the best way to do PRs. I&amp;rsquo;m sick of people picking apart architectural decisions in a PR. I&amp;rsquo;m tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I&amp;rsquo;m over the fact that I don&amp;rsquo;t think I&amp;rsquo;ve ever seen a single person clone a PR locally and actually verify that it does what it says it does.</description>
+      <description>Common pitfalls with everyones &amp;ldquo;git process&amp;rdquo;</description>
     </item>
     
   </channel>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>engineering processes on Xangelo.ca</title>
+    <link>https://xangelo.ca/tags/engineering-processes/</link>
+    <description>Recent content in engineering processes on Xangelo.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2011 - 2022</copyright>
+    <lastBuildDate>Wed, 21 Sep 2022 22:36:23 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/engineering-processes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing On-Call</title>
+      <link>https://xangelo.ca/posts/on-call/</link>
+      <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/on-call/</guid>
+      <description>How to implement a successful on-call process for the first time</description>
+    </item>
+    
+    <item>
+      <title>Code Reviews Are Failure</title>
+      <link>https://xangelo.ca/posts/code-reviews-are-failure/</link>
+      <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
+      
+      <guid>https://xangelo.ca/posts/code-reviews-are-failure/</guid>
+      <description>Code Reviews are nothing more than a half-hearted attempt to avoid planning</description>
+    </item>
+    
+    <item>
+      <title>Git Branching Strategies</title>
+      <link>https://xangelo.ca/posts/git-branching-strategies/</link>
+      <pubDate>Fri, 16 Jul 2021 16:14:40 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
+      <description>A topic that every developer in the world has an opinion about</description>
+    </item>
+    
+    <item>
+      <title>Git Workflows Suck</title>
+      <link>https://xangelo.ca/posts/git-workflows/</link>
+      <pubDate>Thu, 15 Jul 2021 12:16:45 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/git-workflows/</guid>
+      <description>Common pitfalls with everyones &amp;ldquo;git process&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

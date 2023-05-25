@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Sat, 20 May 2023 23:36:42 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2023 23:29:45 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title> Now Powered by Outlines</title>
+      <title>Now Powered by Outlines</title>
       <link>https://xangelo.ca/posts/outliner_blog_update/</link>
-      <pubDate>Sat, 20 May 2023 23:36:42 -3600</pubDate>
+      <pubDate>Sun, 21 May 2023 23:29:45 -2900</pubDate>
       
       <guid>https://xangelo.ca/posts/outliner_blog_update/</guid>
-      <description>&lt;h1 id=&#34;now-powered-by-outlines&#34;&gt;Now Powered by Outlines&lt;/h1&gt;
-&lt;p&gt;One of the things that I do every so often is completely re-write the backend of my blog. I&amp;rsquo;ve mostly hit upon a UI that I like, but I&amp;rsquo;ve swapped out the backend over the years between various custom iterations, wordpress, ghost, and now finally Hugo. This time, I&amp;rsquo;ve swapped out how I write my blog posts - but kept everything else the same.&lt;/p&gt;
+      <description>&lt;p&gt;One of the things that I do every so often is completely re-write the backend of my blog. I&amp;rsquo;ve mostly hit upon a UI that I like, but I&amp;rsquo;ve swapped out the backend over the years between various custom iterations, wordpress, ghost, and now finally Hugo. This time, I&amp;rsquo;ve swapped out how I write my blog posts - but kept everything else the same.&lt;/p&gt;
 &lt;p&gt;The current system allows me to write markdown in vim. I&amp;rsquo;m normally running &lt;code&gt;hugo serve -w&lt;/code&gt; at the same time so I can watch the rendered version of what I&amp;rsquo;m doing as I go. It&amp;rsquo;s sort of like a hacked-together live preview. It works well enough.&lt;/p&gt;
 &lt;p&gt;However, for the last 10 years (maybe more?) I&amp;rsquo;ve been a huge fan of outliners. I original started with various projects by &lt;a href=&#34;https://scripting.com&#34;&gt;Dave Winer&lt;/a&gt; and I used almost everything he&amp;rsquo;s written around them for a number of years. I&amp;rsquo;ve also tried tooling like &lt;a href=&#34;https://workflowy.com&#34;&gt;Workflowy&lt;/a&gt; and almost every other infinite-bullet-list tool that came after them. They were all.. fine? I had no real problems with them except that they never really stuck around for very long. They were in a tab in my browser, and my browser has like 100 tabs open at any given time. &lt;/p&gt;
 &lt;p&gt;For the last 6 months or so, however, I&amp;rsquo;ve been working on my own outliner. It started as an in-browser tool&amp;hellip; and I quickly moved it to an offline-first desktop app via &lt;a href=&#34;https://tauri.app&#34;&gt;Tauri&lt;/a&gt;. Having it offline first meant a few big things.&lt;/p&gt;
@@ -193,14 +192,14 @@
 &lt;p&gt;However, monospaced fonts arose to solve a technical problem that original typesetters had long since solved.&lt;/p&gt;
 &lt;h2 id=&#34;monospaced-font&#34;&gt;Monospaced Font&lt;/h2&gt;
 &lt;p&gt;A monospaced font is a font that has a &amp;ldquo;fixed with&amp;rdquo;. When you look at a word in a monospaced font, it&amp;rsquo;s not that each character is the same size, but rather the area that contains each character is the same size.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://xangelo.ca/img/monospace.png&#34; alt=&#34;Font Spaces&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/monospace.png&#34; alt=&#34;Font Spaces&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In this image we can see how a monospace font is &amp;ldquo;set&amp;rdquo;. Whenever a character appears on the screen, these &amp;ldquo;boxes&amp;rdquo; surrounding them denote their bounds. In a monospace&amp;rsquo;f font, the bounding box for each character is the same size. The size of the character and its placement within the box may vary - but by standardizing on the bounding box size it will appear that each character is the same &amp;ldquo;width&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;This is very cool stuff.&lt;/p&gt;
 &lt;p&gt;Since each character has a bounding box that&amp;rsquo;s the same size as every other character we actually run into a very specific instance of a cool typography side-effect known as &lt;a href=&#34;https://en.wikipedia.org/wiki/River_(typography)&#34;&gt;Rivers&lt;/a&gt;. Each character aligns itself perfectly with the character above and below it, creating a giant grid of characters on your screen.&lt;/p&gt;
 &lt;p&gt;But this isn&amp;rsquo;t always the best for reading.&lt;/p&gt;
 &lt;h2 id=&#34;proportional-font&#34;&gt;Proportional Font&lt;/h2&gt;
 &lt;p&gt;A proportional font is one that allows the bounding box for any individual character to vary. This has the side-effect of allowing for much narrow kerning (the space between letters) and does 100% lead to improved legibility (see &lt;a href=&#34;https://journals.sagepub.com/doi/pdf/10.1177/001872088302500303&#34;&gt;this study here&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://xangelo.ca/img/proportional.png&#34; alt=&#34;Proportional Font&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/proportional.png&#34; alt=&#34;Proportional Font&#34;&gt;&lt;/p&gt;
 &lt;p&gt;By varying the kerning and allowing each character to use as much space as it needs, font designers can really tweak the legibility of the font.&lt;/p&gt;
 &lt;h2 id=&#34;why-does-any-of-this-matter&#34;&gt;Why does any of this matter?&lt;/h2&gt;
 &lt;p&gt;We know that monospaced fonts improve the legibility of text in SOME cases, like reading code or if the reader has a disability like dyslexia. In all other cases, proportional fonts improve legibility. Serifs in generally tend to be chosen by popular type users (newspapers for example) because of their legibility.&lt;/p&gt;
@@ -445,7 +444,7 @@ up.&lt;/p&gt;
       <pubDate>Fri, 16 Jul 2021 16:14:40 -1400</pubDate>
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
-      <description>&lt;p&gt;In a &lt;a href=&#34;https://xangelo.ca/posts/git-workflows/&#34;&gt;previous&lt;/a&gt; post, I talked about git workflows and I outlined the two big problems I see with git workflows:&lt;/p&gt;
+      <description>&lt;p&gt;In a &lt;a href=&#34;../posts/git-workflows/&#34;&gt;previous&lt;/a&gt; post, I talked about git workflows and I outlined the two big problems I see with git workflows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Pull Requests/Reviews&lt;/li&gt;
 &lt;li&gt;Branching Strategies&lt;/li&gt;
@@ -845,7 +844,7 @@ in a real dungeon..&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve also included provisions for ensuring that you can skip incrementing the counters if you add a &lt;code&gt;.nocount&lt;/code&gt; class to any header.&lt;/p&gt;
 &lt;h3 id=&#34;flexible-visual-line-up&#34;&gt;Flexible visual line-up&lt;/h3&gt;
 &lt;p&gt;This was probably the hardest part.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://xangelo.ca/img/devlog/blog/flexible-line.png&#34; alt=&#34;flexible-line&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/devlog/blog/flexible-line.png&#34; alt=&#34;flexible-line&#34;&gt;&lt;/p&gt;
 &lt;p&gt;That dashed line that lets you link a post with the corresponding date. Both elements are positioned at the exterior of their boxes, and the titles have a varying width.&lt;/p&gt;
 &lt;p&gt;In order to accomplish this I ended up needing to introduce a 3rd element, the line itself. However, I can&amp;rsquo;t actually use an &lt;code&gt;&amp;lt;hr /&amp;gt;&lt;/code&gt; tag because I want to work towards supporting screen readers.. and those tags get interpreted as dividers between content.&lt;/p&gt;
 &lt;p&gt;The article list is an unordered list, so the HTML code looks like this:&lt;/p&gt;
@@ -1330,7 +1329,7 @@ in a real dungeon..&lt;/p&gt;
       
       <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
       <description>&lt;p&gt;&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://xangelo.ca/img/silver-hard-drive-internals.jpg&#34; alt=&#34;Disk&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/silver-hard-drive-internals.jpg&#34; alt=&#34;Disk&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-is-slow&#34;&gt;What is slow?&lt;/h2&gt;
 &lt;p&gt;For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute. This is an indication of how quickly the disk can spin. It is common now-days to see drives advertising 7,200 rpm, or 10,000 rpm or even 15,000 rpm. How fancy.&lt;/p&gt;
 &lt;p&gt;Now, the disk itself is split into a couple major components:&lt;/p&gt;

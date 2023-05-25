@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Disclaimers on Xangelo.ca</title>
+    <link>https://xangelo.ca/disclaimer/</link>
+    <description>Recent content in Disclaimers on Xangelo.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2011 - 2022</copyright>
+    <lastBuildDate>Wed, 30 Mar 2022 18:50:14 +0200</lastBuildDate><atom:link href="https://xangelo.ca/disclaimer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>For Online Reading Only</title>
+      <link>https://xangelo.ca/disclaimer/online-only/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/online-only/</guid>
+      <description>No downloadable version is available, this work is only for online reading.</description>
+    </item>
+    
+    <item>
+      <title>Given Publisher is Publisher of an Earlier Version</title>
+      <link>https://xangelo.ca/disclaimer/publisher-formerly/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/publisher-formerly/</guid>
+      <description>The publisher given is the publisher of an earlier version. The version referenced has probably been modified compared with the version originally published by the given publisher.</description>
+    </item>
+    
+    <item>
+      <title>Homepage not Available</title>
+      <link>https://xangelo.ca/disclaimer/homepage-na/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/homepage-na/</guid>
+      <description>There is no homepage available for this book/work. Please verify the copyright status by other means, like consulting the text frontmatter, searching for information using the search engine of your choice or obtain historical information from the wayback machine.</description>
+    </item>
+    
+    <item>
+      <title>No Direct Download Link</title>
+      <link>https://xangelo.ca/disclaimer/no-direct-download/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/no-direct-download/</guid>
+      <description>No direct download link can be provided. According to our understanding, the copyright holders or the authors require that you go via the item homepage.</description>
+    </item>
+    
+    <item>
+      <title>Verify Copyright Despite Direct Download Link</title>
+      <link>https://xangelo.ca/disclaimer/direct-download/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/direct-download/</guid>
+      <description>A direct download link is available, regardless it is strongly recommended that you verify the copyright status, e.g. by consulting the frontmatter or the homepage.</description>
+    </item>
+    
+    <item>
+      <title>Verify the Copyright</title>
+      <link>https://xangelo.ca/disclaimer/verify-copyright/</link>
+      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
+      
+      <guid>https://xangelo.ca/disclaimer/verify-copyright/</guid>
+      <description>We are not making legally binding statements on the copright status of the linked work. It is necessary that you verify the copyright status yourself, e.g. by consulting the frontmatter or the homepage.</description>
+    </item>
+    
+  </channel>
+</rss>

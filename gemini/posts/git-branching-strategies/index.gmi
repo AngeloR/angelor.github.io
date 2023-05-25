@@ -82,7 +82,7 @@ These branching strategies sound great - but branching strategies aren't an isol
 
 ## Related articles
 
+=> /gemini/posts/on-call/index.gmi Designing On-Call: <no value>
 => /gemini/posts/gitweb/index.gmi gitweb - a GitHub/GitLab alternative: <no value>
 => /gemini/posts/code-reviews-are-failure/index.gmi Code Reviews Are Failure: <no value>
-=> /gemini/posts/git-workflows/index.gmi Git Workflows Suck: <no value>
 ---

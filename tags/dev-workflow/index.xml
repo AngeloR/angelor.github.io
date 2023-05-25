@@ -14,9 +14,7 @@
       <pubDate>Fri, 16 Jul 2021 16:14:40 -0400</pubDate>
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
-      <description>In a previous post, I talked about git workflows and I outlined the two big problems I see with git workflows:
-Pull Requests/Reviews Branching Strategies I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.
-The reason I think branching strategies are such a complicated topic is because it touches more than just git.</description>
+      <description>A topic that every developer in the world has an opinion about</description>
     </item>
     
   </channel>

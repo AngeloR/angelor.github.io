@@ -1,0 +1,20 @@
+# Verify Copyright Despite Direct Download Link
+
+
+=> gemini://gemini.xangelo.ca/disclaimer/no-direct-download/index.gmi ← Newer: No Direct Download Link
+=> gemini://gemini.xangelo.ca/disclaimer/verify-copyright/index.gmi → Older: Verify the Copyright
+
+We have given a direct download link to the book/work, since this is,
+to our understanding, permitted in this case. Regardless we strongly
+recommend that you do not just download from the provided link, but
+check the copyright status (what you are allowed to do with the
+book/work) on the homepage of the book/work.
+
+
+
+---
+## References
+
+
+
+---
