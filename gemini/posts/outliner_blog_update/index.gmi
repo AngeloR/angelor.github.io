@@ -1,7 +1,7 @@
 # Now Powered by Outlines
 
 
-
+=> gemini://gemini.xangelo.ca/daily/2023/may/24/index.gmi ← Newer: Thursday, May 24, 2023
 => gemini://gemini.xangelo.ca/posts/on-call/index.gmi → Older: Designing On-Call
 
 

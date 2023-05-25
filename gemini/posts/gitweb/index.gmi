@@ -1,7 +1,7 @@
 # gitweb - a GitHub/GitLab alternative
 
 
-=> gemini://gemini.xangelo.ca/disclaimer/verify-copyright/index.gmi ← Newer: Verify the Copyright
+=> gemini://gemini.xangelo.ca/posts/default-font/index.gmi ← Newer: Removing the Default Font
 => gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi → Older: Code Reviews Are Failure
 
 ## Owning Your Digital Space

@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Sun, 21 May 2023 23:29:45 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 May 2023 23:11:51 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thursday, May 24, 2023</title>
+      <link>https://xangelo.ca/daily/2023/may/24/</link>
+      <pubDate>Wed, 24 May 2023 23:11:51 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/may/24/</guid>
+      <description>I&amp;rsquo;m attempting to adopt Dave Winer&amp;rsquo;s posting setup of daily updates. I realize there&amp;rsquo;s so much that I want to just say over the course of the day. Some of it might morph into full blown posts.. some of it will just disappear. I originally thought I would try and transition some into &amp;ldquo;tweets&amp;rdquo; and &amp;ldquo;toots&amp;rdquo; or whatever mastodon calls them.. but for now they&amp;rsquo;ll just live here.
+I moved to hugo about a year ago, mostly to gain the easy github pages integration&amp;hellip; I&amp;rsquo;m only now beginning to discover some of the neat details that made it so popular.</description>
+    </item>
+    
     <item>
       <title>Now Powered by Outlines</title>
       <link>https://xangelo.ca/posts/outliner_blog_update/</link>
@@ -33,60 +43,6 @@
       
       <guid>https://xangelo.ca/posts/default-font/</guid>
       <description>Where I spend too long talking about why I removed the default font temporarily</description>
-    </item>
-    
-    <item>
-      <title>For Online Reading Only</title>
-      <link>https://xangelo.ca/disclaimer/online-only/</link>
-      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
-      
-      <guid>https://xangelo.ca/disclaimer/online-only/</guid>
-      <description>No downloadable version is available, this work is only for online reading.</description>
-    </item>
-    
-    <item>
-      <title>Given Publisher is Publisher of an Earlier Version</title>
-      <link>https://xangelo.ca/disclaimer/publisher-formerly/</link>
-      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
-      
-      <guid>https://xangelo.ca/disclaimer/publisher-formerly/</guid>
-      <description>The publisher given is the publisher of an earlier version. The version referenced has probably been modified compared with the version originally published by the given publisher.</description>
-    </item>
-    
-    <item>
-      <title>Homepage not Available</title>
-      <link>https://xangelo.ca/disclaimer/homepage-na/</link>
-      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
-      
-      <guid>https://xangelo.ca/disclaimer/homepage-na/</guid>
-      <description>There is no homepage available for this book/work. Please verify the copyright status by other means, like consulting the text frontmatter, searching for information using the search engine of your choice or obtain historical information from the wayback machine.</description>
-    </item>
-    
-    <item>
-      <title>No Direct Download Link</title>
-      <link>https://xangelo.ca/disclaimer/no-direct-download/</link>
-      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
-      
-      <guid>https://xangelo.ca/disclaimer/no-direct-download/</guid>
-      <description>No direct download link can be provided. According to our understanding, the copyright holders or the authors require that you go via the item homepage.</description>
-    </item>
-    
-    <item>
-      <title>Verify Copyright Despite Direct Download Link</title>
-      <link>https://xangelo.ca/disclaimer/direct-download/</link>
-      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
-      
-      <guid>https://xangelo.ca/disclaimer/direct-download/</guid>
-      <description>A direct download link is available, regardless it is strongly recommended that you verify the copyright status, e.g. by consulting the frontmatter or the homepage.</description>
-    </item>
-    
-    <item>
-      <title>Verify the Copyright</title>
-      <link>https://xangelo.ca/disclaimer/verify-copyright/</link>
-      <pubDate>Wed, 30 Mar 2022 18:50:14 +0200</pubDate>
-      
-      <guid>https://xangelo.ca/disclaimer/verify-copyright/</guid>
-      <description>We are not making legally binding statements on the copright status of the linked work. It is necessary that you verify the copyright status yourself, e.g. by consulting the frontmatter or the homepage.</description>
     </item>
     
     <item>
@@ -141,6 +97,52 @@
       
       <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
       <description>A simple dungeon generation algorithm for organic rooms</description>
+    </item>
+    
+    <item>
+      <title>DEVLOG: NewsRiver Updates</title>
+      <link>https://xangelo.ca/posts/devlog/newsriver/intro/</link>
+      <pubDate>Tue, 10 Nov 2020 09:43:04 -0500</pubDate>
+      
+      <guid>https://xangelo.ca/posts/devlog/newsriver/intro/</guid>
+      <description>A River-of-News style RSS Reader</description>
+    </item>
+    
+    <item>
+      <title>DEVLOG: Custom Theme for Hugo</title>
+      <link>https://xangelo.ca/posts/devlog/blog/1/</link>
+      <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/devlog/blog/1/</guid>
+      <description>I&amp;rsquo;ve started working on a custom theme for Hugo1 that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file2 where possible.
+The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend3 who helped me adjust the colors for both dark and light modes to make them a bit more legible.</description>
+    </item>
+    
+    <item>
+      <title>Moving to Hugo and GitHub Pages</title>
+      <link>https://xangelo.ca/posts/hugo-github/</link>
+      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/hugo-github/</guid>
+      <description>Goal I&amp;rsquo;ve been running my blog over on Ghost1 for a few years now. I really don&amp;rsquo;t have a lot of issues with it, except for the fact that I have to manage the server itself. I&amp;rsquo;ve been running a small Digital Ocean VPS for a number of years where I host my blog. Ghost itself goes through a lot of updates and keeping the application up to date was starting to become a hassle.</description>
+    </item>
+    
+    <item>
+      <title>Serverless with CloudFlare Workers</title>
+      <link>https://xangelo.ca/posts/what-is-lootcap/</link>
+      <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/what-is-lootcap/</guid>
+      <description>What is LootCap? Last week we (Adam Cochran and myself) launched LootCap. The goal is to provide tracking on a new class of tokens called Loot. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://xangelo.ca/page/about/</link>
+      <pubDate>Wed, 29 Apr 2020 23:38:37 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/page/about/</guid>
+      <description>I&amp;rsquo;m Angelo. I&amp;rsquo;ve been working in Software Development for the last 20 years or so, doing a bit of everything. I started my journey as a &amp;ldquo;Full Stack&amp;rdquo; developer/designer back when 2Advanced Studios launched v3 and over the years I&amp;rsquo;ve moved further and further &amp;ldquo;backward&amp;rdquo; in the stack. Since about 2012 my technical focus has been around Backend/DevOps/SRE work and more broadly around &amp;ldquo;Leveling Up Engineering&amp;rdquo;. I have a history of joining teams that are ready to take the next step from &amp;ldquo;We have this MVP&amp;rdquo; and helping them get to &amp;ldquo;We are a company&amp;rdquo;.</description>
     </item>
     
   </channel>

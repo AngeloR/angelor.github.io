@@ -1,0 +1,25 @@
+# Thursday, May 24, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/posts/outliner_blog_update/index.gmi → Older: Now Powered by Outlines
+
+
+I'm attempting to adopt Dave Winer's [1] posting setup of daily updates. I realize there's so much that I want to just say over the course of the day. Some of it might morph into full blown posts.. some of it will just disappear. I originally thought I would try and transition some into "tweets" and "toots" or whatever mastodon calls them.. but for now they'll just live here.
+
+I moved to hugo about a year ago, mostly to gain the easy github pages integration... I'm only now beginning to discover some of the neat details that made it so popular.
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://scripting.com [1] Dave Winer's (https://scripting.com)
+
+
+---

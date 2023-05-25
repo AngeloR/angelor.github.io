@@ -3,18 +3,13 @@
 
 ### 2023
 
+=> gemini://gemini.xangelo.ca/daily/2023/may/24/index.gmi Thursday, May 24, 2023
 => gemini://gemini.xangelo.ca/posts/outliner_blog_update/index.gmi Now Powered by Outlines
 
 ### 2022
 
 => gemini://gemini.xangelo.ca/posts/on-call/index.gmi Designing On-Call
 => gemini://gemini.xangelo.ca/posts/default-font/index.gmi Removing the Default Font
-=> gemini://gemini.xangelo.ca/disclaimer/online-only/index.gmi For Online Reading Only
-=> gemini://gemini.xangelo.ca/disclaimer/publisher-formerly/index.gmi Given Publisher is Publisher of an Earlier Version
-=> gemini://gemini.xangelo.ca/disclaimer/homepage-na/index.gmi Homepage not Available
-=> gemini://gemini.xangelo.ca/disclaimer/no-direct-download/index.gmi No Direct Download Link
-=> gemini://gemini.xangelo.ca/disclaimer/direct-download/index.gmi Verify Copyright Despite Direct Download Link
-=> gemini://gemini.xangelo.ca/disclaimer/verify-copyright/index.gmi Verify the Copyright
 => gemini://gemini.xangelo.ca/posts/gitweb/index.gmi gitweb - a GitHub/GitLab alternative
 => gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi Code Reviews Are Failure
 
