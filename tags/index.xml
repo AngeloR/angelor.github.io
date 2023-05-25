@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 25 May 2023 00:15:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 May 2023 00:29:23 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>daily</title>
+      <link>https://xangelo.ca/tags/daily/</link>
+      <pubDate>Thu, 25 May 2023 00:29:23 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/daily/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>architecture</title>
       <link>https://xangelo.ca/tags/architecture/</link>
@@ -23,15 +32,6 @@
       <pubDate>Thu, 25 May 2023 00:15:53 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>daily</title>
-      <link>https://xangelo.ca/tags/daily/</link>
-      <pubDate>Wed, 24 May 2023 23:11:51 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/daily/</guid>
       <description></description>
     </item>
     

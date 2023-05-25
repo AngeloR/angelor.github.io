@@ -22,4 +22,7 @@ I moved to hugo about a year ago, mostly to gain the easy github pages integrati
 => https://scripting.com [1] Dave Winer's (https://scripting.com)
 
 
+## Related articles
+
+=> /gemini/daily/2023/may/25/index.gmi Friday, May 25, 2023: <no value>
 ---

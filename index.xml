@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 25 May 2023 00:15:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 May 2023 00:29:23 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Friday, May 25, 2023</title>
+      <link>https://xangelo.ca/daily/2023/may/25/</link>
+      <pubDate>Thu, 25 May 2023 00:29:23 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/may/25/</guid>
+      <description>I have a sneaking suspicion that Azure DevOps is way better than GitHub but no one is willing to admit it.</description>
+    </item>
+    
     <item>
       <title>Simple Redis Job Queue</title>
       <link>https://xangelo.ca/posts/simple_redis_queue/</link>
@@ -134,15 +143,6 @@ The theme itself contains a light/dark mode as well as a small variation of the 
       
       <guid>https://xangelo.ca/posts/hugo-github/</guid>
       <description>Goal I&amp;rsquo;ve been running my blog over on Ghost1 for a few years now. I really don&amp;rsquo;t have a lot of issues with it, except for the fact that I have to manage the server itself. I&amp;rsquo;ve been running a small Digital Ocean VPS for a number of years where I host my blog. Ghost itself goes through a lot of updates and keeping the application up to date was starting to become a hassle.</description>
-    </item>
-    
-    <item>
-      <title>Serverless with CloudFlare Workers</title>
-      <link>https://xangelo.ca/posts/what-is-lootcap/</link>
-      <pubDate>Thu, 07 May 2020 17:31:57 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/what-is-lootcap/</guid>
-      <description>What is LootCap? Last week we (Adam Cochran and myself) launched LootCap. The goal is to provide tracking on a new class of tokens called Loot. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself.</description>
     </item>
     
   </channel>

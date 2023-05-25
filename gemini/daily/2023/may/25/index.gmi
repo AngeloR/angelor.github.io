@@ -1,0 +1,26 @@
+# Friday, May 25, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/posts/simple_redis_queue/index.gmi → Older: Simple Redis Job Queue
+
+
+I have a sneaking suspicion that Azure DevOps [1] is way better than GitHub but no one is willing to admit it.
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://azure.microsoft.com/en-us/products/devops/ [1] Azure DevOps (https://azure.microsoft.com/en-us/products/devops/)
+
+
+## Related articles
+
+=> /gemini/daily/2023/may/24/index.gmi Thursday, May 24, 2023: <no value>
+---
