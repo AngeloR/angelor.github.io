@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+Simple Redis Job Queue | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
+<header>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
+</header>
+
+
+    <main>
+      
+<h2>Simple Redis Job Queue</h2>
+<p>A common pattern in most software projects is the &ldquo;queue&rdquo;. You&rsquo;ll throw some stuff on there and eventually get around to sorting it all out. In some cases, you may not even really care about that.</p>
+<p>I recent ran into a situation in node.js where I needed to offload some CPU intensive out of the main http request handling process. Originally I thought about just forking the process, but I due to the fact that this endpoint is public facing (albeit authenticated and paid for), I was wary. Instead I figured I&rsquo;d rope in a quick job queue.</p>
+<h3 id="caveats">Caveats:</h3>
+<ul>
+<li>
+<p>The jobs have an easy &ldquo;deduplication key&rdquo;. An ID that is the same given the same inputs.<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>If we don&rsquo;t complete a job for any reason, that&rsquo;s fine, another one will likely show up again in a few minutes</p>
+</li>
+</ul>
+<p>We were also using redis so here&rsquo;s a real simple pattern that can handle this kind of workload.</p>
+<ol>
+<li>
+<p>Whenever we get a new job we calculate its deduplication ID. We&rsquo;ll call this the <code>jobId</code> moving forward.</p>
+</li>
+<li>
+<p>We call <code>set job:[jobId] value NX EX 10</code>. This sets the key <code>job:[jobId]</code> to some value we provide only if the key does not already exist. It also sets a 10s expiration time. We&rsquo;re using <code>NX</code> to provide some additional deduplication and we&rsquo;re using <code>EX</code> to ensure that if for some reason our job doesn&rsquo;t complete in 10s.. just allow another job to be inserted with the same key. You can tune <code>EX</code> as necessary, or leave it off entirely if you never want this job re-processed again until you flush your cache.</p>
+</li>
+<li>
+<p>We use <code>rpush [queueName] [jobId]</code> to add the job Id to the list of jobs that need to be processed.</p>
+</li>
+<li>
+<p>If we have any additional information about the job we want to pass on, we can use <code>hset jobDetails:[jobId] k1 v1 k2 v2...</code> and store it in there.</p>
+</li>
+</ol>
+<p>Your &ldquo;worker&rdquo; is just a process that runs <code>lrange [queueName] 0 0</code>. That will retrieve the oldest <code>jobId</code> in your queue. You can grab any further information from the <code>jobDetails:[jobId]</code> hash set and do whatever work you need. When you&rsquo;re done you can call <code>ltrim [queueName] 0 0</code> which will remove the job from the queue. </p>
+<p>An interesting fact about this setup is that all your calls are <code>O(1)</code> and you can pipeline the initial <code>set</code>/<code>rpush</code>/<code>hset</code> calls so that things are even faster. </p>
+
+<div class="post-date">
+  Posted Thursday, May 25, 2023
+</div>
+
+    </main>
+    
+<footer>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
+</footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/simple_redis_queue/>https://xangelo.ca/posts/simple_redis_queue/</a>, 2023-05-25</p>
+
+
+
+</body>
+     
+ 

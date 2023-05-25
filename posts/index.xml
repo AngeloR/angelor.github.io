@@ -7,7 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Sun, 21 May 2023 23:29:45 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 May 2023 00:15:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple Redis Job Queue</title>
+      <link>https://xangelo.ca/posts/simple_redis_queue/</link>
+      <pubDate>Thu, 25 May 2023 00:15:53 -1500</pubDate>
+      
+      <guid>https://xangelo.ca/posts/simple_redis_queue/</guid>
+      <description>&lt;p&gt;A common pattern in most software projects is the &amp;ldquo;queue&amp;rdquo;. You&amp;rsquo;ll throw some stuff on there and eventually get around to sorting it all out. In some cases, you may not even really care about that.&lt;/p&gt;
+&lt;p&gt;I recent ran into a situation in node.js where I needed to offload some CPU intensive out of the main http request handling process. Originally I thought about just forking the process, but I due to the fact that this endpoint is public facing (albeit authenticated and paid for), I was wary. Instead I figured I&amp;rsquo;d rope in a quick job queue.&lt;/p&gt;
+&lt;h3 id=&#34;caveats&#34;&gt;Caveats:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The jobs have an easy &amp;ldquo;deduplication key&amp;rdquo;. An ID that is the same given the same inputs.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If we don&amp;rsquo;t complete a job for any reason, that&amp;rsquo;s fine, another one will likely show up again in a few minutes&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We were also using redis so here&amp;rsquo;s a real simple pattern that can handle this kind of workload.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Whenever we get a new job we calculate its deduplication ID. We&amp;rsquo;ll call this the &lt;code&gt;jobId&lt;/code&gt; moving forward.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We call &lt;code&gt;set job:[jobId] value NX EX 10&lt;/code&gt;. This sets the key &lt;code&gt;job:[jobId]&lt;/code&gt; to some value we provide only if the key does not already exist. It also sets a 10s expiration time. We&amp;rsquo;re using &lt;code&gt;NX&lt;/code&gt; to provide some additional deduplication and we&amp;rsquo;re using &lt;code&gt;EX&lt;/code&gt; to ensure that if for some reason our job doesn&amp;rsquo;t complete in 10s.. just allow another job to be inserted with the same key. You can tune &lt;code&gt;EX&lt;/code&gt; as necessary, or leave it off entirely if you never want this job re-processed again until you flush your cache.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;We use &lt;code&gt;rpush [queueName] [jobId]&lt;/code&gt; to add the job Id to the list of jobs that need to be processed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If we have any additional information about the job we want to pass on, we can use &lt;code&gt;hset jobDetails:[jobId] k1 v1 k2 v2...&lt;/code&gt; and store it in there.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Your &amp;ldquo;worker&amp;rdquo; is just a process that runs &lt;code&gt;lrange [queueName] 0 0&lt;/code&gt;. That will retrieve the oldest &lt;code&gt;jobId&lt;/code&gt; in your queue. You can grab any further information from the &lt;code&gt;jobDetails:[jobId]&lt;/code&gt; hash set and do whatever work you need. When you&amp;rsquo;re done you can call &lt;code&gt;ltrim [queueName] 0 0&lt;/code&gt; which will remove the job from the queue. &lt;/p&gt;
+&lt;p&gt;An interesting fact about this setup is that all your calls are &lt;code&gt;O(1)&lt;/code&gt; and you can pipeline the initial &lt;code&gt;set&lt;/code&gt;/&lt;code&gt;rpush&lt;/code&gt;/&lt;code&gt;hset&lt;/code&gt; calls so that things are even faster. &lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Now Powered by Outlines</title>
       <link>https://xangelo.ca/posts/outliner_blog_update/</link>
@@ -1401,44 +1438,6 @@ Step 5:        cccc0bbb
 &lt;p&gt;How interesting&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s crazy to think of all that we&amp;rsquo;ve accomplished because of that little mechanical hard-drive. But what&amp;rsquo;s crazier is that we are only able to see this in retrospect. No one was able to see what the result of spinning disk drives would be. No would thought that we would invent so many different file systems to solve the problems. That we would make so many advancements in technology just to store MORE data on the drives. At the time, they were just better than tape. They were simply a step in the chain, that in retrospect, was pretty cool.
 Follow the conversation at HackerNews &lt;a href=&#34;https://news.ycombinator.com/item?id=13091192&#34;&gt;https://news.ycombinator.com/item?id=13091192&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>What the heck is a Database Index?</title>
-      <link>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -2100</pubDate>
-      
-      <guid>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</guid>
-      <description>&lt;p&gt;When you do a standard &lt;code&gt;select * from table_name where columns=some_value&lt;/code&gt; from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&amp;rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&amp;rsquo;t know where/how-many instances of a particular value it might find. This is a pretty common problem. Think of a standard &lt;code&gt;users&lt;/code&gt; table&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;+-------------------+
-|       users       |
-+-------------------+
-|                   |
-| id (int)          |
-| username (string) |
-| password (string) |
-|                   |
-+-------------------+
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this scenario there are a couple different uses of this table .&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;We are registering a user (inserting a row)&lt;/li&gt;
-&lt;li&gt;A user might be changing their password (updating a row)&lt;/li&gt;
-&lt;li&gt;A user is logging in (reading a row)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;In a table without any indices when logging in we only know the users username and password. We have to run a &lt;code&gt;select * from users where username = ?&lt;/code&gt; on the database. Even if we add a &lt;code&gt;limit 1&lt;/code&gt; to our query, the database still needs to scan through every single row in our database until it finds one (or more) that matches our filter.&lt;/p&gt;
-&lt;p&gt;If you create an index on a particular column in the table, it serves as a lookup. If you look for a row where a particular indexed column matches a value.. the database doesn&amp;rsquo;t need to scan the table, it can look at the index. You can think of an index exactly the same as as you would an index in a book. If you want to know where a word in the book occurs you have two choices.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;You can either flip through the entire book until you see what you&amp;rsquo;re looking for&lt;/li&gt;
-&lt;li&gt;Consult the index, which tells you which page in the book you need to look at.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Once you tell the database that you want a particular column to have an index, you don&amp;rsquo;t need to do anything else. The database will ensure that the index is kept up to date (as you modify the data in the table). You also don&amp;rsquo;t need to change anything about how you&amp;rsquo;re accessing the data - (IE: you don&amp;rsquo;t need to modify your queries).&lt;/p&gt;
-&lt;p&gt;Ok - so it sounds like indexes are pretty awesome right? If it speeds up looking things up, why don&amp;rsquo;t we create an index on every column?&lt;/p&gt;
-&lt;p&gt;Well, like everything - there&amp;rsquo;s a caveat. READING data from the table is very quick with an index.. but Creating, Updating, and Deleting data becomes a bit slower. This is because the database needs some additional time to update the index with the new data. So it&amp;rsquo;s a bit of a balancing act. The more indices you have on a table.. the slower it becomes to write data to that table (insert/update/delete). You want to take a look at your table and how you&amp;rsquo;re using the data in your table and create the index carefully.&lt;/p&gt;
-&lt;p&gt;Because of this, you can&amp;rsquo;t really have a &amp;ldquo;rule&amp;rdquo; on when to create an index - you&amp;rsquo;ll want to monitor your database and create them based on your investigations. Of course, it&amp;rsquo;s never that easy - the more data IN the table when you create the index the longer it will take to create. It doesn&amp;rsquo;t sound too bad - but if you have hundreds of thousands of rows in a table.. it can take a few minutes to create the index, during which your application will need to be down. So you need to be somewhat pre-emptive in creating your indices.. but also you can&amp;rsquo;t go overboard.. but also there isn&amp;rsquo;t really a guide on when to create an index. How wonderful.&lt;/p&gt;
-&lt;p&gt;As you progress in your database tuning/development life you&amp;rsquo;ll find use-cases where it makes sense to have an index from the start. For example, most &amp;ldquo;user&amp;rdquo; tables will have an index on the username column. This is something that you can then take and implement on your next project!&lt;/p&gt;
-&lt;h2 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h2&gt;
-&lt;p&gt;I really recommend you peruse this documentation from mysql on what an index is. While you may be using Postgres/MSSQL - the core concepts of what an index is remains the same. &lt;a href=&#34;https://dev.mysql.com/doc/refman/5.7/en/mysql-indexes.html&#34;&gt;https://dev.mysql.com/doc/refman/5.7/en/mysql-indexes.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

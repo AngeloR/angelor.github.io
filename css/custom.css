@@ -7,3 +7,8 @@
   max-width: 300px;
   min-width: 100px;
 }
+
+.post-date {
+  text-align: right;
+  font-style: italic;
+}

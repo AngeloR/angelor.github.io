@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 24 May 2023 23:11:51 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 May 2023 00:15:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple Redis Job Queue</title>
+      <link>https://xangelo.ca/posts/simple_redis_queue/</link>
+      <pubDate>Thu, 25 May 2023 00:15:53 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/simple_redis_queue/</guid>
+      <description>A naive redis job queue implementation</description>
+    </item>
+    
     <item>
       <title>Thursday, May 24, 2023</title>
       <link>https://xangelo.ca/daily/2023/may/24/</link>
@@ -134,15 +143,6 @@ The theme itself contains a light/dark mode as well as a small variation of the 
       
       <guid>https://xangelo.ca/posts/what-is-lootcap/</guid>
       <description>What is LootCap? Last week we (Adam Cochran and myself) launched LootCap. The goal is to provide tracking on a new class of tokens called Loot. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://xangelo.ca/page/about/</link>
-      <pubDate>Wed, 29 Apr 2020 23:38:37 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/page/about/</guid>
-      <description>I&amp;rsquo;m Angelo. I&amp;rsquo;ve been working in Software Development for the last 20 years or so, doing a bit of everything. I started my journey as a &amp;ldquo;Full Stack&amp;rdquo; developer/designer back when 2Advanced Studios launched v3 and over the years I&amp;rsquo;ve moved further and further &amp;ldquo;backward&amp;rdquo; in the stack. Since about 2012 my technical focus has been around Backend/DevOps/SRE work and more broadly around &amp;ldquo;Leveling Up Engineering&amp;rdquo;. I have a history of joining teams that are ready to take the next step from &amp;ldquo;We have this MVP&amp;rdquo; and helping them get to &amp;ldquo;We are a company&amp;rdquo;.</description>
     </item>
     
   </channel>

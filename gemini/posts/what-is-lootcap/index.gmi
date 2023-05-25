@@ -180,4 +180,7 @@ Today, when you load LootCap [9] #7 #6 #2 you're loading data from 3 different w
 => https://lootcap.com [9] LootCap (https://lootcap.com)
 
 
+## Related articles
+
+=> /gemini/posts/simple_redis_queue/index.gmi Simple Redis Job Queue: <no value>
 ---

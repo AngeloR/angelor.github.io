@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xangelo.ca/tags/architecture/</loc>
+    <lastmod>2023-05-25T00:15:53-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/posts/</loc>
+    <lastmod>2023-05-25T00:15:53-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/redis/</loc>
+    <lastmod>2023-05-25T00:15:53-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/posts/simple_redis_queue/</loc>
+    <lastmod>2023-05-25T00:15:53-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/</loc>
+    <lastmod>2023-05-25T00:15:53-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/</loc>
+    <lastmod>2023-05-25T00:15:53-04:00</lastmod>
+  </url><url>
     <loc>https://xangelo.ca/daily/</loc>
     <lastmod>2023-05-24T23:11:51-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/daily/</loc>
     <lastmod>2023-05-24T23:11:51-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/</loc>
-    <lastmod>2023-05-24T23:11:51-04:00</lastmod>
-  </url><url>
     <loc>https://xangelo.ca/daily/2023/may/24/</loc>
-    <lastmod>2023-05-24T23:11:51-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/</loc>
     <lastmod>2023-05-24T23:11:51-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/blog/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2023-05-21T23:29:45-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/outliner/</loc>
-    <lastmod>2023-05-21T23:29:45-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/posts/</loc>
     <lastmod>2023-05-21T23:29:45-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/project/</loc>
@@ -118,9 +127,6 @@
   </url><url>
     <loc>https://xangelo.ca/posts/hugo-github/</loc>
     <lastmod>2020-06-03T14:00:00-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/architecture/</loc>
-    <lastmod>2020-05-07T17:31:57-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/lootcap/</loc>
     <lastmod>2020-05-07T17:31:57-04:00</lastmod>
