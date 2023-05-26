@@ -3,6 +3,7 @@
 
 ### 2023
 
+=> gemini://gemini.xangelo.ca/daily/2023/may/26/index.gmi Friday, May 26, 2023
 => gemini://gemini.xangelo.ca/daily/2023/may/25/index.gmi Thursday, May 25, 2023
 => gemini://gemini.xangelo.ca/posts/simple_redis_queue/index.gmi Simple Redis Job Queue
 => gemini://gemini.xangelo.ca/daily/2023/may/24/index.gmi Thursday, May 24, 2023

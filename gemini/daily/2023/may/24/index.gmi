@@ -24,5 +24,6 @@ I moved to hugo about a year ago, mostly to gain the easy github pages integrati
 
 ## Related articles
 
+=> /gemini/daily/2023/may/26/index.gmi Friday, May 26, 2023: <no value>
 => /gemini/daily/2023/may/25/index.gmi Thursday, May 25, 2023: <no value>
 ---

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 25 May 2023 21:20:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 May 2023 13:33:16 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Friday, May 26, 2023</title>
+      <link>https://xangelo.ca/daily/2023/may/26/</link>
+      <pubDate>Fri, 26 May 2023 13:33:16 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/may/26/</guid>
+      <description>Everyone wanting their own streaming service is just re-inventing cable and the whole reason that services like Netflix &amp;ldquo;distrupted&amp;rdquo;. Gabe Newell said it best &amp;ldquo;[Piracy] is a service issue&amp;rdquo;. And the service here sucks.</description>
+    </item>
+    
     <item>
       <title>Thursday, May 25, 2023</title>
       <link>https://xangelo.ca/daily/2023/may/25/</link>
@@ -136,15 +145,6 @@ I moved to hugo about a year ago, mostly to gain the easy github pages integrati
       <guid>https://xangelo.ca/posts/devlog/blog/1/</guid>
       <description>I&amp;rsquo;ve started working on a custom theme for Hugo1 that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file2 where possible.
 The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend3 who helped me adjust the colors for both dark and light modes to make them a bit more legible.</description>
-    </item>
-    
-    <item>
-      <title>Moving to Hugo and GitHub Pages</title>
-      <link>https://xangelo.ca/posts/hugo-github/</link>
-      <pubDate>Wed, 03 Jun 2020 14:00:00 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/hugo-github/</guid>
-      <description>Goal I&amp;rsquo;ve been running my blog over on Ghost1 for a few years now. I really don&amp;rsquo;t have a lot of issues with it, except for the fact that I have to manage the server itself. I&amp;rsquo;ve been running a small Digital Ocean VPS for a number of years where I host my blog. Ghost itself goes through a lot of updates and keeping the application up to date was starting to become a hassle.</description>
     </item>
     
   </channel>
