@@ -1,7 +1,7 @@
 # Simple Redis Job Queue
 
 
-=> gemini://gemini.xangelo.ca/daily/2023/may/25/index.gmi ← Newer: Friday, May 25, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/may/25/index.gmi ← Newer: Thursday, May 25, 2023
 => gemini://gemini.xangelo.ca/daily/2023/may/24/index.gmi → Older: Thursday, May 24, 2023
 
 

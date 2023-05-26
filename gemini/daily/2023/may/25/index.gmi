@@ -1,4 +1,4 @@
-# Friday, May 25, 2023
+# Thursday, May 25, 2023
 
 
 
@@ -8,6 +8,8 @@
 I have a sneaking suspicion that Azure DevOps [1] is way better than GitHub but no one is willing to admit it.
 
 For whatever reason this year has been really bad on my allergies. I'm trying a variety of over-the-counter medications but will likely have to resort to something a bit stronger before the summer is out.
+
+I just realized &nbsp;that all the "Daily Updates" are already one day out of sync due to the fact that I don't know what day it is. Just did an update to fix this once and for all.
 
 
 
