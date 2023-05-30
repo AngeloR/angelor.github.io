@@ -191,7 +191,6 @@ in a real dungeon..
 
 ## Related articles
 
-=> /gemini/posts/chrome_request_stalled/index.gmi Chrome HTTP Request stuck in "Stalled" State: <no value>
 => /gemini/posts/what-the-heck-is-a-database-index/index.gmi What the heck is a Database Index?: <no value>
 => /gemini/posts/the-disk-is-slow/index.gmi The Disk Is Slow: <no value>
 ---

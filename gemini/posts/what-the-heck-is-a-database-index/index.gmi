@@ -48,7 +48,6 @@ I really recommend you peruse this documentation from mysql on what an index is.
 
 ## Related articles
 
-=> /gemini/posts/chrome_request_stalled/index.gmi Chrome HTTP Request stuck in "Stalled" State: <no value>
 => /gemini/posts/devlog/roguelike/dungeon-generation/index.gmi Dungeon Generation in Roguelikes: <no value>
 => /gemini/posts/the-disk-is-slow/index.gmi The Disk Is Slow: <no value>
 ---

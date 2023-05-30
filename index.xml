@@ -18,15 +18,6 @@
     </item>
     
     <item>
-      <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
-      <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
-      <pubDate>Sun, 28 May 2023 22:39:07 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/chrome_request_stalled/</guid>
-      <description>Chrome reports that a request is stuck in a &amp;ldquo;stalled&amp;rdquo; state and I try and figure out why</description>
-    </item>
-    
-    <item>
       <title>Friday, May 26, 2023</title>
       <link>https://xangelo.ca/daily/2023/may/26/</link>
       <pubDate>Fri, 26 May 2023 13:33:16 -0400</pubDate>
@@ -144,6 +135,15 @@ I moved to hugo about a year ago, mostly to gain the easy github pages integrati
       
       <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
       <description>A simple dungeon generation algorithm for organic rooms</description>
+    </item>
+    
+    <item>
+      <title>DEVLOG: NewsRiver Updates</title>
+      <link>https://xangelo.ca/posts/devlog/newsriver/intro/</link>
+      <pubDate>Tue, 10 Nov 2020 09:43:04 -0500</pubDate>
+      
+      <guid>https://xangelo.ca/posts/devlog/newsriver/intro/</guid>
+      <description>A River-of-News style RSS Reader</description>
     </item>
     
   </channel>
