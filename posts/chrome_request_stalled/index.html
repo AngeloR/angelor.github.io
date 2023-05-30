@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+Chrome HTTP Request stuck in &#34;Stalled&#34; State | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
+<header>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
+</header>
+
+
+    <main>
+      
+<h2>Chrome HTTP Request stuck in &#34;Stalled&#34; State</h2>
+
+<div class="tag-list">
+  
+  [ <a href="../../tags/chrome">chrome</a> ]
+  
+  [ <a href="../../tags/iis">iis</a> ]
+  
+  [ <a href="../../tags/investigation">investigation</a> ]
+  
+  [ <a href="../../tags/explanation">explanation</a> ]
+  
+</div>
+
+
+<p>I got the chance to investigate a really odd bug where randomly network requests in Chrome would just hang. This would only occurr in our test environments at work and not in production. The request would hang for some long amount of time.. and then eventually complete successfully. The bug has been occurring for some time, but has been getting worse in Chrome. It got so bad that it was guaranteed that if you were using Chrome it was going to happen to you. Eventually it started happening in Firefox as well.. during an investor demo (what good is a demo if it doesn&rsquo;t go up in flames?). That&rsquo;s when I got roped in.</p>
+<p>The first thing I did was attempt to replicate it and capture a <code>.har</code> file that I could share with anyone else that was interested. This part was easy - just popping open the network tab, navigating to the app on a test env, and then clicking every link that would trigger a network request. After about 30-40 seconds I had replicated the event</p>
+<p>LINK TO TIMING WHERE IT SHOES THE QUEUE</p>
+<p>So we can clearly see here that the request took 2 minutes and the entirety of that time the connection was stuck in the <code>stalled</code> state. That indicates one of two things:</p>
+<ol>
+<li>
+<p>Chrome never attempted to make the network request at all. Perhaps the priority on the request was dropped, maybe there were too many connections open to that FQDN already. </p>
+</li>
+<li>
+<p>In some situations chrome actually merges the CORS preflight requests into what it reports as <code>stalled</code>. So it&rsquo;s possible that there was a problem in the preflight request that caused the delay before the actual request happened.</p>
+</li>
+</ol>
+<p>I did a bit more testing to figure out the scope of the issue. On/Off VPN with multiple browsers would all replicate the problem just fine. In this particular situation the fact that we could replicate it across EVERYTHING made it pretty clear that it was something related to our server.. but what? If the request never actually hits the server what could be going on?</p>
+<h3 id="chrome-network-log">Chrome Network Log</h3>
+<p>One tool that chrome has to diagnose networking issues is hidden away at <code>chrome://net-export</code>. It generates a very VERY detailed log of everything network related that chrome is aware of. </p>
+<p>IMAGE OF CHROME CAPTURE NETWORK LOG</p>
+<p>I unchecked the <code>strip private information</code> option and told it to include cookies + credentials and started logging it to disk. Then I swapped back to my tab and replicated the issue. Waited a few seconds, and then went back and ended the captuer session.</p>
+<p>Once you get that capture file, you have to head over to <a href="https://netlog-viewer.appspot.com">https://netlog-viewer.appspot.com</a> and import it. There&rsquo;s a TON of information here, and honestly I didn&rsquo;t even look at half of it. The only two things I cared about were the &ldquo;Events&rdquo; and &ldquo;Timeline&rdquo; sections. The Timeline really makes no sense until you have a idea of when your actual network event happened, so we can skip that and jump right over to Events</p>
+<p>There will likely be a lot of events. The &ldquo;filter&rdquo; at the top never worked for me given the sheer size of the events.. but scrolling through them all was just fine and eventually I found the URL request that caused the issue. If you click on the event it will display a bunch of debug information about the request. </p>
+<p>IMAGE OF EVENT 169281</p>
+<p>As you can see.. suddenly there&rsquo;s a HUGE jump in time from <code>66807</code> to <code>187631</code>. We&rsquo;ve confirmed now that this is a problem that&rsquo;s occurring within the CORS preflight request specifically, and it&rsquo;s just getting rolled into the <code>stalled</code> state. The log viewer makes it trivial to dig down into the events and if you click on the details of the <code>HTTP_STREAM_JOB_CONTROLLER</code> event you can see some more details. </p>
+<p>IMAGE OF EVENT 169283</p>
+<p>Here again, we see that there is a definitely delay when it attempts to call <code>HTTP_STREAM_REQUEST_STARTED_JOB</code> </p>
+<p>IMAGE OF EVENT 169284</p>
+<p>And now we can easily see the problem: <code>SOCKET_POOL_STALLED_MAX_SOCKETS_PER_GROUP</code></p>
+<p>For some reason, the socket pool dedicated to this particular group (in this case grouped by FQDN) is filled up and so it can&rsquo;t actually make the next request. So it just sits there.. until suddenly a socket is available (2 minutes later) and it is able to complete the rest of the request as expected.</p>
+<p>We can dig even further! Since we know that this is happening on an HTTP2 call, we can filter our events to only show us the http2 connections and that paints a more serious picture! </p>
+<p>Every since one of our http2 sockets is getting set a <code>GOAWAY</code> frame by the server.. but notice that it says <code>NO_ERROR</code>. Some quick research shows us that this is actually part of the &ldquo;graceful shutdown&rdquo; strategy. The server tells the client to <code>GOAWAY</code> but there&rsquo;s <code>NO_ERROR</code>. This is the clients indication to wrap up its work because the server is going to officially disconnect soon. Except that final disconnect frame is never sent. So as far as chrome is concerned, we&rsquo;re still happily connected so it returns the connection to the pool. But the server has disconnected.</p>
+
+<div class="post-date">
+  Posted Sunday, May 28, 2023
+</div>
+
+    </main>
+    
+<footer>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
+</footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/chrome_request_stalled/>https://xangelo.ca/posts/chrome_request_stalled/</a>, 2023-05-28</p>
+
+
+
+</body>
+     
+ 

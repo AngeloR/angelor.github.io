@@ -7,7 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 25 May 2023 00:15:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 22:39:07 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
+      <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
+      <pubDate>Sun, 28 May 2023 22:39:07 -3900</pubDate>
+      
+      <guid>https://xangelo.ca/posts/chrome_request_stalled/</guid>
+      <description>&lt;p&gt;I got the chance to investigate a really odd bug where randomly network requests in Chrome would just hang. This would only occurr in our test environments at work and not in production. The request would hang for some long amount of time.. and then eventually complete successfully. The bug has been occurring for some time, but has been getting worse in Chrome. It got so bad that it was guaranteed that if you were using Chrome it was going to happen to you. Eventually it started happening in Firefox as well.. during an investor demo (what good is a demo if it doesn&amp;rsquo;t go up in flames?). That&amp;rsquo;s when I got roped in.&lt;/p&gt;
+&lt;p&gt;The first thing I did was attempt to replicate it and capture a &lt;code&gt;.har&lt;/code&gt; file that I could share with anyone else that was interested. This part was easy - just popping open the network tab, navigating to the app on a test env, and then clicking every link that would trigger a network request. After about 30-40 seconds I had replicated the event&lt;/p&gt;
+&lt;p&gt;LINK TO TIMING WHERE IT SHOES THE QUEUE&lt;/p&gt;
+&lt;p&gt;So we can clearly see here that the request took 2 minutes and the entirety of that time the connection was stuck in the &lt;code&gt;stalled&lt;/code&gt; state. That indicates one of two things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Chrome never attempted to make the network request at all. Perhaps the priority on the request was dropped, maybe there were too many connections open to that FQDN already. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In some situations chrome actually merges the CORS preflight requests into what it reports as &lt;code&gt;stalled&lt;/code&gt;. So it&amp;rsquo;s possible that there was a problem in the preflight request that caused the delay before the actual request happened.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I did a bit more testing to figure out the scope of the issue. On/Off VPN with multiple browsers would all replicate the problem just fine. In this particular situation the fact that we could replicate it across EVERYTHING made it pretty clear that it was something related to our server.. but what? If the request never actually hits the server what could be going on?&lt;/p&gt;
+&lt;h3 id=&#34;chrome-network-log&#34;&gt;Chrome Network Log&lt;/h3&gt;
+&lt;p&gt;One tool that chrome has to diagnose networking issues is hidden away at &lt;code&gt;chrome://net-export&lt;/code&gt;. It generates a very VERY detailed log of everything network related that chrome is aware of. &lt;/p&gt;
+&lt;p&gt;IMAGE OF CHROME CAPTURE NETWORK LOG&lt;/p&gt;
+&lt;p&gt;I unchecked the &lt;code&gt;strip private information&lt;/code&gt; option and told it to include cookies + credentials and started logging it to disk. Then I swapped back to my tab and replicated the issue. Waited a few seconds, and then went back and ended the captuer session.&lt;/p&gt;
+&lt;p&gt;Once you get that capture file, you have to head over to &lt;a href=&#34;https://netlog-viewer.appspot.com&#34;&gt;https://netlog-viewer.appspot.com&lt;/a&gt; and import it. There&amp;rsquo;s a TON of information here, and honestly I didn&amp;rsquo;t even look at half of it. The only two things I cared about were the &amp;ldquo;Events&amp;rdquo; and &amp;ldquo;Timeline&amp;rdquo; sections. The Timeline really makes no sense until you have a idea of when your actual network event happened, so we can skip that and jump right over to Events&lt;/p&gt;
+&lt;p&gt;There will likely be a lot of events. The &amp;ldquo;filter&amp;rdquo; at the top never worked for me given the sheer size of the events.. but scrolling through them all was just fine and eventually I found the URL request that caused the issue. If you click on the event it will display a bunch of debug information about the request. &lt;/p&gt;
+&lt;p&gt;IMAGE OF EVENT 169281&lt;/p&gt;
+&lt;p&gt;As you can see.. suddenly there&amp;rsquo;s a HUGE jump in time from &lt;code&gt;66807&lt;/code&gt; to &lt;code&gt;187631&lt;/code&gt;. We&amp;rsquo;ve confirmed now that this is a problem that&amp;rsquo;s occurring within the CORS preflight request specifically, and it&amp;rsquo;s just getting rolled into the &lt;code&gt;stalled&lt;/code&gt; state. The log viewer makes it trivial to dig down into the events and if you click on the details of the &lt;code&gt;HTTP_STREAM_JOB_CONTROLLER&lt;/code&gt; event you can see some more details. &lt;/p&gt;
+&lt;p&gt;IMAGE OF EVENT 169283&lt;/p&gt;
+&lt;p&gt;Here again, we see that there is a definitely delay when it attempts to call &lt;code&gt;HTTP_STREAM_REQUEST_STARTED_JOB&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;IMAGE OF EVENT 169284&lt;/p&gt;
+&lt;p&gt;And now we can easily see the problem: &lt;code&gt;SOCKET_POOL_STALLED_MAX_SOCKETS_PER_GROUP&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For some reason, the socket pool dedicated to this particular group (in this case grouped by FQDN) is filled up and so it can&amp;rsquo;t actually make the next request. So it just sits there.. until suddenly a socket is available (2 minutes later) and it is able to complete the rest of the request as expected.&lt;/p&gt;
+&lt;p&gt;We can dig even further! Since we know that this is happening on an HTTP2 call, we can filter our events to only show us the http2 connections and that paints a more serious picture! &lt;/p&gt;
+&lt;p&gt;Every since one of our http2 sockets is getting set a &lt;code&gt;GOAWAY&lt;/code&gt; frame by the server.. but notice that it says &lt;code&gt;NO_ERROR&lt;/code&gt;. Some quick research shows us that this is actually part of the &amp;ldquo;graceful shutdown&amp;rdquo; strategy. The server tells the client to &lt;code&gt;GOAWAY&lt;/code&gt; but there&amp;rsquo;s &lt;code&gt;NO_ERROR&lt;/code&gt;. This is the clients indication to wrap up its work because the server is going to officially disconnect soon. Except that final disconnect frame is never sent. So as far as chrome is concerned, we&amp;rsquo;re still happily connected so it returns the connection to the pool. But the server has disconnected.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Simple Redis Job Queue</title>
       <link>https://xangelo.ca/posts/simple_redis_queue/</link>
@@ -1356,88 +1393,6 @@ in a real dungeon..&lt;/p&gt;
 &lt;li&gt;Two running API endpoints&lt;/li&gt;
 &lt;li&gt;1 Running a static site&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Disk Is Slow</title>
-      <link>https://xangelo.ca/posts/the-disk-is-slow/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -2100</pubDate>
-      
-      <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
-      <description>&lt;p&gt;&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/silver-hard-drive-internals.jpg&#34; alt=&#34;Disk&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;what-is-slow&#34;&gt;What is slow?&lt;/h2&gt;
-&lt;p&gt;For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute. This is an indication of how quickly the disk can spin. It is common now-days to see drives advertising 7,200 rpm, or 10,000 rpm or even 15,000 rpm. How fancy.&lt;/p&gt;
-&lt;p&gt;Now, the disk itself is split into a couple major components:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The disks that data is stored on:&lt;/li&gt;
-&lt;li&gt;The read/write head&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These disks are where the data is actually stored, and when you see a number like &amp;ldquo;7,200 rpm&amp;rdquo; what you are seeing is how quickly these disks can spin. In a simplified manner, what happens when you &amp;ldquo;write something to disk&amp;rdquo;, is that the disk spins to an empty point, and the head beings to write. Likewise, when you &amp;ldquo;read&amp;rdquo; data from the disk, it spins to a designated point (the &amp;ldquo;start&amp;rdquo; of the data) and the head begins to &amp;ldquo;read&amp;rdquo; the data until it is done.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s walk through a theoretical &amp;ldquo;disk&amp;rdquo;. Your &amp;ldquo;disk&amp;rdquo; can hold 8 units (00000000) of storage. We are going to perform a few actions on this disk.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;You write &amp;#39;a&amp;#39; twice - aa000000  
-You write &amp;#39;b&amp;#39; 3 times - aabbb000 
-You delete the two &amp;#39;a&amp;#39;   - 00bbb000 
-You write &amp;#39;c&amp;#39; 4 to,es - ccbbbcc0
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See your drive is smart enough to know that, even though there isn&amp;rsquo;t enough &amp;ldquo;contiguous&amp;rdquo; space, there is still enough space scattered around on the drive to store your 4 units of &amp;lsquo;c&amp;rsquo;. What happens is that your drive will spin to a free location, and let you start writing. When you run out of contiguous space, it will spin to a new location. This results in your data actually spread out all over your drive instead of next to each other. This is a good thing, of course. It means that you can use all the space on your drive without worrying about WHERE things are stored.&lt;/p&gt;
-&lt;p&gt;But, it also means that instead of the disk spinning just ONCE to get to the start of your data, it actually needs to spin twice.&lt;/p&gt;
-&lt;p&gt;As we grow our disk size from &amp;ldquo;8 units&amp;rdquo; to hundreds of gigabytes as most modern drives today have, we run into a problem - there is no guarantee that the data we need will be next to each other. In actuality, there is a high probability that we will need to keep jumping about on the disk to be able to read ALL the data we want. Our data ends up &amp;ldquo;fragmented&amp;rdquo;.&lt;/p&gt;
-&lt;h2 id=&#34;data-fragmentation&#34;&gt;Data Fragmentation&lt;/h2&gt;
-&lt;p&gt;The result of all this fragmentation, is that things just get slower over time. Unfortunately, the eventual degradation of data storage efficiencies is never attributed to the hard-drive because users don&amp;rsquo;t actually USE the hard-drive directly - they go through the OS which is supposed to manage these things. As a result, the eventual experience of degrading of performance is chalked up to &amp;ldquo;my Windows is slow&amp;rdquo;. Operating systems combatted this eventual degradation by shipping with a defragmenter, which does exactly what you&amp;rsquo;d expect. It takes all these scattered fragments from around your drive, and puts them next to each other. This reduces the overall amount of seeks necessary to retrieve necessary information, thereby making things speedier.&lt;/p&gt;
-&lt;p&gt;But that&amp;rsquo;s an expensive (resource wise) thing to do. In order to defragment a system, the program needs to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;find an application that has its data fragmented&lt;/li&gt;
-&lt;li&gt;copy the data between the fragmented data to memory or some other free space on the drive&lt;/li&gt;
-&lt;li&gt;move the data closer together.&lt;/li&gt;
-&lt;li&gt;repeat&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Lets go back to our previous scenario, and see how defragmentation could work:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Initial State: ccbbbcc0
-
-Step 1:        cc0bbccb
-Step 2:        cccbbc0b
-Step 3:        ccc0bcbb
-Step 4:        ccccb0bb
-Step 5:        cccc0bbb
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Obviously this is not optimized in any way, so there&amp;rsquo;s plenty we could do to speed this up. But this is essentially what your drive is doing. It&amp;rsquo;s like putting a deck of cards back in order after you&amp;rsquo;ve been shuffling them. Sure it&amp;rsquo;s possible, but it just takes some time.&lt;/p&gt;
-&lt;p&gt;A much better idea, would be to try and optimize STORING this data in such a way that would reduce fragmentation. That is, maybe we keep data that is related next to each other on the drive when we WRITE the data the first time. That way things don&amp;rsquo;t get as fragmented as quickly.&lt;/p&gt;
-&lt;h2 id=&#34;blocks-and-pages&#34;&gt;Blocks and Pages&lt;/h2&gt;
-&lt;p&gt;The first step in ensuring data is kept close together is the idea of &amp;ldquo;blocks&amp;rdquo;. Basically the filesystem that actually interacts with the hard-drive will define a &amp;ldquo;block-size&amp;rdquo;. The block size is basically a measure of how much data will fix in a block, and the filesystem reads/writes in blocks instead of individual bytes. Think of it this way: If your hard-drive was a piece of lined paper, we were originally writing things down one word per line. With blocks, we basically said &amp;ldquo;well, we&amp;rsquo;ll just write until we reach the horizontal end of this line&amp;rdquo;. So now instead of one word per line, we have a few words per line. Perhaps, we could say, we have have one sentence per line.&lt;/p&gt;
-&lt;p&gt;Using our previous 8 unit drive example, we could sub-divide that into blocks of 2 units, making it look like this:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Drive State: [c,c][c,c][b,b][b,0]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now when we want to read all the c values, we have two seeks instead of 1 per record. This is already a big improvement (we&amp;rsquo;ve reduced seeks by 50%), but we could probably reduce it even more. Since the filesystem has to expose a standard block size to all applications, systems that have to have a high amount of HDD I/O need an alternative. The easiest thing to do, is take the concept of a block containing records and create another abstraction: a page containing blocks.&lt;/p&gt;
-&lt;p&gt;At its &amp;ldquo;lowest&amp;rdquo; level, a relational database deals with &amp;ldquo;pages&amp;rdquo;. Pages are really  just collections of the data that you are storing. Relational databases (non-relational databases might as well, but I haven&amp;rsquo;t really dug into the internals of a lot of them) utilize this concept of a &amp;ldquo;page&amp;rdquo; to further decrease IO latency with the disk. Rather than dealing with the storage of individual records or information, it groups records together into a &amp;ldquo;page&amp;rdquo; and uses that. It will read/write a  whole page. This allows them to capitalize on the assumption that when you are reading/writing data the data you are accessing is probably next to other data that you also require.&lt;/p&gt;
-&lt;p&gt;They even go so far as to let you customize this via &amp;ldquo;clustered keys&amp;rdquo;. A clustered key is just a mechanism to allow you, the database administrator, to define HOW the database orders the data within pages. As the administrator, you know the data you are trying to store, and the primary ways that it might be accessed. Databases give you the ability to say &amp;ldquo;well, group all these records together on the disk by the values in this column&amp;rdquo;. This creates pages that are grouped around a particular value (a userID for example), so that all records with that same value are near each other.&lt;/p&gt;
-&lt;p&gt;Think of a database where you want to associate a list of items with a user. You have two tabes, &lt;code&gt;users&lt;/code&gt; and &lt;code&gt;items&lt;/code&gt;.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;+-------+    +---------+
-| users |    |  items  |
-+-------+    +---------+
-| id    |    | id      |
-| name  |    | user_id |
-+-------+    | name    |
-             +---------+
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It would make sense to create a clustered key around the userID in the items table. This allows us to keep all items that belong to a single user in the same page, or group of pages, on the disk. This way, when we try and retrieve the items for a user, the database management system can fetch all the pages related to this user, stick them in memory, operate on them, and then write them all.&lt;/p&gt;
-&lt;p&gt;Databases are very intricate systems, and I don&amp;rsquo;t want you leaving thinking there isn&amp;rsquo;t a whole lot more to this whole concept. This is a HUGE simplification of what the database is actually doing, but it should provide you with an understanding of why it is doing some of that at a storage level.&lt;/p&gt;
-&lt;h2 id=&#34;the-problem-with-blocks&#34;&gt;The problem with blocks&lt;/h2&gt;
-&lt;p&gt;The block system, however, is not without its own problems. By using &amp;ldquo;blocks&amp;rdquo; we&amp;rsquo;ve introduced a bit of wasted space into our storage. Lets go back to our block example:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Drive State: [c,c][c,c][b,b][b,0]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That trailing 0 in block 4 will remain empty unless we add more b data. We will be unable to add any more c values but we&amp;rsquo;ll be able to add more b. In fact, your drive will appear full to you because at the operating system level, it has no idea about the intricacies of your data storage. It just knows that these blocks are in use. So your 8 unit drive, has suddenly become 7 units.&lt;/p&gt;
-&lt;p&gt;That kind of sucks, and is actually a fundamental problem with &amp;ldquo;blocks&amp;rdquo;. As long as you have data to write, blocks are great, but they will almost always result in the LAST block in a segment not being completely filled. This is natural of course, since whatever application is using that space generally doesn&amp;rsquo;t care to know (nor should it!) about the block size it needs to be using. The result of this is that the more &amp;ldquo;small files&amp;rdquo; you have on your drive, the more &amp;ldquo;slack space&amp;rdquo; you have on the drive - space that isn&amp;rsquo;t being used for anything, but is still seen as &amp;ldquo;used&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;So now we come to a decision, either we just leave that space empty and accept it as part of the operating costs, or we try and figure out how to utilize it. Engineers, (un)fortunately, are quite obsessed with performance. These &amp;ldquo;tails&amp;rdquo; (the last block) are inefficient, and could probably be removed with a bit of smart thinking. This results in two possible ways to resolve this problem.:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;We allow the filesystem to support variable block sizes&lt;/li&gt;
-&lt;li&gt;We figure out how to use that tail block for something useful&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The first way, variable block sizes, is something file systems like ZFS utilize in an attempt to have more efficient storage. Since you know the kind of data you will be using the drive for, ZFS will let you specify your block size. If you know you have a lot of small things that need to be stored, drop the block size, likewise, increase if you have large things. It even has some magic like block level compression to try and use those blocks to their fullest. It is a very simple idea - and as we know, the simple ideas are the hardest to implement!&lt;/p&gt;
-&lt;p&gt;The second way, is another simple solution to the problem. If we know we have a bunch of tail blocks that are half-filled.. why don&amp;rsquo;t we just combine them? That way we aren&amp;rsquo;t creating a new tail block, but are instead re-using another tail block. This would result in another seek to read/write this data, but it ensures that we are using this disk to its fullest capacity. File systems like BTRFS will combine multiple tail blocks. The reason this is so effective is because the average block size is actually some multiple of 512 bytes. If you think about it, a text file might be a couple bytes? In a traditional file system that&amp;rsquo;s 1 block per couple bytes. That&amp;rsquo;s a heck of a lot of things you can stuff into a single block at that rate!&lt;/p&gt;
-&lt;h2 id=&#34;changing-the-game&#34;&gt;Changing the game&lt;/h2&gt;
-&lt;p&gt;As you can see, we&amp;rsquo;ve put a lot of work into reducing the seek time for hard-drives. They&amp;rsquo;ve been such a fundamental component of computing that it was a requirement. But, what if you could just ignore seeking entirely? What if there was a way to almost instantly seek? In computer science we refer to this as O(1). That is the size of the data we are looking through is irrelevant - we can access any section of the data as quickly as any other. Welcome to the world of solid state storage. Solid state storage utilizes electronics instead of mechanical instrumentation. That is, instead of a spinning disk and actuators for the read/write heads it used electrical circuits. By removing the mechanical parts, it eliminated the &amp;ldquo;seek&amp;rdquo; time of disks that we find so slow. The only problem was that it was expensive and hard to make ENOUGH storage this way. We could easily make HDDs that were several gigabytes, but were struggling to make solid state drives at megabytes. It just couldn&amp;rsquo;t keep up.&lt;/p&gt;
-&lt;p&gt;Until it could.&lt;/p&gt;
-&lt;p&gt;Now days solid state storage devices are relatively cheap and large enough for the average user. They a whole bunch of problems caused by mechanical components. They produce less heat, less vibrations, and they are a lot faster. In fact, for a lot of work-loads, it&amp;rsquo;s silly to rely on hard-drives when you can get so much better performance from solid state storage.&lt;/p&gt;
-&lt;p&gt;How interesting&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s crazy to think of all that we&amp;rsquo;ve accomplished because of that little mechanical hard-drive. But what&amp;rsquo;s crazier is that we are only able to see this in retrospect. No one was able to see what the result of spinning disk drives would be. No would thought that we would invent so many different file systems to solve the problems. That we would make so many advancements in technology just to store MORE data on the drives. At the time, they were just better than tape. They were simply a step in the chain, that in retrospect, was pretty cool.
-Follow the conversation at HackerNews &lt;a href=&#34;https://news.ycombinator.com/item?id=13091192&#34;&gt;https://news.ycombinator.com/item?id=13091192&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iis on Xangelo.ca</title>
+    <link>https://xangelo.ca/tags/iis/</link>
+    <description>Recent content in iis on Xangelo.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2011 - 2022</copyright>
+    <lastBuildDate>Sun, 28 May 2023 22:39:07 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/iis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
+      <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
+      <pubDate>Sun, 28 May 2023 22:39:07 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/posts/chrome_request_stalled/</guid>
+      <description>Chrome reports that a request is stuck in a &amp;ldquo;stalled&amp;rdquo; state and I try and figure out why</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+# Tuesday, May 30, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/posts/chrome_request_stalled/index.gmi → Older: Chrome HTTP Request stuck in "Stalled" State
+
+
+I feel like I'm ALMOST there on the process for deployments. I think right now I need to adjust the build process so that after I write a post in the outliner, it gets pushed up to github automatically (the raw data) which builds and deploys it to github pages. That way the "built" info isn't in github.
+
+
+
+
+
+
+    
+
+---
+## References
+
+
+
+## Related articles
+
+=> /gemini/daily/2023/may/26/index.gmi Friday, May 26, 2023: <no value>
+=> /gemini/daily/2023/may/25/index.gmi Thursday, May 25, 2023: <no value>
+=> /gemini/daily/2023/may/24/index.gmi Thursday, May 24, 2023: <no value>
+---
