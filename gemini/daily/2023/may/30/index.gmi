@@ -1,7 +1,7 @@
 # Tuesday, May 30, 2023
 
 
-
+=> gemini://gemini.xangelo.ca/daily/2023/june/2/index.gmi ← Newer: Friday, June 2nd, 2023
 => gemini://gemini.xangelo.ca/daily/2023/may/26/index.gmi → Older: Friday, May 26, 2023
 
 
@@ -21,7 +21,7 @@ I feel like I'm ALMOST there on the process for deployments. I think right now I
 
 ## Related articles
 
+=> /gemini/daily/2023/june/2/index.gmi Friday, June 2nd, 2023: <no value>
 => /gemini/daily/2023/may/26/index.gmi Friday, May 26, 2023: <no value>
 => /gemini/daily/2023/may/25/index.gmi Thursday, May 25, 2023: <no value>
-=> /gemini/daily/2023/may/24/index.gmi Thursday, May 24, 2023: <no value>
 ---
