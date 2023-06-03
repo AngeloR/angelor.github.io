@@ -1,7 +1,8 @@
 ---
 title: "Git Workflows Suck"
 date: 2021-07-15T12:16:45-04:00
-tags: ["git", "development"]
+tags: ["git", "development", "engineering processes"]
+summary: Common pitfalls with everyones "git process"
 ---
 
 I'm tired of all the git workflows. I'm tired of talking about the best way to craft commit messages. I'm tired of how people pile on the best way to do PRs. I'm sick of people picking apart architectural decisions in a PR. I'm tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I'm over the fact that I don't think I've ever seen a single person clone a PR locally and actually verify that it does what it says it does.

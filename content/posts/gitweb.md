@@ -2,7 +2,7 @@
 title: "gitweb - a GitHub/GitLab alternative"
 date: 2022-03-24T01:29:37-04:00
 tags: ["git", "development", "dev tools", "gitweb"]
-draft: false
+summary: Setting up your own git repo browser
 ---
 
 ## Owning Your Digital Space

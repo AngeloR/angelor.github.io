@@ -1,7 +1,8 @@
 ---
 title: "Designing On-Call"
 date: 2022-09-21T22:36:23-04:00
-tags: ["engineering", "engineering org"]
+tags: ["engineering", "engineering org", "engineering processes"]
+summary: How to implement a successful on-call process for the first time
 ---
 On-call is one of those things that all developers end up doing at some point. My goal isn't to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I'm going to start at the very beginning because chances are you're already doing it wrong. I should also note that I'm looking at this specifically from a SaaS point of view.
 

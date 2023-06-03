@@ -1,6 +1,7 @@
 ---
 title: "DEVLOG: NewsRiver Updates"
 date: 2020-11-10T09:43:04-05:00
+summary: A River-of-News style RSS Reader
 ---
 
 ## What is News River?

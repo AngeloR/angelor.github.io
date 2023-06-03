@@ -1,7 +1,8 @@
 ---
 title: "Code Reviews Are Failure"
 date: 2022-02-24T11:05:34-05:00
-tags: ["git", "development"]
+tags: ["git", "development", "engineering processes"]
+summary: Code Reviews are nothing more than a half-hearted attempt to avoid planning
 ---
 
 ## Code Reviews are a Failure

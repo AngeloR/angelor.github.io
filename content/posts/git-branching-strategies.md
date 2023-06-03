@@ -1,7 +1,8 @@
 ---
 title: "Git Branching Strategies"
 date: 2021-07-16T16:14:40-04:00
-tags: ["git", "development", "dev workflow"]
+tags: ["git", "development", "dev workflow", "engineering processes"]
+summary: A topic that every developer in the world has an opinion about
 ---
 
 In a [previous](/posts/git-workflows/) post, I talked about git workflows and I outlined the two big problems I see with git workflows:  

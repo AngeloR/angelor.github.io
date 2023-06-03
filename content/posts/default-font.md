@@ -2,6 +2,7 @@
 title: "Removing the Default Font"
 date: 2022-03-31T00:07:57-04:00
 tags: ["upkeep", "fonts"]
+summary: Where I spend too long talking about why I removed the default font temporarily
 ---
 
 This is a small change that I've made to the site that I've actually been thinking about for quite some time. I've always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.

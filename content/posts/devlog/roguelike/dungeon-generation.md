@@ -2,6 +2,7 @@
 title: "Dungeon Generation in Roguelikes"
 date: 2021-04-23T09:44:35-04:00
 tags: ["roguelike", "explanation"]
+summary: A simple dungeon generation algorithm for organic rooms
 ---
 
 

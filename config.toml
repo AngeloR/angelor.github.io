@@ -1,16 +1,30 @@
-baseURL = "https://xangelo.ca"
-theme = "plain"
 title = "Xangelo.ca"
 author = "Angelo R"
 copyright = "Copyright © 2011 - 2022"
 paginate = 15
+baseURL = "https://xangelo.ca"
+theme = "brutalist-minimalist"
 languageCode = "en-us"
+relativeURLs = true
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 rssLimit = 15
 
+[menu]
+[[menu.main]]
+name = 'About'
+pageRef = '/about'
+[[menu.main]]
+name = 'Linkblog'
+pageRef = '/linkblog'
+[[menu.main]]
+name = 'Categories'
+pageRef = '/categories'
+
 [params]
 subtitle = "Technical musings and other tidbits"
+siteBaseName = "Xangelo.ca"
+bloglistLength = 10
 
 [markup]
 [markup.highlight]

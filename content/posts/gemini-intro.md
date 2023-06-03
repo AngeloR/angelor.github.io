@@ -1,7 +1,8 @@
 ---
 title: "Gemini, an HTTP alternative"
 date: 2021-06-21T17:11:57-04:00
-tags: ["gemini"]
+tags: ["gemini", "upkeep"]
+summary: An HTTP alternative
 ---
 
 For the last few months now I've started embracing my weird love for text and text-related user interfaces. From email to irc, I'm moving more and more of my social interactions away from traditional websites/apps and over to my terminal. A big part of this move is a step back from 3rd party applications to things that I have a bit more control over - but there are many reasons.
