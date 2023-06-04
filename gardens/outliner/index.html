@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<title>
+Outliner [Garden] | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
+<header>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
+</header>
+
+
+    <main>
+      
+<h2>Outliner [Garden]</h2>
+
+<div class="tag-list">
+  
+  [ <a href="../../tags/project">project</a> ]
+  
+  [ <a href="../../tags/outliner">outliner</a> ]
+  
+  [ <a href="../../tags/garden">garden</a> ]
+  
+</div>
+
+
+<p>This page will serve as the current state of my Outliner project.</p>
+<p>Github - <a href="https://github.com/angelor/outliner">https://github.com/angelor/outliner</a></p>
+<h2 id="current-version-001-alpha-2">Current Version: 0.0.1-alpha-2</h2>
+<h3 id="known-bugs">Known Bugs</h3>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="planned-features">Planned Features</h3>
+<h4 id="general-publishing">General Publishing</h4>
+<p>Right now, publishing is heavily hardcoded to work with my  hugo setup. The idea is to first iron out all the usability bugs and then once we have a nice working copy that&rsquo;s relatively bug free, implement a &ldquo;settings&rdquo; file where these things can be configured. One issue that I&rsquo;m running in to right now is the fact that I restrict permissions on the build to only the <code>.outliner/</code> directory so that I don&rsquo;t accidentally touch any other files. Hugo, obviously, lives outside that directoy and so we have a slight issue. I&rsquo;m not totally sure what the best way to deal with this is yet, which is why there hasn&rsquo;t been a new build of the outliner that officially supports this.</p>
+<h4 id="referential-node-links">Referential Node Links</h4>
+<p>Each node in the outliner is saved as its own JSON file. The reason for this was to eventually implement the idea of &ldquo;Referential Node Links&rdquo;. A single node, that can be referenced in multiple outliners. Updating the node from any of the outlines will update the node in every outline. The idea is to give you the ability to re-use certain templates/bits of code. </p>
+<h4 id="copy-nodes">Copy Nodes</h4>
+<p>Hitting <code>ctrl</code>+<code>c</code> on a hilighted node should all you to copy the content of that particular node. Pasting the node should happen in one of two ways: If you are in edit mode, it should paste just the content of the node in your current editor. If you are in navigation mode, it should paste a new copy of the node at your cursor, pushing the existing content down.</p>
+
+<div class="post-date">
+  Posted Sunday, June 04, 2023
+</div>
+
+    </main>
+    
+<footer>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
+</footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../gardens/outliner/>https://xangelo.ca/gardens/outliner/</a>, 2023-06-04</p>
+
+
+
+</body>
+     
+ 

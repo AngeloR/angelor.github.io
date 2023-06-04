@@ -26,7 +26,7 @@ I just realized &nbsp;that all the "Daily Updates" are already one day out of sy
 
 ## Related articles
 
+=> /gemini/daily/2023/june/4/index.gmi Sunday, June 4th, 2023: <no value>
 => /gemini/daily/2023/june/3/index.gmi Saturday, June 3rd, 2023: <no value>
 => /gemini/daily/2023/june/2/index.gmi Friday, June 2nd, 2023: <no value>
-=> /gemini/daily/2023/may/30/index.gmi Tuesday, May 30, 2023: <no value>
 ---

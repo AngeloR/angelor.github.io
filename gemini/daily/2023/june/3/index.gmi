@@ -1,7 +1,7 @@
 # Saturday, June 3rd, 2023
 
 
-
+=> gemini://gemini.xangelo.ca/gardens/outliner/index.gmi ← Newer: Outliner [Garden]
 => gemini://gemini.xangelo.ca/daily/2023/june/2/index.gmi → Older: Friday, June 2nd, 2023
 
 
@@ -23,7 +23,7 @@ Learned about the `hugo -w` flag which allows hugo to constantly watch/build my 
 
 ## Related articles
 
+=> /gemini/daily/2023/june/4/index.gmi Sunday, June 4th, 2023: <no value>
 => /gemini/daily/2023/june/2/index.gmi Friday, June 2nd, 2023: <no value>
 => /gemini/daily/2023/may/30/index.gmi Tuesday, May 30, 2023: <no value>
-=> /gemini/daily/2023/may/26/index.gmi Friday, May 26, 2023: <no value>
 ---

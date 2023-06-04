@@ -9,6 +9,24 @@
     <copyright>Copyright © 2011 - 2022</copyright>
     <lastBuildDate>Sat, 03 Jun 2023 06:01:42 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Sunday, June 4th, 2023</title>
+      <link>https://xangelo.ca/daily/2023/june/4/</link>
+      <pubDate>Sun, 04 Jun 2023 06:27:38 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/june/4/</guid>
+      <description>I&amp;rsquo;ve been noodling around in the fediverse for a long time now, entraced by some of the ideas Diaspora had when it first launched.. and mostly just continually disappointed by the various communities that tend to spring up around it. Hoping this foray into the activity-pub based world (kbin, lemmy, pleroma) will be different. But already the main lemmy instance is proving to be a bad one specifically because of the devs.</description>
+    </item>
+    
+    <item>
+      <title>Outliner [Garden]</title>
+      <link>https://xangelo.ca/gardens/outliner/</link>
+      <pubDate>Sun, 04 Jun 2023 06:03:38 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/gardens/outliner/</guid>
+      <description>A Garden (Continually updating) post about the current Outliner Status.</description>
+    </item>
+    
+    <item>
       <title>Saturday, June 3rd, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/3/</link>
       <pubDate>Sat, 03 Jun 2023 06:08:02 -0400</pubDate>
@@ -126,24 +144,6 @@ I moved to hugo about a year ago, mostly to gain the easy github pages integrati
       
       <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
       <description>A topic that every developer in the world has an opinion about</description>
-    </item>
-    
-    <item>
-      <title>Git Workflows Suck</title>
-      <link>https://xangelo.ca/posts/git-workflows/</link>
-      <pubDate>Thu, 15 Jul 2021 12:16:45 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/git-workflows/</guid>
-      <description>Common pitfalls with everyones &amp;ldquo;git process&amp;rdquo;</description>
-    </item>
-    
-    <item>
-      <title>Gemini, an HTTP alternative</title>
-      <link>https://xangelo.ca/posts/gemini-intro/</link>
-      <pubDate>Mon, 21 Jun 2021 17:11:57 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/gemini-intro/</guid>
-      <description>An HTTP alternative</description>
     </item>
     
   </channel>

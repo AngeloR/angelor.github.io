@@ -1,0 +1,30 @@
+# Sunday, June 4th, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/gardens/outliner/index.gmi → Older: Outliner [Garden]
+
+
+I've been noodling around in the fediverse for a long time now, entraced by some of the ideas Diaspora had when it first launched.. and mostly just continually disappointed by the various communities that tend to spring up around it. Hoping this foray into the activity-pub based world (kbin, lemmy, pleroma) will be different. But already the main lemmy instance is proving to be a bad one specifically because of the devs. Why can't we just have nice things?
+
+Created the first "Garden" post about my Outliner [1] project which will serve as a long running (forever updating) "home page" for the project.
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> /gardens/outliner [1] Outliner (/gardens/outliner)
+
+
+## Related articles
+
+=> /gemini/daily/2023/june/3/index.gmi Saturday, June 3rd, 2023: <no value>
+=> /gemini/daily/2023/june/2/index.gmi Friday, June 2nd, 2023: <no value>
+=> /gemini/daily/2023/may/30/index.gmi Tuesday, May 30, 2023: <no value>
+---
