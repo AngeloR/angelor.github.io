@@ -1,0 +1,27 @@
+# Monday, June 5th, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/daily/2023/june/4/index.gmi → Older: Sunday, June 4th, 2023
+
+
+Caching is a bad idea until you have some concrete numbers as to why you're caching a thing.
+
+
+
+
+
+
+    
+
+---
+## References
+
+
+
+## Related articles
+
+=> /gemini/daily/2023/june/4/index.gmi Sunday, June 4th, 2023: <no value>
+=> /gemini/daily/2023/june/3/index.gmi Saturday, June 3rd, 2023: <no value>
+=> /gemini/daily/2023/june/2/index.gmi Friday, June 2nd, 2023: <no value>
+---

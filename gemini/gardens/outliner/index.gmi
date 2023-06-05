@@ -17,6 +17,12 @@ Github - https://github.com/angelor/outliner
 
 ### Planned Features
 
+There's no timeline on any of these features, but their current order is rougly the order that I'll be working on them on.
+
+### Mouse Support
+
+I've been holding off on this a bit, mostly because I don't want to deal with the node-reordering during dragging/dropping. However, I think it'll be one of those things that are really helpful even if you're a keyboard only user.
+
 ### General Publishing
 
 Right now, publishing is heavily hardcoded to work with my &nbsp;hugo setup. The idea is to first iron out all the usability bugs and then once we have a nice working copy that's relatively bug free, implement a "settings" file where these things can be configured. One issue that I'm running in to right now is the fact that I restrict permissions on the build to only the `.outliner/` directory so that I don't accidentally touch any other files. Hugo, obviously, lives outside that directoy and so we have a slight issue. I'm not totally sure what the best way to deal with this is yet, which is why there hasn't been a new build of the outliner that officially supports this.
