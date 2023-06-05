@@ -2,10 +2,12 @@
 
 
 
-=> gemini://gemini.xangelo.ca/daily/2023/june/4/index.gmi → Older: Sunday, June 4th, 2023
+=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi → Older: Rising Legends [Garden]
 
 
 Caching is a bad idea until you have some concrete numbers as to why you're caching a thing.
+
+I feel like all reddit has to do is say "Ok, we've changed the pricing to something more reasonable" and then everyone will pat themselves on the back and start paying for their own content. Reddit exists because users devote the time to submit new content and to MODERATE IT all for free. They want you to continue to do that, but then charge users to read it the way they want to read it? Kind of crazy. All this is to say that I'm being drawn back in to the whole fediverse stuff....
 
 
 

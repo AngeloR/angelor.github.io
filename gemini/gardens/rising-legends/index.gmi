@@ -1,0 +1,39 @@
+# Rising Legends [Garden]
+
+
+=> gemini://gemini.xangelo.ca/daily/2023/june/5/index.gmi ← Newer: Monday, June 5th, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/june/4/index.gmi → Older: Sunday, June 4th, 2023
+
+
+This page will serve as the current state of Rising Legends [1], a Persistent Browser-Based Game that I'm working on.
+
+---
+
+### News
+
+### 2023-05-06
+
+Finally set up a page where I can track the current status of the game (known bugs, changelog, etc.)
+
+
+
+
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://www.risinglegends.net [1] Rising Legends (https://www.risinglegends.net)
+
+
+## Related articles
+
+=> /gemini/gardens/outliner/index.gmi Outliner [Garden]: <no value>
+=> /gemini/posts/outliner_blog_update/index.gmi Now Powered by Outlines: <no value>
+---

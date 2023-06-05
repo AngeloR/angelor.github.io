@@ -53,5 +53,6 @@ Hitting `ctrl`+`c` on a hilighted node should all you to copy the content of tha
 
 ## Related articles
 
+=> /gemini/gardens/rising-legends/index.gmi Rising Legends [Garden]: <no value>
 => /gemini/posts/outliner_blog_update/index.gmi Now Powered by Outlines: <no value>
 ---

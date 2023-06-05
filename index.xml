@@ -11,10 +11,20 @@
     <item>
       <title>Monday, June 5th, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/5/</link>
-      <pubDate>Mon, 05 Jun 2023 09:56:19 -0400</pubDate>
+      <pubDate>Mon, 05 Jun 2023 14:14:27 -0400</pubDate>
       
       <guid>https://xangelo.ca/daily/2023/june/5/</guid>
-      <description>Caching is a bad idea until you have some concrete numbers as to why you&amp;rsquo;re caching a thing.</description>
+      <description>Caching is a bad idea until you have some concrete numbers as to why you&amp;rsquo;re caching a thing.
+I feel like all reddit has to do is say &amp;ldquo;Ok, we&amp;rsquo;ve changed the pricing to something more reasonable&amp;rdquo; and then everyone will pat themselves on the back and start paying for their own content. Reddit exists because users devote the time to submit new content and to MODERATE IT all for free.</description>
+    </item>
+    
+    <item>
+      <title>Rising Legends [Garden]</title>
+      <link>https://xangelo.ca/gardens/rising-legends/</link>
+      <pubDate>Mon, 05 Jun 2023 10:10:34 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/gardens/rising-legends/</guid>
+      <description>A Garden (Continually updating) post about the current status of a PBBG Game I&amp;rsquo;m working on.</description>
     </item>
     
     <item>
@@ -135,15 +145,6 @@ I moved to hugo about a year ago, mostly to gain the easy github pages integrati
       
       <guid>https://xangelo.ca/posts/gitweb/</guid>
       <description>Setting up your own git repo browser</description>
-    </item>
-    
-    <item>
-      <title>Code Reviews Are Failure</title>
-      <link>https://xangelo.ca/posts/code-reviews-are-failure/</link>
-      <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
-      
-      <guid>https://xangelo.ca/posts/code-reviews-are-failure/</guid>
-      <description>Code Reviews are nothing more than a half-hearted attempt to avoid planning</description>
     </item>
     
   </channel>
