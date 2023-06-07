@@ -75,15 +75,16 @@ Outliner [Garden] | Xangelo.ca
 <p>There&rsquo;s no timeline on any of these features, but their current order is rougly the order that I&rsquo;ll be working on them on.</p>
 <h4 id="mouse-support">Mouse Support</h4>
 <p>I&rsquo;ve been holding off on this a bit, mostly because I don&rsquo;t want to deal with the node-reordering during dragging/dropping. However, I think it&rsquo;ll be one of those things that are really helpful even if you&rsquo;re a keyboard only user.</p>
+<h4 id="copy-nodes">Copy Nodes</h4>
+<p>Hitting <code>ctrl</code>+<code>c</code> on a hilighted node should all you to copy the content of that particular node. Pasting the node should happen in one of two ways: If you are in edit mode, it should paste just the content of the node in your current editor. If you are in navigation mode, it should paste a new copy of the node at your cursor, pushing the existing content down.</p>
+<p>This lends itself really well to &ldquo;referential nodes&rdquo; as well</p>
 <h4 id="general-publishing">General Publishing</h4>
 <p>Right now, publishing is heavily hardcoded to work with my  hugo setup. The idea is to first iron out all the usability bugs and then once we have a nice working copy that&rsquo;s relatively bug free, implement a &ldquo;settings&rdquo; file where these things can be configured. One issue that I&rsquo;m running in to right now is the fact that I restrict permissions on the build to only the <code>.outliner/</code> directory so that I don&rsquo;t accidentally touch any other files. Hugo, obviously, lives outside that directoy and so we have a slight issue. I&rsquo;m not totally sure what the best way to deal with this is yet, which is why there hasn&rsquo;t been a new build of the outliner that officially supports this.</p>
 <h4 id="referential-node-links">Referential Node Links</h4>
-<p>Each node in the outliner is saved as its own JSON file. The reason for this was to eventually implement the idea of &ldquo;Referential Node Links&rdquo;. A single node, that can be referenced in multiple outliners. Updating the node from any of the outlines will update the node in every outline. The idea is to give you the ability to re-use certain templates/bits of code. </p>
-<h4 id="copy-nodes">Copy Nodes</h4>
-<p>Hitting <code>ctrl</code>+<code>c</code> on a hilighted node should all you to copy the content of that particular node. Pasting the node should happen in one of two ways: If you are in edit mode, it should paste just the content of the node in your current editor. If you are in navigation mode, it should paste a new copy of the node at your cursor, pushing the existing content down.</p>
+<p>Each node in the outliner is saved as its own JSON file. The reason for this was to eventually implement the idea of &ldquo;Referential Node Links&rdquo;. A single node, that can be referenced in multiple outliners. Updating the node from any of the outlines will update the node in every outline. The idea is to give you the ability to re-use certain templates/bits of code. If you hit <code>ctrl+shift+c</code> it should copy the node reference and allow you to paste that in</p>
 
 <div class="post-date">
-  Posted Monday, June 05, 2023
+  Posted Tuesday, June 06, 2023
 </div>
 
     </main>
@@ -105,7 +106,7 @@ Outliner [Garden] | Xangelo.ca
 
 
 
-<p id="source-url">Source: <a href=../../gardens/outliner/>https://xangelo.ca/gardens/outliner/</a>, 2023-06-05</p>
+<p id="source-url">Source: <a href=../../gardens/outliner/>https://xangelo.ca/gardens/outliner/</a>, 2023-06-06</p>
 
 
 

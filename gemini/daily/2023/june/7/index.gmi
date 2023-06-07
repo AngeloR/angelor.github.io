@@ -1,0 +1,27 @@
+# Tuesday, June 7th, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/gardens/outliner/index.gmi → Older: Outliner [Garden]
+
+
+Today's the day I finally start looking into mouse support on the Outliner. It's honestly been a great tool and a daily driver for my notes/blog updates. I don't really see much need in mouse support, but someone saw me using it and was intrigued. And I had to reluctantly tell them it doesn't support a mouse...
+
+
+
+
+
+
+    
+
+---
+## References
+
+
+
+## Related articles
+
+=> /gemini/daily/2023/june/5/index.gmi Monday, June 5th, 2023: <no value>
+=> /gemini/daily/2023/june/4/index.gmi Sunday, June 4th, 2023: <no value>
+=> /gemini/daily/2023/june/3/index.gmi Saturday, June 3rd, 2023: <no value>
+---
