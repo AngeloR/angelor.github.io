@@ -1,7 +1,7 @@
 # Sunday, June 4th, 2023
 
 
-=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi ← Newer: Rising Legends [Garden]
+=> gemini://gemini.xangelo.ca/daily/2023/june/5/index.gmi ← Newer: Monday, June 5th, 2023
 => gemini://gemini.xangelo.ca/daily/2023/june/3/index.gmi → Older: Saturday, June 3rd, 2023
 
 

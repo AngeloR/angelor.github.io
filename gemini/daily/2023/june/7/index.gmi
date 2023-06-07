@@ -1,11 +1,13 @@
 # Tuesday, June 7th, 2023
 
 
-
+=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi ← Newer: Rising Legends [Garden]
 => gemini://gemini.xangelo.ca/gardens/outliner/index.gmi → Older: Outliner [Garden]
 
 
 Today's the day I finally start looking into mouse support on the Outliner. It's honestly been a great tool and a daily driver for my notes/blog updates. I don't really see much need in mouse support, but someone saw me using it and was intrigued. And I had to reluctantly tell them it doesn't support a mouse...
+
+With the fires out in Quebec continuing, air quality has continued to deteriorate. For a good chunk of yesterday everything had a bit of an orange hue. You can track air quality forecasts here -&nbsp;https://firesmoke.ca/
 
 
 

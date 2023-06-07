@@ -1,15 +1,25 @@
 # Rising Legends [Garden]
 
 
-=> gemini://gemini.xangelo.ca/daily/2023/june/5/index.gmi ← Newer: Monday, June 5th, 2023
-=> gemini://gemini.xangelo.ca/daily/2023/june/4/index.gmi → Older: Sunday, June 4th, 2023
+
+=> gemini://gemini.xangelo.ca/daily/2023/june/7/index.gmi → Older: Tuesday, June 7th, 2023
 
 
 This page will serve as the current state of Rising Legends [1], a Persistent Browser-Based Game that I'm working on.
 
 ---
 
+### Features
+
+* Skills - All users get the "core" skills: `bladed`, `blunt`, `one handed mastery`, `two handed mastery`, `destruction magic`, `restoration magic`, `light armour mastery`, `heavy armour mastery`. These are all passive and improve based on use.
+
+---
+
 ### News
+
+2023-05-07
+
+Started the rework on inventory to support updating skills dynamically. All skills are "affected by" a skill. For example, a Short Sword is affected by your One Handed Mastery skill and your Bladed Mastery skill.
 
 ### 2023-05-06
 
