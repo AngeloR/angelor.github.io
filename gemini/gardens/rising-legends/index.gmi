@@ -1,19 +1,35 @@
 # Rising Legends [Garden]
 
 
-
-=> gemini://gemini.xangelo.ca/daily/2023/june/7/index.gmi → Older: Tuesday, June 7th, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/june/18/index.gmi ← Newer: Sunday, June 18, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/june/9/index.gmi → Older: Friday, June 9th, 2023
 
 
 This page will serve as the current state of Rising Legends [1], a Persistent Browser-Based Game that I'm working on.
 
----
+### Skills
 
-### Features
+All users get the "core" skills: `bladed`, `blunt`, `one handed mastery`, `two handed mastery`, `destruction magic`, `restoration magic`, `light armour mastery`, `heavy armour mastery`. These are all passive and improve based on use.
 
-* Skills - All users get the "core" skills: `bladed`, `blunt`, `one handed mastery`, `two handed mastery`, `destruction magic`, `restoration magic`, `light armour mastery`, `heavy armour mastery`. These are all passive and improve based on use.
 
----
+### Professions
+
+### Wanderer
+
+The primary profession. All players start out as a wanderer. Wanderers gain stat point increases every other level.&nbsp;
+
+
+### Warrior
+
++2 STR on even levels, +1 STR, +1 CON on odd
+
+### Rogue
+
++2 DEX on even levels, +1 DEX, +1 INT on odd
+
+### Mage
+
++2 INT on even levels, +1 INT, +1 CON on odd
 
 ### News
 

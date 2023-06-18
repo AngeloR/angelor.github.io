@@ -9,12 +9,30 @@
     <copyright>Copyright © 2011 - 2022</copyright>
     <lastBuildDate>Sat, 03 Jun 2023 06:01:42 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Sunday, June 18, 2023</title>
+      <link>https://xangelo.ca/daily/2023/june/18/</link>
+      <pubDate>Sun, 18 Jun 2023 06:30:13 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/june/18/</guid>
+      <description>Been a few days since an update here - mostly because I&amp;rsquo;ve been quite swamped. The Reddit Fiasco has been somewhat freeing in that I&amp;rsquo;ve just moved on from the platform. I never really contributed much in my 13+ years outside of a few DMs and responding to help. I haven&amp;rsquo;t actually replaced it with anything. I like kbin/lemmy.. but I&amp;rsquo;m really not looking for the same thing. I think I&amp;rsquo;m looking for smaller communities&amp;hellip; again the IndieWeb beckons.</description>
+    </item>
+    
+    <item>
       <title>Rising Legends [Garden]</title>
       <link>https://xangelo.ca/gardens/rising-legends/</link>
-      <pubDate>Wed, 07 Jun 2023 10:15:44 -0400</pubDate>
+      <pubDate>Tue, 13 Jun 2023 10:08:25 -0400</pubDate>
       
       <guid>https://xangelo.ca/gardens/rising-legends/</guid>
       <description>A Garden (Continually updating) post about the current status of a PBBG Game I&amp;rsquo;m working on.</description>
+    </item>
+    
+    <item>
+      <title>Friday, June 9th, 2023</title>
+      <link>https://xangelo.ca/daily/2023/june/9/</link>
+      <pubDate>Fri, 09 Jun 2023 05:49:51 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/june/9/</guid>
+      <description>Rising Legends is finally getting to the point where the core game loop is in. It&amp;rsquo;s exciting to be back in this space after so many years. Every couple years I build the mechanics/system for some PBBG - often to test out some new architecture/design patterns. This time I really focused on getting something playable rather than the code behind it. The next step is to start getting some 3rd party testers and early alpha feedback!</description>
     </item>
     
     <item>
@@ -128,24 +146,6 @@ I moved to hugo about a year ago, mostly to gain the easy github pages integrati
       
       <guid>https://xangelo.ca/posts/outliner_blog_update/</guid>
       <description>An update to how I publish new posts</description>
-    </item>
-    
-    <item>
-      <title>Designing On-Call</title>
-      <link>https://xangelo.ca/posts/on-call/</link>
-      <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/on-call/</guid>
-      <description>How to implement a successful on-call process for the first time</description>
-    </item>
-    
-    <item>
-      <title>Removing the Default Font</title>
-      <link>https://xangelo.ca/posts/default-font/</link>
-      <pubDate>Thu, 31 Mar 2022 00:07:57 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/default-font/</guid>
-      <description>Where I spend too long talking about why I removed the default font temporarily</description>
     </item>
     
   </channel>

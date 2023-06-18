@@ -1,7 +1,7 @@
 # Tuesday, June 7th, 2023
 
 
-=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi ← Newer: Rising Legends [Garden]
+=> gemini://gemini.xangelo.ca/daily/2023/june/9/index.gmi ← Newer: Friday, June 9th, 2023
 => gemini://gemini.xangelo.ca/gardens/outliner/index.gmi → Older: Outliner [Garden]
 
 
@@ -23,7 +23,7 @@ With the fires out in Quebec continuing, air quality has continued to deteriorat
 
 ## Related articles
 
+=> /gemini/daily/2023/june/18/index.gmi Sunday, June 18, 2023: <no value>
+=> /gemini/daily/2023/june/9/index.gmi Friday, June 9th, 2023: <no value>
 => /gemini/daily/2023/june/5/index.gmi Monday, June 5th, 2023: <no value>
-=> /gemini/daily/2023/june/4/index.gmi Sunday, June 4th, 2023: <no value>
-=> /gemini/daily/2023/june/3/index.gmi Saturday, June 3rd, 2023: <no value>
 ---

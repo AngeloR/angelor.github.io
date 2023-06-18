@@ -1,0 +1,28 @@
+# Friday, June 9th, 2023
+
+
+=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi ← Newer: Rising Legends [Garden]
+=> gemini://gemini.xangelo.ca/daily/2023/june/7/index.gmi → Older: Tuesday, June 7th, 2023
+
+
+Rising Legends [1] is finally getting to the point where the core game loop is in. It's exciting to be back in this space after so many years. Every couple years I build the mechanics/system for some PBBG - often to test out some new architecture/design patterns. This time I really focused on getting something playable rather than the code behind it. The next step is to start getting some 3rd party testers and early alpha feedback!
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://www.risinglegends.net [1] Rising Legends (https://www.risinglegends.net)
+
+
+## Related articles
+
+=> /gemini/daily/2023/june/18/index.gmi Sunday, June 18, 2023: <no value>
+=> /gemini/daily/2023/june/7/index.gmi Tuesday, June 7th, 2023: <no value>
+=> /gemini/daily/2023/june/5/index.gmi Monday, June 5th, 2023: <no value>
+---
