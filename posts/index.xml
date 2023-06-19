@@ -9,6 +9,24 @@
     <copyright>Copyright © 2011 - 2022</copyright>
     <lastBuildDate>Thu, 25 May 2023 00:15:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Started from *Free* now we&#39;re here</title>
+      <link>https://xangelo.ca/posts/free_software_mtx/</link>
+      <pubDate>Mon, 19 Jun 2023 06:12:47 -1200</pubDate>
+      
+      <guid>https://xangelo.ca/posts/free_software_mtx/</guid>
+      <description>&lt;p&gt;Neopets was the first time I&amp;rsquo;d ever heard about HTML or CSS. I had been playing terrible games for a long time at this point, even digging into basic at one point to try and do something.. but I didn&amp;rsquo;t have the interest at the time. I didn&amp;rsquo;t have anyone in my (or my parents) circle that was interested in computers at the time, so I never even considered what was possible. Neopets was a free game where you took care of a digital pet and then played a ton of games to earn in-game money. They even had a huge &amp;ldquo;Auction house&amp;rdquo; that was made up of individual stores that users ran. You could start a store, and set up your own items for sale. It was amazing. It also gave you a little area to enter HTML/CSS snippets so you could customize your store. That was why I bothered learning HTML/CSS at all. To customize my neopets store. They had the same interface for your clan page - customize your entire clan page with HTML and CSS. It was amazing. It was the first time anything related to &amp;ldquo;programming&amp;rdquo; clicked and I realized I loved it. &lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t remember a single ad on neopet trying to force me to make a purchase of a premium currency. There probably were.. but I don&amp;rsquo;t remember them at all.&lt;/p&gt;
+&lt;p&gt;After learning HTML/CSS and offering my services to other neopets players in exchange for ingame goods.. I grew out of what neopets offered. In that time I discovered geocities and it DHTML. I loved it. I grew out of that too when I started digging into PHP and started looking around for free shared hosting. There were a lot of hosting companies at the time.&lt;/p&gt;
+&lt;p&gt;One in particular, Host Matrix, caught my attention - because I love the Matrix. They were having a promotion where if you wrote long form tutorials for them (around HTML/CSS/PHP) you could get free hosting! And so I did. I wrote a lot of tutorials so that I could get free hosting and continue into this weird world I had stumbled in to.&lt;/p&gt;
+&lt;p&gt;Around the same time I picked up the guitar. My dad had played the guitar since his teens, and so there was always one around. I had never shown an interest in it.. but one day I picked it up and started learning how to play. Mostly because of tabs (tabulature) - a fingering based musical notation that works beautifully for the guitar. People, on the internet, would listen to songs, figure out what they were playing.. and then write it down and put it on the internet.. for free! I devoured everything I could find. Eventually I got good enough that I could write my own tabs and share with others! It was incredible. &lt;/p&gt;
+&lt;p&gt;When I started branching out musically.. it was because of free access to it. The first time I had heard Ravenous by &lt;a href=&#34;https://archenemy.net/en/&#34;&gt;Arch Enemy&lt;/a&gt; my mind was blown - I ran home and downloaded the song. I listened to it every day for a week and then started learning it. When I discovered Children of Bodom and Kalmah it was the same thing. Obscure bands that I would never have had the hope of finding out, accessible to me because it was free.&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t get me wrong, I understand there were costs to creating this. I&amp;rsquo;ve spent the last decade of my life building SaaS software for companies and managing infra budgets. I understand the cost. But also, I understand that I wasn&amp;rsquo;t a customer. Arch Enemy didn&amp;rsquo;t lose money by having me download their album. I didn&amp;rsquo;t have access to purchase their album and I didn&amp;rsquo;t have the money to do it. Arch Enemy gained a fan that would later on buy tickets to shows, and albums, and t-shirts. A fan that would have never bothered if he hadn&amp;rsquo;t heard their albums for free.&lt;/p&gt;
+&lt;p&gt;Free played a huge role in my life and I&amp;rsquo;ve always loved it. I donate a few hours every week to local startups that need technical advice. I hang out in slack groups answering questions. I hang out in Magic discord groups answering questions. I write software and give it away for free. I do it because I owe so much to free. &lt;/p&gt;
+&lt;p&gt;And now I sit here trying to figure out monetization strategies for my projects.. and I don&amp;rsquo;t like it. I wish I could do it for free, but there are costs associated with it that I know I won&amp;rsquo;t be able to subsidize forever. I know I want as much of it to be free as possible. I don&amp;rsquo;t want people to feel like they need to pay, I want them to want to. So I have to think about the best way to monetize &lt;a href=&#34;https://www.risinglegends.net&#34;&gt;Rising Legends&lt;/a&gt; that are in line with my philosophies&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Simple Redis Job Queue</title>
       <link>https://xangelo.ca/posts/simple_redis_queue/</link>
       <pubDate>Thu, 25 May 2023 00:15:53 -1500</pubDate>
@@ -1356,88 +1374,6 @@ in a real dungeon..&lt;/p&gt;
 &lt;li&gt;Two running API endpoints&lt;/li&gt;
 &lt;li&gt;1 Running a static site&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Disk Is Slow</title>
-      <link>https://xangelo.ca/posts/the-disk-is-slow/</link>
-      <pubDate>Wed, 29 Apr 2020 16:21:29 -2100</pubDate>
-      
-      <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
-      <description>&lt;p&gt;&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/silver-hard-drive-internals.jpg&#34; alt=&#34;Disk&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;what-is-slow&#34;&gt;What is slow?&lt;/h2&gt;
-&lt;p&gt;For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute. This is an indication of how quickly the disk can spin. It is common now-days to see drives advertising 7,200 rpm, or 10,000 rpm or even 15,000 rpm. How fancy.&lt;/p&gt;
-&lt;p&gt;Now, the disk itself is split into a couple major components:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The disks that data is stored on:&lt;/li&gt;
-&lt;li&gt;The read/write head&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;These disks are where the data is actually stored, and when you see a number like &amp;ldquo;7,200 rpm&amp;rdquo; what you are seeing is how quickly these disks can spin. In a simplified manner, what happens when you &amp;ldquo;write something to disk&amp;rdquo;, is that the disk spins to an empty point, and the head beings to write. Likewise, when you &amp;ldquo;read&amp;rdquo; data from the disk, it spins to a designated point (the &amp;ldquo;start&amp;rdquo; of the data) and the head begins to &amp;ldquo;read&amp;rdquo; the data until it is done.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s walk through a theoretical &amp;ldquo;disk&amp;rdquo;. Your &amp;ldquo;disk&amp;rdquo; can hold 8 units (00000000) of storage. We are going to perform a few actions on this disk.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;You write &amp;#39;a&amp;#39; twice - aa000000  
-You write &amp;#39;b&amp;#39; 3 times - aabbb000 
-You delete the two &amp;#39;a&amp;#39;   - 00bbb000 
-You write &amp;#39;c&amp;#39; 4 to,es - ccbbbcc0
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See your drive is smart enough to know that, even though there isn&amp;rsquo;t enough &amp;ldquo;contiguous&amp;rdquo; space, there is still enough space scattered around on the drive to store your 4 units of &amp;lsquo;c&amp;rsquo;. What happens is that your drive will spin to a free location, and let you start writing. When you run out of contiguous space, it will spin to a new location. This results in your data actually spread out all over your drive instead of next to each other. This is a good thing, of course. It means that you can use all the space on your drive without worrying about WHERE things are stored.&lt;/p&gt;
-&lt;p&gt;But, it also means that instead of the disk spinning just ONCE to get to the start of your data, it actually needs to spin twice.&lt;/p&gt;
-&lt;p&gt;As we grow our disk size from &amp;ldquo;8 units&amp;rdquo; to hundreds of gigabytes as most modern drives today have, we run into a problem - there is no guarantee that the data we need will be next to each other. In actuality, there is a high probability that we will need to keep jumping about on the disk to be able to read ALL the data we want. Our data ends up &amp;ldquo;fragmented&amp;rdquo;.&lt;/p&gt;
-&lt;h2 id=&#34;data-fragmentation&#34;&gt;Data Fragmentation&lt;/h2&gt;
-&lt;p&gt;The result of all this fragmentation, is that things just get slower over time. Unfortunately, the eventual degradation of data storage efficiencies is never attributed to the hard-drive because users don&amp;rsquo;t actually USE the hard-drive directly - they go through the OS which is supposed to manage these things. As a result, the eventual experience of degrading of performance is chalked up to &amp;ldquo;my Windows is slow&amp;rdquo;. Operating systems combatted this eventual degradation by shipping with a defragmenter, which does exactly what you&amp;rsquo;d expect. It takes all these scattered fragments from around your drive, and puts them next to each other. This reduces the overall amount of seeks necessary to retrieve necessary information, thereby making things speedier.&lt;/p&gt;
-&lt;p&gt;But that&amp;rsquo;s an expensive (resource wise) thing to do. In order to defragment a system, the program needs to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;find an application that has its data fragmented&lt;/li&gt;
-&lt;li&gt;copy the data between the fragmented data to memory or some other free space on the drive&lt;/li&gt;
-&lt;li&gt;move the data closer together.&lt;/li&gt;
-&lt;li&gt;repeat&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Lets go back to our previous scenario, and see how defragmentation could work:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Initial State: ccbbbcc0
-
-Step 1:        cc0bbccb
-Step 2:        cccbbc0b
-Step 3:        ccc0bcbb
-Step 4:        ccccb0bb
-Step 5:        cccc0bbb
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Obviously this is not optimized in any way, so there&amp;rsquo;s plenty we could do to speed this up. But this is essentially what your drive is doing. It&amp;rsquo;s like putting a deck of cards back in order after you&amp;rsquo;ve been shuffling them. Sure it&amp;rsquo;s possible, but it just takes some time.&lt;/p&gt;
-&lt;p&gt;A much better idea, would be to try and optimize STORING this data in such a way that would reduce fragmentation. That is, maybe we keep data that is related next to each other on the drive when we WRITE the data the first time. That way things don&amp;rsquo;t get as fragmented as quickly.&lt;/p&gt;
-&lt;h2 id=&#34;blocks-and-pages&#34;&gt;Blocks and Pages&lt;/h2&gt;
-&lt;p&gt;The first step in ensuring data is kept close together is the idea of &amp;ldquo;blocks&amp;rdquo;. Basically the filesystem that actually interacts with the hard-drive will define a &amp;ldquo;block-size&amp;rdquo;. The block size is basically a measure of how much data will fix in a block, and the filesystem reads/writes in blocks instead of individual bytes. Think of it this way: If your hard-drive was a piece of lined paper, we were originally writing things down one word per line. With blocks, we basically said &amp;ldquo;well, we&amp;rsquo;ll just write until we reach the horizontal end of this line&amp;rdquo;. So now instead of one word per line, we have a few words per line. Perhaps, we could say, we have have one sentence per line.&lt;/p&gt;
-&lt;p&gt;Using our previous 8 unit drive example, we could sub-divide that into blocks of 2 units, making it look like this:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Drive State: [c,c][c,c][b,b][b,0]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now when we want to read all the c values, we have two seeks instead of 1 per record. This is already a big improvement (we&amp;rsquo;ve reduced seeks by 50%), but we could probably reduce it even more. Since the filesystem has to expose a standard block size to all applications, systems that have to have a high amount of HDD I/O need an alternative. The easiest thing to do, is take the concept of a block containing records and create another abstraction: a page containing blocks.&lt;/p&gt;
-&lt;p&gt;At its &amp;ldquo;lowest&amp;rdquo; level, a relational database deals with &amp;ldquo;pages&amp;rdquo;. Pages are really  just collections of the data that you are storing. Relational databases (non-relational databases might as well, but I haven&amp;rsquo;t really dug into the internals of a lot of them) utilize this concept of a &amp;ldquo;page&amp;rdquo; to further decrease IO latency with the disk. Rather than dealing with the storage of individual records or information, it groups records together into a &amp;ldquo;page&amp;rdquo; and uses that. It will read/write a  whole page. This allows them to capitalize on the assumption that when you are reading/writing data the data you are accessing is probably next to other data that you also require.&lt;/p&gt;
-&lt;p&gt;They even go so far as to let you customize this via &amp;ldquo;clustered keys&amp;rdquo;. A clustered key is just a mechanism to allow you, the database administrator, to define HOW the database orders the data within pages. As the administrator, you know the data you are trying to store, and the primary ways that it might be accessed. Databases give you the ability to say &amp;ldquo;well, group all these records together on the disk by the values in this column&amp;rdquo;. This creates pages that are grouped around a particular value (a userID for example), so that all records with that same value are near each other.&lt;/p&gt;
-&lt;p&gt;Think of a database where you want to associate a list of items with a user. You have two tabes, &lt;code&gt;users&lt;/code&gt; and &lt;code&gt;items&lt;/code&gt;.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;+-------+    +---------+
-| users |    |  items  |
-+-------+    +---------+
-| id    |    | id      |
-| name  |    | user_id |
-+-------+    | name    |
-             +---------+
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It would make sense to create a clustered key around the userID in the items table. This allows us to keep all items that belong to a single user in the same page, or group of pages, on the disk. This way, when we try and retrieve the items for a user, the database management system can fetch all the pages related to this user, stick them in memory, operate on them, and then write them all.&lt;/p&gt;
-&lt;p&gt;Databases are very intricate systems, and I don&amp;rsquo;t want you leaving thinking there isn&amp;rsquo;t a whole lot more to this whole concept. This is a HUGE simplification of what the database is actually doing, but it should provide you with an understanding of why it is doing some of that at a storage level.&lt;/p&gt;
-&lt;h2 id=&#34;the-problem-with-blocks&#34;&gt;The problem with blocks&lt;/h2&gt;
-&lt;p&gt;The block system, however, is not without its own problems. By using &amp;ldquo;blocks&amp;rdquo; we&amp;rsquo;ve introduced a bit of wasted space into our storage. Lets go back to our block example:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Drive State: [c,c][c,c][b,b][b,0]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That trailing 0 in block 4 will remain empty unless we add more b data. We will be unable to add any more c values but we&amp;rsquo;ll be able to add more b. In fact, your drive will appear full to you because at the operating system level, it has no idea about the intricacies of your data storage. It just knows that these blocks are in use. So your 8 unit drive, has suddenly become 7 units.&lt;/p&gt;
-&lt;p&gt;That kind of sucks, and is actually a fundamental problem with &amp;ldquo;blocks&amp;rdquo;. As long as you have data to write, blocks are great, but they will almost always result in the LAST block in a segment not being completely filled. This is natural of course, since whatever application is using that space generally doesn&amp;rsquo;t care to know (nor should it!) about the block size it needs to be using. The result of this is that the more &amp;ldquo;small files&amp;rdquo; you have on your drive, the more &amp;ldquo;slack space&amp;rdquo; you have on the drive - space that isn&amp;rsquo;t being used for anything, but is still seen as &amp;ldquo;used&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;So now we come to a decision, either we just leave that space empty and accept it as part of the operating costs, or we try and figure out how to utilize it. Engineers, (un)fortunately, are quite obsessed with performance. These &amp;ldquo;tails&amp;rdquo; (the last block) are inefficient, and could probably be removed with a bit of smart thinking. This results in two possible ways to resolve this problem.:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;We allow the filesystem to support variable block sizes&lt;/li&gt;
-&lt;li&gt;We figure out how to use that tail block for something useful&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The first way, variable block sizes, is something file systems like ZFS utilize in an attempt to have more efficient storage. Since you know the kind of data you will be using the drive for, ZFS will let you specify your block size. If you know you have a lot of small things that need to be stored, drop the block size, likewise, increase if you have large things. It even has some magic like block level compression to try and use those blocks to their fullest. It is a very simple idea - and as we know, the simple ideas are the hardest to implement!&lt;/p&gt;
-&lt;p&gt;The second way, is another simple solution to the problem. If we know we have a bunch of tail blocks that are half-filled.. why don&amp;rsquo;t we just combine them? That way we aren&amp;rsquo;t creating a new tail block, but are instead re-using another tail block. This would result in another seek to read/write this data, but it ensures that we are using this disk to its fullest capacity. File systems like BTRFS will combine multiple tail blocks. The reason this is so effective is because the average block size is actually some multiple of 512 bytes. If you think about it, a text file might be a couple bytes? In a traditional file system that&amp;rsquo;s 1 block per couple bytes. That&amp;rsquo;s a heck of a lot of things you can stuff into a single block at that rate!&lt;/p&gt;
-&lt;h2 id=&#34;changing-the-game&#34;&gt;Changing the game&lt;/h2&gt;
-&lt;p&gt;As you can see, we&amp;rsquo;ve put a lot of work into reducing the seek time for hard-drives. They&amp;rsquo;ve been such a fundamental component of computing that it was a requirement. But, what if you could just ignore seeking entirely? What if there was a way to almost instantly seek? In computer science we refer to this as O(1). That is the size of the data we are looking through is irrelevant - we can access any section of the data as quickly as any other. Welcome to the world of solid state storage. Solid state storage utilizes electronics instead of mechanical instrumentation. That is, instead of a spinning disk and actuators for the read/write heads it used electrical circuits. By removing the mechanical parts, it eliminated the &amp;ldquo;seek&amp;rdquo; time of disks that we find so slow. The only problem was that it was expensive and hard to make ENOUGH storage this way. We could easily make HDDs that were several gigabytes, but were struggling to make solid state drives at megabytes. It just couldn&amp;rsquo;t keep up.&lt;/p&gt;
-&lt;p&gt;Until it could.&lt;/p&gt;
-&lt;p&gt;Now days solid state storage devices are relatively cheap and large enough for the average user. They a whole bunch of problems caused by mechanical components. They produce less heat, less vibrations, and they are a lot faster. In fact, for a lot of work-loads, it&amp;rsquo;s silly to rely on hard-drives when you can get so much better performance from solid state storage.&lt;/p&gt;
-&lt;p&gt;How interesting&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s crazy to think of all that we&amp;rsquo;ve accomplished because of that little mechanical hard-drive. But what&amp;rsquo;s crazier is that we are only able to see this in retrospect. No one was able to see what the result of spinning disk drives would be. No would thought that we would invent so many different file systems to solve the problems. That we would make so many advancements in technology just to store MORE data on the drives. At the time, they were just better than tape. They were simply a step in the chain, that in retrospect, was pretty cool.
-Follow the conversation at HackerNews &lt;a href=&#34;https://news.ycombinator.com/item?id=13091192&#34;&gt;https://news.ycombinator.com/item?id=13091192&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

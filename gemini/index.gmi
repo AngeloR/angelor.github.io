@@ -3,6 +3,7 @@
 
 ### 2023
 
+=> gemini://gemini.xangelo.ca/posts/free_software_mtx/index.gmi Started from *Free* now we're here
 => gemini://gemini.xangelo.ca/daily/2023/june/18/index.gmi Sunday, June 18, 2023
 => gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi Rising Legends [Garden]
 => gemini://gemini.xangelo.ca/daily/2023/june/9/index.gmi Friday, June 9th, 2023

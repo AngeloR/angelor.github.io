@@ -1,7 +1,7 @@
 # Sunday, June 18, 2023
 
 
-
+=> gemini://gemini.xangelo.ca/posts/free_software_mtx/index.gmi ← Newer: Started from *Free* now we're here
 => gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi → Older: Rising Legends [Garden]
 
 
