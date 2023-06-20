@@ -9,6 +9,60 @@
     <copyright>Copyright © 2011 - 2022</copyright>
     <lastBuildDate>Thu, 25 May 2023 00:15:53 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
+      <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
+      <pubDate>Tue, 20 Jun 2023 12:30:56 -3000</pubDate>
+      
+      <guid>https://xangelo.ca/posts/chrome_request_stalled/</guid>
+      <description>&lt;p&gt;I got the chance to investigate a really odd bug where randomly network requests in Chrome would just hang. This would only occurr in our test environments at work and not in production. The request would hang for some long amount of time.. and then eventually complete successfully. The bug has been occurring for some time, but has been getting worse in Chrome. It got so bad that it was guaranteed that if you were using Chrome it was going to happen to you. Eventually it started happening in Firefox as well.. during an investor demo (what good is a demo if it doesn&amp;rsquo;t go up in flames?). That&amp;rsquo;s when I got roped in.&lt;/p&gt;
+&lt;p&gt;The first thing I did was attempt to replicate it and capture a &lt;code&gt;.har&lt;/code&gt; file that I could share with anyone else that was interested. This part was easy - just popping open the network tab, navigating to the app on a test env, and then clicking every link that would trigger a network request. After about 30-40 seconds I had replicated the event&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/http2/wait-queue.png&#34; alt=&#34;Stuck Stalled&amp;hellip;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;So we can clearly see here that the request took 2 minutes and the entirety of that time the connection was stuck in the &lt;code&gt;stalled&lt;/code&gt; state. That indicates one of two things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Chrome never attempted to make the network request at all. Perhaps the priority on the request was dropped, maybe there were too many connections open to that FQDN already. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In some situations chrome actually merges the CORS preflight requests into what it reports as &lt;code&gt;stalled&lt;/code&gt;. So it&amp;rsquo;s possible that there was a problem in the preflight request that caused the delay before the actual request happened.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I did a bit more testing to figure out the scope of the issue. On/Off VPN with multiple browsers would all replicate the problem just fine. In this particular situation the fact that we could replicate it across EVERYTHING made it pretty clear that it was something related to our server.. but what? If the request never actually hits the server what could be going on?&lt;/p&gt;
+&lt;h3 id=&#34;chrome-network-log&#34;&gt;Chrome Network Log&lt;/h3&gt;
+&lt;p&gt;One tool that chrome has to diagnose networking issues is hidden away at &lt;code&gt;chrome://net-export&lt;/code&gt;. It generates a very VERY detailed log of everything network related that chrome is aware of. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/http2/net-export.png&#34; alt=&#34;Chrome Net Export&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I unchecked the &lt;code&gt;strip private information&lt;/code&gt; option and told it to include cookies + credentials and started logging it to disk. Then I swapped back to my tab and replicated the issue. Waited a few seconds, and then went back and ended the capture session.&lt;/p&gt;
+&lt;p&gt;Once you get that capture file, you have to head over to &lt;a href=&#34;https://netlog-viewer.appspot.com&#34;&gt;https://netlog-viewer.appspot.com&lt;/a&gt; and import it. There&amp;rsquo;s a TON of information here, and honestly I didn&amp;rsquo;t even look at half of it. The only two things I cared about were the &amp;ldquo;Events&amp;rdquo; and &amp;ldquo;Timeline&amp;rdquo; sections. The Timeline really makes no sense until you have a idea of when your actual network event happened, so we can skip that and jump right over to Events&lt;/p&gt;
+&lt;p&gt;There will likely be a lot of events. The &amp;ldquo;filter&amp;rdquo; at the top never worked for me given the sheer size of the events.. but scrolling through them all was just fine and eventually I found the URL request that caused the issue. If you click on the event it will display a bunch of debug information about the request. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/http2/event-169281.png&#34; alt=&#34;Event 168281&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see.. suddenly there&amp;rsquo;s a HUGE jump in time from &lt;code&gt;66807&lt;/code&gt; to &lt;code&gt;187631&lt;/code&gt;. We&amp;rsquo;ve confirmed now that this is a problem that&amp;rsquo;s occurring within the CORS preflight request specifically, and it&amp;rsquo;s just getting rolled into the &lt;code&gt;stalled&lt;/code&gt; state. The log viewer makes it trivial to dig down into the events and if you click on the details of the &lt;code&gt;HTTP_STREAM_JOB_CONTROLLER&lt;/code&gt; event you can see some more details. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/http2/event-169284.png&#34; alt=&#34;Event 169283&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here again, we see that there is a definitely delay when it attempts to call &lt;code&gt;HTTP_STREAM_REQUEST_STARTED_JOB&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/http2/event-169284.png&#34; alt=&#34;Event 169284&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And now we can easily see the problem: &lt;code&gt;SOCKET_POOL_STALLED_MAX_SOCKETS_PER_GROUP&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In HTTP1.1 each tab in your browser is configured to only make a certain number of requests per FQDN at the same time.This is one of the reasons why we load &amp;ldquo;static assets&amp;rdquo; on a different subdomain. By loading static assets on a separate FQDN we can increase the objects that are simultaneously loaded in our tab providing a better experience (for some definition of experience) to our user. In HTTP2, this restriction is across every single tab in your browser. For chrome, it can only instantiate 6 concurrent connections to an FQDN. This is because your connections are persistent in http2 and you don&amp;rsquo;t need to deal with the initialization handshakes on every request. The connection, once opened, is continually reused. &lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;For some reason, the socket pool dedicated to this particular FQDN gets filled up and so it can&amp;rsquo;t actually make the next request. So it just sits there.. until suddenly a socket is available (2 minutes later) and it is able to complete the rest of the request as expected. The &amp;ldquo;suddenly&amp;rdquo; is likely due to the default socket timeout. Once that timeout is hit, Chrome kills the connection and opens a new one and suddenly our request works again.&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;We can dig even further! Since we know that this is happening on an HTTP2 call, we can filter our events to only show us the http2 connections and that paints a more serious picture! &lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/http2/goaway.png&#34; alt=&#34;GOAWAY&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Every one of our http2 sockets is getting sent a &lt;code&gt;GOAWAY&lt;/code&gt; frame by the server.. but notice that it says &lt;code&gt;NO_ERROR&lt;/code&gt;. This generally indicates that the server is telling the client that it will be shutting down this socket and. The &lt;code&gt;GOAWAY&lt;/code&gt; frame also tells the client what the last stream that it processed was. This is so that the client can resend any data that it needs to on a new connection. What should happen is that after this frame, the connection is ended by both parties and we move on to a new one. In practice, it happens after a following &lt;code&gt;GOAWAY&lt;/code&gt; frame that indicates the connection is now dead. Except that final disconnect frame is never sent. So as far as chrome is concerned, we&amp;rsquo;re still happily connected so it returns the connection to the pool. But the server has disconnected.&lt;/p&gt;
+&lt;p&gt;So it just sits there trying to use the connection again, times out, and then closes and opens a new connection! And so we tracked down the mysterious slow-down and also used some cool tools in the process! &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;One thing I do want to note: This seems like a really straight forward problem - but that&amp;rsquo;s just in hindsight. In the moment there&amp;rsquo;s lots of googling and staring off into space trying to remember obscure keywords. I have a really bad memory, and so one of the things I do is memorize keywords/ideas rather than content because there&amp;rsquo;s just too much to remember. In this way I can ensure that I can find the pieces of information I need when I need to. In this case the keys things were:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;chrome has some kind of detailed network log&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;browsers like to fold CORS requests into the main request for reporting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;http2 has a max connection limit across your browser&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The rest of the information used is all derivable from those keys and a search engine.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Started from *Free* now we&#39;re here</title>
       <link>https://xangelo.ca/posts/free_software_mtx/</link>
       <pubDate>Mon, 19 Jun 2023 06:12:47 -1200</pubDate>
@@ -1219,161 +1273,6 @@ in a real dungeon..&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Serverless with CloudFlare Workers</title>
-      <link>https://xangelo.ca/posts/what-is-lootcap/</link>
-      <pubDate>Thu, 07 May 2020 17:31:57 -3100</pubDate>
-      
-      <guid>https://xangelo.ca/posts/what-is-lootcap/</guid>
-      <description>&lt;h2 id=&#34;what-is-lootcap&#34;&gt;What is LootCap?&lt;/h2&gt;
-&lt;p&gt;Last week we (&lt;a href=&#34;https://twitter.com/AdamScochran&#34;&gt;Adam Cochran&lt;/a&gt; and myself) launched &lt;a href=&#34;https://lootcap.com&#34;&gt;LootCap&lt;/a&gt;. The goal is to provide tracking on a new class of tokens called &lt;a href=&#34;https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749&#34;&gt;Loot&lt;/a&gt;. It&amp;rsquo;s been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself. It never provided any value. It felt like most coins out there were focused on trying to re-create the trajectory of Bitcoin rather than trying to DO anything. Ethereum was different. It was different enough to force me to pay attention. It allows you to run &lt;a href=&#34;https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract&#34;&gt;Smart Contracts&lt;/a&gt;. In recent years you&amp;rsquo;ve likely seen &amp;ldquo;Tokens&amp;rdquo; suddenly gain popularity. Well those are primarily powered by Ethereum. Again, however, it felt like tokens were just trying to recreate the Bitcoin boom.&lt;/p&gt;
-&lt;p&gt;Recently however, Loot tokens have become a thing. To condense Adam&amp;rsquo;s &lt;a href=&#34;https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749&#34;&gt;article&lt;/a&gt; (which you should read if you&amp;rsquo;re interested in this stuff)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Loot tokens are earned by contributing to communities.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;What that means is, instead of you buying the token, the community you belong to gives you the token because your contributions to the community have some merit. It&amp;rsquo;s a way to reward content creators for utilizing your community platform.&lt;/p&gt;
-&lt;p&gt;When Adam first approached me about the idea for &lt;a href=&#34;https://lootcap.com&#34;&gt;LootCap&lt;/a&gt; I was on board - this was the first timssse I saw a use for Crypto that wasn&amp;rsquo;t being sold as &amp;ldquo;Well it&amp;rsquo;s crypto so it&amp;rsquo;s just better!&amp;rdquo;. My task was to build a simple Market Cap site targeting a select number of these tokens that actually qualify as &amp;ldquo;Loot&amp;rdquo;.&lt;/p&gt;
-&lt;h2 id=&#34;planning&#34;&gt;Planning&lt;/h2&gt;
-&lt;p&gt;The first step in any project is to have a plan. This doesn&amp;rsquo;t mean that I have some giant design document sitting on my computer, or is it scrawled on a napkit. It varies for every project. In this case, a markdown document with some relatively simple diagrams via mermaidjs was more than enough. In fact, the goal of the site could be expressed in a single sentence.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Display relevant market-cap information quickly to everyone&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I&amp;rsquo;m also a firm believer in starting application development from the data side of things. The data is the only constant in your application. Everything is just abstracting away queries for your users to display the data in ways that make sense. So that&amp;rsquo;s where I begin.&lt;/p&gt;
-&lt;h3 id=&#34;database-design&#34;&gt;Database Design&lt;/h3&gt;
-&lt;p&gt;Whenever I start a project I do the same thing, from the technical side.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;What will be UI look like?&lt;/li&gt;
-&lt;li&gt;What data do I need to make this happen?&lt;/li&gt;
-&lt;li&gt;How do I store the data?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Weird right? The hard thing about database design, traditionally, is that the original wisdom is normalization. That is, data should be split apart into smaller isolated pieces. This idea is one that we use in software development all the time - Don&amp;rsquo;t Repeat Yourself (DRY). By splitting the data into smaller units we&amp;rsquo;re not storing more data than we need to store. When your databases start getting to the 10s of millions of rows storing unnecessary data can get expensive. Expensive because it&amp;rsquo;s a lot of work to keep the same piece of data updated across different tables, but also expensive because storage is expensive.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve always believed that the reason that normalization existed is two fold&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Resources were expensive. Going from 8GB to 16GB HDDs were a huge financial leap.&lt;/li&gt;
-&lt;li&gt;Development was segmented. DBAs worked in isolation, and often against, developers.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;As a database designer, you already know all the normalization rules. So take a look at how the application is being designed. What pieces if information are always shown together. What is important and what isn&amp;rsquo;t? These questions can help you better shape your database design.&lt;/p&gt;
-&lt;p&gt;With these things in mind, I took a look at my UI, drawing inspiration from the many market-cap sites devoted to crypto currencies. After all, while Tokens aren&amp;rsquo;t Coins, they&amp;rsquo;re treated quite similarly. This wasn&amp;rsquo;t something I did in isolation - Adam has been a part of the crypto community for much longer than I have and I heavily relied on his expertise in defining what data we want to showcase.&lt;/p&gt;
-&lt;p&gt;Knowing what data I had to display for a first pass, and how my data was organized I opted to skip a database entirely.&lt;/p&gt;
-&lt;p&gt;See it turns out I can assemble most of the information I need from various 3rd parties, cache it in memory, and when that cache expires, grab the information from the sources and assemble it again.&lt;/p&gt;
-&lt;p&gt;This worked because the scope of the initial launch is small. I only need to display fairly static data (may change every few minutes) that&amp;rsquo;s simultaneously general. I don&amp;rsquo;t need real-time precision at the moment. This means that I had a lot more flexibility in my architecture design, but also it meant that apart from the cache load/reload events, serving this data would be as fast as I can possible make it.&lt;/p&gt;
-&lt;h3 id=&#34;application-architecture&#34;&gt;Application Architecture&lt;/h3&gt;
-&lt;h4 id=&#34;api&#34;&gt;API&lt;/h4&gt;
-&lt;p&gt;When designing any application I always start with my API. It allows me to define my endpoints and figure out how I&amp;rsquo;m going to breaking up the data so that I can return the most relevant data for an endpoint. That is, now that I&amp;rsquo;ve broken down how I&amp;rsquo;m going to store my data, what&amp;rsquo;s the best way to create my endpoints so that I have the flexibility to compose the UI that I have envisioned, but also allows me to change that front end as necessary.&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s a tough nut to craft. If you pop open your console on &lt;a href=&#34;https://lootcap.com&#34;&gt;LootCap&lt;/a&gt; you&amp;rsquo;ll see that we make requests to 2 different endpoints:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/api/v1/contracts/[contract-address]/price
-
-/api/v1/coin/ethereum/price
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For us, that&amp;rsquo;s enough to render the entire first page and also preload some data so that if you click on any Token for more information, that data is already loaded and ready for you. I also made sure to version the end-points. The reason for this is to differentiate between deployment/releases. We can roll out new functionality to the API endpoints and test them to our hearts content before releasing front-end changes and deprecating the old API versions. We can also split test UI designs if we are interested in such a thing. Versioning your API endpoints is vital.&lt;/p&gt;
-&lt;p&gt;In original dev versions, you could actually supply multiple contract addresses, comma separated, and it would return all the data at once. It was a way to reduce 7 or 8 calls to load the page into 2.&lt;/p&gt;
-&lt;p&gt;Obviously that&amp;rsquo;s not what happened in production, but we&amp;rsquo;lll get to that later.&lt;/p&gt;
-&lt;h4 id=&#34;front-end&#34;&gt;Front end&lt;/h4&gt;
-&lt;p&gt;The front-end for the app is actually just a SPA. We load some minimal HTML and dynamically populate the data as soon as we can. The idea behind this is that once we hit production, we can cache the static content for much longer periods of time improving response times which would help us achieve our original goal of Displaying relevant market-cap information quickly for everyone.&lt;/p&gt;
-&lt;p&gt;We are using a two different 3rd party libraries on the front-end.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mvp.css - &lt;a href=&#34;https://andybrewer.github.io/mvp/&#34;&gt;https://andybrewer.github.io/mvp/&lt;/a&gt; - because we wanted a simple, classless, css framework as a base&lt;/li&gt;
-&lt;li&gt;BigNumber - &lt;a href=&#34;https://mikemcl.github.io/bignumber.js&#34;&gt;https://mikemcl.github.io/bignumber.js&lt;/a&gt; - because dealing with crypto numbers in JS can be challenging.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We aren&amp;rsquo;t using React, and so for the times where we have to update the Dom we&amp;rsquo;re using this function and interacting directly with the Element nodes.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;selector&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;) =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; document;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;root&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;querySelectorAll&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;selector&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;We&amp;rsquo;re also relying on &lt;code&gt;fetch&lt;/code&gt; since all our endpoints are very simple &lt;code&gt;GET&lt;/code&gt; based requests.&lt;/p&gt;
-&lt;p&gt;We are also using a very rudimentary SPA router that relies on css classes to define routes. We&amp;rsquo;re only able to do this because we have 2 routes.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;routeTable&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;route-name&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;REGEX_MATCH&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fn&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ];
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.route.active&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;classList&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;remove&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;active&amp;#39;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;requestedRoute&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; window.&lt;span style=&#34;color:#a6e22e&#34;&gt;location&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;hash&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;split&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;routeTable&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;some&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt; =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;test&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;requestedRoute&lt;/span&gt;)) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;exec&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;requestedRoute&lt;/span&gt;));
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;`#route-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;route&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;)[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;classList&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;active&amp;#39;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    })) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// clear the info page
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#route-info&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;innerHTML&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.route.default&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;classList&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;active&amp;#39;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;going-live&#34;&gt;Going Live&lt;/h2&gt;
-&lt;h3 id=&#34;heroku&#34;&gt;Heroku&lt;/h3&gt;
-&lt;p&gt;Once I had a copy working locally it was time to deploy it. &lt;a href=&#34;https://heroku.com&#34;&gt;Heroku&lt;/a&gt; has long been my dpeloyment strategy of choice for projects that are undergoing rapid development. I always use git, but I don&amp;rsquo;t always use a git hosting provider (GitLab/GitHub). Since heroku supports deploying from git, so I&amp;rsquo;m able to deploy from my dev env to share.&lt;/p&gt;
-&lt;p&gt;If you haven&amp;rsquo;t had a chance to mess with Heroku for yourself, I high recommend you do. It&amp;rsquo;s a wonderful service that allows you virtually unlimited free applications, and you can easily build your PoC without concern.&lt;/p&gt;
-&lt;p&gt;They also offer numerous paid plans that you can use to take your service from PoC to live by clicking a few buttons. My initial thoughts on architecture were pretty standard. Perhaps two &amp;ldquo;dynos&amp;rdquo; or servers+load-balancer would be more than enough. We have no state, just in-mem caches, I don&amp;rsquo;t care if the caches are repliced for eahc node. Base price like 20$ a month easy.&lt;/p&gt;
-&lt;h3 id=&#34;serverless&#34;&gt;Serverless?&lt;/h3&gt;
-&lt;p&gt;However this is somethign we&amp;rsquo;re launching for fun. While spending 20$ for infrastructure (bandwidth might cause some overage) is certainly doable.. is it the best option for us?&lt;/p&gt;
-&lt;p&gt;For one thing, with any cloud provider, if I&amp;rsquo;m running a container or vm, I&amp;rsquo;m stuck to a paricular data-center. That&amp;rsquo;s not very helpful if someone in Japan wants to take a look at my site. Remember, our goal was to provide this information quickly for everyone.&lt;/p&gt;
-&lt;p&gt;So maybe we look at &lt;strong&gt;SERVERLESS&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The idea behind server less infrastructure is simply: You write apps that are designed as &amp;ldquo;functions&amp;rdquo;. These functions are deployed and spun up/down as necessary. Scale becomes pretty straight-forward. The infrastructure is available, it&amp;rsquo;s just a matter of&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;How much do you want to pay?&lt;/li&gt;
-&lt;li&gt;What&amp;rsquo;s the cold-start time on your app?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The payment is pretty straight foward. Since these serverless tends to be small apps that cater well to &amp;ldquo;bursty&amp;rdquo; applications in terms of requests, they tend to be cheaper to run.&lt;/p&gt;
-&lt;p&gt;Most of these providers will take your app out of the pool if you don&amp;rsquo;t get any requests for a preset amount of time. This is to free up compute space for other apps. The time to start for an app NOT currently pre-loaded is what&amp;rsquo;s refered to as &amp;ldquo;cold start&amp;rdquo;. That varies, mostly reliant on the size of the application you&amp;rsquo;re starting, but there is a baseline cost regardless.&lt;/p&gt;
-&lt;p&gt;And of course, all &amp;ldquo;Serverless&amp;rdquo; is really server-based. They just abstract that away from you. That means I&amp;rsquo;m still on the hook for running these in multiple data centers around the world to hit my goals.&lt;/p&gt;
-&lt;h3 id=&#34;cloudflare-workers-and-kv&#34;&gt;CloudFlare Workers and KV&lt;/h3&gt;
-&lt;p&gt;Then I ran across CloudFlare Workers. I remember seeing the announcement post some time back, and thought &amp;ldquo;hey that&amp;rsquo;s neat&amp;rdquo; but quickly pushed it out of my mind. I returned to CloudFlare workers and did some more investigation.&lt;/p&gt;
-&lt;p&gt;Oh My. I think CloudFlare Workers are the only TRUE serverless mechanism out there.&lt;/p&gt;
-&lt;p&gt;CloudFlare workers are essentially serverless functions.. except they run at every CloudFlare Point-of-Presence (PoP). They have milliseconds of cold-start time, and they run globally. They do have way more restrictions than traditional serverless offerings&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1MB compressed filesize&lt;/li&gt;
-&lt;li&gt;50ms CPU time&lt;/li&gt;
-&lt;li&gt;max 30 workers&lt;/li&gt;
-&lt;li&gt;&amp;lt; 50 subrequests per worker (redirects count!)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;But I felt that if we COULD work within their limits, it would bring us closest to what we needed. They also offered an eventually consistent KV store that was accessible from the workers. Since our data was cached anyway, we didn&amp;rsquo;t care about the eventual consistency - worst case we served stale data for a minute more than we expected.&lt;/p&gt;
-&lt;p&gt;After a couple of days of fiddling with their tooling and documentation, I was able to convert our regular API into a bunch of &amp;ldquo;serverless&amp;rdquo; functions that worked with the KV store and were deployed to all CloudFlare PoP.&lt;/p&gt;
-&lt;p&gt;Today, when you load &lt;a href=&#34;https://lootcap.com&#34;&gt;LootCap&lt;/a&gt; you&amp;rsquo;re loading data from 3 different workers&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Two running API endpoints&lt;/li&gt;
-&lt;li&gt;1 Running a static site&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     

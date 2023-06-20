@@ -1,7 +1,7 @@
 # Started from *Free* now we're here
 
 
-
+=> gemini://gemini.xangelo.ca/posts/chrome_request_stalled/index.gmi ← Newer: Chrome HTTP Request stuck in "Stalled" State
 => gemini://gemini.xangelo.ca/daily/2023/june/18/index.gmi → Older: Sunday, June 18, 2023
 
 
