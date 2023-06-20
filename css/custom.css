@@ -14,7 +14,7 @@
 }
 
 main {
-  width: 80ch;
+  max-width: 80ch;
   margin: auto;
 }
 
