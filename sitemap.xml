@@ -2,34 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xangelo.ca/tags/chrome/</loc>
+    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
+  </url><url>
     <loc>https://xangelo.ca/posts/chrome_request_stalled/</loc>
     <lastmod>2023-06-20T12:30:56-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/chrome/</loc>
-    <lastmod>2023-06-20T11:35:08-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/iis/</loc>
-    <lastmod>2023-06-20T11:35:08-04:00</lastmod>
+    <loc>https://xangelo.ca/tags/explanation/</loc>
+    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/investigation/</loc>
-    <lastmod>2023-06-20T11:35:08-04:00</lastmod>
+    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/posts/</loc>
+    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/</loc>
+    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/</loc>
+    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/bio/</loc>
+    <lastmod>2023-06-19T06:12:47-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/game-dev/</loc>
+    <lastmod>2023-06-19T06:12:47-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/mtx/</loc>
+    <lastmod>2023-06-19T06:12:47-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/posts/free_software_mtx/</loc>
     <lastmod>2023-06-19T06:12:47-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/bio/</loc>
-    <lastmod>2023-06-19T05:45:40-04:00</lastmod>
+    <loc>https://xangelo.ca/daily/</loc>
+    <lastmod>2023-06-18T06:30:13-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/game-dev/</loc>
-    <lastmod>2023-06-19T05:45:40-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/mtx/</loc>
-    <lastmod>2023-06-19T05:45:40-04:00</lastmod>
+    <loc>https://xangelo.ca/tags/daily/</loc>
+    <lastmod>2023-06-18T06:30:13-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/daily/2023/june/18/</loc>
     <lastmod>2023-06-18T06:30:13-04:00</lastmod>
   </url><url>
+    <loc>https://xangelo.ca/tags/garden/</loc>
+    <lastmod>2023-06-13T10:08:25-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/gardens/</loc>
+    <lastmod>2023-06-13T10:08:25-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/project/</loc>
+    <lastmod>2023-06-13T10:08:25-04:00</lastmod>
+  </url><url>
     <loc>https://xangelo.ca/gardens/rising-legends/</loc>
+    <lastmod>2023-06-13T10:08:25-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/rising-legends/</loc>
     <lastmod>2023-06-13T10:08:25-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/daily/2023/june/9/</loc>
@@ -38,38 +65,20 @@
     <loc>https://xangelo.ca/daily/2023/june/7/</loc>
     <lastmod>2023-06-07T06:15:03-04:00</lastmod>
   </url><url>
+    <loc>https://xangelo.ca/tags/outliner/</loc>
+    <lastmod>2023-06-06T10:36:46-04:00</lastmod>
+  </url><url>
     <loc>https://xangelo.ca/gardens/outliner/</loc>
     <lastmod>2023-06-06T10:36:46-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/daily/2023/june/5/</loc>
     <lastmod>2023-06-05T14:14:27-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/rising-legends/</loc>
-    <lastmod>2023-06-05T10:09:11-04:00</lastmod>
-  </url><url>
     <loc>https://xangelo.ca/daily/2023/june/4/</loc>
     <lastmod>2023-06-05T09:47:29-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/garden/</loc>
-    <lastmod>2023-06-04T05:54:33-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/gardens/</loc>
-    <lastmod>2023-06-04T05:54:33-04:00</lastmod>
-  </url><url>
     <loc>https://xangelo.ca/daily/2023/june/3/</loc>
     <lastmod>2023-06-03T06:08:02-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/daily/</loc>
-    <lastmod>2023-06-03T06:01:42-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/daily/</loc>
-    <lastmod>2023-06-03T06:01:42-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/</loc>
-    <lastmod>2023-06-03T06:01:42-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/</loc>
-    <lastmod>2023-06-03T06:01:42-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/daily/2023/june/2/</loc>
     <lastmod>2023-06-02T10:36:35-04:00</lastmod>
@@ -86,9 +95,6 @@
     <loc>https://xangelo.ca/tags/architecture/</loc>
     <lastmod>2023-05-25T00:15:53-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/posts/</loc>
-    <lastmod>2023-05-25T00:15:53-04:00</lastmod>
-  </url><url>
     <loc>https://xangelo.ca/tags/redis/</loc>
     <lastmod>2023-05-25T00:15:53-04:00</lastmod>
   </url><url>
@@ -102,12 +108,6 @@
     <lastmod>2023-05-21T23:29:45-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/posts/outliner_blog_update/</loc>
-    <lastmod>2023-05-21T23:29:45-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/outliner/</loc>
-    <lastmod>2023-05-21T23:29:45-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/project/</loc>
     <lastmod>2023-05-21T23:29:45-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/posts/on-call/</loc>
@@ -165,9 +165,6 @@
     <lastmod>2021-06-21T17:11:57-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</loc>
-    <lastmod>2021-04-23T09:44:35-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/explanation/</loc>
     <lastmod>2021-04-23T09:44:35-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/roguelike/</loc>

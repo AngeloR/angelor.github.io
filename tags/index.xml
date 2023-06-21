@@ -7,29 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Sat, 03 Jun 2023 06:01:42 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jun 2023 12:30:56 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>chrome</title>
       <link>https://xangelo.ca/tags/chrome/</link>
-      <pubDate>Tue, 20 Jun 2023 11:35:08 -0400</pubDate>
+      <pubDate>Tue, 20 Jun 2023 12:30:56 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/chrome/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>iis</title>
-      <link>https://xangelo.ca/tags/iis/</link>
-      <pubDate>Tue, 20 Jun 2023 11:35:08 -0400</pubDate>
+      <title>explanation</title>
+      <link>https://xangelo.ca/tags/explanation/</link>
+      <pubDate>Tue, 20 Jun 2023 12:30:56 -0400</pubDate>
       
-      <guid>https://xangelo.ca/tags/iis/</guid>
+      <guid>https://xangelo.ca/tags/explanation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>investigation</title>
       <link>https://xangelo.ca/tags/investigation/</link>
-      <pubDate>Tue, 20 Jun 2023 11:35:08 -0400</pubDate>
+      <pubDate>Tue, 20 Jun 2023 12:30:56 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/investigation/</guid>
       <description></description>
@@ -38,7 +38,7 @@
     <item>
       <title>bio</title>
       <link>https://xangelo.ca/tags/bio/</link>
-      <pubDate>Mon, 19 Jun 2023 05:45:40 -0400</pubDate>
+      <pubDate>Mon, 19 Jun 2023 06:12:47 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/bio/</guid>
       <description></description>
@@ -47,7 +47,7 @@
     <item>
       <title>game dev</title>
       <link>https://xangelo.ca/tags/game-dev/</link>
-      <pubDate>Mon, 19 Jun 2023 05:45:40 -0400</pubDate>
+      <pubDate>Mon, 19 Jun 2023 06:12:47 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/game-dev/</guid>
       <description></description>
@@ -56,36 +56,54 @@
     <item>
       <title>mtx</title>
       <link>https://xangelo.ca/tags/mtx/</link>
-      <pubDate>Mon, 19 Jun 2023 05:45:40 -0400</pubDate>
+      <pubDate>Mon, 19 Jun 2023 06:12:47 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/mtx/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>rising-legends</title>
-      <link>https://xangelo.ca/tags/rising-legends/</link>
-      <pubDate>Mon, 05 Jun 2023 10:09:11 -0400</pubDate>
+      <title>daily</title>
+      <link>https://xangelo.ca/tags/daily/</link>
+      <pubDate>Sun, 18 Jun 2023 06:30:13 -0400</pubDate>
       
-      <guid>https://xangelo.ca/tags/rising-legends/</guid>
+      <guid>https://xangelo.ca/tags/daily/</guid>
       <description></description>
     </item>
     
     <item>
       <title>garden</title>
       <link>https://xangelo.ca/tags/garden/</link>
-      <pubDate>Sun, 04 Jun 2023 05:54:33 -0400</pubDate>
+      <pubDate>Tue, 13 Jun 2023 10:08:25 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/garden/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>daily</title>
-      <link>https://xangelo.ca/tags/daily/</link>
-      <pubDate>Sat, 03 Jun 2023 06:01:42 -0400</pubDate>
+      <title>project</title>
+      <link>https://xangelo.ca/tags/project/</link>
+      <pubDate>Tue, 13 Jun 2023 10:08:25 -0400</pubDate>
       
-      <guid>https://xangelo.ca/tags/daily/</guid>
+      <guid>https://xangelo.ca/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rising-legends</title>
+      <link>https://xangelo.ca/tags/rising-legends/</link>
+      <pubDate>Tue, 13 Jun 2023 10:08:25 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/rising-legends/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outliner</title>
+      <link>https://xangelo.ca/tags/outliner/</link>
+      <pubDate>Tue, 06 Jun 2023 10:36:46 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/outliner/</guid>
       <description></description>
     </item>
     
@@ -113,24 +131,6 @@
       <pubDate>Sun, 21 May 2023 23:29:45 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>outliner</title>
-      <link>https://xangelo.ca/tags/outliner/</link>
-      <pubDate>Sun, 21 May 2023 23:29:45 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/outliner/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>project</title>
-      <link>https://xangelo.ca/tags/project/</link>
-      <pubDate>Sun, 21 May 2023 23:29:45 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/project/</guid>
       <description></description>
     </item>
     
