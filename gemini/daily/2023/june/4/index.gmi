@@ -24,7 +24,7 @@ Created the first "Garden" post about my Outliner [1] project which will serve a
 
 ## Related articles
 
+=> /gemini/daily/2023/june/21/index.gmi Wednesday, June 21, 2023: <no value>
 => /gemini/daily/2023/june/18/index.gmi Sunday, June 18, 2023: <no value>
 => /gemini/daily/2023/june/9/index.gmi Friday, June 9th, 2023: <no value>
-=> /gemini/daily/2023/june/7/index.gmi Tuesday, June 7th, 2023: <no value>
 ---

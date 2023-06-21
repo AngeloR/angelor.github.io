@@ -3,6 +3,7 @@
 
 ### 2023
 
+=> gemini://gemini.xangelo.ca/daily/2023/june/21/index.gmi Wednesday, June 21, 2023
 => gemini://gemini.xangelo.ca/posts/chrome_request_stalled/index.gmi Chrome HTTP Request stuck in "Stalled" State
 => gemini://gemini.xangelo.ca/posts/free_software_mtx/index.gmi Started from *Free* now we're here
 => gemini://gemini.xangelo.ca/daily/2023/june/18/index.gmi Sunday, June 18, 2023

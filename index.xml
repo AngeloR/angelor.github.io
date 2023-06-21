@@ -9,6 +9,15 @@
     <copyright>Copyright © 2011 - 2022</copyright>
     <lastBuildDate>Tue, 20 Jun 2023 12:30:56 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Wednesday, June 21, 2023</title>
+      <link>https://xangelo.ca/daily/2023/june/21/</link>
+      <pubDate>Wed, 21 Jun 2023 05:57:49 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/june/21/</guid>
+      <description>I don&amp;rsquo;t do a lot of posts with images.. mostly because I do all my work in markdown and rarely preview as I&amp;rsquo;m going. However this new outliner writing method has me paranoid and constantly previewing the content as I go and it&amp;rsquo;s made me add images for the first time in a long time&amp;hellip;</description>
+    </item>
+    
+    <item>
       <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
       <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
       <pubDate>Tue, 20 Jun 2023 12:30:56 -0400</pubDate>
@@ -136,15 +145,6 @@ I feel like all reddit has to do is say &amp;ldquo;Ok, we&amp;rsquo;ve changed t
       <description>I have a sneaking suspicion that Azure DevOps is way better than GitHub but no one is willing to admit it.
 For whatever reason this year has been really bad on my allergies. I&amp;rsquo;m trying a variety of over-the-counter medications but will likely have to resort to something a bit stronger before the summer is out.
 I just realized that all the &amp;ldquo;Daily Updates&amp;rdquo; are already one day out of sync due to the fact that I don&amp;rsquo;t know what day it is.</description>
-    </item>
-    
-    <item>
-      <title>Simple Redis Job Queue</title>
-      <link>https://xangelo.ca/posts/simple_redis_queue/</link>
-      <pubDate>Thu, 25 May 2023 00:15:53 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/simple_redis_queue/</guid>
-      <description>A naive redis job queue implementation</description>
     </item>
     
   </channel>
