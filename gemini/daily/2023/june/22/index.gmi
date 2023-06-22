@@ -1,0 +1,30 @@
+# Thursday, June 22, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/daily/2023/june/21/index.gmi → Older: Wednesday, June 21, 2023
+
+
+Trying out Helix [1] and just the ease of getting up and running with all the features that I want out of the box was incredible? Like that alone should be enough for new devs to get started. Vim/NeoVim is great if you're already in that world and have years of configs/settings that you're used to. But if you're just starting out with modal editors, you can't compete with everything just working out of the box?
+
+I literally have a git repo where I track my vim config and all the plugins that I use so that I don't need to remember that. Being able to skip out on all of that is a wonderful idea/change.
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://helix-editor.com/ [1] Helix (https://helix-editor.com/)
+
+
+## Related articles
+
+=> /gemini/daily/2023/june/21/index.gmi Wednesday, June 21, 2023: <no value>
+=> /gemini/daily/2023/june/18/index.gmi Sunday, June 18, 2023: <no value>
+=> /gemini/daily/2023/june/9/index.gmi Friday, June 9th, 2023: <no value>
+---

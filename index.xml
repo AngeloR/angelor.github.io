@@ -9,6 +9,15 @@
     <copyright>Copyright © 2011 - 2022</copyright>
     <lastBuildDate>Tue, 20 Jun 2023 12:30:56 -0400</lastBuildDate><atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Thursday, June 22, 2023</title>
+      <link>https://xangelo.ca/daily/2023/june/22/</link>
+      <pubDate>Thu, 22 Jun 2023 10:11:03 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/june/22/</guid>
+      <description>Trying out Helix and just the ease of getting up and running with all the features that I want out of the box was incredible? Like that alone should be enough for new devs to get started. Vim/NeoVim is great if you&amp;rsquo;re already in that world and have years of configs/settings that you&amp;rsquo;re used to. But if you&amp;rsquo;re just starting out with modal editors, you can&amp;rsquo;t compete with everything just working out of the box?</description>
+    </item>
+    
+    <item>
       <title>Wednesday, June 21, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/21/</link>
       <pubDate>Wed, 21 Jun 2023 05:57:49 -0400</pubDate>
@@ -134,17 +143,6 @@ I feel like all reddit has to do is say &amp;ldquo;Ok, we&amp;rsquo;ve changed t
       
       <guid>https://xangelo.ca/daily/2023/may/26/</guid>
       <description>Everyone wanting their own streaming service is just re-inventing cable and the whole reason that services like Netflix &amp;ldquo;distrupted&amp;rdquo;. Gabe Newell said it best &amp;ldquo;[Piracy] is a service issue&amp;rdquo;. And the service here sucks.</description>
-    </item>
-    
-    <item>
-      <title>Thursday, May 25, 2023</title>
-      <link>https://xangelo.ca/daily/2023/may/25/</link>
-      <pubDate>Thu, 25 May 2023 21:20:53 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/daily/2023/may/25/</guid>
-      <description>I have a sneaking suspicion that Azure DevOps is way better than GitHub but no one is willing to admit it.
-For whatever reason this year has been really bad on my allergies. I&amp;rsquo;m trying a variety of over-the-counter medications but will likely have to resort to something a bit stronger before the summer is out.
-I just realized that all the &amp;ldquo;Daily Updates&amp;rdquo; are already one day out of sync due to the fact that I don&amp;rsquo;t know what day it is.</description>
     </item>
     
   </channel>

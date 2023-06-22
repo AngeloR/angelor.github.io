@@ -1,7 +1,7 @@
 # Wednesday, June 21, 2023
 
 
-
+=> gemini://gemini.xangelo.ca/daily/2023/june/22/index.gmi ← Newer: Thursday, June 22, 2023
 => gemini://gemini.xangelo.ca/posts/chrome_request_stalled/index.gmi → Older: Chrome HTTP Request stuck in "Stalled" State
 
 
@@ -21,7 +21,7 @@ I don't do a lot of posts with images.. mostly because I do all my work in markd
 
 ## Related articles
 
+=> /gemini/daily/2023/june/22/index.gmi Thursday, June 22, 2023: <no value>
 => /gemini/daily/2023/june/18/index.gmi Sunday, June 18, 2023: <no value>
 => /gemini/daily/2023/june/9/index.gmi Friday, June 9th, 2023: <no value>
-=> /gemini/daily/2023/june/7/index.gmi Tuesday, June 7th, 2023: <no value>
 ---
