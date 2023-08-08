@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Sun, 18 Jun 2023 06:30:13 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Aug 2023 14:14:33 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tuesday, August 8, 2023</title>
+      <link>https://xangelo.ca/daily/2023/august/08/</link>
+      <pubDate>Tue, 08 Aug 2023 14:14:33 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/august/08/</guid>
+      <description>After about a month helix is something I dropped. I work on linux, mac&amp;rsquo;s and Windows envs and if my editor can&amp;rsquo;t do the same I drop it. Unfortunately there&amp;rsquo;s a weird bug in helix where some keypresses (like escape to get out edit mode) take a second to register. That seriously messes with my workflow where I mash esc and then quickly jump to another section.. Enough to make using Helix a frustrating experience.</description>
+    </item>
+    
     <item>
       <title>Thursday, June 22, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/22/</link>

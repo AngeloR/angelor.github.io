@@ -1,0 +1,30 @@
+# Tuesday, August 8, 2023
+
+
+
+=> gemini://gemini.xangelo.ca/daily/2023/june/22/index.gmi → Older: Thursday, June 22, 2023
+
+
+After about a month helix is something I dropped. I work on linux, mac's and Windows envs and if my editor can't do the same I drop it. Unfortunately there's a weird bug in helix where some keypresses (like `escape` to get out edit mode) take a second to register. That seriously messes with my workflow where I mash `esc` and then quickly jump to another section.. Enough to make using Helix a frustrating experience.&nbsp;
+
+Instead I've been testing Lunar Vim [1] which is a bunch of plugins pre-configured for neovim. My goal is to be able to get set up on my editing environment quickly and neovim is not that. But Lunar Vim seems to have mostly sensible defaults (except for the nerdfonts requirement)
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://www.lunarvim.org/ [1] Lunar Vim (https://www.lunarvim.org/)
+
+
+## Related articles
+
+=> /gemini/daily/2023/june/22/index.gmi Thursday, June 22, 2023: <no value>
+=> /gemini/daily/2023/june/21/index.gmi Wednesday, June 21, 2023: <no value>
+=> /gemini/daily/2023/june/18/index.gmi Sunday, June 18, 2023: <no value>
+---

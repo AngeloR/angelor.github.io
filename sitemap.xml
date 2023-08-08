@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xangelo.ca/daily/</loc>
+    <lastmod>2023-08-08T14:14:33-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/daily/</loc>
+    <lastmod>2023-08-08T14:14:33-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/</loc>
+    <lastmod>2023-08-08T14:14:33-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/daily/2023/august/08/</loc>
+    <lastmod>2023-08-08T14:14:33-04:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/</loc>
+    <lastmod>2023-08-08T14:14:33-04:00</lastmod>
+  </url><url>
     <loc>https://xangelo.ca/daily/2023/june/22/</loc>
     <lastmod>2023-06-22T10:11:03-04:00</lastmod>
   </url><url>
@@ -23,12 +38,6 @@
     <loc>https://xangelo.ca/posts/</loc>
     <lastmod>2023-06-20T12:30:56-04:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/</loc>
-    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/</loc>
-    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
-  </url><url>
     <loc>https://xangelo.ca/tags/bio/</loc>
     <lastmod>2023-06-19T06:12:47-04:00</lastmod>
   </url><url>
@@ -40,12 +49,6 @@
   </url><url>
     <loc>https://xangelo.ca/posts/free_software_mtx/</loc>
     <lastmod>2023-06-19T06:12:47-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/daily/</loc>
-    <lastmod>2023-06-18T06:30:13-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/tags/daily/</loc>
-    <lastmod>2023-06-18T06:30:13-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/daily/2023/june/18/</loc>
     <lastmod>2023-06-18T06:30:13-04:00</lastmod>
