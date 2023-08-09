@@ -1,7 +1,7 @@
 # Tuesday, August 8, 2023
 
 
-
+=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi ← Newer: Rising Legends [Garden]
 => gemini://gemini.xangelo.ca/daily/2023/june/22/index.gmi → Older: Thursday, June 22, 2023
 
 
