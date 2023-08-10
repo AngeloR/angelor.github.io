@@ -67,17 +67,32 @@ Rising Legends [Garden] | Xangelo.ca
 
 
 <p>This page will serve as the current state of <a href="https://www.risinglegends.net">Rising Legends</a>, a Persistent Browser-Based Game.</p>
+<h2 id="known-bugs-with-current-release">Known Bugs With Current Release</h2>
+<ul>
+<li>
+<p>When you swap apps on mobile the websocket disconnects&hellip; then it reconnects it always throws you back to the Profile screen.</p>
+</li>
+<li>
+<p>On mobile the tabbed interface for the Armour doesn&rsquo;t translate too well</p>
+</li>
+</ul>
+<hr>
 <h1 id="changelog">Changelog</h1>
 <p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
-<h3 id="027httpsgitxangelocaprisinglegendsgitacommitdiffhv027hpv026dssidebyside-2023-08-09"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.7;hp=v0.2.6;ds=sidebyside">0.2.7</a> (2023-08-09)</h3>
+<h3 id="028httpsgitxangelocaprisinglegendsgitacommitdiffhv028hpv027dssidebyside-2023-08-10"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.8;hp=v0.2.7;ds=sidebyside">0.2.8</a> (2023-08-10)</h3>
 <h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>migrate signup/login form to htmx 26e475c</li>
+</ul>
+<h3 id="027httpsgitxangelocaprisinglegendsgitacommitdiffhv027hpv026dssidebyside-2023-08-09"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.7;hp=v0.2.6;ds=sidebyside">0.2.7</a> (2023-08-09)</h3>
+<h3 id="bug-fixes-1">Bug Fixes</h3>
 <ul>
 <li>reduce spam requests on /status 5862d25</li>
 <li>seed equipment info bac2f63</li>
 <li>time displays 0pm at noon instead of 12pm 4993906</li>
 </ul>
 <h3 id="026httpsgitxangelocaprisinglegendsgitacommitdiffhv026hpv025dssidebyside-2023-08-09"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.6;hp=v0.2.5;ds=sidebyside">0.2.6</a> (2023-08-09)</h3>
-<h3 id="bug-fixes-1">Bug Fixes</h3>
+<h3 id="bug-fixes-2">Bug Fixes</h3>
 <ul>
 <li>armour icon support 4f6823d</li>
 <li>auto-load player object and place in request 7079401</li>
@@ -90,7 +105,7 @@ Rising Legends [Garden] | Xangelo.ca
 <li>add health-potion functionality 2f13844</li>
 <li>purchasable items from the store 4d8b8b1</li>
 </ul>
-<h3 id="bug-fixes-2">Bug Fixes</h3>
+<h3 id="bug-fixes-3">Bug Fixes</h3>
 <ul>
 <li>migrate chat to htmx 34c9eae</li>
 <li>migrate explore fight to htmx d955aa8</li>
@@ -106,13 +121,13 @@ Rising Legends [Garden] | Xangelo.ca
 <li>support time display e110480</li>
 </ul>
 <h3 id="024httpsgitxangelocaprisinglegendsgitacommitdiffhv024hpv023dssidebyside-2023-07-29"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.4;hp=v0.2.3;ds=sidebyside">0.2.4</a> (2023-07-29)</h3>
-<h3 id="bug-fixes-3">Bug Fixes</h3>
+<h3 id="bug-fixes-4">Bug Fixes</h3>
 <ul>
 <li>filtered shop views f160ce2</li>
 <li>time gradients not scaled properly 2b5a905</li>
 </ul>
 <h3 id="023httpsgitxangelocaprisinglegendsgitacommitdiffhv023hpv022dssidebyside-2023-07-28"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.3;hp=v0.2.2;ds=sidebyside">0.2.3</a> (2023-07-28)</h3>
-<h3 id="bug-fixes-4">Bug Fixes</h3>
+<h3 id="bug-fixes-5">Bug Fixes</h3>
 <ul>
 <li>spacing of time on mobile 1db9c53</li>
 </ul>
@@ -121,14 +136,14 @@ Rising Legends [Garden] | Xangelo.ca
 <ul>
 <li>first profile picture ab0d041</li>
 </ul>
-<h3 id="bug-fixes-5">Bug Fixes</h3>
+<h3 id="bug-fixes-6">Bug Fixes</h3>
 <ul>
 <li>3s delay when clicking the button to keep walking 8710ea9, closes #11</li>
 <li>display right background based on travelled distance 5f6b5f9</li>
 <li>extend in-game day to 2 IRL hours 8e44b72</li>
 </ul>
 <h3 id="021httpsgitxangelocaprisinglegendsgitacommitdiffhv021hpv020dssidebyside-2023-07-27"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.1;hp=v0.2.0;ds=sidebyside">0.2.1</a> (2023-07-27)</h3>
-<h3 id="bug-fixes-6">Bug Fixes</h3>
+<h3 id="bug-fixes-7">Bug Fixes</h3>
 <ul>
 <li>only run into monsters 20% of the time 84c3282</li>
 </ul>
@@ -144,7 +159,7 @@ Rising Legends [Garden] | Xangelo.ca
 <li>travelling between towns! 621c35b</li>
 <li>when you die your travel plan is discarded 6f21c21</li>
 </ul>
-<h3 id="bug-fixes-7">Bug Fixes</h3>
+<h3 id="bug-fixes-8">Bug Fixes</h3>
 <ul>
 <li>back to town button after healing 7f29b2f</li>
 <li>disable switching tabs in a fight ea7eafe</li>
@@ -159,7 +174,7 @@ Rising Legends [Garden] | Xangelo.ca
 <li>allow users to log out 22d96bc</li>
 <li>display current deployed version in UI a717a30</li>
 </ul>
-<h3 id="bug-fixes-8">Bug Fixes</h3>
+<h3 id="bug-fixes-9">Bug Fixes</h3>
 <ul>
 <li>casting now uses INT instead of CON 223bc6d</li>
 <li>check players hp before allowing them to start a battle 4d7a556, closes #2</li>
@@ -175,7 +190,7 @@ Rising Legends [Garden] | Xangelo.ca
 <ul>
 <li>players get stat points on every level up 1c9c8a5, closes #5</li>
 </ul>
-<h3 id="bug-fixes-9">Bug Fixes</h3>
+<h3 id="bug-fixes-10">Bug Fixes</h3>
 <ul>
 <li>define stats as an enum for easier iteration f113d4a</li>
 <li>spacing of stats/equipped items section on mobile 9f45e48</li>
@@ -186,13 +201,13 @@ Rising Legends [Garden] | Xangelo.ca
 <li>add damage mitigation to armour f8156c8, closes #3</li>
 </ul>
 <h3 id="002httpsgitxangelocaprisinglegendsgitacommitdiffhv002hpv001dssidebyside-2023-07-07"><a href="https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.0.2;hp=v0.0.1;ds=sidebyside">0.0.2</a> (2023-07-07)</h3>
-<h3 id="bug-fixes-10">Bug Fixes</h3>
+<h3 id="bug-fixes-11">Bug Fixes</h3>
 <ul>
 <li>give users free healing if they have less than 20g 8dbffa6</li>
 <li>type in temp professional services 5671ff4</li>
 </ul>
 <h3 id="001-2023-07-04">0.0.1 (2023-07-04)</h3>
-<h3 id="bug-fixes-11">Bug Fixes</h3>
+<h3 id="bug-fixes-12">Bug Fixes</h3>
 <ul>
 <li>background gradient doesnt span full height 20d6206</li>
 <li>cache main map screen 1a5ad09</li>
@@ -213,7 +228,7 @@ Rising Legends [Garden] | Xangelo.ca
 </ul>
 
 <div class="post-date">
-  Posted Wednesday, August 09, 2023
+  Posted Thursday, August 10, 2023
 </div>
 
     </main>
@@ -235,7 +250,7 @@ Rising Legends [Garden] | Xangelo.ca
 
 
 
-<p id="source-url">Source: <a href=../../gardens/rising-legends/>https://xangelo.ca/gardens/rising-legends/</a>, 2023-08-09</p>
+<p id="source-url">Source: <a href=../../gardens/rising-legends/>https://xangelo.ca/gardens/rising-legends/</a>, 2023-08-10</p>
 
 
 

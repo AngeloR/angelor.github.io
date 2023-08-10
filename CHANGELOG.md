@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.8;hp=v0.2.7;ds=sidebyside) (2023-08-10)
+
+
+### Bug Fixes
+
+* migrate signup/login form to htmx 26e475c
+
 ### [0.2.7](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.7;hp=v0.2.6;ds=sidebyside) (2023-08-09)
 
 

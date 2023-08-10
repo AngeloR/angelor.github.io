@@ -7,6 +7,14 @@
 
 This page will serve as the current state of Rising Legends [1], a Persistent Browser-Based Game.
 
+## Known Bugs With Current Release
+
+* When you swap apps on mobile the websocket disconnects... then it reconnects it always throws you back to the Profile screen.
+
+* On mobile the tabbed interface for the Armour doesn't translate too well
+
+---
+
 {{% include "./static/CHANGELOG.md" %}}
 
 
