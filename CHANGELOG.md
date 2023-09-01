@@ -2,6 +2,147 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.2;hp=v0.3.1;ds=sidebyside) (2023-09-01)
+
+
+### Features
+
+* `/online` to list usernames of all online players 3e37d7f
+
+
+### Bug Fixes
+
+* add missing "Back to Town" button 0752f70
+* skills not progressing with use 36b7b7c
+* small chat style tweaks e6b5884
+
+### [0.3.1](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.1;hp=v0.3.0;ds=sidebyside) (2023-08-31)
+
+
+### Bug Fixes
+
+* add button that goes back to town from any page 06c0e48
+* spells support durability 2dbb9b8
+* stop z-stacking alert messages 6e756e8
+* tooltip text centered due to media-query cbfebd1
+
+## [0.3.0](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.0;hp=v0.2.17;ds=sidebyside) (2023-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* vigor mortensen
+
+### Features
+
+* display optimal level range for monsters 5878793
+* move alerts to bottom of main section 9575cfb
+* repairing damaged equipment 161b5bf
+* unequip items if they hit 0 ap in battle bc9e05f
+* vigor mortensen f6aba7a
+
+
+### Bug Fixes
+
+* spacing for stat increase button 61e6d07
+
+### [0.2.17](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.17;hp=v0.2.16;ds=sidebyside) (2023-08-25)
+
+
+### Bug Fixes
+
+* xss username on signup a827642
+
+### [0.2.16](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.16;hp=v0.2.15;ds=sidebyside) (2023-08-25)
+
+
+### Bug Fixes
+
+* properly increment skill level 24e6b3b
+
+### [0.2.15](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.15;hp=v0.2.14;ds=sidebyside) (2023-08-25)
+
+
+### Features
+
+* expoential exp drop-off/gain c8bd4d6
+
+
+### Bug Fixes
+
+* add block timer for casting and clear after fight bffb415
+* make signup collapsible 97b3c28
+* rate limit fights! 235d836
+* standardize blocking timeouts for buttons 01d06ca
+* time displays at 0 for midnight 789380b
+
+### [0.2.14](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.14;hp=v0.2.13;ds=sidebyside) (2023-08-21)
+
+
+### Features
+
+* display travel progress d66fcf8
+
+### [0.2.13](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.13;hp=v0.2.12;ds=sidebyside) (2023-08-21)
+
+
+### Bug Fixes
+
+* strip all tags in chat 9da5336
+
+### [0.2.12](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.12;hp=v0.2.11;ds=sidebyside) (2023-08-21)
+
+
+### Features
+
+* return to town button while travelling fd070de
+
+
+### Bug Fixes
+
+* xss chat input 943cbc3
+
+### [0.2.11](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.11;hp=v0.2.10;ds=sidebyside) (2023-08-21)
+
+
+### Bug Fixes
+
+* chat history clearning existing chat on load 8a7161c
+* green button colors b8755db
+* migrate recruiter to htmx 8f42a66
+
+### [0.2.10](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.10;hp=v0.2.9;ds=sidebyside) (2023-08-18)
+
+
+### Features
+
+* add icons for beginner equipment 218a9ee
+* increase hp gain rate 1f9aaf6
+
+
+### Bug Fixes
+
+* background not appearing if reload during fight 64a76af
+* cant perform other actions in a fight b1a1999
+* chat timeline to messages show up chronologically b82a2ef
+* dont display death text after fleeing 2a1bffe
+* missing % from player bar a0606a5
+* move purchase button under icon in stores 93aeef5
+* only disable equipping/unequipping in a fight b6e9f9a
+
+### [0.2.9](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.9;hp=v0.2.8;ds=sidebyside) (2023-08-15)
+
+
+### Features
+
+* default player to the Explore tab 9b5b9fa
+* new UI c793612
+
+
+### Bug Fixes
+
+* avatar takes up too much space on mobile dced2d0
+
 ### [0.2.8](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.2.8;hp=v0.2.7;ds=sidebyside) (2023-08-10)
 
 

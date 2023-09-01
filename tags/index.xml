@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 09 Aug 2023 13:48:11 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Sep 2023 13:49:19 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>garden</title>
       <link>https://xangelo.ca/tags/garden/</link>
-      <pubDate>Wed, 09 Aug 2023 13:48:11 -0400</pubDate>
+      <pubDate>Fri, 01 Sep 2023 13:49:19 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/garden/</guid>
       <description></description>
@@ -20,7 +20,7 @@
     <item>
       <title>project</title>
       <link>https://xangelo.ca/tags/project/</link>
-      <pubDate>Wed, 09 Aug 2023 13:48:11 -0400</pubDate>
+      <pubDate>Fri, 01 Sep 2023 13:49:19 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/project/</guid>
       <description></description>
@@ -29,9 +29,27 @@
     <item>
       <title>rising-legends</title>
       <link>https://xangelo.ca/tags/rising-legends/</link>
-      <pubDate>Wed, 09 Aug 2023 13:48:11 -0400</pubDate>
+      <pubDate>Fri, 01 Sep 2023 13:49:19 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/rising-legends/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://xangelo.ca/tags/css/</link>
+      <pubDate>Thu, 17 Aug 2023 11:05:55 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://xangelo.ca/tags/tutorial/</link>
+      <pubDate>Thu, 17 Aug 2023 11:05:55 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/tags/tutorial/</guid>
       <description></description>
     </item>
     
@@ -122,24 +140,6 @@
       <pubDate>Thu, 25 May 2023 00:15:53 -0400</pubDate>
       
       <guid>https://xangelo.ca/tags/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>https://xangelo.ca/tags/blog/</link>
-      <pubDate>Sun, 21 May 2023 23:29:45 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>engineering</title>
-      <link>https://xangelo.ca/tags/engineering/</link>
-      <pubDate>Wed, 21 Sep 2022 22:36:23 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/tags/engineering/</guid>
       <description></description>
     </item>
     

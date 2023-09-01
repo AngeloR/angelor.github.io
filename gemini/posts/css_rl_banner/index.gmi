@@ -1,0 +1,45 @@
+# CSS Banner
+
+
+=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi ← Newer: Rising Legends [Garden]
+=> gemini://gemini.xangelo.ca/daily/2023/august/08/index.gmi → Older: Tuesday, August 8, 2023
+
+
+&gt;&gt; As with all my posts, this will likely meander a bit. I've moved the meandering to the bottom if you care, and put the tutorial up top.
+
+Here's what we're making: ---
+
+### Meandering
+
+I love CSS. I love it so much I never really bothered much with bootstrap or Tailwind for my personal projects. &nbsp;I particularly love that CSS has caught up to my Photoshop Skills from the 2000s when sites like GreyCobra and 2Advanced were king. A long pain point in design (and one I think that really forced the move from the complexities in the early 2000s) was... scaling!
+
+While HTML started out relatively simple.. the advent of flash in web design really catapulted things forward. We went from these "static" (everyone remembers blinking and spinning tags right?) websites to really interactive ones. I'm not talking "oh look there's a chat box" I'm talking things flying around the screen, excellent sound effects when you clicked a site, and a web design renaissance that was squashed and obliterated by "Web 2.0".&nbsp;
+
+We went from sites that looked truly unique and were works of art to what you're seeing now.. but with hard gradients. There's lots of reasons it went this way, and it would be truely foolish to foist the blame entirely on a single cause.
+
+The problem was CSS in it's current form was mostly useless except for the most mudane things.
+
+The only way to get "nice" websites in CSS was to trawl the early days of alistapart.com and csszengarden for ideas. The other way was design your entire site in Photoshop - multiple resolutions be damned. If websites were supposed to be about freedom of expression I was going to express myself at a resolution of 1000x700 so that everything was pixel perfect. We used an umpteen number of nested tables to ensure that our designs were always perfect.&nbsp;
+
+The hardest thing we could do in these days was.. scaling our sites for other resolutions. Web 2.0 solved that problem by making designs boring and generic. When you look around and see every website look exactly the same, that's because of Web2.0 and "the look" that it came with.
+
+
+
+
+
+
+
+
+
+
+    
+
+---
+## References
+
+
+
+## Related articles
+
+=> /gemini/gardens/rising-legends/index.gmi Rising Legends [Garden]: <no value>
+---
