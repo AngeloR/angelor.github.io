@@ -11,19 +11,10 @@
     <item>
       <title>Rising Legends [Garden]</title>
       <link>https://xangelo.ca/gardens/rising-legends/</link>
-      <pubDate>Fri, 01 Sep 2023 13:49:19 -0400</pubDate>
+      <pubDate>Fri, 01 Sep 2023 13:52:42 -0400</pubDate>
       
       <guid>https://xangelo.ca/gardens/rising-legends/</guid>
       <description>A Garden (Continually updating) post about the current status of a PBBG Game I&amp;rsquo;m working on.</description>
-    </item>
-    
-    <item>
-      <title>CSS Banner</title>
-      <link>https://xangelo.ca/posts/css_rl_banner/</link>
-      <pubDate>Thu, 17 Aug 2023 11:05:55 -0400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/css_rl_banner/</guid>
-      <description>An interesting CSS only banner for an RPG</description>
     </item>
     
     <item>
@@ -143,6 +134,15 @@ I feel like all reddit has to do is say &amp;ldquo;Ok, we&amp;rsquo;ve changed t
       
       <guid>https://xangelo.ca/daily/2023/june/2/</guid>
       <description>There was something magical about uploading the wordpress zip file to your shared host and going through install.php</description>
+    </item>
+    
+    <item>
+      <title>Tuesday, May 30, 2023</title>
+      <link>https://xangelo.ca/daily/2023/may/30/</link>
+      <pubDate>Tue, 30 May 2023 11:12:44 -0400</pubDate>
+      
+      <guid>https://xangelo.ca/daily/2023/may/30/</guid>
+      <description>I feel like I&amp;rsquo;m ALMOST there on the process for deployments. I think right now I need to adjust the build process so that after I write a post in the outliner, it gets pushed up to github automatically (the raw data) which builds and deploys it to github pages. That way the &amp;ldquo;built&amp;rdquo; info isn&amp;rsquo;t in github.</description>
     </item>
     
   </channel>
