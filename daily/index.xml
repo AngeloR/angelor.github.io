@@ -7,8 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Tue, 08 Aug 2023 14:14:33 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2023 23:49:12 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tuesday, November 21, 2023</title>
+      <link>https://xangelo.ca/daily/2023/november/23/</link>
+      <pubDate>Tue, 21 Nov 2023 23:49:12 -0500</pubDate>
+      <guid>https://xangelo.ca/daily/2023/november/23/</guid>
+      <description>Lunar Vim has become my new editor configuration. The easy of setup + inter-plugin configuration trumphs the requirement for me to craft my own personal installation. Out of the plugins that I use, everything works well enough. It&amp;rsquo;s been enough that my configuration has become quite minimal.
+.config/lvim/config.lua
+To be honest, there&amp;rsquo;s actually very little in here that is required apart from the relative line numbering.</description>
+    </item>
     <item>
       <title>Tuesday, August 8, 2023</title>
       <link>https://xangelo.ca/daily/2023/august/08/</link>

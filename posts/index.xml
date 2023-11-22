@@ -40,7 +40,7 @@
 &lt;p&gt;&lt;img src=&#34;../img/http2/event-169284.png&#34; alt=&#34;Event 169284&#34;&gt;&lt;/p&gt;
 &lt;p&gt;And now we can easily see the problem: &lt;code&gt;SOCKET_POOL_STALLED_MAX_SOCKETS_PER_GROUP&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;In HTTP1.1 each tab in your browser is configured to only make a certain number of requests per FQDN at the same time.This is one of the reasons why we load &amp;ldquo;static assets&amp;rdquo; on a different subdomain. By loading static assets on a separate FQDN we can increase the objects that are simultaneously loaded in our tab providing a better experience (for some definition of experience) to our user. In HTTP2, this restriction is across every single tab in your browser. For chrome, it can only instantiate 6 concurrent connections to an FQDN. This is because your connections are persistent in http2 and you don&amp;rsquo;t need to deal with the initialization handshakes on every request. The connection, once opened, is continually reused. &lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;For some reason, the socket pool dedicated to this particular FQDN gets filled up and so it can&amp;rsquo;t actually make the next request. So it just sits there.. until suddenly a socket is available (2 minutes later) and it is able to complete the rest of the request as expected. The &amp;ldquo;suddenly&amp;rdquo; is likely due to the default socket timeout. Once that timeout is hit, Chrome kills the connection and opens a new one and suddenly our request works again.&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;font-family: sans-serif; font-size: 16px; font-style: normal; font-variant-caps: normal;&#34;&gt;For some reason, the socket pool dedicated to this particular FQDN gets filled up and so it can&amp;rsquo;t actually make the next request. So it just sits there.. until suddenly a socket is available (2 minutes later) and it is able to complete the rest of the request as expected. The &amp;ldquo;suddenly&amp;rdquo; is likely due to the default socket timeout. Once that timeout is hit, Chrome kills the connection and opens a new one and suddenly our request works again.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;We can dig even further! Since we know that this is happening on an HTTP2 call, we can filter our events to only show us the http2 connections and that paints a more serious picture! &lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../img/http2/goaway.png&#34; alt=&#34;GOAWAY&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Every one of our http2 sockets is getting sent a &lt;code&gt;GOAWAY&lt;/code&gt; frame by the server.. but notice that it says &lt;code&gt;NO_ERROR&lt;/code&gt;. This generally indicates that the server is telling the client that it will be shutting down this socket and. The &lt;code&gt;GOAWAY&lt;/code&gt; frame also tells the client what the last stream that it processed was. This is so that the client can resend any data that it needs to on a new connection. What should happen is that after this frame, the connection is ended by both parties and we move on to a new one. In practice, it happens after a following &lt;code&gt;GOAWAY&lt;/code&gt; frame that indicates the connection is now dead. Except that final disconnect frame is never sent. So as far as chrome is concerned, we&amp;rsquo;re still happily connected so it returns the connection to the pool. But the server has disconnected.&lt;/p&gt;
@@ -91,7 +91,7 @@
 &lt;h3 id=&#34;caveats&#34;&gt;Caveats:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The jobs have an easy &amp;ldquo;deduplication key&amp;rdquo;. An ID that is the same given the same inputs.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;The jobs have an easy &amp;ldquo;deduplication key&amp;rdquo;. An ID that is the same given the same inputs.&lt;br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If we don&amp;rsquo;t complete a job for any reason, that&amp;rsquo;s fine, another one will likely show up again in a few minutes&lt;/p&gt;
@@ -129,7 +129,7 @@
 &lt;p&gt;For the last 6 months or so, however, I&amp;rsquo;ve been working on my own outliner. It started as an in-browser tool&amp;hellip; and I quickly moved it to an offline-first desktop app via &lt;a href=&#34;https://tauri.app&#34;&gt;Tauri&lt;/a&gt;. Having it offline first meant a few big things.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;All the syncing tools just work. Dropbox, rsync, backblaze, s3 as a filesystem. Whatever. It works. All nodes in the outliner are individual json files on your computer. There&amp;rsquo;s an &amp;ldquo;outline&amp;rdquo; file that stitches the nodes together into a tree.  &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;All the syncing tools just work. Dropbox, rsync, backblaze, s3 as a filesystem. Whatever. It works. All nodes in the outliner are individual json files on your computer. There&amp;rsquo;s an &amp;ldquo;outline&amp;rdquo; file that stitches the nodes together into a tree.  &lt;br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Building desktop first allowed me to bypass the need for user accounts and passwords. It allowed me to skip out on the complexities of providing reliable encrypted storage to users. I don&amp;rsquo;t need to run a collection of servers and databases and object stores to power this thing.&lt;/p&gt;
@@ -206,7 +206,7 @@
 &lt;h4 id=&#34;service-level-objectives&#34;&gt;Service Level Objectives&lt;/h4&gt;
 &lt;p&gt;By defining what broken means you&amp;rsquo;ve now set a baseline stat for your systems. You&amp;rsquo;ve defined your first Service Level Objective (SLO). Yay!&lt;/p&gt;
 &lt;p&gt;In the nutshell, SLOs form the baseline for your Service Level Agreements (SLA) with customers. Your SLA can&amp;rsquo;t be better than your SLO or you&amp;rsquo;re going to have to sacrifice on feature development to bring them up to speed. Now we can talk about all kinds of marketing tricks you can do (mainly playing with the measurement period) but the truth is if your SLO defines a particular flow as &amp;ldquo;broken&amp;rdquo; it sets the floor for your SLA. You can only promise less than that until you invest in improving that SLO.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s move on to the 2&lt;!-- raw HTML omitted --&gt;nd&lt;!-- raw HTML omitted --&gt; step.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s move on to the 2&lt;sup&gt;nd&lt;/sup&gt; step.&lt;/p&gt;
 &lt;h3 id=&#34;you-find-out-that-something-is-broken&#34;&gt;You find out that something is broken&lt;/h3&gt;
 &lt;h4 id=&#34;whats-on-first&#34;&gt;What&amp;rsquo;s on first?&lt;/h4&gt;
 &lt;p&gt;Ok. something is definitely broken. How do you find out?&lt;/p&gt;

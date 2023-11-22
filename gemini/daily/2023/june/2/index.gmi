@@ -21,7 +21,7 @@ There was something magical about uploading the wordpress zip file to your share
 
 ## Related articles
 
+=> /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
 => /gemini/daily/2023/august/08/index.gmi Tuesday, August 8, 2023: <no value>
 => /gemini/daily/2023/june/22/index.gmi Thursday, June 22, 2023: <no value>
-=> /gemini/daily/2023/june/21/index.gmi Wednesday, June 21, 2023: <no value>
 ---

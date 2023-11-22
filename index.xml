@@ -7,8 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Fri, 01 Sep 2023 13:52:42 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2023 23:49:12 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tuesday, November 21, 2023</title>
+      <link>https://xangelo.ca/daily/2023/november/23/</link>
+      <pubDate>Tue, 21 Nov 2023 23:49:12 -0500</pubDate>
+      <guid>https://xangelo.ca/daily/2023/november/23/</guid>
+      <description>Lunar Vim has become my new editor configuration. The easy of setup + inter-plugin configuration trumphs the requirement for me to craft my own personal installation. Out of the plugins that I use, everything works well enough. It&amp;rsquo;s been enough that my configuration has become quite minimal.
+.config/lvim/config.lua
+To be honest, there&amp;rsquo;s actually very little in here that is required apart from the relative line numbering.</description>
+    </item>
+    <item>
+      <title>Tuesday, November 21, 2023</title>
+      <link>https://xangelo.ca/tuesday_november_21_2023/</link>
+      <pubDate>Tue, 21 Nov 2023 23:31:55 -0500</pubDate>
+      <guid>https://xangelo.ca/tuesday_november_21_2023/</guid>
+      <description>Lunar Vim has become my new editor configuration. The easy of setup + inter-plugin configuration trumphs the requirement for me to craft my own personal installation. Out of the plugins that I use, everything works well enough. It&amp;rsquo;s been enough that my configuration has become quite minimal.</description>
+    </item>
     <item>
       <title>Rising Legends [Garden]</title>
       <link>https://xangelo.ca/gardens/rising-legends/</link>
@@ -101,20 +117,6 @@ I feel like all reddit has to do is say &amp;ldquo;Ok, we&amp;rsquo;ve changed t
       <pubDate>Sat, 03 Jun 2023 06:08:02 -0400</pubDate>
       <guid>https://xangelo.ca/daily/2023/june/3/</guid>
       <description>In a strange twist, it appears that I may be more of a morning person than I though. The last few days I&amp;rsquo;ve been going to bed by 9:30 (kids&amp;hellip;) and then waking up at 4am and starting my day. It&amp;rsquo;s been a strange experience. By about 7am I&amp;rsquo;ve managed to get a bunch of work done and had time to walk the dog before the 30 degree weather kicks in and melts her.</description>
-    </item>
-    <item>
-      <title>Friday, June 2nd, 2023</title>
-      <link>https://xangelo.ca/daily/2023/june/2/</link>
-      <pubDate>Fri, 02 Jun 2023 10:36:35 -0400</pubDate>
-      <guid>https://xangelo.ca/daily/2023/june/2/</guid>
-      <description>There was something magical about uploading the wordpress zip file to your shared host and going through install.php</description>
-    </item>
-    <item>
-      <title>Tuesday, May 30, 2023</title>
-      <link>https://xangelo.ca/daily/2023/may/30/</link>
-      <pubDate>Tue, 30 May 2023 11:12:44 -0400</pubDate>
-      <guid>https://xangelo.ca/daily/2023/may/30/</guid>
-      <description>I feel like I&amp;rsquo;m ALMOST there on the process for deployments. I think right now I need to adjust the build process so that after I write a post in the outliner, it gets pushed up to github automatically (the raw data) which builds and deploys it to github pages. That way the &amp;ldquo;built&amp;rdquo; info isn&amp;rsquo;t in github.</description>
     </item>
   </channel>
 </rss>
