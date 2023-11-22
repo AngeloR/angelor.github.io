@@ -1,7 +1,7 @@
 # Outliner [Garden]
 
 
-=> gemini://gemini.xangelo.ca/daily/2023/november/22/index.gmi ← Newer: Tuesday, November 22, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/november/22/index.gmi ← Newer: Wednesday, November 22, 2023
 => gemini://gemini.xangelo.ca/daily/2023/november/23/index.gmi → Older: Tuesday, November 21, 2023
 
 

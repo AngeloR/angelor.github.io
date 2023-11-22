@@ -24,7 +24,7 @@ Instead I've been testing Lunar Vim [1] which is a bunch of plugins pre-configur
 
 ## Related articles
 
-=> /gemini/daily/2023/november/22/index.gmi Tuesday, November 22, 2023: <no value>
+=> /gemini/daily/2023/november/22/index.gmi Wednesday, November 22, 2023: <no value>
 => /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
 => /gemini/daily/2023/june/22/index.gmi Thursday, June 22, 2023: <no value>
 ---

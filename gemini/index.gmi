@@ -3,7 +3,7 @@
 
 ### 2023
 
-=> gemini://gemini.xangelo.ca/daily/2023/november/22/index.gmi Tuesday, November 22, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/november/22/index.gmi Wednesday, November 22, 2023
 => gemini://gemini.xangelo.ca/gardens/outliner/index.gmi Outliner [Garden]
 => gemini://gemini.xangelo.ca/daily/2023/november/23/index.gmi Tuesday, November 21, 2023
 => gemini://gemini.xangelo.ca/tuesday_november_21_2023/index.gmi Tuesday, November 21, 2023
