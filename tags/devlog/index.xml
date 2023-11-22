@@ -7,16 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 10 Jun 2020 12:00:00 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/devlog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jun 2020 12:00:00 -0400</lastBuildDate>
+    <atom:link href="https://xangelo.ca/tags/devlog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DEVLOG: Custom Theme for Hugo</title>
       <link>https://xangelo.ca/posts/devlog/blog/1/</link>
       <pubDate>Wed, 10 Jun 2020 12:00:00 -0400</pubDate>
-      
       <guid>https://xangelo.ca/posts/devlog/blog/1/</guid>
       <description>I&amp;rsquo;ve started working on a custom theme for Hugo1 that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file2 where possible.
 The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend3 who helped me adjust the colors for both dark and light modes to make them a bit more legible.</description>
     </item>
-    
   </channel>
 </rss>

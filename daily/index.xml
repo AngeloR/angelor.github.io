@@ -7,137 +7,110 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Tue, 08 Aug 2023 14:14:33 -0400</lastBuildDate><atom:link href="https://xangelo.ca/daily/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Aug 2023 14:14:33 -0400</lastBuildDate>
+    <atom:link href="https://xangelo.ca/daily/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tuesday, August 8, 2023</title>
       <link>https://xangelo.ca/daily/2023/august/08/</link>
       <pubDate>Tue, 08 Aug 2023 14:14:33 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/august/08/</guid>
       <description>After about a month helix is something I dropped. I work on linux, mac&amp;rsquo;s and Windows envs and if my editor can&amp;rsquo;t do the same I drop it. Unfortunately there&amp;rsquo;s a weird bug in helix where some keypresses (like escape to get out edit mode) take a second to register. That seriously messes with my workflow where I mash esc and then quickly jump to another section.. Enough to make using Helix a frustrating experience.</description>
     </item>
-    
     <item>
       <title>Thursday, June 22, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/22/</link>
       <pubDate>Thu, 22 Jun 2023 10:11:03 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/22/</guid>
       <description>Trying out Helix and just the ease of getting up and running with all the features that I want out of the box was incredible? Like that alone should be enough for new devs to get started. Vim/NeoVim is great if you&amp;rsquo;re already in that world and have years of configs/settings that you&amp;rsquo;re used to. But if you&amp;rsquo;re just starting out with modal editors, you can&amp;rsquo;t compete with everything just working out of the box?</description>
     </item>
-    
     <item>
       <title>Wednesday, June 21, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/21/</link>
       <pubDate>Wed, 21 Jun 2023 05:57:49 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/21/</guid>
       <description>I don&amp;rsquo;t do a lot of posts with images.. mostly because I do all my work in markdown and rarely preview as I&amp;rsquo;m going. However this new outliner writing method has me paranoid and constantly previewing the content as I go and it&amp;rsquo;s made me add images for the first time in a long time&amp;hellip;</description>
     </item>
-    
     <item>
       <title>Sunday, June 18, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/18/</link>
       <pubDate>Sun, 18 Jun 2023 06:30:13 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/18/</guid>
       <description>Been a few days since an update here - mostly because I&amp;rsquo;ve been quite swamped. The Reddit Fiasco has been somewhat freeing in that I&amp;rsquo;ve just moved on from the platform. I never really contributed much in my 13+ years outside of a few DMs and responding to help. I haven&amp;rsquo;t actually replaced it with anything. I like kbin/lemmy.. but I&amp;rsquo;m really not looking for the same thing. I think I&amp;rsquo;m looking for smaller communities&amp;hellip; again the IndieWeb beckons.</description>
     </item>
-    
     <item>
       <title>Friday, June 9th, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/9/</link>
       <pubDate>Fri, 09 Jun 2023 05:49:51 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/9/</guid>
       <description>Rising Legends is finally getting to the point where the core game loop is in. It&amp;rsquo;s exciting to be back in this space after so many years. Every couple years I build the mechanics/system for some PBBG - often to test out some new architecture/design patterns. This time I really focused on getting something playable rather than the code behind it. The next step is to start getting some 3rd party testers and early alpha feedback!</description>
     </item>
-    
     <item>
       <title>Tuesday, June 7th, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/7/</link>
       <pubDate>Wed, 07 Jun 2023 06:15:03 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/7/</guid>
       <description>Today&amp;rsquo;s the day I finally start looking into mouse support on the Outliner. It&amp;rsquo;s honestly been a great tool and a daily driver for my notes/blog updates. I don&amp;rsquo;t really see much need in mouse support, but someone saw me using it and was intrigued. And I had to reluctantly tell them it doesn&amp;rsquo;t support a mouse&amp;hellip;
 With the fires out in Quebec continuing, air quality has continued to deteriorate. For a good chunk of yesterday everything had a bit of an orange hue.</description>
     </item>
-    
     <item>
       <title>Monday, June 5th, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/5/</link>
       <pubDate>Mon, 05 Jun 2023 14:14:27 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/5/</guid>
       <description>Caching is a bad idea until you have some concrete numbers as to why you&amp;rsquo;re caching a thing.
 I feel like all reddit has to do is say &amp;ldquo;Ok, we&amp;rsquo;ve changed the pricing to something more reasonable&amp;rdquo; and then everyone will pat themselves on the back and start paying for their own content. Reddit exists because users devote the time to submit new content and to MODERATE IT all for free.</description>
     </item>
-    
     <item>
       <title>Sunday, June 4th, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/4/</link>
       <pubDate>Mon, 05 Jun 2023 09:47:29 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/4/</guid>
       <description>I&amp;rsquo;ve been noodling around in the fediverse for a long time now, entranced by some of the ideas Diaspora had when it first launched.. and mostly just continually disappointed by the various communities that tend to spring up around it. Hoping this foray into the activity-pub based world (kbin, lemmy, pleroma) will be different. But already the main lemmy instance is proving to be a bad one specifically because of the devs.</description>
     </item>
-    
     <item>
       <title>Saturday, June 3rd, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/3/</link>
       <pubDate>Sat, 03 Jun 2023 06:08:02 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/3/</guid>
       <description>In a strange twist, it appears that I may be more of a morning person than I though. The last few days I&amp;rsquo;ve been going to bed by 9:30 (kids&amp;hellip;) and then waking up at 4am and starting my day. It&amp;rsquo;s been a strange experience. By about 7am I&amp;rsquo;ve managed to get a bunch of work done and had time to walk the dog before the 30 degree weather kicks in and melts her.</description>
     </item>
-    
     <item>
       <title>Friday, June 2nd, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/2/</link>
       <pubDate>Fri, 02 Jun 2023 10:36:35 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/june/2/</guid>
       <description>There was something magical about uploading the wordpress zip file to your shared host and going through install.php</description>
     </item>
-    
     <item>
       <title>Tuesday, May 30, 2023</title>
       <link>https://xangelo.ca/daily/2023/may/30/</link>
       <pubDate>Tue, 30 May 2023 11:12:44 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/may/30/</guid>
       <description>I feel like I&amp;rsquo;m ALMOST there on the process for deployments. I think right now I need to adjust the build process so that after I write a post in the outliner, it gets pushed up to github automatically (the raw data) which builds and deploys it to github pages. That way the &amp;ldquo;built&amp;rdquo; info isn&amp;rsquo;t in github.</description>
     </item>
-    
     <item>
       <title>Friday, May 26, 2023</title>
       <link>https://xangelo.ca/daily/2023/may/26/</link>
       <pubDate>Fri, 26 May 2023 13:33:16 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/may/26/</guid>
       <description>Everyone wanting their own streaming service is just re-inventing cable and the whole reason that services like Netflix &amp;ldquo;distrupted&amp;rdquo;. Gabe Newell said it best &amp;ldquo;[Piracy] is a service issue&amp;rdquo;. And the service here sucks.</description>
     </item>
-    
     <item>
       <title>Thursday, May 25, 2023</title>
       <link>https://xangelo.ca/daily/2023/may/25/</link>
       <pubDate>Thu, 25 May 2023 21:20:53 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/may/25/</guid>
       <description>I have a sneaking suspicion that Azure DevOps is way better than GitHub but no one is willing to admit it.
 For whatever reason this year has been really bad on my allergies. I&amp;rsquo;m trying a variety of over-the-counter medications but will likely have to resort to something a bit stronger before the summer is out.
 I just realized that all the &amp;ldquo;Daily Updates&amp;rdquo; are already one day out of sync due to the fact that I don&amp;rsquo;t know what day it is.</description>
     </item>
-    
     <item>
       <title>Thursday, May 24, 2023</title>
       <link>https://xangelo.ca/daily/2023/may/24/</link>
       <pubDate>Wed, 24 May 2023 23:11:51 -0400</pubDate>
-      
       <guid>https://xangelo.ca/daily/2023/may/24/</guid>
       <description>I&amp;rsquo;m attempting to adopt Dave Winer&amp;rsquo;s posting setup of daily updates. I realize there&amp;rsquo;s so much that I want to just say over the course of the day. Some of it might morph into full blown posts.. some of it will just disappear. I originally thought I would try and transition some into &amp;ldquo;tweets&amp;rdquo; and &amp;ldquo;toots&amp;rdquo; or whatever mastodon calls them.. but for now they&amp;rsquo;ll just live here.
 I moved to hugo about a year ago, mostly to gain the easy github pages integration&amp;hellip; I&amp;rsquo;m only now beginning to discover some of the neat details that made it so popular.</description>
     </item>
-    
   </channel>
 </rss>

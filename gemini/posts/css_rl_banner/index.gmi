@@ -1,13 +1,20 @@
 # CSS Banner
 
 
-=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi ← Newer: Rising Legends [Garden]
-=> gemini://gemini.xangelo.ca/daily/2023/august/08/index.gmi → Older: Tuesday, August 8, 2023
+
+=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi → Older: Rising Legends [Garden]
 
 
 &gt;&gt; As with all my posts, this will likely meander a bit. I've moved the meandering to the bottom if you care, and put the tutorial up top.
 
-Here's what we're making: ---
+Here's what we're making:
+
+=> /img/css-banner/final-banner.png Embedded Image: /img/css-banner/final-banner.png
+
+
+### The HTML
+
+the HTML for this is pretty boring so I'm just gonna show you: ```&lt;div class="city-title-wrapper"&gt;&lt;div class="city-title"&gt;Windcross&lt;/div&gt;&lt;/div&gt;```
 
 ### Meandering
 
@@ -22,6 +29,8 @@ The problem was CSS in it's current form was mostly useless except for the most 
 The only way to get "nice" websites in CSS was to trawl the early days of alistapart.com and csszengarden for ideas. The other way was design your entire site in Photoshop - multiple resolutions be damned. If websites were supposed to be about freedom of expression I was going to express myself at a resolution of 1000x700 so that everything was pixel perfect. We used an umpteen number of nested tables to ensure that our designs were always perfect.&nbsp;
 
 The hardest thing we could do in these days was.. scaling our sites for other resolutions. Web 2.0 solved that problem by making designs boring and generic. When you look around and see every website look exactly the same, that's because of Web2.0 and "the look" that it came with.
+
+It feels like we're finally at the spot (technologically) that we can start making some of those early designs again - except this time with more of a focus on target-audience usability.
 
 
 

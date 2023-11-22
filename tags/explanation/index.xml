@@ -7,43 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Tue, 20 Jun 2023 12:30:56 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/explanation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jun 2023 12:30:56 -0400</lastBuildDate>
+    <atom:link href="https://xangelo.ca/tags/explanation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
       <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
       <pubDate>Tue, 20 Jun 2023 12:30:56 -0400</pubDate>
-      
       <guid>https://xangelo.ca/posts/chrome_request_stalled/</guid>
       <description>Chrome reports that a request is stuck in a &amp;ldquo;stalled&amp;rdquo; state and I try and figure out why</description>
     </item>
-    
     <item>
       <title>Dungeon Generation in Roguelikes</title>
       <link>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</link>
       <pubDate>Fri, 23 Apr 2021 09:44:35 -0400</pubDate>
-      
       <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
       <description>A simple dungeon generation algorithm for organic rooms</description>
     </item>
-    
     <item>
       <title>The Disk Is Slow</title>
       <link>https://xangelo.ca/posts/the-disk-is-slow/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
-      
       <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
       <description>&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.
 What is slow? For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute.</description>
     </item>
-    
     <item>
       <title>What the heck is a Database Index?</title>
       <link>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
-      
       <guid>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</guid>
       <description>When you do a standard select * from table_name where columns=some_value from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&amp;rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&amp;rsquo;t know where/how-many instances of a particular value it might find.</description>
     </item>
-    
   </channel>
 </rss>

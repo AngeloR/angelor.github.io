@@ -2,6 +2,73 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.4.1;hp=v0.4.0;ds=sidebyside) (2023-09-29)
+
+
+### Bug Fixes
+
+* add missing migration 34d64f8
+* remove clickhouse f7a8ccf
+
+## [0.4.0](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.4.0;hp=v0.3.6;ds=sidebyside) (2023-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* dungeon traversal
+
+### Features
+
+* cleanup chat commands 074d6ad
+* dungeon traversal 2ec43df
+* min level for all locations 2be0160
+* psql based event system 43f0bc3
+
+
+### Bug Fixes
+
+* auto-enter dungeon if you are in it dfa62a7
+* remove log of 0 events being flushed 552c744
+
+### [0.3.6](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.6;hp=v0.3.5;ds=sidebyside) (2023-09-06)
+
+
+### Features
+
+* chat command to set player level 9ced477
+* rbac support with admin permission 940079d
+
+### [0.3.5](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.5;hp=v0.3.4;ds=sidebyside) (2023-09-06)
+
+
+### Bug Fixes
+
+* reduce specials to 10% 5beba79
+
+### [0.3.4](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.4;hp=v0.3.3;ds=sidebyside) (2023-09-06)
+
+
+### Bug Fixes
+
+* add missing migration d7268ba
+
+### [0.3.3](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.3;hp=v0.3.2;ds=sidebyside) (2023-09-06)
+
+
+### Features
+
+* add debug/error methods to logger 3238965
+* display equippable hand option only d7569d3
+* migrate to augmenting express.Request interface d820e11
+* monster variants b8bed23
+* remove body-part targeting c6a5f62
+* variable level monsters b5577b4
+
+
+### Bug Fixes
+
+* min/max level definitions for monsters bedec85
+
 ### [0.3.2](https://git.xangelo.ca/?p=risinglegends.git;a=commitdiff;h=v0.3.2;hp=v0.3.1;ds=sidebyside) (2023-09-01)
 
 

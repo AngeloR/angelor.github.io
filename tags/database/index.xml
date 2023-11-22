@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 29 Apr 2020 16:21:29 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Apr 2020 16:21:29 -0400</lastBuildDate>
+    <atom:link href="https://xangelo.ca/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What the heck is a Database Index?</title>
       <link>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
-      
       <guid>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</guid>
       <description>When you do a standard select * from table_name where columns=some_value from a table.. the database has no idea where IN the table that data exists. In order to figure out which rows in the table it needs to return to you (based on your where clause), it looks through the rows in the table. Of course, if you don&amp;rsquo;t set a limit clause, it has to look through EVERY single entry in the table because it doesn&amp;rsquo;t know where/how-many instances of a particular value it might find.</description>
     </item>
-    
   </channel>
 </rss>

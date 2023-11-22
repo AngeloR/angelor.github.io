@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Thu, 24 Mar 2022 01:29:37 -0400</lastBuildDate><atom:link href="https://xangelo.ca/tags/dev-tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Mar 2022 01:29:37 -0400</lastBuildDate>
+    <atom:link href="https://xangelo.ca/tags/dev-tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>gitweb - a GitHub/GitLab alternative</title>
       <link>https://xangelo.ca/posts/gitweb/</link>
       <pubDate>Thu, 24 Mar 2022 01:29:37 -0400</pubDate>
-      
       <guid>https://xangelo.ca/posts/gitweb/</guid>
       <description>Setting up your own git repo browser</description>
     </item>
-    
   </channel>
 </rss>
