@@ -2,7 +2,7 @@
 
 
 => gemini://gemini.xangelo.ca/daily/2023/june/9/index.gmi ← Newer: Friday, June 9th, 2023
-=> gemini://gemini.xangelo.ca/gardens/outliner/index.gmi → Older: Outliner [Garden]
+=> gemini://gemini.xangelo.ca/daily/2023/june/5/index.gmi → Older: Monday, June 5th, 2023
 
 
 Today's the day I finally start looking into mouse support on the Outliner. It's honestly been a great tool and a daily driver for my notes/blog updates. I don't really see much need in mouse support, but someone saw me using it and was intrigued. And I had to reluctantly tell them it doesn't support a mouse...
@@ -23,7 +23,7 @@ With the fires out in Quebec continuing, air quality has continued to deteriorat
 
 ## Related articles
 
+=> /gemini/daily/2023/november/22/index.gmi Tuesday, November 22, 2023: <no value>
 => /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
 => /gemini/daily/2023/august/08/index.gmi Tuesday, August 8, 2023: <no value>
-=> /gemini/daily/2023/june/22/index.gmi Thursday, June 22, 2023: <no value>
 ---

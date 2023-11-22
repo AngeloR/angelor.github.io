@@ -1,7 +1,7 @@
 # Monday, June 5th, 2023
 
 
-=> gemini://gemini.xangelo.ca/gardens/outliner/index.gmi ← Newer: Outliner [Garden]
+=> gemini://gemini.xangelo.ca/daily/2023/june/7/index.gmi ← Newer: Tuesday, June 7th, 2023
 => gemini://gemini.xangelo.ca/daily/2023/june/4/index.gmi → Older: Sunday, June 4th, 2023
 
 
@@ -23,7 +23,7 @@ I feel like all reddit has to do is say "Ok, we've changed the pricing to someth
 
 ## Related articles
 
+=> /gemini/daily/2023/november/22/index.gmi Tuesday, November 22, 2023: <no value>
 => /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
 => /gemini/daily/2023/august/08/index.gmi Tuesday, August 8, 2023: <no value>
-=> /gemini/daily/2023/june/22/index.gmi Thursday, June 22, 2023: <no value>
 ---

@@ -21,7 +21,7 @@ I feel like I'm ALMOST there on the process for deployments. I think right now I
 
 ## Related articles
 
+=> /gemini/daily/2023/november/22/index.gmi Tuesday, November 22, 2023: <no value>
 => /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
 => /gemini/daily/2023/august/08/index.gmi Tuesday, August 8, 2023: <no value>
-=> /gemini/daily/2023/june/22/index.gmi Thursday, June 22, 2023: <no value>
 ---

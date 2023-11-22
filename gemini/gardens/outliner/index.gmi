@@ -1,15 +1,15 @@
 # Outliner [Garden]
 
 
-=> gemini://gemini.xangelo.ca/daily/2023/june/7/index.gmi ← Newer: Tuesday, June 7th, 2023
-=> gemini://gemini.xangelo.ca/daily/2023/june/5/index.gmi → Older: Monday, June 5th, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/november/22/index.gmi ← Newer: Tuesday, November 22, 2023
+=> gemini://gemini.xangelo.ca/daily/2023/november/23/index.gmi → Older: Tuesday, November 21, 2023
 
 
 This page will serve as the current state of my Outliner project.
 
 Github - https://github.com/angelor/outliner
 
-## Current Version: 0.0.1-alpha-2
+## Current Version: 0.0.1-alpha-4
 
 ### Known Bugs
 
@@ -31,7 +31,7 @@ This lends itself really well to "referential nodes" as well
 
 ### General Publishing
 
-Right now, publishing is heavily hardcoded to work with my &nbsp;hugo setup. The idea is to first iron out all the usability bugs and then once we have a nice working copy that's relatively bug free, implement a "settings" file where these things can be configured. One issue that I'm running in to right now is the fact that I restrict permissions on the build to only the `.outliner/` directory so that I don't accidentally touch any other files. Hugo, obviously, lives outside that directoy and so we have a slight issue. I'm not totally sure what the best way to deal with this is yet, which is why there hasn't been a new build of the outliner that officially supports this.
+General publish is working in alpha-4. I'm actually quite pleased with it so far. The configuration is abstracted away, but does expect that you're going to be operating out of the `/home` directory specifically. But, apart from that, the actual work to generate posts, inculding drag+drop support for images, and also code is allowing this to become a really all-rounded tool for me.
 
 ### Referential Node Links
 

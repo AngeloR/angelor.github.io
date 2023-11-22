@@ -48,7 +48,7 @@ But honestly? I'm kind of enjoying this right now.
 
 ## Related articles
 
-=> /gemini/gardens/rising-legends/index.gmi Rising Legends [Garden]: <no value>
 => /gemini/gardens/outliner/index.gmi Outliner [Garden]: <no value>
+=> /gemini/gardens/rising-legends/index.gmi Rising Legends [Garden]: <no value>
 => /gemini/posts/devlog/blog/1/index.gmi DEVLOG: Custom Theme for Hugo: <no value>
 ---

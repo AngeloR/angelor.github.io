@@ -68,7 +68,7 @@ Outliner [Garden] | Xangelo.ca
 
 <p>This page will serve as the current state of my Outliner project.</p>
 <p>Github - <a href="https://github.com/angelor/outliner">https://github.com/angelor/outliner</a></p>
-<h2 id="current-version-001-alpha-2">Current Version: 0.0.1-alpha-2</h2>
+<h2 id="current-version-001-alpha-4">Current Version: 0.0.1-alpha-4</h2>
 <h3 id="known-bugs">Known Bugs</h3>
 <ul>
 <li>None</li>
@@ -81,12 +81,12 @@ Outliner [Garden] | Xangelo.ca
 <p>Hitting <code>ctrl</code>+<code>c</code> on a hilighted node should all you to copy the content of that particular node. Pasting the node should happen in one of two ways: If you are in edit mode, it should paste just the content of the node in your current editor. If you are in navigation mode, it should paste a new copy of the node at your cursor, pushing the existing content down.</p>
 <p>This lends itself really well to &ldquo;referential nodes&rdquo; as well</p>
 <h4 id="general-publishing">General Publishing</h4>
-<p>Right now, publishing is heavily hardcoded to work with my  hugo setup. The idea is to first iron out all the usability bugs and then once we have a nice working copy that&rsquo;s relatively bug free, implement a &ldquo;settings&rdquo; file where these things can be configured. One issue that I&rsquo;m running in to right now is the fact that I restrict permissions on the build to only the <code>.outliner/</code> directory so that I don&rsquo;t accidentally touch any other files. Hugo, obviously, lives outside that directoy and so we have a slight issue. I&rsquo;m not totally sure what the best way to deal with this is yet, which is why there hasn&rsquo;t been a new build of the outliner that officially supports this.</p>
+<p>General publish is working in alpha-4. I&rsquo;m actually quite pleased with it so far. The configuration is abstracted away, but does expect that you&rsquo;re going to be operating out of the <code>/home</code> directory specifically. But, apart from that, the actual work to generate posts, inculding drag+drop support for images, and also code is allowing this to become a really all-rounded tool for me.</p>
 <h4 id="referential-node-links">Referential Node Links</h4>
 <p>Each node in the outliner is saved as its own JSON file. The reason for this was to eventually implement the idea of &ldquo;Referential Node Links&rdquo;. A single node, that can be referenced in multiple outliners. Updating the node from any of the outlines will update the node in every outline. The idea is to give you the ability to re-use certain templates/bits of code. If you hit <code>ctrl+shift+c</code> it should copy the node reference and allow you to paste that in</p>
 
 <div class="post-date">
-  Posted Tuesday, June 06, 2023
+  Posted Wednesday, November 22, 2023
 </div>
 
     </main>
@@ -108,7 +108,7 @@ Outliner [Garden] | Xangelo.ca
 
 
 
-<p id="source-url">Source: <a href=../../gardens/outliner/>https://xangelo.ca/gardens/outliner/</a>, 2023-06-06</p>
+<p id="source-url">Source: <a href=../../gardens/outliner/>https://xangelo.ca/gardens/outliner/</a>, 2023-11-22</p>
 
 
 

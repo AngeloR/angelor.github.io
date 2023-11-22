@@ -7,12 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Tue, 21 Nov 2023 23:49:12 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 22 Nov 2023 01:06:27 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tuesday, November 22, 2023</title>
+      <link>https://xangelo.ca/daily/2023/november/22/</link>
+      <pubDate>Wed, 22 Nov 2023 01:06:27 -0500</pubDate>
+      <guid>https://xangelo.ca/daily/2023/november/22/</guid>
+      <description>Lunar Vim has become my new editor configuration. The easy of setup + inter-plugin configuration trumphs the requirement for me to craft my own personal installation. Out of the plugins that I use, everything works well enough. It&amp;rsquo;s been enough that my configuration has become quite minimal.
+.config/lvim/config.lua
+To be honest, there&amp;rsquo;s actually very little in here that is required apart from the relative line numbering. The same configuration works across platforms (linux, windows with wsl, mac) and honestly I&amp;rsquo;ve run into no real issues with it.</description>
+    </item>
+    <item>
+      <title>Outliner [Garden]</title>
+      <link>https://xangelo.ca/gardens/outliner/</link>
+      <pubDate>Wed, 22 Nov 2023 01:03:25 -0500</pubDate>
+      <guid>https://xangelo.ca/gardens/outliner/</guid>
+      <description>A Garden (Continually updating) post about the current Outliner Status.</description>
+    </item>
     <item>
       <title>Tuesday, November 21, 2023</title>
       <link>https://xangelo.ca/daily/2023/november/23/</link>
-      <pubDate>Tue, 21 Nov 2023 23:49:12 -0500</pubDate>
+      <pubDate>Wed, 22 Nov 2023 00:25:43 -0500</pubDate>
       <guid>https://xangelo.ca/daily/2023/november/23/</guid>
       <description>Lunar Vim has become my new editor configuration. The easy of setup + inter-plugin configuration trumphs the requirement for me to craft my own personal installation. Out of the plugins that I use, everything works well enough. It&amp;rsquo;s been enough that my configuration has become quite minimal.
 .config/lvim/config.lua
@@ -90,13 +106,6 @@ To be honest, there&amp;rsquo;s actually very little in here that is required ap
 With the fires out in Quebec continuing, air quality has continued to deteriorate. For a good chunk of yesterday everything had a bit of an orange hue.</description>
     </item>
     <item>
-      <title>Outliner [Garden]</title>
-      <link>https://xangelo.ca/gardens/outliner/</link>
-      <pubDate>Tue, 06 Jun 2023 10:36:46 -0400</pubDate>
-      <guid>https://xangelo.ca/gardens/outliner/</guid>
-      <description>A Garden (Continually updating) post about the current Outliner Status.</description>
-    </item>
-    <item>
       <title>Monday, June 5th, 2023</title>
       <link>https://xangelo.ca/daily/2023/june/5/</link>
       <pubDate>Mon, 05 Jun 2023 14:14:27 -0400</pubDate>
@@ -110,13 +119,6 @@ I feel like all reddit has to do is say &amp;ldquo;Ok, we&amp;rsquo;ve changed t
       <pubDate>Mon, 05 Jun 2023 09:47:29 -0400</pubDate>
       <guid>https://xangelo.ca/daily/2023/june/4/</guid>
       <description>I&amp;rsquo;ve been noodling around in the fediverse for a long time now, entranced by some of the ideas Diaspora had when it first launched.. and mostly just continually disappointed by the various communities that tend to spring up around it. Hoping this foray into the activity-pub based world (kbin, lemmy, pleroma) will be different. But already the main lemmy instance is proving to be a bad one specifically because of the devs.</description>
-    </item>
-    <item>
-      <title>Saturday, June 3rd, 2023</title>
-      <link>https://xangelo.ca/daily/2023/june/3/</link>
-      <pubDate>Sat, 03 Jun 2023 06:08:02 -0400</pubDate>
-      <guid>https://xangelo.ca/daily/2023/june/3/</guid>
-      <description>In a strange twist, it appears that I may be more of a morning person than I though. The last few days I&amp;rsquo;ve been going to bed by 9:30 (kids&amp;hellip;) and then waking up at 4am and starting my day. It&amp;rsquo;s been a strange experience. By about 7am I&amp;rsquo;ve managed to get a bunch of work done and had time to walk the dog before the 30 degree weather kicks in and melts her.</description>
     </item>
   </channel>
 </rss>
