@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Tue, 20 Jun 2023 12:30:56 -0400</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 05:16:29 -0500</lastBuildDate><atom:link href="https://xangelo.ca/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amplify docker limitations</title>
+      <link>https://xangelo.ca/posts/amplify_docker/</link>
+      <pubDate>Tue, 05 Dec 2023 05:16:29 -1600</pubDate>
+      
+      <guid>https://xangelo.ca/posts/amplify_docker/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently had the chance to do some work wtih Amplify in AWS and I&amp;rsquo;m surprised how simultaneously feature rich and half baked it is. It seems if you&amp;rsquo;re in to click-ops you&amp;rsquo;ll be fine in Amplify until you hit a problem.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re deploying through amplify you&amp;rsquo;ll eventually hit this problem:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[BUILD_CONTAINER_UNABLE_TO_PULL_IMAGE: Unable to pull customer&#39;s container image. CannotPullContainerError: Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Which seems perfectly reasonable at first glance. Nowhere in your project setup did you really define credentials for your docker account.&lt;/p&gt;
+&lt;p&gt;But if you dig a bit it gets weird: You actually can&amp;rsquo;t define credentials for a docker account.. and the limits for the free tier are high enough that you probably wouldn&amp;rsquo;t hit them with a small team - 100 pulls every 6 hours per IP.&lt;/p&gt;
+&lt;p&gt;Turns out you actually share a build pool with other users in amplify - which makes sense. But that in turn means that every so often your build pool will hit the limits for pulling containers from docker hub. And since there&amp;rsquo;s no way to set credentials for your pull.. you&amp;rsquo;re just kinda left hoping that if you retry things will work. There&amp;rsquo;s probably a large enough build pool that it works sometimes, but there are reports of it taking up to an hour or so.&lt;/p&gt;
+&lt;p&gt;So you think: Oh yeah, no worries -&amp;gt; I&amp;rsquo;ll just set up ECR, and configure Amplify to grab my image from that repo instead. But ECR is a non-starter. It turns out that you can&amp;rsquo;t assign any kind of roles to amplify to allow authentication against an ECR.. so if you&amp;rsquo;re hosting your image in ECR, you have to make the entire repo publicly accessible.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re using customized images unfortunately this is really the only way to go. You have to build and deploy to ECR and make the repo publicly available.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re using pre-built images, amazon actually has their own public replica of popular docker images &lt;a href=&#34;https://gallery.ecr.aws/&#34;&gt;https://gallery.ecr.aws/&lt;/a&gt;. If you can find your image on there then you can reference it in the build params for your Amplify project.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
       <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
@@ -1077,199 +1095,6 @@ in a real dungeon..&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://utteranc.es/&#34;&gt;https://utteranc.es/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Moving to Hugo and GitHub Pages</title>
-      <link>https://xangelo.ca/posts/hugo-github/</link>
-      <pubDate>Wed, 03 Jun 2020 14:00:00 -0000</pubDate>
-      
-      <guid>https://xangelo.ca/posts/hugo-github/</guid>
-      <description>&lt;h2 id=&#34;goal&#34;&gt;Goal&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;ve been running my blog over on Ghost&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; for a few years now. I really don&amp;rsquo;t have a lot of issues with it, except for the fact that I have to manage the server itself. I&amp;rsquo;ve been running a small Digital Ocean VPS for a number of years where I host my blog. Ghost itself goes through a lot of updates and keeping the application up to date was starting to become a hassle.&lt;/p&gt;
-&lt;p&gt;I was keen to move to a solution where I could&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Write my posts in markdown&lt;/li&gt;
-&lt;li&gt;Not have to worry about hosting/management&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;After looking at a few different solutions I ended up settling on a static site that was hosted through GitHub. The benefits of this was that&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I could have all my content stored on GitHub.&lt;/li&gt;
-&lt;li&gt;I could utilize GitHub pages to serve the site with a custom domain name (with SSL)&lt;/li&gt;
-&lt;li&gt;I wouldn&amp;rsquo;t need to keep everything up to date&lt;/li&gt;
-&lt;li&gt;I could re-purpose my VPS for other things&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Of course, not all static sites are created the same. I specifically settled on Hugo to power my static site.&lt;/p&gt;
-&lt;h2 id=&#34;hugo&#34;&gt;Hugo&lt;/h2&gt;
-&lt;p&gt;Unlike more traditional blogging software (WordPress, Ghost, etc.) which saves your posts in a database, Hugo&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; generates a bunch of static files (HTML) for each post. By doing this you&amp;rsquo;re still able to have the more complex features (tagging, drafts, pagination, themeing, etc.) but because Hugo pre-processes everything, you&amp;rsquo;re just left with a bunch of HTML files that represent your site. Once you&amp;rsquo;re happy, you can just sync the generated files with your server. In my case, I&amp;rsquo;m simply able to &lt;code&gt;git add&lt;/code&gt; and &lt;code&gt;git push&lt;/code&gt; my content to GitHub.&lt;/p&gt;
-&lt;h3 id=&#34;dynamic-blogging-platforms&#34;&gt;Dynamic Blogging Platforms&lt;/h3&gt;
-&lt;p&gt;Lets look at Wordpress to contrast Hugo. WordPress is the most used blogging software in the world and has the following requirements:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;MySQL&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The implicit requirement is also a server that supports these two. That means you are either relying on a 3rd party host that manages the server and just exposes the Wordpress interface&amp;hellip; or you are managing that server yourself.&lt;/p&gt;
-&lt;p&gt;Most blogging systems work this way - Some language requirement, and some database system for storing the data you create.&lt;/p&gt;
-&lt;p&gt;However, there&amp;rsquo;s lots of additional caveats that you aren&amp;rsquo;t normally aware of, that tend to bite you later:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;You need to run a web server, either Apache or Nginx&lt;/li&gt;
-&lt;li&gt;You need to keep the server itself up to date (security patches)&lt;/li&gt;
-&lt;li&gt;You need to keep Apache|Nginx/PHP/MySQL up to date (security patches)&lt;/li&gt;
-&lt;li&gt;You need to manage database backups (what happens if your server crashes)&lt;/li&gt;
-&lt;li&gt;You need to keep WordPress up to date.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;That&amp;rsquo;s a heck of a lot of stuff for something that&amp;rsquo;s supposed to be easy. And I just picked WordPress because it&amp;rsquo;s popular. Almost every blogging system is the same way.&lt;/p&gt;
-&lt;p&gt;Except for static site generators.&lt;/p&gt;
-&lt;h3 id=&#34;static-site-generators&#34;&gt;Static Site Generators&lt;/h3&gt;
-&lt;p&gt;Static Site Generators are a different way to approach blogging that merges more recent tooling with traditional delivery methods. That&amp;rsquo;s just a fancy way of saying Static Site Generators give you some tooling to generate a bunch of HTML documents that represent your site.&lt;/p&gt;
-&lt;p&gt;With Hugo, I install hugo locally.. write some markdown for my posts, and then use Hugo to generate the HTML for my site. With this, we bring our &amp;ldquo;management&amp;rdquo; layer down to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Hugo&lt;/li&gt;
-&lt;li&gt;Web server (nginx/apache)&lt;/li&gt;
-&lt;li&gt;The hosting server&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo runs locally, so the surface of attack is pretty minimal. There&amp;rsquo;s nothing really wrong with running an outdated version of Hugo except you won&amp;rsquo;t get the most recent features/bug fixes. But there&amp;rsquo;s no security implications of doing so.&lt;/p&gt;
-&lt;p&gt;Since the output from Static Site Generators is just .. static content it can be hosted anywhere. You can use a hosting provider, a VPS, S3+CloudFront, or.. GitHub Pages!&lt;/p&gt;
-&lt;h2 id=&#34;github-pages&#34;&gt;GitHub Pages&lt;/h2&gt;
-&lt;p&gt;GitHub pages is a feature of GitHub that is available to all accounts, regardless of subscription. GitHub pages allows you to serve static content from any repository you&amp;rsquo;d like. They have some rules around how you need to organize your code and how to configure your site (project vs. main) but it&amp;rsquo;s all relatively straight forward.&lt;/p&gt;
-&lt;p&gt;I haven&amp;rsquo;t really hosted much on GitHub pages, but it&amp;rsquo;s very easy - They also have a great walkthrough page&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; that shows you how to configure the kind of Static Site you want to host.&lt;/p&gt;
-&lt;h2 id=&#34;project-configuration&#34;&gt;Project Configuration&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;m not going to go into too much detail, because both Hugo and GitHub have very good introductions, but this should be enough to get a site running.&lt;/p&gt;
-&lt;h3 id=&#34;installing-hugo&#34;&gt;Installing Hugo&lt;/h3&gt;
-&lt;p&gt;Installing Hugo can be done from a terminal in your chosen operating system. There are alternate installation instructions available if you don&amp;rsquo;t have brew installed or if you don&amp;rsquo;t have a mac&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install hugo
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;setup-hugo&#34;&gt;Setup Hugo&lt;/h3&gt;
-&lt;p&gt;Open up your terminal, and navigate to the place you want to store your website. Then you can run the following command:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site mysite
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;This creates a new folder called &lt;code&gt;mysite&lt;/code&gt; that contains the raw files for your static site. At this point you don&amp;rsquo;t have anything generated just the files that will eventually be compiled into your static site.&lt;/p&gt;
-&lt;p&gt;You can install a theme by doing the following:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;You can actually choose whatever theme you would like from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;  &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;and just replace the &lt;code&gt;git submodule&lt;/code&gt; line with the instructions from your theme.&lt;/p&gt;
-&lt;p&gt;Line 1 creates a git repository in the &lt;code&gt;mysite&lt;/code&gt; directory. We want this because themes in Hugo are installed via &lt;code&gt;git submodule&lt;/code&gt; which clones a particular repository into the current one. It also allows you to save the raw site (before static generation) to git!&lt;/p&gt;
-&lt;p&gt;Now it&amp;rsquo;s time to head over to your &lt;code&gt;config.toml&lt;/code&gt; file and set up the defaults for your website. My config file looks like this. You only really need the configurations on the first 9 lines. The rest are just further configurations&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; that I&amp;rsquo;ve made.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;baseURL&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://xangelo.ca&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;theme&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;plain&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Xangelo.ca&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;author&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Angelo R&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;copyright&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Copyright © 2011 - 2020&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;paginate&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;languageCode&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en-us&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;enableInlineShortcodes&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;footnoteReturnLinkContents&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;subtitle&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Technical musings and other tidbits&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;markup&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;markup&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;highlight&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;lineNos&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;lineNumbersInTable&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;style&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;vs&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tabWidth&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;markup&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;tableOfContents&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;endLevel&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ordered&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;startLevel&lt;/span&gt; = &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;create-and-test&#34;&gt;Create and test!&lt;/h3&gt;
-&lt;p&gt;Hugo ships with a built in server that allows you to preview what your site will end up looking like, you can start it up with:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server -w
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;This creates the server and the &lt;code&gt;-w&lt;/code&gt; flag sets it to &amp;ldquo;watch&amp;rdquo;. Any changes that are made will automatically reload the server and also reload the site. You can visit this site by navigating to &lt;code&gt;https://localhost:1313&lt;/code&gt; in your browser.&lt;/p&gt;
-&lt;p&gt;You can create a new post by using &lt;code&gt;hugo new posts/welcome.md&lt;/code&gt;. This creates a new Markdown file in the &lt;code&gt;posts/&lt;/code&gt; directory.&lt;/p&gt;
-&lt;p&gt;You can go ahead and edit that file - saving it will cause Hugo to live reload the website.&lt;/p&gt;
-&lt;h3 id=&#34;publish-your-site&#34;&gt;Publish your site!&lt;/h3&gt;
-&lt;p&gt;Once you&amp;rsquo;re happy with your stuff, you can turn off the live-reloading server and run the &lt;code&gt;hugo&lt;/code&gt; command. This parses all your information and generates the static files for your website. It will then put all this content in the &lt;code&gt;public/&lt;/code&gt; directory. If you followed the instructions from earlier around setting up GitHub Pages, you can &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;public/&lt;/code&gt; directory and set it up as another git repository.&lt;/p&gt;
-&lt;p&gt;then running &lt;code&gt;git push &lt;/code&gt;will publish your static files to whatever GitHub repository you configured to host the site.&lt;/p&gt;
-&lt;h2 id=&#34;wrapping-up&#34;&gt;Wrapping Up&lt;/h2&gt;
-&lt;p&gt;I haven&amp;rsquo;t really dug too much into setting up GitHub pages because it&amp;rsquo;s mostly clicking around the interface and the instructions for that are kept up to date &lt;sup id=&#34;fnref1:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;. I highly recommend GitHub pages because of the ease of setting up&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Custom domain names (if you have your own domain it&amp;rsquo;s trivial to point it to your GitHub pages site)&lt;/li&gt;
-&lt;li&gt;Custom domain name SSL certificafte. Most places only allow you custom SSL certs if you use a subdomain, but GitHub lets you use a custom domain name.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I also highly suggest you spend some time going through the themes&lt;sup id=&#34;fnref1:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; on Hugo to find one that you really like. There are so many and it&amp;rsquo;s so easy to make new themes that you&amp;rsquo;ll definitely find one you like.&lt;/p&gt;
-&lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;Ghost, a node.js based blogging engine: &lt;a href=&#34;https://ghost.org/&#34;&gt;https://ghost.org/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;Hugo, static site generatror: &lt;a href=&#34;https://gohugo.io&#34;&gt;https://gohugo.io&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;GitHub Pages setup:  &lt;a href=&#34;https://pages.github.com/&#34;&gt;https://pages.github.com/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;Hugo installation: &lt;a href=&#34;https://gohugo.io/getting-started/installing&#34;&gt;https://gohugo.io/getting-started/installing&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;Hugo themes: &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;Hugo configuration options: &lt;a href=&#34;https://gohugo.io/getting-started/configuration-markup&#34;&gt;https://gohugo.io/getting-started/configuration-markup&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;

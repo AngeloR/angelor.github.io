@@ -1,7 +1,7 @@
 # Wednesday, November 22, 2023
 
 
-
+=> gemini://gemini.xangelo.ca/posts/amplify_docker/index.gmi ← Newer: Amplify docker limitations
 => gemini://gemini.xangelo.ca/gardens/outliner/index.gmi → Older: Outliner [Garden]
 
 

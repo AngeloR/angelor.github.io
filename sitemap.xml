@@ -2,19 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xangelo.ca/tags/amplify/</loc>
+    <lastmod>2023-12-05T05:16:29-05:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/posts/amplify_docker/</loc>
+    <lastmod>2023-12-05T05:16:29-05:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/aws/</loc>
+    <lastmod>2023-12-05T05:16:29-05:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/docker/</loc>
+    <lastmod>2023-12-05T05:16:29-05:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/posts/</loc>
+    <lastmod>2023-12-05T05:16:29-05:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/tags/</loc>
+    <lastmod>2023-12-05T05:16:29-05:00</lastmod>
+  </url><url>
+    <loc>https://xangelo.ca/</loc>
+    <lastmod>2023-12-05T05:16:29-05:00</lastmod>
+  </url><url>
     <loc>https://xangelo.ca/daily/</loc>
     <lastmod>2023-11-22T03:07:16-05:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/daily/</loc>
     <lastmod>2023-11-22T03:07:16-05:00</lastmod>
   </url><url>
-    <loc>https://xangelo.ca/tags/</loc>
-    <lastmod>2023-11-22T03:07:16-05:00</lastmod>
-  </url><url>
     <loc>https://xangelo.ca/daily/2023/november/22/</loc>
-    <lastmod>2023-11-22T03:07:16-05:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/</loc>
     <lastmod>2023-11-22T03:07:16-05:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/garden/</loc>
@@ -63,9 +78,6 @@
     <lastmod>2023-06-20T12:30:56-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/investigation/</loc>
-    <lastmod>2023-06-20T12:30:56-04:00</lastmod>
-  </url><url>
-    <loc>https://xangelo.ca/posts/</loc>
     <lastmod>2023-06-20T12:30:56-04:00</lastmod>
   </url><url>
     <loc>https://xangelo.ca/tags/bio/</loc>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang ="en-US">
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-variables.css>
+
+<link rel="stylesheet" href="../../css/brutalist-minimalist.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="../../css/bm-responsiveness.css">
+
+
+<link rel="stylesheet" href="../../css/beyond-minimalism.css">
+
+
+<link rel="stylesheet" href=../../css/brutalist-minimalist-fonts.css>
+
+
+
+<link rel="stylesheet" href="../../css/bm-printing.css" media="print">
+
+
+<link rel="stylesheet" href="../../css/custom.css">
+<link rel="alternate" type="text/gemini" href="gemini://xangelo.ca/gemini/posts/amplify_docker/index.gmi" title="Xangelo.ca" />
+<title>
+Amplify docker limitations | Xangelo.ca
+</title>
+  </head>
+  <body leftmargin=40 rightmarin=40>
+    
+
+<header>
+  
+
+<input id="menu-toggle" type="checkbox" hidden /><div id="nav-area"><label id='menu-button' for="menu-toggle"></label><nav id="nav-menu">
+<a href="../../">Home</a>
+<a href="../../tags/">All Categories</a>
+<a href="../../page/about">About</a>
+<a href="../../index.xml"><img src="../../icons/feed-icon-14x14.png"></a>
+</nav>
+</div>
+
+
+
+
+  <h1><a href=../../>Xangelo.ca</a></h1>
+  <em id="subtitle">Technical musings and other tidbits</em>  
+</header>
+
+
+    <main>
+      
+<h2>Amplify docker limitations</h2>
+
+<div class="tag-list">
+  
+  [ <a href="../../tags/aws">aws</a> ]
+  
+  [ <a href="../../tags/docker">docker</a> ]
+  
+  [ <a href="../../tags/amplify">amplify</a> ]
+  
+</div>
+
+
+<p>I&rsquo;ve recently had the chance to do some work wtih Amplify in AWS and I&rsquo;m surprised how simultaneously feature rich and half baked it is. It seems if you&rsquo;re in to click-ops you&rsquo;ll be fine in Amplify until you hit a problem.</p>
+<p>If you&rsquo;re deploying through amplify you&rsquo;ll eventually hit this problem:</p>
+<p><code>[BUILD_CONTAINER_UNABLE_TO_PULL_IMAGE: Unable to pull customer's container image. CannotPullContainerError: Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit]</code></p>
+<p>Which seems perfectly reasonable at first glance. Nowhere in your project setup did you really define credentials for your docker account.</p>
+<p>But if you dig a bit it gets weird: You actually can&rsquo;t define credentials for a docker account.. and the limits for the free tier are high enough that you probably wouldn&rsquo;t hit them with a small team - 100 pulls every 6 hours per IP.</p>
+<p>Turns out you actually share a build pool with other users in amplify - which makes sense. But that in turn means that every so often your build pool will hit the limits for pulling containers from docker hub. And since there&rsquo;s no way to set credentials for your pull.. you&rsquo;re just kinda left hoping that if you retry things will work. There&rsquo;s probably a large enough build pool that it works sometimes, but there are reports of it taking up to an hour or so.</p>
+<p>So you think: Oh yeah, no worries -&gt; I&rsquo;ll just set up ECR, and configure Amplify to grab my image from that repo instead. But ECR is a non-starter. It turns out that you can&rsquo;t assign any kind of roles to amplify to allow authentication against an ECR.. so if you&rsquo;re hosting your image in ECR, you have to make the entire repo publicly accessible.</p>
+<p>If you&rsquo;re using customized images unfortunately this is really the only way to go. You have to build and deploy to ECR and make the repo publicly available.</p>
+<p>If you&rsquo;re using pre-built images, amazon actually has their own public replica of popular docker images <a href="https://gallery.ecr.aws/">https://gallery.ecr.aws/</a>. If you can find your image on there then you can reference it in the build params for your Amplify project.</p>
+
+<div class="post-date">
+  Posted Tuesday, December 05, 2023
+</div>
+
+    </main>
+    
+<footer>
+
+
+
+
+
+  <span id="footer-links">
+[<a href="https://github.com/angelor">GitHub</a>]
+[<a href="https://git.xangelo.ca">GitWeb</a>]
+[<a href="https://www.linkedin.com/in/rodriguesangelo">Linked In</a>]
+</span>
+</footer>
+
+
+
+
+
+<p id="source-url">Source: <a href=../../posts/amplify_docker/>https://xangelo.ca/posts/amplify_docker/</a>, 2023-12-05</p>
+
+
+
+</body>
+     
+ 

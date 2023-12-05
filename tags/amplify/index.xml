@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>amplify on Xangelo.ca</title>
+    <link>https://xangelo.ca/tags/amplify/</link>
+    <description>Recent content in amplify on Xangelo.ca</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2011 - 2022</copyright>
+    <lastBuildDate>Tue, 05 Dec 2023 05:16:29 -0500</lastBuildDate>
+    <atom:link href="https://xangelo.ca/tags/amplify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amplify docker limitations</title>
+      <link>https://xangelo.ca/posts/amplify_docker/</link>
+      <pubDate>Tue, 05 Dec 2023 05:16:29 -0500</pubDate>
+      <guid>https://xangelo.ca/posts/amplify_docker/</guid>
+      <description>Amplify has some odd docker limitations it doesn&amp;rsquo;t want to fix</description>
+    </item>
+  </channel>
+</rss>
