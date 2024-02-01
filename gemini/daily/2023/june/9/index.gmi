@@ -22,7 +22,7 @@ Rising Legends [1] is finally getting to the point where the core game loop is i
 
 ## Related articles
 
+=> /gemini/daily/2024/feb/1/index.gmi river.xangelo.ca: <no value>
 => /gemini/daily/2023/november/22/index.gmi Wednesday, November 22, 2023: <no value>
 => /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
-=> /gemini/daily/2023/august/08/index.gmi Tuesday, August 8, 2023: <no value>
 ---

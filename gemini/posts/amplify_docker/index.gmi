@@ -1,7 +1,7 @@
 # Amplify docker limitations
 
 
-
+=> gemini://gemini.xangelo.ca/daily/2024/feb/1/index.gmi ← Newer: river.xangelo.ca
 => gemini://gemini.xangelo.ca/daily/2023/november/22/index.gmi → Older: Wednesday, November 22, 2023
 
 

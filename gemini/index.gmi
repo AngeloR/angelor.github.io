@@ -1,6 +1,10 @@
 ## List of posts
 
 
+### 2024
+
+=> gemini://gemini.xangelo.ca/daily/2024/feb/1/index.gmi river.xangelo.ca
+
 ### 2023
 
 => gemini://gemini.xangelo.ca/posts/amplify_docker/index.gmi Amplify docker limitations

@@ -28,8 +28,7 @@
       <link>https://xangelo.ca/posts/the-disk-is-slow/</link>
       <pubDate>Wed, 29 Apr 2020 16:21:29 -0400</pubDate>
       <guid>https://xangelo.ca/posts/the-disk-is-slow/</guid>
-      <description>&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.
-What is slow? For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute.</description>
+      <description>&amp;ldquo;The disk is slow&amp;rdquo; is one of those things that most programmers take for granted. Yes it is slow given the speed of other components. But rarely have programmers taken the time to dig into WHY the disk is slow and what that actually means. Yet, doing so can lead us down some interesting rabbit holes.&#xA;What is slow? For a while now the speed of a hard-drive was measured in RPM or Revolutions Per Minute.</description>
     </item>
     <item>
       <title>What the heck is a Database Index?</title>

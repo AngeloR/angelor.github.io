@@ -1,0 +1,30 @@
+# river.xangelo.ca
+
+
+
+=> gemini://gemini.xangelo.ca/posts/amplify_docker/index.gmi → Older: Amplify docker limitations
+
+
+I've been running https://river.xangelo.ca [1] for a number of years now - going back to tweak things ever-so-slightly. This is the first time I've been happy about the whole system. This whole "build it for yourself" phase seems to be working...
+
+The river is just a few websites that I like to follow, but mostly sporadically. I'll hop on and check things out when I can because I find the content to be pretty interesting. It reads some RSS feeds, and constantly updates the main page with any new posts that I haven't seen yet.
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://river.xangelo.ca [1] https://river.xangelo.ca (https://river.xangelo.ca)
+
+
+## Related articles
+
+=> /gemini/daily/2023/november/22/index.gmi Wednesday, November 22, 2023: <no value>
+=> /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
+=> /gemini/daily/2023/august/08/index.gmi Tuesday, August 8, 2023: <no value>
+---
