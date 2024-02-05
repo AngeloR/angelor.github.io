@@ -1,0 +1,28 @@
+# Links!
+
+
+
+=> gemini://gemini.xangelo.ca/page/links/index.gmi → Older: Links
+
+
+I've added a new Links [1] section to my blog to highlight individual-owned/operated blogs that I follow. It's kind of a throwback to the old blog-world pre web2.0 where you just maintained a link to other blogs that you wanted to support.
+
+
+
+
+
+
+    
+
+---
+## References
+
+=> https://xangelo.ca/page/links [1] Links (https://xangelo.ca/page/links)
+
+
+## Related articles
+
+=> /gemini/daily/2024/feb/1/index.gmi river.xangelo.ca: <no value>
+=> /gemini/daily/2023/november/22/index.gmi Wednesday, November 22, 2023: <no value>
+=> /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
+---

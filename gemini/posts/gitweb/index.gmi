@@ -1,8 +1,8 @@
 # gitweb - a GitHub/GitLab alternative
 
 
-=> gemini://gemini.xangelo.ca/posts/running-a-git-server/index.gmi ← Newer: Running a Git Server
-=> gemini://gemini.xangelo.ca/posts/i3/index.gmi → Older: My i3wm Setup
+=> gemini://gemini.xangelo.ca/posts/default-font/index.gmi ← Newer: Removing the Default Font
+=> gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi → Older: Code Reviews Are Failure
 
 ## Owning Your Digital Space
 Over the last year or so I've slowly pushed further and further into the idea of

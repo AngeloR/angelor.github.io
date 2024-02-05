@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 31 Jan 2024 21:36:06 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 04 Feb 2024 23:00:12 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/tags/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Links!</title>
+      <link>https://xangelo.ca/daily/2024/feb/4/</link>
+      <pubDate>Sun, 04 Feb 2024 23:00:12 -0500</pubDate>
+      <guid>https://xangelo.ca/daily/2024/feb/4/</guid>
+      <description>I&amp;rsquo;ve added a new Links section to my blog to highlight individual-owned/operated blogs that I follow. It&amp;rsquo;s kind of a throwback to the old blog-world pre web2.0 where you just maintained a link to other blogs that you wanted to support.</description>
+    </item>
     <item>
       <title>river.xangelo.ca</title>
       <link>https://xangelo.ca/daily/2024/feb/1/</link>
@@ -106,13 +113,6 @@
       <pubDate>Tue, 30 May 2023 11:12:44 -0400</pubDate>
       <guid>https://xangelo.ca/daily/2023/may/30/</guid>
       <description>I feel like I&amp;rsquo;m ALMOST there on the process for deployments. I think right now I need to adjust the build process so that after I write a post in the outliner, it gets pushed up to github automatically (the raw data) which builds and deploys it to github pages. That way the &amp;ldquo;built&amp;rdquo; info isn&amp;rsquo;t in github.</description>
-    </item>
-    <item>
-      <title>Friday, May 26, 2023</title>
-      <link>https://xangelo.ca/daily/2023/may/26/</link>
-      <pubDate>Fri, 26 May 2023 13:33:16 -0400</pubDate>
-      <guid>https://xangelo.ca/daily/2023/may/26/</guid>
-      <description>Everyone wanting their own streaming service is just re-inventing cable and the whole reason that services like Netflix &amp;ldquo;distrupted&amp;rdquo;. Gabe Newell said it best &amp;ldquo;[Piracy] is a service issue&amp;rdquo;. And the service here sucks.</description>
     </item>
   </channel>
 </rss>

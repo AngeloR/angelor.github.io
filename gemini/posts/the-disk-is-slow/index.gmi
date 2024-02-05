@@ -117,7 +117,7 @@ Follow the conversation at HackerNews https://news.ycombinator.com/item?id=13091
 
 ## Related articles
 
-=> /gemini/posts/you_dont_need_nosql.md/index.gmi You probably don't need NoSQL: <no value>
 => /gemini/posts/chrome_request_stalled/index.gmi Chrome HTTP Request stuck in "Stalled" State: <no value>
 => /gemini/posts/devlog/roguelike/dungeon-generation/index.gmi Dungeon Generation in Roguelikes: <no value>
+=> /gemini/posts/what-the-heck-is-a-database-index/index.gmi What the heck is a Database Index?: <no value>
 ---

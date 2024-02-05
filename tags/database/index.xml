@@ -7,22 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Tue, 21 Nov 2023 23:29:09 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2020 16:21:29 -0400</lastBuildDate>
     <atom:link href="https://xangelo.ca/tags/database/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>You probably don&#39;t need NoSQL</title>
-      <link>https://xangelo.ca/posts/you_dont_need_nosql.md/</link>
-      <pubDate>Tue, 21 Nov 2023 23:29:09 -0500</pubDate>
-      <guid>https://xangelo.ca/posts/you_dont_need_nosql.md/</guid>
-      <description>Your decision to start with a NoSQL store is likely impeding you</description>
-    </item>
-    <item>
-      <title>Mongo vs. DynamoDB</title>
-      <link>https://xangelo.ca/posts/mongo-ux/</link>
-      <pubDate>Sat, 17 Sep 2022 02:12:13 -0400</pubDate>
-      <guid>https://xangelo.ca/posts/mongo-ux/</guid>
-      <description>Abstract Whenever you get into the conversation of NoSQL, and specifically &amp;ldquo;Document based&amp;rdquo; systems, you inevitably seem to end up on either DynamoDB or Mongo. The truth is while DynamoDB is a wonderful tool, Mongo should probably be your first stop.&#xA;Mongo vs. DynamoDB Mongo and DynamoDB are two document storage databases in the NoSQL family. Where mongo took the more traditional &amp;ldquo;server&amp;rdquo; route, DynamoDB opted for &amp;ldquo;serverless&amp;rdquo;. As a result, most of the distinction between the two comes from this divide.</description>
-    </item>
     <item>
       <title>What the heck is a Database Index?</title>
       <link>https://xangelo.ca/posts/what-the-heck-is-a-database-index/</link>

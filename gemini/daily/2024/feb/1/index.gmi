@@ -1,7 +1,7 @@
 # river.xangelo.ca
 
 
-
+=> gemini://gemini.xangelo.ca/page/links/index.gmi ← Newer: Links
 => gemini://gemini.xangelo.ca/posts/amplify_docker/index.gmi → Older: Amplify docker limitations
 
 
@@ -24,7 +24,7 @@ The river is just a few websites that I like to follow, but mostly sporadically.
 
 ## Related articles
 
+=> /gemini/daily/2024/feb/4/index.gmi Links!: <no value>
 => /gemini/daily/2023/november/22/index.gmi Wednesday, November 22, 2023: <no value>
 => /gemini/daily/2023/november/23/index.gmi Tuesday, November 21, 2023: <no value>
-=> /gemini/daily/2023/august/08/index.gmi Tuesday, August 8, 2023: <no value>
 ---

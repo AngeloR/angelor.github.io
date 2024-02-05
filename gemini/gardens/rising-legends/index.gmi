@@ -1,7 +1,7 @@
 # Rising Legends [Garden]
 
 
-=> gemini://gemini.xangelo.ca/posts/css_rl_banner/index.gmi ← Newer: CSS Banner
+=> gemini://gemini.xangelo.ca/tuesday_november_21_2023/index.gmi ← Newer: Tuesday, November 21, 2023
 => gemini://gemini.xangelo.ca/daily/2023/august/08/index.gmi → Older: Tuesday, August 8, 2023
 
 
@@ -37,6 +37,5 @@ This page will serve as the current state of Rising Legends [1], a Persistent Br
 ## Related articles
 
 => /gemini/gardens/outliner/index.gmi Outliner [Garden]: <no value>
-=> /gemini/posts/css_rl_banner/index.gmi CSS Banner: <no value>
 => /gemini/posts/outliner_blog_update/index.gmi Now Powered by Outlines: <no value>
 ---

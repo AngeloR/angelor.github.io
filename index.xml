@@ -7,8 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 31 Jan 2024 21:36:06 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 04 Feb 2024 23:00:12 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Links!</title>
+      <link>https://xangelo.ca/daily/2024/feb/4/</link>
+      <pubDate>Sun, 04 Feb 2024 23:00:12 -0500</pubDate>
+      <guid>https://xangelo.ca/daily/2024/feb/4/</guid>
+      <description>I&amp;rsquo;ve added a new Links section to my blog to highlight individual-owned/operated blogs that I follow. It&amp;rsquo;s kind of a throwback to the old blog-world pre web2.0 where you just maintained a link to other blogs that you wanted to support.</description>
+    </item>
+    <item>
+      <title>Links</title>
+      <link>https://xangelo.ca/page/links/</link>
+      <pubDate>Sat, 03 Feb 2024 00:00:00 -0400</pubDate>
+      <guid>https://xangelo.ca/page/links/</guid>
+      <description>Here&amp;rsquo;s a collection of blogs (normally run by a single person) that I enjoy and try and keep up with. They aren&amp;rsquo;t being listed in any particular order. I&amp;rsquo;m not interested in posting sites that avoid points for links (hn, reddit, lobsters, etc.) - I&amp;rsquo;m really looking to re-live the nostaliga of early webrings.&#xA;Drew Devaults Blog - https://drewdevault.com/ Drew&amp;rsquo;s blog has been something I&amp;rsquo;ve long followed. He&amp;rsquo;s the guy behind SourceHut which has quickly become my favourite spot to host projects.</description>
+    </item>
     <item>
       <title>river.xangelo.ca</title>
       <link>https://xangelo.ca/daily/2024/feb/1/</link>
@@ -50,20 +64,6 @@
       <pubDate>Tue, 21 Nov 2023 23:31:55 -0500</pubDate>
       <guid>https://xangelo.ca/tuesday_november_21_2023/</guid>
       <description>Lunar Vim has become my new editor configuration. The easy of setup + inter-plugin configuration trumphs the requirement for me to craft my own personal installation. Out of the plugins that I use, everything works well enough. It&amp;rsquo;s been enough that my configuration has become quite minimal.</description>
-    </item>
-    <item>
-      <title>You probably don&#39;t need NoSQL</title>
-      <link>https://xangelo.ca/posts/you_dont_need_nosql.md/</link>
-      <pubDate>Tue, 21 Nov 2023 23:29:09 -0500</pubDate>
-      <guid>https://xangelo.ca/posts/you_dont_need_nosql.md/</guid>
-      <description>Your decision to start with a NoSQL store is likely impeding you</description>
-    </item>
-    <item>
-      <title>CSS Banner</title>
-      <link>https://xangelo.ca/posts/css_rl_banner/</link>
-      <pubDate>Tue, 21 Nov 2023 23:12:49 -0500</pubDate>
-      <guid>https://xangelo.ca/posts/css_rl_banner/</guid>
-      <description>An interesting CSS only banner for an RPG</description>
     </item>
     <item>
       <title>Rising Legends [Garden]</title>

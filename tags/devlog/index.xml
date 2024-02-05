@@ -16,12 +16,5 @@
       <guid>https://xangelo.ca/posts/devlog/blog/1/</guid>
       <description>I&amp;rsquo;ve started working on a custom theme for Hugo1 that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file2 where possible.&#xA;The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend3 who helped me adjust the colors for both dark and light modes to make them a bit more legible.</description>
     </item>
-    <item>
-      <title>DEVLOG: Infinite Clicker, with a story</title>
-      <link>https://xangelo.ca/posts/devlog/sketchy-heroes/1/</link>
-      <pubDate>Sun, 07 Jun 2020 12:09:04 -0400</pubDate>
-      <guid>https://xangelo.ca/posts/devlog/sketchy-heroes/1/</guid>
-      <description>Introduction I&amp;rsquo;ve been working on Sketchy Heroes for about 2 years now. Honestly it started as more of a learning</description>
-    </item>
   </channel>
 </rss>

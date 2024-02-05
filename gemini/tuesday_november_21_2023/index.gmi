@@ -2,7 +2,7 @@
 
 
 => gemini://gemini.xangelo.ca/daily/2023/november/23/index.gmi ← Newer: Tuesday, November 21, 2023
-=> gemini://gemini.xangelo.ca/posts/you_dont_need_nosql.md/index.gmi → Older: You probably don't need NoSQL
+=> gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi → Older: Rising Legends [Garden]
 
 
 Lunar Vim [1] has become my new editor configuration. The easy of setup + inter-plugin configuration trumphs the requirement for me to craft my own personal installation. Out of the plugins that I use, everything works well enough. It's been enough that my configuration has become quite minimal.

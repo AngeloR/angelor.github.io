@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 31 Jan 2024 21:36:06 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 04 Feb 2024 23:00:12 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>daily</title>
       <link>https://xangelo.ca/tags/daily/</link>
-      <pubDate>Wed, 31 Jan 2024 21:36:06 -0500</pubDate>
+      <pubDate>Sun, 04 Feb 2024 23:00:12 -0500</pubDate>
       <guid>https://xangelo.ca/tags/daily/</guid>
       <description></description>
     </item>
@@ -59,38 +59,10 @@
       <description></description>
     </item>
     <item>
-      <title>database</title>
-      <link>https://xangelo.ca/tags/database/</link>
-      <pubDate>Tue, 21 Nov 2023 23:29:09 -0500</pubDate>
-      <guid>https://xangelo.ca/tags/database/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>explanation</title>
-      <link>https://xangelo.ca/tags/explanation/</link>
-      <pubDate>Tue, 21 Nov 2023 23:29:09 -0500</pubDate>
-      <guid>https://xangelo.ca/tags/explanation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>css</title>
-      <link>https://xangelo.ca/tags/css/</link>
-      <pubDate>Tue, 21 Nov 2023 23:12:49 -0500</pubDate>
-      <guid>https://xangelo.ca/tags/css/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>rising-legends</title>
       <link>https://xangelo.ca/tags/rising-legends/</link>
-      <pubDate>Tue, 21 Nov 2023 23:12:49 -0500</pubDate>
+      <pubDate>Fri, 01 Sep 2023 13:52:42 -0400</pubDate>
       <guid>https://xangelo.ca/tags/rising-legends/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>tutorial</title>
-      <link>https://xangelo.ca/tags/tutorial/</link>
-      <pubDate>Tue, 21 Nov 2023 23:12:49 -0500</pubDate>
-      <guid>https://xangelo.ca/tags/tutorial/</guid>
       <description></description>
     </item>
     <item>
@@ -98,6 +70,13 @@
       <link>https://xangelo.ca/tags/chrome/</link>
       <pubDate>Tue, 20 Jun 2023 12:30:56 -0400</pubDate>
       <guid>https://xangelo.ca/tags/chrome/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>explanation</title>
+      <link>https://xangelo.ca/tags/explanation/</link>
+      <pubDate>Tue, 20 Jun 2023 12:30:56 -0400</pubDate>
+      <guid>https://xangelo.ca/tags/explanation/</guid>
       <description></description>
     </item>
     <item>
@@ -112,6 +91,27 @@
       <link>https://xangelo.ca/tags/bio/</link>
       <pubDate>Mon, 19 Jun 2023 06:12:47 -0400</pubDate>
       <guid>https://xangelo.ca/tags/bio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>game dev</title>
+      <link>https://xangelo.ca/tags/game-dev/</link>
+      <pubDate>Mon, 19 Jun 2023 06:12:47 -0400</pubDate>
+      <guid>https://xangelo.ca/tags/game-dev/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mtx</title>
+      <link>https://xangelo.ca/tags/mtx/</link>
+      <pubDate>Mon, 19 Jun 2023 06:12:47 -0400</pubDate>
+      <guid>https://xangelo.ca/tags/mtx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>architecture</title>
+      <link>https://xangelo.ca/tags/architecture/</link>
+      <pubDate>Thu, 25 May 2023 00:15:53 -0400</pubDate>
+      <guid>https://xangelo.ca/tags/architecture/</guid>
       <description></description>
     </item>
   </channel>
