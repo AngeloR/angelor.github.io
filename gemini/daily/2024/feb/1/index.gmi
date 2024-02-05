@@ -1,7 +1,7 @@
 # river.xangelo.ca
 
 
-=> gemini://gemini.xangelo.ca/page/links/index.gmi ← Newer: Links
+=> gemini://gemini.xangelo.ca/daily/2024/feb/4/index.gmi ← Newer: Links!
 => gemini://gemini.xangelo.ca/posts/amplify_docker/index.gmi → Older: Amplify docker limitations
 
 

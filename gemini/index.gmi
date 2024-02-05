@@ -3,8 +3,8 @@
 
 ### 2024
 
-=> gemini://gemini.xangelo.ca/daily/2024/feb/4/index.gmi Links!
 => gemini://gemini.xangelo.ca/page/links/index.gmi Links
+=> gemini://gemini.xangelo.ca/daily/2024/feb/4/index.gmi Links!
 => gemini://gemini.xangelo.ca/daily/2024/feb/1/index.gmi river.xangelo.ca
 
 ### 2023
