@@ -7,7 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Wed, 25 Oct 2023 00:38:47 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2023 23:12:49 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSS Banner</title>
+      <link>https://xangelo.ca/posts/css_rl_banner/</link>
+      <pubDate>Tue, 21 Nov 2023 23:12:49 -0500</pubDate>
+      <guid>https://xangelo.ca/posts/css_rl_banner/</guid>
+      <description>An interesting CSS only banner for an RPG</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,14 @@
+# Discovering Problems as a Manager
+
+
+=> gemini://gemini.xangelo.ca/posts/code-reviews-are-failure/index.gmi ← Newer: Code Reviews Are Failure
+=> gemini://gemini.xangelo.ca/posts/git-branching-strategies/index.gmi → Older: Git Branching Strategies
+
+
+
+---
+## References
+
+
+
+---

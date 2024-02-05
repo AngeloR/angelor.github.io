@@ -48,7 +48,7 @@ I really recommend you peruse this documentation from mysql on what an index is.
 
 ## Related articles
 
+=> /gemini/posts/you_dont_need_nosql.md/index.gmi You probably don't need NoSQL: <no value>
 => /gemini/posts/chrome_request_stalled/index.gmi Chrome HTTP Request stuck in "Stalled" State: <no value>
-=> /gemini/posts/devlog/roguelike/dungeon-generation/index.gmi Dungeon Generation in Roguelikes: <no value>
-=> /gemini/posts/the-disk-is-slow/index.gmi The Disk Is Slow: <no value>
+=> /gemini/posts/mongo-ux/index.gmi Mongo vs. DynamoDB: <no value>
 ---

@@ -1,0 +1,26 @@
+# Mongo vs. DynamoDB
+
+
+=> gemini://gemini.xangelo.ca/posts/on-call/index.gmi ← Newer: Designing On-Call
+=> gemini://gemini.xangelo.ca/posts/default-font/index.gmi → Older: Removing the Default Font
+
+## Abstract
+Whenever you get into the conversation of NoSQL, and specifically "Document based" systems, you inevitably seem to end up on either DynamoDB or Mongo. The truth is while DynamoDB is a wonderful tool, Mongo should probably be your first stop.
+
+## Mongo vs. DynamoDB
+Mongo and DynamoDB are two document storage databases in the NoSQL family. Where mongo took the more traditional "server" route, DynamoDB opted for "serverless". As a result, most of the distinction between the two comes from this divide.
+### The infrastructure and Scaling
+### The UX
+### Support
+
+
+---
+## References
+
+
+
+## Related articles
+
+=> /gemini/posts/you_dont_need_nosql.md/index.gmi You probably don't need NoSQL: <no value>
+=> /gemini/posts/what-the-heck-is-a-database-index/index.gmi What the heck is a Database Index?: <no value>
+---

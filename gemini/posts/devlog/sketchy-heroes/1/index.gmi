@@ -5,7 +5,8 @@
 => gemini://gemini.xangelo.ca/posts/hugo-github/index.gmi → Older: Moving to Hugo and GitHub Pages
 
 ## Introduction
-I've been working on Sketchy Heroes for a few years now
+I've been working on Sketchy Heroes for about 2 years now. Honestly it started as more of a learning 
+
 
 ---
 ## References

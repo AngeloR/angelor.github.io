@@ -2,7 +2,7 @@
 
 
 => gemini://gemini.xangelo.ca/posts/outliner_blog_update/index.gmi ← Newer: Now Powered by Outlines
-=> gemini://gemini.xangelo.ca/posts/default-font/index.gmi → Older: Removing the Default Font
+=> gemini://gemini.xangelo.ca/posts/mongo-ux/index.gmi → Older: Mongo vs. DynamoDB
 On-call is one of those things that all developers end up doing at some point. My goal isn't to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I'm going to start at the very beginning because chances are you're already doing it wrong. I should also note that I'm looking at this specifically from a SaaS point of view.
 
 ## Why do devs go on-call?

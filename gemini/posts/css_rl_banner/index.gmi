@@ -1,7 +1,7 @@
 # CSS Banner
 
 
-
+=> gemini://gemini.xangelo.ca/posts/you_dont_need_nosql.md/index.gmi ← Newer: You probably don't need NoSQL
 => gemini://gemini.xangelo.ca/gardens/rising-legends/index.gmi → Older: Rising Legends [Garden]
 
 
@@ -9,8 +9,7 @@
 
 Here's what we're making:
 
-=> /img/css-banner/final-banner.png Embedded Image: /img/css-banner/final-banner.png
-
+=> /1700623990704-final-banner.png Embedded Image: /1700623990704-final-banner.png
 
 ### The HTML
 
@@ -31,6 +30,8 @@ The only way to get "nice" websites in CSS was to trawl the early days of alista
 The hardest thing we could do in these days was.. scaling our sites for other resolutions. Web 2.0 solved that problem by making designs boring and generic. When you look around and see every website look exactly the same, that's because of Web2.0 and "the look" that it came with.
 
 It feels like we're finally at the spot (technologically) that we can start making some of those early designs again - except this time with more of a focus on target-audience usability.
+
+
 
 
 

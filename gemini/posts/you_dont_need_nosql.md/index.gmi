@@ -1,0 +1,31 @@
+# You probably don't need NoSQL
+
+
+=> gemini://gemini.xangelo.ca/tuesday_november_21_2023/index.gmi ← Newer: Tuesday, November 21, 2023
+=> gemini://gemini.xangelo.ca/posts/css_rl_banner/index.gmi → Older: CSS Banner
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+---
+## References
+
+
+
+## Related articles
+
+=> /gemini/posts/chrome_request_stalled/index.gmi Chrome HTTP Request stuck in "Stalled" State: <no value>
+=> /gemini/posts/mongo-ux/index.gmi Mongo vs. DynamoDB: <no value>
+=> /gemini/posts/devlog/roguelike/dungeon-generation/index.gmi Dungeon Generation in Roguelikes: <no value>
+---

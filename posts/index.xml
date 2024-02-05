@@ -27,6 +27,37 @@
     </item>
     
     <item>
+      <title>You probably don&#39;t need NoSQL</title>
+      <link>https://xangelo.ca/posts/you_dont_need_nosql.md/</link>
+      <pubDate>Tue, 21 Nov 2023 23:29:09 -2900</pubDate>
+      
+      <guid>https://xangelo.ca/posts/you_dont_need_nosql.md/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS Banner</title>
+      <link>https://xangelo.ca/posts/css_rl_banner/</link>
+      <pubDate>Tue, 21 Nov 2023 23:12:49 -1200</pubDate>
+      
+      <guid>https://xangelo.ca/posts/css_rl_banner/</guid>
+      <description>&lt;p&gt;&amp;gt;&amp;gt; As with all my posts, this will likely meander a bit. I&amp;rsquo;ve moved the meandering to the bottom if you care, and put the tutorial up top.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s what we&amp;rsquo;re making:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../1700623990704-final-banner.png&#34; alt=&#34;Newly Uploaded Image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-html&#34;&gt;The HTML&lt;/h3&gt;
+&lt;p&gt;the HTML for this is pretty boring so I&amp;rsquo;m just gonna show you: &lt;code&gt;&amp;amp;lt;div class=&amp;quot;city-title-wrapper&amp;quot;&amp;amp;gt;&amp;amp;lt;div class=&amp;quot;city-title&amp;quot;&amp;amp;gt;Windcross&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;meandering&#34;&gt;Meandering&lt;/h3&gt;
+&lt;p&gt;I love CSS. I love it so much I never really bothered much with bootstrap or Tailwind for my personal projects.  I particularly love that CSS has caught up to my Photoshop Skills from the 2000s when sites like GreyCobra and 2Advanced were king. A long pain point in design (and one I think that really forced the move from the complexities in the early 2000s) was&amp;hellip; scaling!&lt;/p&gt;
+&lt;p&gt;While HTML started out relatively simple.. the advent of flash in web design really catapulted things forward. We went from these &amp;ldquo;static&amp;rdquo; (everyone remembers blinking and spinning tags right?) websites to really interactive ones. I&amp;rsquo;m not talking &amp;ldquo;oh look there&amp;rsquo;s a chat box&amp;rdquo; I&amp;rsquo;m talking things flying around the screen, excellent sound effects when you clicked a site, and a web design renaissance that was squashed and obliterated by &amp;ldquo;Web 2.0&amp;rdquo;. &lt;/p&gt;
+&lt;p&gt;We went from sites that looked truly unique and were works of art to what you&amp;rsquo;re seeing now.. but with hard gradients. There&amp;rsquo;s lots of reasons it went this way, and it would be truely foolish to foist the blame entirely on a single cause.&lt;/p&gt;
+&lt;p&gt;The problem was CSS in it&amp;rsquo;s current form was mostly useless except for the most mudane things.&lt;/p&gt;
+&lt;p&gt;The only way to get &amp;ldquo;nice&amp;rdquo; websites in CSS was to trawl the early days of alistapart.com and csszengarden for ideas. The other way was design your entire site in Photoshop - multiple resolutions be damned. If websites were supposed to be about freedom of expression I was going to express myself at a resolution of 1000x700 so that everything was pixel perfect. We used an umpteen number of nested tables to ensure that our designs were always perfect. &lt;/p&gt;
+&lt;p&gt;The hardest thing we could do in these days was.. scaling our sites for other resolutions. Web 2.0 solved that problem by making designs boring and generic. When you look around and see every website look exactly the same, that&amp;rsquo;s because of Web2.0 and &amp;ldquo;the look&amp;rdquo; that it came with.&lt;/p&gt;
+&lt;p&gt;It feels like we&amp;rsquo;re finally at the spot (technologically) that we can start making some of those early designs again - except this time with more of a focus on target-audience usability.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
       <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
       <pubDate>Tue, 20 Jun 2023 12:30:56 -3000</pubDate>
@@ -309,6 +340,22 @@
     </item>
     
     <item>
+      <title>Mongo vs. DynamoDB</title>
+      <link>https://xangelo.ca/posts/mongo-ux/</link>
+      <pubDate>Sat, 17 Sep 2022 02:12:13 -1200</pubDate>
+      
+      <guid>https://xangelo.ca/posts/mongo-ux/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Whenever you get into the conversation of NoSQL, and specifically &amp;ldquo;Document based&amp;rdquo; systems, you inevitably seem to end up on either DynamoDB or Mongo. The truth is while DynamoDB is a wonderful tool, Mongo should probably be your first stop.&lt;/p&gt;
+&lt;h2 id=&#34;mongo-vs-dynamodb&#34;&gt;Mongo vs. DynamoDB&lt;/h2&gt;
+&lt;p&gt;Mongo and DynamoDB are two document storage databases in the NoSQL family. Where mongo took the more traditional &amp;ldquo;server&amp;rdquo; route, DynamoDB opted for &amp;ldquo;serverless&amp;rdquo;. As a result, most of the distinction between the two comes from this divide.&lt;/p&gt;
+&lt;h3 id=&#34;the-infrastructure-and-scaling&#34;&gt;The infrastructure and Scaling&lt;/h3&gt;
+&lt;h3 id=&#34;the-ux&#34;&gt;The UX&lt;/h3&gt;
+&lt;h3 id=&#34;support&#34;&gt;Support&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Removing the Default Font</title>
       <link>https://xangelo.ca/posts/default-font/</link>
       <pubDate>Thu, 31 Mar 2022 00:07:57 -0700</pubDate>
@@ -334,6 +381,31 @@
 &lt;p&gt;I&amp;rsquo;ve since decided to remove that setting, allowing your browser/system defaults to set the primary font on the site. After all, what matters on this site is the content and you should be able to view that as you&amp;rsquo;d like.&lt;/p&gt;
 &lt;h2 id=&#34;appendix&#34;&gt;Appendix&lt;/h2&gt;
 &lt;p&gt;The study linked looks specifically at fixed vs. variable letter width (monospace vs. proportional) for televised text. This is particularly relevant since we&amp;rsquo;re talking about screens rather than print. The differences cited are also quite marginal - but that&amp;rsquo;s the point of this font change. To the majority of users it won&amp;rsquo;t make a difference, but to a small few it will matter a lot.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Running a Git Server</title>
+      <link>https://xangelo.ca/posts/running-a-git-server/</link>
+      <pubDate>Wed, 30 Mar 2022 11:08:53 -0800</pubDate>
+      
+      <guid>https://xangelo.ca/posts/running-a-git-server/</guid>
+      <description>&lt;h1 id=&#34;running-your-own-git-server&#34;&gt;Running your own Git server&lt;/h1&gt;
+&lt;p&gt;Following this theme of owning your digital space I wanted to do a quick post on what it takes to run your own git server. There are a bunch of services out there like that will host your git repositories for free (I personally recommend &lt;a href=&#34;https://sourcehut.org/&#34;&gt;sourcehut&lt;/a&gt;), but you can get a most of what they offer for free with &lt;a href=&#34;https://xangelo.ca/posts/gitweb/&#34;&gt;gitweb&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why-would-you-want-to-do-this&#34;&gt;Why would you want to do this?&lt;/h2&gt;
+&lt;p&gt;Honestly it&amp;rsquo;s not as complicated as you would think to run your own git server and get almost all the same functionality from popular forges. Running your own git server doesn&amp;rsquo;t mean you can&amp;rsquo;t use something like GitHub or GitLab - it&amp;rsquo;s not a one or the other choice. You can host all your repos on your own VPS while still pushing to GitHub/GitLab to ensure that you can still take advantage of their social networks.&lt;/p&gt;
+&lt;p&gt;For me the biggest precursor to hosting my own repos was just to get more familiar with git. I&amp;rsquo;ve been using git for a number of years, but it was only in the last year or so that I really started digging into all the functionality that it offers.&lt;/p&gt;
+&lt;p&gt;In addition to that there&amp;rsquo;s a huge difference in complexity between running your own server, and running a service for millions of others to consume. As GitHub grows (both in size and in feature set) the likelihood of any one piece of it being down also grows. If we look at the &lt;a href=&#34;https://www.githubstatus.com/history&#34;&gt;Incident History&lt;/a&gt; of GitHub from Jan 2022  to March 2022 we can see that some piece of it has been dozens of incidents and outages. Using git allows you to bypass a lot of those problems, but centralizing on any hosted forge will always come with these inherent risks. It&amp;rsquo;s much better to use hosted forges as secondary locations and just host your own git repos.&lt;/p&gt;
+&lt;h2 id=&#34;what-do-you-need&#34;&gt;What do you need?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Server - You need somewhere to host your git server. Personally I use &lt;a href=&#34;&#34;&gt;Digital Ocean&lt;/a&gt; but you are free to use anything that gives you ssh access and an IP address.&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll need root access to that server&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That&amp;rsquo;s it. Those are the minimum requirements to actually host your git repos elsewhere. Everything else on top of that is just extra functionality and we&amp;rsquo;ll talk about those later.&lt;/p&gt;
+&lt;h3 id=&#34;a-server&#34;&gt;A Server&lt;/h3&gt;
+&lt;p&gt;The easiest thing to do would be to spin up a brand new server on a cloud platform like &lt;a href=&#34;https://digitalocean.com&#34;&gt;DigitalOcean&lt;/a&gt;. It costs approx 5$ CAD and is probably one of the cheaper shared hosts you can find. You don&amp;rsquo;t need anything fancy because the git repos actually do nothing the majority of the time. There&amp;rsquo;s only activity on them when you push/pull.&lt;/p&gt;
+&lt;p&gt;If you spin up a droplet (server) in Digital Ocean it will provide you the ability to set up your root credentials. Personally I&amp;rsquo;d suggest using an SSH key! It&amp;rsquo;s a heck of a lot easier than typing in your password every time you try and connect.&lt;/p&gt;
+&lt;h4 id=&#34;ssh-keygen&#34;&gt;ssh-keygen&lt;/h4&gt;
 </description>
     </item>
     
@@ -504,6 +576,28 @@ up.&lt;/p&gt;
     </item>
     
     <item>
+      <title>My i3wm Setup</title>
+      <link>https://xangelo.ca/posts/i3/</link>
+      <pubDate>Fri, 18 Mar 2022 12:16:36 -1600</pubDate>
+      
+      <guid>https://xangelo.ca/posts/i3/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve recently made the switch from the stock Ubuntu setup over to i3wm. I&amp;rsquo;ve
+used xmonad for many years before this, but always found it a bit harder than I
+would have liked to customize it.&lt;/p&gt;
+&lt;p&gt;Most of what i3 does out of the box works perfectly for me. The only thing I
+didn&amp;rsquo;t like was the fact that navigation was shifted from &lt;code&gt;hjkl&lt;/code&gt; to &lt;code&gt;jkl;&lt;/code&gt;. I&amp;rsquo;m
+also not a big fan of dmenu. Honestly I&amp;rsquo;m not totally sure why, but I&amp;rsquo;ve always
+struggled getting it to do what I wanted.&lt;/p&gt;
+&lt;p&gt;With i3 I made a few small config changes, and swapped out the launcher and so
+far things have been quite excellent. I&amp;rsquo;m just posting this here so that I
+don&amp;rsquo;t forget my configs.&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;my-config&#34;&gt;My Config&lt;/h2&gt;
+&lt;p&gt;As a vim user, I&amp;rsquo;m much more comfortable with the default vim bindings, than the &amp;ldquo;1 ket to the right&amp;rdquo; bindings that i3 tends to use.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Code Reviews Are Failure</title>
       <link>https://xangelo.ca/posts/code-reviews-are-failure/</link>
       <pubDate>Thu, 24 Feb 2022 11:05:34 -0500</pubDate>
@@ -566,539 +660,12 @@ up.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Git Branching Strategies</title>
-      <link>https://xangelo.ca/posts/git-branching-strategies/</link>
-      <pubDate>Fri, 16 Jul 2021 16:14:40 -1400</pubDate>
+      <title>Discovering Problems as a Manager</title>
+      <link>https://xangelo.ca/posts/discovering-problems-as-manager/</link>
+      <pubDate>Mon, 01 Nov 2021 17:11:57 -1100</pubDate>
       
-      <guid>https://xangelo.ca/posts/git-branching-strategies/</guid>
-      <description>&lt;p&gt;In a &lt;a href=&#34;../posts/git-workflows/&#34;&gt;previous&lt;/a&gt; post, I talked about git workflows and I outlined the two big problems I see with git workflows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pull Requests/Reviews&lt;/li&gt;
-&lt;li&gt;Branching Strategies&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I took the easy route at the time and just talked about Pull Requests/Reviews. But I was requested to throw some thoughts out around branching strategies and how they should work.&lt;/p&gt;
-&lt;p&gt;The reason I think branching strategies are such a complicated topic is because it touches more than just git. As an industry we&amp;rsquo;ve mostly settled on the idea of Continuous Integration and Continuous Deployment (CI/CD). These processes tend to tie directly into git and have deep ties to your branching strategies. In addition branching strategies tend to reflect the testing architecture and experience level of the engineering organization itself. It&amp;rsquo;s not the simple strategy that workflows like GitHub Flow like to pretend it is. Whether you like it or not, your git branching strategy is already embedded in your organiztion and reflected in your development process. It&amp;rsquo;s your job to discover what that is and then decide if it&amp;rsquo;s even worth it to change. Sometimes, unfortunately, even though it may not be what you consider ideal, the strategy the team is currently using is MOSTLY one that works for them. At that point it&amp;rsquo;s just a matter of uncovering bottlenecks (oh don&amp;rsquo;t worry, the engineers will tell you what those are) and mitigating them.&lt;/p&gt;
-&lt;p&gt;The two main branching strategies people tend to advocate for are &amp;ldquo;Environment Branching&amp;rdquo; and &amp;ldquo;Feature Branching&amp;rdquo; so lets talk about the strategy itself, and then see how it affects your org.&lt;/p&gt;
-&lt;h2 id=&#34;environment-branching&#34;&gt;Environment Branching&lt;/h2&gt;
-&lt;p&gt;Environment branching models the fact that the software at your org has some kind of &amp;ldquo;release cycle&amp;rdquo; where a series of patches (in the git sense) are first in a &amp;ldquo;development&amp;rdquo; environment where the developers involved can work on the feature without impacting others. We then merge the dev branch into a &amp;ldquo;staging&amp;rdquo;/&amp;ldquo;testing&amp;rdquo;/&amp;ldquo;integration&amp;rdquo; environment where a patch or series of patches are released for other people in the org to test. Often this involves a QA team looking at the changes and validating that there aren&amp;rsquo;t any regression tests. Finally once everyone is happy we merge staging into production and deploy it.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Environment&#34; data-lang=&#34;Environment&#34;&gt;┌┬──────┐    ┌┬───────┐    ┌┬──────┐
-││ Dev  │    ││ Stage │    ││ Prod │
-└┴──┬───┘    └┴──┬────┘    └┴──┬───┘
-    │            │             │
-   ┌┼┐           │             │
-   └┼┴───────────┤             │
-    │            │             │
-   ┌┼┐          ┌┼┐            │
-   └┼┘          └┼┘            │
-    │            │             │
-   ┌┼┐           ▼             │
-   └┼┴───────────┐             │
-    │            │             │
-   ┌┼┐          ┌▼┐            │
-   └┴┘          └─┴────────────┤
-    ▼                          │
-                              ┌┼┐
-                              └─┘
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that not every commit to the dev branch results in an equivalent merge to the staging branch. Infact sometimes there&amp;rsquo;ll be plenty of back/forth on the dev branch. Finally a set of features is selected and deployed to staging. Once it&amp;rsquo;s been debugged, it goes off to production. Of course, this is when everything goes smoothly. Most times you&amp;rsquo;ll have hotfixes that you&amp;rsquo;ll need to make to prod to fix additional bugs.&lt;/p&gt;
-&lt;p&gt;Different orgs deal with that differently. Sometimes we&amp;rsquo;ll have &amp;ldquo;hotfixes&amp;rdquo;, which bypass the branching model entirely. It allows us to take whatever is it prod, branch from it to fi xa bug and merge it straight back into prod without going through the other branches. That hotfix is then ported back to development.&lt;/p&gt;
-&lt;p&gt;This model, of course, has its pros/cons. But if it works for your org then it&amp;rsquo;s right for your org. I&amp;rsquo;ve outlined  some caveats and things to think about if you decide to go with the environment branching model.&lt;/p&gt;
-&lt;h3 id=&#34;it-forces-a-release-cadence&#34;&gt;It forces a release cadence&lt;/h3&gt;
-&lt;p&gt;When you have a single team working in this model it&amp;rsquo;s very easy. It also maps so cleanly to traditional engineering pipelines that it doesn&amp;rsquo;t require a lot of explanation or documentation. But this requires that each team working has its own &amp;ldquo;dev&amp;rdquo; branch/environment to ensure that they&amp;rsquo;re not impacting others testing. But this is expensive, so there&amp;rsquo;s a tradeoff. Often you&amp;rsquo;ll find &amp;ldquo;shared&amp;rdquo; dev environments, which are really just a very broken integration environment where you can&amp;rsquo;t really trust what&amp;rsquo;s happening, and a less broken integration environment. Just the inclusion of an environment that&amp;rsquo;s considering &amp;ldquo;integration&amp;rdquo; requires scheduled releases.&lt;/p&gt;
-&lt;p&gt;You need to ensure that your features aren&amp;rsquo;t impacting other developers and so you need to coordinate between internal teams. This takes time. It means while your changes can be tested in tandem in &amp;ldquo;dev&amp;rdquo;, eventually you&amp;rsquo;ll need to settle on what&amp;rsquo;s going out to production adn only those patches get moved into staging. Those patches get tested on for some time and then move into production. There you have a release cadence. Your cadence might be a day, or it might be two weeks. It doesn&amp;rsquo;t matter - that is your cadence. That is the minimal amount of time, on average, that it takes for a change to make it to production.&lt;/p&gt;
-&lt;p&gt;There are always ways to mitigate this problem, but I&amp;rsquo;d argue that it isn&amp;rsquo;t a real problem. Having a release cadence is perfectly fine once you have a product that has paying users. It ensures that releases can happen during low-volume traffic times and doesn&amp;rsquo;t impact as many users. It also ensures that users know when they can expect new features.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Have dedicated dev environments for each team with no shared resources to speed up the development time. Keep the &amp;ldquo;staging&amp;rdquo;/&amp;ldquo;integration&amp;rdquo; environment the only place where multiple features/bug-fixes are tested in tandem.&lt;/li&gt;
-&lt;li&gt;Declare your cadence officially so that everyone knows when the cutoff for a release is. Stick to this. No last minute sneaking in of changes allowed. This allows internal/external expectations for when new features will be rolled out.&lt;/li&gt;
-&lt;li&gt;Understand that there is a difference between deploying a change and releasing it to users.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;its-very-easy-for-the-branches-to-get-out-of-sync&#34;&gt;It&amp;rsquo;s very easy for the branches to get out of sync&lt;/h3&gt;
-&lt;p&gt;Since you now have multiple teams working it&amp;rsquo;s easy for features that everyone thinks is ready to make it to integration.. only to discover that they are quite broken. So we need to pull them out so that they&amp;rsquo;re not impacting anything else. But how do you do that? You can&amp;rsquo;t just muck with staging directly since merges from dev-&amp;gt;staging will then break. So you need to actually back the change out in dev, then merge dev-&amp;gt;staging to remove the change. But are you using squash+merge or rebase functionality? That can affect the method of resolution you decide on. Regardless, you can expect dev/staging/prod branches to get out of sync and you&amp;rsquo;ll need to manually intervene to sort that nonsense out.&lt;/p&gt;
-&lt;h3 id=&#34;its-easy-for-broken-things-to-get-out&#34;&gt;It&amp;rsquo;s easy for broken things to get out&lt;/h3&gt;
-&lt;p&gt;The dev environment will probably be mostly broken - with working state only conveyed via some internal communication among devs. Merging that right into staging will cause unexpected bugs or broken features to make it out. The best way to deal with this is to have each team working on a single feature/code-base and having dedicated development environments for each team. This way you ensure that a team is able to test what they are working on in isolation. Once they&amp;rsquo;re sure it&amp;rsquo;s working they&amp;rsquo;ll be able to merge their fixes into the integration environment. This is suspiciously close to the other model of branching.&lt;/p&gt;
-&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;I&amp;rsquo;m really not a fan of environment branching, but I do concur that when there are processes/releases cadences already in place that are immovable (imagine you have a 3rd party group that needs to do testing on releases before they go out) then this can be a good way to handle dependencies. Personally I think environment branching is easy for SREs/devops teams to think about and they map very cleanly to how software orgs traditionally worked. It provides the lowest barrier to adoption - but it has enough problems that it can seem like the new process doesn&amp;rsquo;t work as well as the old one.&lt;/p&gt;
-&lt;p&gt;I would be wary about moving an org TO this model as there&amp;rsquo;s just a lot of things that can go wrong that will result in certain individuals spending time rectifying process problems rather than business ones.&lt;/p&gt;
-&lt;h2 id=&#34;feature-branches&#34;&gt;Feature Branches&lt;/h2&gt;
-&lt;p&gt;This is the other model of branching that I think attempts to tackle some of the major problems with environment branching (while offering up a few of its own). In feature branches you don&amp;rsquo;t have a single dev branch.. instead every thing you work on gets its own &amp;ldquo;dev&amp;rdquo; branch. It&amp;rsquo;s expected that while you&amp;rsquo;re working on your thing your feature branch is probably in a &amp;ldquo;broken&amp;rdquo; state. You keep adding commits to it and eventually when you&amp;rsquo;re happy you merge it to your integration environment branch. Once it&amp;rsquo;s tested, the integration environment gets deployed to production.&lt;/p&gt;
-&lt;p&gt;Feature branches aim to solve the problem of environment branches by integrating the &amp;ldquo;staging&amp;rdquo; and &amp;ldquo;production&amp;rdquo; branches. Devs work on feature branches, and then merge their features into &amp;ldquo;integration&amp;rdquo; environments. When people are happy with that, the features get moved into production environments. There&amp;rsquo;s a lot less moving parts (on the surface) and so this is normally the process that people go with.&lt;/p&gt;
-&lt;h2 id=&#34;branching-strategies-affect-everything&#34;&gt;Branching Strategies Affect Everything&lt;/h2&gt;
-&lt;p&gt;These branching strategies sound great - but branching strategies aren&amp;rsquo;t an isolated problem that can be solved without affecting anything else. Environment branches require you to have multiple environments for your code. It requires you to have &amp;ldquo;development&amp;rdquo; and &amp;ldquo;staging&amp;rdquo; and &amp;ldquo;production&amp;rdquo; environments. All branching strategies require you to differentiate between &amp;ldquo;code&amp;rdquo; and &amp;ldquo;build artifacts&amp;rdquo; which are actually what you should be deploying.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Git Workflows Suck</title>
-      <link>https://xangelo.ca/posts/git-workflows/</link>
-      <pubDate>Thu, 15 Jul 2021 12:16:45 -1600</pubDate>
-      
-      <guid>https://xangelo.ca/posts/git-workflows/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m tired of all the git workflows. I&amp;rsquo;m tired of talking about the best way to craft commit messages. I&amp;rsquo;m tired of how people pile on the best way to do PRs. I&amp;rsquo;m sick of people picking apart architectural decisions in a PR. I&amp;rsquo;m tired of opening PRs only to have no one look at them for days while I continue to harass people into reviews. I&amp;rsquo;m over the fact that I don&amp;rsquo;t think I&amp;rsquo;ve ever seen a single person clone a PR locally and actually verify that it does what it says it does.&lt;/p&gt;
-&lt;p&gt;And I don&amp;rsquo;t think I&amp;rsquo;m alone in these problems. Almost every engineering team I&amp;rsquo;ve ever worked with has their own slightly customized git workflow that &amp;ldquo;works&amp;rdquo; for them. And every one has had the same problems I mentioned above. Honestly I think it&amp;rsquo;s just cause no one uses git properly.&lt;/p&gt;
-&lt;p&gt;The problem, of course, is not &amp;ldquo;using git&amp;rdquo;. The problem is from all the interconnected bits around it. Writing a commit message is easy. Writing a commit message on code that no one at your company knows anything about, where you&amp;rsquo;re pretty sure it does what you want, is much harder. In order to even talk about &amp;ldquo;using git properly&amp;rdquo; there&amp;rsquo;s so much background that needs to be talked about.&lt;/p&gt;
-&lt;h2 id=&#34;what-is-git&#34;&gt;What is git?&lt;/h2&gt;
-&lt;p&gt;Git has this as the first sentence on it&amp;rsquo;s site:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Git is a free and open source &lt;em&gt;distributed version control system&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s git. Distributed version control system (DVCS).&lt;/p&gt;
-&lt;p&gt;Traditional Version Control Systems (VCS) tended to be centralized. That is you had a &amp;ldquo;server&amp;rdquo; where your code resided. Developers would &amp;ldquo;check out&amp;rdquo; the files that they wanted to work on. Do the work locally, and then re-upload them to this central server. git changed that model. EVERYONE has a copy of the code. You make your changes locally, and you can push to anyone else you&amp;rsquo;d like! You could make a change, and then send that code to a friend directly from git USING git. Push to their repo. They could do the same to you. Instead of having one central server that contains all the code, people work with each other.&lt;/p&gt;
-&lt;h2 id=&#34;what-are-forges&#34;&gt;What are Forges?&lt;/h2&gt;
-&lt;p&gt;Of course, that works really well when you&amp;rsquo;re a small group that&amp;rsquo;s making changes. When things get larger, it can be a bit more difficult. There are inherent problems with having copies of your code scattered around. Who has the most recent version? Who has the authority to merge changes in? How do you communicate these changes to everyone?&lt;/p&gt;
-&lt;p&gt;These problems are what propelled tooling like GitHub, GitLab, and BitBucket into the spotlight (known as a Forge). They became these central repositories for your code that allows you to not have to think about that. They allow you a central location where you push/pull your code. They provided an interface for Pull Requests. The ability to track issues and correlate them with code changes. They provided a service that filled a gap in git tooling. They even started publishing general &amp;ldquo;workflows&amp;rdquo; on how best to use git that are all slight variations on this:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;clone from remote&lt;/li&gt;
-&lt;li&gt;create a new branch from master&lt;/li&gt;
-&lt;li&gt;make your changes&lt;/li&gt;
-&lt;li&gt;commit your changes&lt;/li&gt;
-&lt;li&gt;push your changes in your branch to the remote&lt;/li&gt;
-&lt;li&gt;create a PR in the UI&lt;/li&gt;
-&lt;li&gt;Ping some reviewers (maybe they&amp;rsquo;re automatically assigned)&lt;/li&gt;
-&lt;li&gt;Back/Forth on review/code changes&lt;/li&gt;
-&lt;li&gt;Merge the approved branch into master&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Note that the &amp;ldquo;workflow&amp;rdquo; is only a small portion of what your actual workflow will look like at your company. It literally is just &amp;ldquo;how do I interact with git and get this change approved&amp;rdquo;. There are many steps before/after.&lt;/p&gt;
-&lt;p&gt;There are variations, as always. &lt;a href=&#34;https://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;Git Flow&lt;/a&gt; talks about conventions for branch naming/merging processes. &lt;a href=&#34;https://guides.github.com/introduction/flow/&#34;&gt;GitHub Flow&lt;/a&gt; and &lt;a href=&#34;https://docs.gitlab.com/ee/topics/gitlab_flow.html&#34;&gt;GitLab Flow&lt;/a&gt; do the same, but with a focus on their tooling instead of general git level instructions.&lt;/p&gt;
-&lt;h2 id=&#34;the-big-git-workflow-problem&#34;&gt;The Big Git Workflow Problem&lt;/h2&gt;
-&lt;p&gt;The problems people have with git workflows tend to stem from two areas: Pull Requests and Branching Strategies. I&amp;rsquo;m going to avoid chatting about branching strategies here because there is a lot more to consider than just naming conventions. A lot of companies have a lot of additional tooling that is very integrated into the git branching styles used. Things like CI/CD that use environment branches, merging to master auto-deploying to certain environments - all these things force additional constraints on the branching strategies decided upon. Often it&amp;rsquo;s very hard to change these things and you&amp;rsquo;re left in an in-between state indefinitely that is much worse than the original.&lt;/p&gt;
-&lt;p&gt;Instead I&amp;rsquo;m going to focus on Pull Requests and the processes around it: Commits, Pull Request Reviews, Merging Strategies.&lt;/p&gt;
-&lt;h3 id=&#34;commits&#34;&gt;Commits&lt;/h3&gt;
-&lt;p&gt;The smallest unit of the PR is the commit. Now, even at this stage, there&amp;rsquo;s lots of argument on how to proceed but there&amp;rsquo;s at least one &amp;ldquo;agreement&amp;rdquo;: A commit should be one thing.&lt;/p&gt;
-&lt;p&gt;Of course, that&amp;rsquo;s much easier said than done. A lot of the time you&amp;rsquo;ll be in your code and then you may see some small bit of logging or metrics that could be improved. It&amp;rsquo;s only a one line change? May as well make it now to improve things for everything. Sometimes the changes you&amp;rsquo;re making end up really being two indepedent changes that COULD work separately, but only together do they make a whole feature.. is that one commit or two?&lt;/p&gt;
-&lt;p&gt;Once you figure out what&amp;rsquo;s going to be IN your commit, then you get to figure out what message you to leave your future self.&lt;/p&gt;
-&lt;p&gt;I used to think that &lt;a href=&#34;https://chris.beams.io/posts/git-commit/&#34;&gt;https://chris.beams.io/posts/git-commit/&lt;/a&gt; was a great example on how to write commit messages. I&amp;rsquo;ve since changed my mind a bit to be less prescriptive about process and more descriptive about outcome.&lt;/p&gt;
-&lt;p&gt;The goal for a final commit message is that when you look at this message in a year, what&amp;rsquo;s the best way for you to recontruct the context that you had when you came up with your solution. In order to do this you need to have:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A good summary sentence, as short as possible and no shorter (the hardest part, I always write this last)&lt;/li&gt;
-&lt;li&gt;A good explanation of what your single change is. Go as in-depth as you want, but if you find yourself writing multiple paragraphs, put that in a separate document and then add it to the references section.&lt;/li&gt;
-&lt;li&gt;A References section with links to ticket/issue/tasks related, any documentation you used to come up with your solution (possibly links to other repos if you used a particular pattern that you found elsewhere)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;As long as you have those 3 things, you&amp;rsquo;re free to do whatever you&amp;rsquo;d like.&lt;/p&gt;
-&lt;p&gt;But note that this is for your FINAL commit. That&amp;rsquo;s very different from the active commits that are happening that people use as &amp;ldquo;save points&amp;rdquo; on their work. Commits with messages like &amp;ldquo;fix typo&amp;rdquo;, &amp;ldquo;does this work?&amp;rdquo;, &amp;ldquo;how about now?&amp;rdquo; are normally used by devs while they&amp;rsquo;re working on things. These are what I call &amp;ldquo;active&amp;rdquo; commits. That is, you&amp;rsquo;re actively working on something and using git as a bit of a save point for you to go back if you want, or not. Maybe you&amp;rsquo;re wroking on something and just need to get someone else to take a look so you make a random commit, push it to your forge, and send someone a link to review unofficially. These are important steps in the development process.&lt;/p&gt;
-&lt;p&gt;These types of active commits are fine, but once you&amp;rsquo;re DONE and you&amp;rsquo;re happy with what you did, it&amp;rsquo;s time to REBASE your branch. Rebasing seems like a bit of an ambiguous word, but what we are going to be doing is taking a look at the git commit history you&amp;rsquo;ve created, and then squashing them all up into a single commit or maybe a couple if you tried to do multiple things. I don&amp;rsquo;t want to go into all the details about this, because there are plenty of instructions for how to accomplish what you want &lt;a href=&#34;https://git-rebase.io/&#34;&gt;this website being one of the better ones&lt;/a&gt; I&amp;rsquo;ve run into.&lt;/p&gt;
-&lt;p&gt;Rebase allows you to see all the commits between two different commits, and allows you to decide what to do with them. So if you made 10 commits that were &amp;ldquo;fix this typo&amp;rdquo; and one that had the actual implementation, you could choose to squash all those commits in a single one just by telling git &amp;ldquo;squash this commit&amp;rdquo; and choose to &amp;ldquo;pick&amp;rdquo; the commit that you want to remain as a commit. Git even gives you a nice little interactive interface that allows you to do this (it is a text based so don&amp;rsquo;t get too excited).&lt;/p&gt;
-&lt;p&gt;Rebasing is important because it allows us to move from an &amp;ldquo;active commit&amp;rdquo; state to a &amp;ldquo;code complete&amp;rdquo; state. We are officially declaring that we are done with this bit of work and we don&amp;rsquo;t intend to do anything more with it as it relates to the task that we&amp;rsquo;re working on. When we rebase we get a chance to edit your final commit message, which should ideally follow the rules above.&lt;/p&gt;
-&lt;h3 id=&#34;pull-requests&#34;&gt;Pull Requests&lt;/h3&gt;
-&lt;p&gt;Pull requests is where I have most of my problems. PRs are a way for devs to share the changes they&amp;rsquo;ve made with other devs, and gather/address feedback. Things you may have missed in your changes, other repos to look at for similar things. In large orgs it&amp;rsquo;s not unlikely that someone might point out to you a repo you&amp;rsquo;ve never heard of that does something similar that you can take inspiration from. These are valuable interactions to have - but they happen at the wrong time.&lt;/p&gt;
-&lt;p&gt;Pull Requests are always at the end of development process on a task. Once you&amp;rsquo;ve finished your changes, you submit them for review. I think this is just too late, and I&amp;rsquo;ll explain why with some&amp;hellip; history!&lt;/p&gt;
-&lt;p&gt;As I said before, git was designed to be distributed because the developers were distributed geographically. This was in &amp;ldquo;ye olde times&amp;rdquo;, where slack didn&amp;rsquo;t exist and IRC was king. In order to communicate effectively, and keep the conversations public for the commnity, these developers utilized the lost art of.. mailing lists! These lists were available for anyone with an email to join and follow along in the conversation. One of the things that this really fostered was bringing up conversations around code first.&lt;/p&gt;
-&lt;p&gt;Before anyone actually DID the work there was plenty of back and forth in the mailing list about the change that was going to happen. Not just theoritcal &amp;ldquo;we could do this&amp;rdquo;, but code samples would be sent around, links to relevant code bits would be included so everyone had the same context. The evolution of the change was publicly documented and the subject matter experts were able to weigh in on the how they&amp;rsquo;d approach the change. This would go back and forth until there was a VERY clear understanding of what the change would look like. Then someone would take that and get it over the line. They&amp;rsquo;d then send the patches they made back to the mailing list for people to look at. This almost ALWAYS involved taking the patches, applying them locally and doing doing some testing to validate that it was working. At this point, the goal is that changes at this point are not major architectural ones, but smaller ones to tackle edge cases that people might have uncovered during testing.&lt;/p&gt;
-&lt;p&gt;This is the process that PRs are attempting to replicate -&amp;gt; except because of how most companies operate the details of the change only happen when you start working on it, and the architectural decisions are often only reviewed once they&amp;rsquo;ve been made.&lt;/p&gt;
-&lt;p&gt;I think &amp;ldquo;Pull Requests&amp;rdquo; should really be put into multiple categories. There&amp;rsquo;s an initial invesitgation/proposal process where people communicate and collaborate over how to approach the solution to a problem. This should definitely be time-boxed as it&amp;rsquo;s too easy for this to stretch into infinity. The goal is to do those investigations and allow SMEs to contribute to the conversation early. The goal for this document is to have a very clear understanding of the change needed to be made. Schema changes, repos that might need to be adjusted AND WHERE. If there are no links to code within this then you&amp;rsquo;re probably not done. Someone should be able to grab it and move ahead without necessarily being part of the conversation to craft the solution.&lt;/p&gt;
-&lt;p&gt;Then there&amp;rsquo;s the Review process. After the code is complete sharing it with others and having them RETRIEVE YOUR CHANGES AND TEST THEM LOCALLY. Testing locally is important for many reasons - often the main one is that your test suite isn&amp;rsquo;t robust enough, or it isn&amp;rsquo;t trustworthy (then delete them, but that&amp;rsquo;s another story). But also it highlights pain points in your development process that you may not deal with always. Missing documentation for how to run something, or how to set up some data for a test. Not being able to run your tests locally because they take too long. Having people really test your code is a great final step to getting your code reviewed.&lt;/p&gt;
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;This was a lot of text - but thinking about development workflows/optimizations and really understanding where the problems/bottle-necks are is something I&amp;rsquo;m really passionate about. This was also a very high-level introduction to these ideas. There will be a follup post on commits and rebasing itself that will hopefully make things a bit easier for people to understand. If you have any questions, don&amp;rsquo;t hesitate to reach out to me.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Gemini, an HTTP alternative</title>
-      <link>https://xangelo.ca/posts/gemini-intro/</link>
-      <pubDate>Mon, 21 Jun 2021 17:11:57 -1100</pubDate>
-      
-      <guid>https://xangelo.ca/posts/gemini-intro/</guid>
-      <description>&lt;p&gt;For the last few months now I&amp;rsquo;ve started embracing my weird love for text and text-related user interfaces. From email to irc, I&amp;rsquo;m moving more and more of my social interactions away from traditional websites/apps and over to my terminal. A big part of this move is a step back from 3rd party applications to things that I have a bit more control over - but there are many reasons.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Privacy: Text only platforms make it very hard for trackers. Most email nowdays include &amp;ldquo;tracking pixels&amp;rdquo; that allow the sender to know when you opened the email and to gather information about the device what opened the email itself.&lt;/li&gt;
-&lt;li&gt;No ads: When everything is text, there&amp;rsquo;s 0 need to include the ability to deal with images. As such advertisements just can&amp;rsquo;t happen in a traditional format. The closest you can get is what you think of when you look at global chat in MMOs - people just spamming whatever they want. As a result it makes it easier to deal with (blocking).&lt;/li&gt;
-&lt;li&gt;Faster: As we&amp;rsquo;ve added more and more compute power to devices, the tools and applications that we use have just gotten larger and less efficient. It&amp;rsquo;s very common for websites loaded to be 1mb in size - that&amp;rsquo;s kinda terrible. By moving to a text-only interface, you lose the ability to include a bunch of extra things and you end up with what matters - Just The Content.&lt;/li&gt;
-&lt;li&gt;Interoperability: When everything is text, it&amp;rsquo;s much easier to wire up multiple tools together. Think of the unix interface philosophy. Every tool does one thing well, and the input/output is text. So you have the ability to wire up a chain of tools that the original authors don&amp;rsquo;t need to know/care about.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The hard part is that you need to find alternatives to a lot of traditional apps that you have come to rely on. For some things (email for example) it&amp;rsquo;s very easy. For others, like web browsers, it&amp;rsquo;s basically impossible. There are things like &lt;a href=&#34;https://lynx.invisible-island.net/&#34;&gt;lynx&lt;/a&gt; that you can utilize, but it&amp;rsquo;s just not the same. So many websites now days are designed around the fact that the user is going to have a full GUI browser. And, honestly, that&amp;rsquo;s a very reasonable expectation.&lt;/p&gt;
-&lt;p&gt;But I still found myself looking for an alternative. And I found Gemini.&lt;/p&gt;
-&lt;h2 id=&#34;what-is-gemini&#34;&gt;What is Gemini&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://gemini.circumlunar.space&#34;&gt;Gemini&lt;/a&gt; is an alternative to the HTTP protocol. It&amp;rsquo;s definitely not going to replace HTTP, nor does it want to. Instead it aims to operate alongside. It&amp;rsquo;s a very stripped down subset of markdown to enable easy implementations of parsing. A lot of the complexity of modern browser systems is around parsing HTML/CSS effectively and gemini just does away with that whole idea.&lt;/p&gt;
-&lt;p&gt;This means that documents in Gemini are very light-weight, and are readable without any parsing. You could just read the raw text that makes up a gemini doc (called gemtext) and be just fine. Any styling choices are entirely up to the renderer (browser mostly) and are irrelevant to the document itself. There is no way to view images in-line, there is no JS, there is nothing but text.&lt;/p&gt;
-&lt;p&gt;I really recommend you check out the gemini home page and do a bit of reading up on it.&lt;/p&gt;
-&lt;h2 id=&#34;accessing-gemini&#34;&gt;Accessing Gemini&lt;/h2&gt;
-&lt;p&gt;Since gemini is a completely different protocol you can&amp;rsquo;t access it with a regular web-browser that deals in HTTP. Instead you have to find an alternative browser that deals with the gemini:// protocol. There are &lt;a href=&#34;https://gemini.circumlunar.space/software/&#34;&gt;numerous&lt;/a&gt; owing to the simplicitly of the parser implementation. The one I&amp;rsquo;ve been using most is a terminal based one called &lt;a href=&#34;https://github.com/makeworld-the-better-one/amfora&#34;&gt;amfora&lt;/a&gt;, but if you&amp;rsquo;re looking for something graphical I highly recommend &lt;a href=&#34;https://gmi.skyjake.fi/lagrange/&#34;&gt;Lagrange&lt;/a&gt; which is wonderful.&lt;/p&gt;
-&lt;p&gt;Obviously this is just a browser, so you need to go somewhere. I recommend starting at &lt;a href=&#34;gemini://geminispace.info&#34;&gt;geminispace.info&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;One thing I should caution you - don&amp;rsquo;t expect a full replacement for what you consider &amp;ldquo;the internet&amp;rdquo;. Gemini is very simplistic and focuses on ease of content consumption. It doesn&amp;rsquo;t make content creation hard, but because of the focus on content itself, &amp;ldquo;interactions&amp;rdquo; are minimal. Some capsules (the gemini equivalent of a website) have &amp;ldquo;comment&amp;rdquo; sections, which harken back to the guestbooks of the 90s.&lt;/p&gt;
-&lt;h2 id=&#34;why-im-interested-in-gemini&#34;&gt;Why I&amp;rsquo;m interested in Gemini&lt;/h2&gt;
-&lt;p&gt;The thing that attracts me to Gemini is the same thing that attracts me to most projects: putting data privacy/ownership above all else.&lt;/p&gt;
-&lt;p&gt;Getting technical, Gemini foces TLS connections. Nothing is transmitted un-encrypted. It also brings to the forefront client certificates in SSL. The original spec for certs already supports this and it&amp;rsquo;s crazy that it never took off. It honestly resolves the whole account identification/password problem in a really neat way.&lt;/p&gt;
-&lt;h3 id=&#34;a-sidenote-on-ssl-and-authentication&#34;&gt;A sidenote on SSL and Authentication&lt;/h3&gt;
-&lt;p&gt;This is, I think, one of my favourite features of gemini. SSL certs have two sides, and most people are only familiar with one. Servers generate certs to identify themselves. But since anyone can just generate a cert, there is really no way of knowing that the server you are connecting to is who they say they are. That is, I can generate a cert for duckduckgo.com, and you would have no way of knowing I&amp;rsquo;m NOT the actual owner of that site. One way that we currently resolve this problem is &amp;ldquo;Certificate Authorities&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;Certificate Authorities (CA) are just a collection of companies that at SOME POINT were declared trustworthy. You had no say in that process, and despite numerous hacks of the CAs, they&amp;rsquo;re still considered &amp;ldquo;trustworthy&amp;rdquo;. You pay these companies to certify that you are who you say you are. There are various levels of &amp;ldquo;validation&amp;rdquo; that you can do, but the end goal is that your browser trusts a bunch of these CAs. When they see a cert from your website signed by a CA, they trust it.&lt;/p&gt;
-&lt;p&gt;Don&amp;rsquo;t get me wrong, trust in certs is a hard problem to solve and one that has been around for a long time.&lt;/p&gt;
-&lt;p&gt;Gemini utilizies the idea of &amp;ldquo;Trust on First Use (TOFU)&amp;rdquo;. The idea is similar to how ssh manages your known hosts. The first time you visit a site in gemini that provides you a key, you just believe that they are who they say they are and record the key/site pair. Next time you visit, they simply match the cert recieved with what they have stored.&lt;/p&gt;
-&lt;p&gt;This is naive. The rational is, once you connect to a site you&amp;rsquo;ll won&amp;rsquo;t be able to connect to anyone else impersonating that site unless you forget the original key/site mapping. Of course, the reverse is also true -&amp;gt; if you connect to a site that is already impersonating a different one, you&amp;rsquo;ll need to forget the original mapping before you can navigate to the actual site.&lt;/p&gt;
-&lt;p&gt;On the server side, it definitely feels a bit weird. But this works wonderfully for the client!&lt;/p&gt;
-&lt;p&gt;As a user, you can generate a single certificate that&amp;rsquo;s YOU. You can then provide the public key for that cert to the server to identify it as you. If the server implements TOFU (which is how every authentication system ever works) then you are mapped to that cert on that server. Going to another server? Provide the same signature. Nothing to remember. You just need to keep your private key safe.&lt;/p&gt;
-&lt;p&gt;The &amp;ldquo;certification generation&amp;rdquo; part is the tricky part and is why this never caught on for authentication on the web. But in Gemini, which is currentyly a more technical audience, it&amp;rsquo;s a bit more feasible as a solution. What it means is, as a user, I can generate a single &amp;ldquo;account&amp;rdquo; and reuse it everywhere.&lt;/p&gt;
-&lt;h2 id=&#34;updating-hugo-to-output-gemini-valid-content&#34;&gt;Updating Hugo to output Gemini valid content&lt;/h2&gt;
-&lt;p&gt;I&amp;rsquo;m interested enough in Gemini to put some time into modifying my website to output docs in gemtext so that I can serve my site over gemini as well as http. There are a few steps here (including getting off github pages so that both domains can be served over the xangelo.ca root) but that&amp;rsquo;s ok.&lt;/p&gt;
-&lt;p&gt;The first thing I had to do was figure out how to get my content into gemtext. The easiest way was just to utilize hugo and add a new gemini output. There are a couple resources on this, but the two that were the most helpful were &lt;a href=&#34;https://sylvaindurand.org/gemini-and-hugo/&#34;&gt;this article by Sylvain Durand&lt;/a&gt; and &lt;a href=&#34;https://brainbaking.com/post/2021/04/using-hugo-to-launch-a-gemini-capsule/&#34;&gt;this one by Wouter Groenveld&lt;/a&gt;. I won&amp;rsquo;t re-hash what these are but the final configurations for my site can be found here:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/AngeloR/xangelo.ca/blob/88c61cd88bd2228dc7f2e46871f5e5ea6e2fcfdc/config.toml#L36&#34;&gt;config.toml&lt;/a&gt;: The config file to declare the gemini output&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/AngeloR/xangelo.ca/blob/88c61cd88bd2228dc7f2e46871f5e5ea6e2fcfdc/layouts/index.gmi&#34;&gt;index.gmi&lt;/a&gt; - The layout file for the main page&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/AngeloR/xangelo.ca/blob/88c61cd88bd2228dc7f2e46871f5e5ea6e2fcfdc/layouts/_default/single.gmi&#34;&gt;single.gmi&lt;/a&gt; - The layout file for a single post&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I&amp;rsquo;m including them because I mostly cannibalized Wouter/Sylvain&amp;rsquo;s docs. Wouter made the decision to get off Gemini due to the earlyness of the protocol (it is very early) and as such dropped the original config links that he had up. I just went through git history and found them and made a few tweaks and put them up in my repo.&lt;/p&gt;
-&lt;p&gt;At the moment I&amp;rsquo;m mostly doing what Wouter is - a &amp;ldquo;build&amp;rdquo; on my site involves me generating some hugo and usign scp to move it over to my gemini server. I&amp;rsquo;m then running &lt;a href=&#34;https://github.com/mbrubeck/agate&#34;&gt;agate&lt;/a&gt; a bit manually while testing. This command just starts agate, tells it where my content folder is located, the addresses to bind to, and the hostname and language.&lt;/p&gt;
-&lt;p&gt;Agate will happily generate the keys for you on first run, or you can provide them yourself.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; ./agate.x86_64-unknown-linux-gnu --content ./gemini/ --addr &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;::&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;:1965 --addr 0.0.0.0:1965 --hostname gemini.xangelo.ca --lang en-US
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;For now, scp is fine - but I&amp;rsquo;ll probably just set up a gemini submodule/repo and deploy that to my server instead. That way I don&amp;rsquo;t have to worry too much about transferring the entirety of the site.&lt;/p&gt;
-&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Overall, I&amp;rsquo;m pretty excited about Gemini. The ease of getting into the ecosystem as a consumer and publisher is amazing. There are some awesome projects to really ease that gap. But there&amp;rsquo;s also plenty of room for growth and a small enough community that you can get involved in. The best place to get into it is &lt;a href=&#34;gemini://gemini.circumlunar.space&#34;&gt;gemini space&lt;/a&gt;. I think the thing that excites me most about it is just the fact that there&amp;rsquo;s such a big focus on privacy and small contributors. I think that&amp;rsquo;s something that&amp;rsquo;s missing from the web today, that we used to have at some point.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Dungeon Generation in Roguelikes</title>
-      <link>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</link>
-      <pubDate>Fri, 23 Apr 2021 09:44:35 -4400</pubDate>
-      
-      <guid>https://xangelo.ca/posts/devlog/roguelike/dungeon-generation/</guid>
-      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;As always, I&amp;rsquo;ve been working on a terrible browser-based game. This time, it
-will be revolving around gameplay mechanics from roguelikes(or roguelites
-technically)+jrpgs.&lt;/p&gt;
-&lt;p&gt;The thing I specifically want to look at today is the topic of Dungeon
-Generation - both in and out of code.&lt;/p&gt;
-&lt;p&gt;Roguelikes all tend to share one mechanic: Procedurally Generated Dungeons. The
-idea is that every play-through is different, every floor of a dungeon is
-completely unique. As a result, it requires the player to learn the mechanics of
-the game over multiple runs as most roguelikes also include perma-death as a
-required feature.&lt;/p&gt;
-&lt;p&gt;Dungeon Generation in roguelikes are a very interesting topic for two reasons.
-There is a definite technical component to being able to generate &amp;ldquo;good&amp;rdquo;
-dungeons quickly. Dungeons that are large enough, with enough rooms/pathways to
-be interesting, but that don&amp;rsquo;t take forever to generate. The goal is each floor
-is generated randomly when the player enters - we don&amp;rsquo;t want load times
-equivalent to stepping into a room in Morrowind. The second reason is one that I
-think roguelikes can miss out on - dungeon generation must fit the environment.&lt;/p&gt;
-&lt;p&gt;Most roguelikes have a generation alorithm that gets assigned to every single
-floor. But that&amp;rsquo;s not really that helpful. Dungeons should reflect the
-environment the player is in. Having square rooms in a castle dungeon makes
-sense. Having square rooms in a cave, not so much.&lt;/p&gt;
-&lt;p&gt;A lot of dungeon generation information you find online tend to focus on the
-techtechnical component: HOW do you generate a dungeon. I&amp;rsquo;m hoping to also cover
-the second bit here.&lt;/p&gt;
-&lt;h2 id=&#34;random&#34;&gt;Random&lt;/h2&gt;
-&lt;p&gt;The easiest to explain algorithm is the &amp;ldquo;Random&amp;rdquo; one, but it&amp;rsquo;s probably the
-hardest to get right. Random dungeons are exactly what you&amp;rsquo;d think -&amp;gt; just
-randomly place obstacles and interaction points around the dungeon. As a result
-it&amp;rsquo;s very easy to actually MAKE the dungeon.&lt;/p&gt;
-&lt;p&gt;It also has the added benefit that the &amp;ldquo;random&amp;rdquo; look works really well for open
-fields. Think areas that are strewn with trees or rocks or something like that.
-It could also work really well for large underground caverns since you would be
-peppering the inside with obstances.&lt;/p&gt;
-&lt;p&gt;But we&amp;rsquo;re not just making a dungeon - we&amp;rsquo;re making a game. And truly-random
-dungeons are hard to tune. How do you ensure that every chest you place is
-actually reachable by the player? How about the one set of stairs? How do you
-ensure that the player doesn&amp;rsquo;t spawn in a box, closed off from the rest of the
-dungeon. How do you ensure that they don&amp;rsquo;t spawn right next to some stairs?&lt;/p&gt;
-&lt;p&gt;Each of these questions (and many many more) result in you tuning you random
-generation more and more. You&amp;rsquo;ll never get it 100% right. There&amp;rsquo;ll always be
-edge cases reported by your places that you didn&amp;rsquo;t even think about (did a
-monster spawn in deep water so the player didn&amp;rsquo;t even know it was there and is
-now reporting that they didn&amp;rsquo;t get an achievement for killing all the monsters
-on a foor?).&lt;/p&gt;
-&lt;p&gt;I started with a purly random dungeon generation system myeself. It&amp;rsquo;s definitely
-not a bad call to make - but you just have to be aware of the edge cases. But I
-kept having to tune/adjust things and I&amp;rsquo;d still end up with play testers saying
-they got spawned in a box, or couldn&amp;rsquo;t reach the stairs. That&amp;rsquo;s frustrating
-enough to probably just stop playing.&lt;/p&gt;
-&lt;p&gt;The nice thing about random, however, is that you don&amp;rsquo;t NEED to generate the map
-in its entirety. Nor do you need it to be entirely random.&lt;/p&gt;
-&lt;h3 id=&#34;on-demand-generation&#34;&gt;On-demand generation&lt;/h3&gt;
-&lt;p&gt;So you have the container for your map.. and your character is spawned in a
-particular point &lt;code&gt;(x,y)&lt;/code&gt;. Given a field of view (&lt;code&gt;v&lt;/code&gt;) really you only need to
-generate a box defined by the points &lt;code&gt;(x-v, y-v)&lt;/code&gt;, &lt;code&gt;(x+v, y-v)&lt;/code&gt;, &lt;code&gt;(x-v, y+v)&lt;/code&gt;,
-and &lt;code&gt;(x+v, y+v)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;If the player steps in a direction, you only need to expand the generated
-portion of the map by 1 tile (or whatever your fov is). In this way, your entire
-dungeon is being generated as the player discovers it. You get a few benefits
-like not needing to store the entirety of the map if the player doesn&amp;rsquo;t visit
-it. You can tune drop rates for everything just by how much of the map is
-discovered vs. isn&amp;rsquo;t. You can also almost guarantee that EVERY point on the map is
-reachable by the player and that they&amp;rsquo;ll discover the stairs exactly when you&amp;rsquo;d
-like them to.&lt;/p&gt;
-&lt;h3 id=&#34;pseudo-random-fabrication&#34;&gt;Pseudo-random Fabrication&lt;/h3&gt;
-&lt;p&gt;Now, lets get the pedantics out of the way - nothing we&amp;rsquo;re doing is random, it&amp;rsquo;s
-all pseudo-random. The difference is that in this generation mechanic we&amp;rsquo;re
-actually building the map from pre-defined map parts.&lt;/p&gt;
-&lt;p&gt;The downside, of course, is that you have to spend a bunch of time generating
-the pieces of map and you do have to have to have some guidelines. But, being
-able to tune each individual section of map gives you a ton of control over the
-actual gameplay. It also allows you to use non-standard map shapes (get outta
-here square rooms) and generate really unique looking maps.&lt;/p&gt;
-&lt;p&gt;You would need to rotate the location of interactables, but with enough of these
-map pieces being put together in random orders it gives you a lot of variation
-for your players. And if the unlikely event that they end up getting the EXACT
-same map somehow (you know, cause random), the locations of all the interactable
-items will be randomized.&lt;/p&gt;
-&lt;h2 id=&#34;standard-dungeons-connected-squares&#34;&gt;Standard Dungeons (Connected Squares)&lt;/h2&gt;
-&lt;p&gt;There are a million of these tutorials as this is the standard look for
-dungeons. I think they work wonderfully when you&amp;rsquo;re actually exploring a dungeon
-in a castle or something - but otherwise they seem out of place&lt;/p&gt;
-&lt;p&gt;The premise is pretty simplem but it involves iterating over the map numerous
-times to achieve the look you want. The steps themselves are pretty
-straight-foward.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;First go over the map and generate rooms (squares or rectangles, whatever you
-want).&lt;/li&gt;
-&lt;li&gt;Then go over the map again and connect the rooms together via pathways.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Normally you&amp;rsquo;ll make multiple passes over the map to generate the appropriate
-room density that you want. The more rooms, the easier it is to connect them
-all.&lt;/p&gt;
-&lt;p&gt;The connection part CAN be confusing, but the easiest way is to actually look at
-various path-finding algorithms. Since the map doesn&amp;rsquo;t actually exist, any
-pathfinding algorithms will find the straightest line possible between your
-rooms.&lt;/p&gt;
-&lt;p&gt;Simply iterate over each pair of rooms and connect them using your chosen
-path-finding algorithm. &lt;a href=&#34;https://csis.pace.edu/~benjamin/teaching/cs627/webfiles/Astar.pdf&#34;&gt;A*&lt;/a&gt;
-is always a good choice to understand the real basics of the algorithm so that
-you can implement it yourself. Or at least so you understand what&amp;rsquo;s happening
-before using whatever package in your programming language of choice.&lt;/p&gt;
-&lt;p&gt;The pro&amp;rsquo;s of this technique is that it&amp;rsquo;s a very well documented approach. You
-can adjust the density of the map very easily.&lt;/p&gt;
-&lt;p&gt;So easily, in fact, that you can ramp up the density to the point that all of
-the rooms overlap. The iterate to remove random sections of obstacles (walls)
-that are inside the room. That will allow you to generate LARGE rooms where
-everything is accessible.&lt;/p&gt;
-&lt;h2 id=&#34;drunk-walking&#34;&gt;Drunk Walking&lt;/h2&gt;
-&lt;p&gt;The Drunkards Walk is a very simple algorithm and one that I stumbled upon
-without really knowing about it. The idea is simple and is based on these requirements:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;You want to generate organic looking maps&lt;/li&gt;
-&lt;li&gt;You want to ensure that all sections of the map are reachable&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The organic maps requirement is probably the most interesting one to me. The
-ability to random generate maps that don&amp;rsquo;t look like a bunch of pre-defined
-shapes. You could, technically, achieve that same look a myriad of ways, but
-this seems the easiest.&lt;/p&gt;
-&lt;p&gt;The method is as follows:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Create a &amp;ldquo;walker&amp;rdquo; on your map of some size (maybe 4 tiles? maybe 9? whatever
-you feel like)&lt;/li&gt;
-&lt;li&gt;Start them on one side of the map, with their edges being walls, and their
-interiors being walkable floors.&lt;/li&gt;
-&lt;li&gt;Make them march to the opposite side, adding some jitter along the other
-axis.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The size of the &amp;ldquo;walker&amp;rdquo; dictates the minimum width of the space you&amp;rsquo;re
-generating. If you want something to feel more open, make it larger. But if
-you&amp;rsquo;re making caves or something, just make them smaller.&lt;/p&gt;
-&lt;p&gt;The &amp;ldquo;drunken walk&amp;rdquo; step sounds confusing, but it&amp;rsquo;s pretty straight-forward. If,
-for example, we start the walker on the west side of the map, they will be
-walking to the east. Every step they take to the east should be coupled with
-them randomly shifting north/south by a MAX of the size of the walker.&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s it.&lt;/p&gt;
-&lt;p&gt;When you&amp;rsquo;re done, you have a single corridor. To build a map, add more walkers
-all moving along the same plane (west-&amp;gt;east for example), and then add one or
-two walkers moving from the perpendiclar plane (north-&amp;gt;south in this case). This
-ensures that all corridors will be connected, and gives you really neat looking
-maps. To me, they work wonderfully for caves/pathways.&lt;/p&gt;
-&lt;p&gt;But, by playing with the size of the walker you can change the entire look of
-the map. Really wide players give you huge open spaces!&lt;/p&gt;
-&lt;p&gt;the only thing this DOESN&amp;rsquo;T do, is actual square looking rooms like if you were
-in a real dungeon..&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>DEVLOG: NewsRiver Updates</title>
-      <link>https://xangelo.ca/posts/devlog/newsriver/intro/</link>
-      <pubDate>Tue, 10 Nov 2020 09:43:04 -4300</pubDate>
-      
-      <guid>https://xangelo.ca/posts/devlog/newsriver/intro/</guid>
-      <description>&lt;h2 id=&#34;what-is-news-river&#34;&gt;What is News River?&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://newsriver.xangelo.ca&#34;&gt;News River&lt;/a&gt; is an auto-updating stream of news that doesn&amp;rsquo;t need to clutter up your RSS feeds. It was based off ideas from &lt;a href=&#34;https://scripting.com&#34;&gt;Dave Winer&lt;/a&gt;. There are some sites that you don&amp;rsquo;t necessarily CARE about reading every single update. Sometimes you just want to see the most recent stuff and move on. Sites like &lt;a href=&#34;https://news.ycombinator.com&#34;&gt;HackerNews&lt;/a&gt; and some subreddits (&lt;a href=&#34;https://reddit.com/r/devops&#34;&gt;/r/devops&lt;/a&gt; or &lt;a href=&#34;https://reddit.com/r/aws&#34;&gt;/r/aws&lt;/a&gt;) are things that I&amp;rsquo;m curious about more recent things that get up there, but I don&amp;rsquo;t necessarily want to read every single item. Normally I&amp;rsquo;m just skimming for interesting titles.&lt;/p&gt;
-&lt;p&gt;I used to have these things synced up to my RSS reader, but the sheer number of updates to them caused me to go insane. There&amp;rsquo;s no reasonable way to keep up with all of that stuff. So I had to pull them and then just.. remember to go there. Eventually I got tired of that and wrote the first News River system. You provide a list of sources (RSS or RedditJSON) and it will periodically scan them, download the items, save them, and serve them up for you to see in a simple little auto-updating front-end.&lt;/p&gt;
-&lt;p&gt;It was a pretty handy tool that was written in Node.js and relied on Redis as the backend storage, with everything hosted on Heroku. It was written at a time when I was really digging into various Redis use cases and the free-form nature was a useful thing when trying to figure out the project. However, due to the nature of Redis I had to jump through quite a few loops to &amp;ldquo;optimize&amp;rdquo; queries. It had a strange bucketing system for the keys that allowed me to query all updates in the last 10 minutes by grouping all updates into sets where the key was in 5 minute intervals. It was a crazy system and honestly most of the code was handling the bucketing+tests for it.&lt;/p&gt;
-&lt;h2 id=&#34;sqlite3&#34;&gt;Sqlite3&lt;/h2&gt;
-&lt;p&gt;The latest version of NewsRiver actually rips out Redis and replaces it with Sqlite3. The crazy bucketing system no longer exists since I can just sort by rounded date values. By utilizing sqlite3 instead of Redis I was able to move the entire system over to a small VPS that I ran and eliminate the heroku requirement for running it. The move to sqlite3 was really pushed by the need to simplify the code base.&lt;/p&gt;
-&lt;p&gt;NewsRiver is not a project I want to keep tinkering with. I&amp;rsquo;d like it to be complete and to be able to use it daily without making a bunch of tweaks. But the date code had become unwieldy and as a result I spent most of time reviewing it to make sure I wasn&amp;rsquo;t breaking it when fixing things. Moving to sqlite3 allowed me to drop that whole system, delete a ton of code, and just move to something that didn&amp;rsquo;t really require a lot of explanation/documentation.&lt;/p&gt;
-&lt;p&gt;Eventually we can replace the sqlite3 only setup by utilizing something like &lt;code&gt;knex&lt;/code&gt; to allow for a swappable data storage layer.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>DEVLOG: Custom Theme for Hugo</title>
-      <link>https://xangelo.ca/posts/devlog/blog/1/</link>
-      <pubDate>Wed, 10 Jun 2020 12:00:00 -0000</pubDate>
-      
-      <guid>https://xangelo.ca/posts/devlog/blog/1/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve started working on a custom theme for Hugo&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; that I use on my blog. The goal here is to be as simple as possible and takes its inspiration from the IETF .txt file&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; where possible.&lt;/p&gt;
-&lt;p&gt;The theme itself contains a light/dark mode as well as a small variation of the main theme for mobile. I actually had some help from a good friend&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; who helped me adjust the colors for both dark and light modes to make them a bit more legible.&lt;/p&gt;
-&lt;p&gt;The two complicated components and 1 simple component are outlined below.&lt;/p&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-&lt;h3 id=&#34;numbered-headers&#34;&gt;Numbered Headers&lt;/h3&gt;
-&lt;p&gt;I wanted to ensure that each heading would have a number associated with it that matched the number that it was automatically assigned by Hugo during the Table of Contents generation. I didn&amp;rsquo;t want to have to update numbers as I added/remove header tags and I didn&amp;rsquo;t want to utilize any JavaScript on the site, so I was left with CSS only.&lt;/p&gt;
-&lt;p&gt;I ended up utilizing counters&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; to achieve this.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-reset&lt;/span&gt;: h2;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h2&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-reset&lt;/span&gt;: h3;} 
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h3&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-reset&lt;/span&gt;: h4;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h4&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-reset&lt;/span&gt;: h5;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h5&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-reset&lt;/span&gt;: h6;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h2&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-increment&lt;/span&gt;: h2; &lt;span style=&#34;color:#66d9ef&#34;&gt;content&lt;/span&gt;: counter(h2) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;. &amp;#34;&lt;/span&gt;;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h3&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-increment&lt;/span&gt;: h3; &lt;span style=&#34;color:#66d9ef&#34;&gt;content&lt;/span&gt;: counter(h2) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h3) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;. &amp;#34;&lt;/span&gt;;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h4&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-increment&lt;/span&gt;: h4; &lt;span style=&#34;color:#66d9ef&#34;&gt;content&lt;/span&gt;: counter(h2) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h3) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h4) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;. &amp;#34;&lt;/span&gt;;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h5&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-increment&lt;/span&gt;: h5; &lt;span style=&#34;color:#66d9ef&#34;&gt;content&lt;/span&gt;: counter(h2) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h3) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h4) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h5) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;. &amp;#34;&lt;/span&gt;;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h6&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;counter-increment&lt;/span&gt;: h6; &lt;span style=&#34;color:#66d9ef&#34;&gt;content&lt;/span&gt;: counter(h2) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h3) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h4) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h5) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;counter(h6) &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;. &amp;#34;&lt;/span&gt;; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h2&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;nocount&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h3&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;nocount&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h4&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;nocount&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h5&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;nocount&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;h6&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;nocount&lt;/span&gt;:&lt;span style=&#34;color:#a6e22e&#34;&gt;before&lt;/span&gt; {&lt;span style=&#34;color:#66d9ef&#34;&gt;content&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;counter-increment&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;none&lt;/span&gt;;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;I only have a single &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; tag in my document which is for the title of the post, which I don&amp;rsquo;t want numbered. The code above it ensures that every time we run across an &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt; tag it will reset the counter for &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt; tags to 0, increment the counter for &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt; tags, and then display the current value of the counter.&lt;/p&gt;
-&lt;p&gt;It repeats this for all header tags appending the counter for each subsequent tag level.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve also included provisions for ensuring that you can skip incrementing the counters if you add a &lt;code&gt;.nocount&lt;/code&gt; class to any header.&lt;/p&gt;
-&lt;h3 id=&#34;flexible-visual-line-up&#34;&gt;Flexible visual line-up&lt;/h3&gt;
-&lt;p&gt;This was probably the hardest part.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../img/devlog/blog/flexible-line.png&#34; alt=&#34;flexible-line&#34;&gt;&lt;/p&gt;
-&lt;p&gt;That dashed line that lets you link a post with the corresponding date. Both elements are positioned at the exterior of their boxes, and the titles have a varying width.&lt;/p&gt;
-&lt;p&gt;In order to accomplish this I ended up needing to introduce a 3rd element, the line itself. However, I can&amp;rsquo;t actually use an &lt;code&gt;&amp;lt;hr /&amp;gt;&lt;/code&gt; tag because I want to work towards supporting screen readers.. and those tags get interpreted as dividers between content.&lt;/p&gt;
-&lt;p&gt;The article list is an unordered list, so the HTML code looks like this:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;li&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/link/to/post&amp;#34;&lt;/span&gt;&amp;gt;Post Title&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;a&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;span&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;divider&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;span&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;span&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pubdate&amp;#34;&lt;/span&gt;&amp;gt;YYYY-MM-DD&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;span&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;li&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;I set the &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; tag to utilize flex &lt;code&gt;display: flex&lt;/code&gt; and tell it to align the items to the center&lt;/p&gt;
-&lt;p&gt;I then set the &lt;code&gt;.divider&lt;/code&gt; to &lt;code&gt;flex-grow: 1&lt;/code&gt; &lt;sup id=&#34;fnref1:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; and don&amp;rsquo;t set the property on the &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; or &lt;code&gt;.pubdate&lt;/code&gt; elements. This causes the divider to grow to take up the entirety of space within the list element, subtracting the side of the title/date tags.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;article-list&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;li&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;list-style&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;none&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;display&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;flex&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;align-items&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;center&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;article-list&lt;/span&gt; .&lt;span style=&#34;color:#a6e22e&#34;&gt;divider&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;flex-grow&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;border-bottom&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;px&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;dashed&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;black&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;margin&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0.3&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;rem&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;darklight-mode&#34;&gt;Dark/Light mode&lt;/h3&gt;
-&lt;p&gt;One of the things that I ended up implementing, that I&amp;rsquo;m not 100% sold on is the auto dark/light mode. Utilizing CSS we can adjust things to account for if the user is utilizing a light or dark mode on their browser:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#66d9ef&#34;&gt;media&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;prefers-color-scheme&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;dark&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;/* your stuff goes here */&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;It&amp;rsquo;s a very simple technique and given the minimalist nature of this site it works rather perfectly.&lt;/p&gt;
-&lt;p&gt;Where I&amp;rsquo;m not 100% happy is on color choices. Where possible I attmpted to tweak things so that they would look the same in light or dark mode. I tweaked the original colors of links (new/visited) and also settled on a particular code-highlighting style.&lt;/p&gt;
-&lt;p&gt;Where I&amp;rsquo;m not 100% happy, is with the default font color. In light mode it&amp;rsquo;s browser defaults, but in dark mode it&amp;rsquo;s a blue/grey and I think it might be a tad too dark. It&amp;rsquo;s something that I&amp;rsquo;ll continue tweaking in small batches until I find something that works well.&lt;/p&gt;
-&lt;p&gt;I also faded out images just a bit so that they&amp;rsquo;re not so jaring. The idea is if you hover/touch the images they&amp;rsquo;ll fade in to full color, but if you&amp;rsquo;re just scrolling through you won&amp;rsquo;t run into any weirdness.&lt;/p&gt;
-&lt;h3 id=&#34;support-for-utterances&#34;&gt;Support for Utteranc.es&lt;/h3&gt;
-&lt;p&gt;This&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; is something that I recently stumbled across - the ability to utilize GitHub issues to track comments on a site. I really love the idea - especially since I&amp;rsquo;m hosting my blog on GitHub Pages. By adding some params to your &lt;code&gt;config.toml&lt;/code&gt; file you&amp;rsquo;ll be able to turn on support for utterances.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;utterances&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;repo&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;AngeloR/angelor.github.io&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;issue_term&lt;/span&gt;=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pathname&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;label&lt;/span&gt;=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;comment&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;theme&lt;/span&gt;=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;preferred-color-scheme&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;The settings match exactly the configuration options provided by utteranc.es, so you should be able to see the mapping quite easiy. The only thing I changed was making it &lt;code&gt;issue_term&lt;/code&gt; instead of &lt;code&gt;issue-term&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;If you don&amp;rsquo;t add this configuration, it&amp;rsquo;ll just hide the comment block and you won&amp;rsquo;t even load the utteranc.es client js.&lt;/p&gt;
-&lt;h2 id=&#34;downloadinstall&#34;&gt;Download/Install&lt;/h2&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in this theme, you can grab it here &lt;a href=&#34;https://github.com/AngeloR/plain-hugo-theme&#34;&gt;https://github.com/AngeloR/plain-hugo-theme&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Up to date installation instructions can be found on the readme, but I&amp;rsquo;ve included a snapshot of what they were at this point:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;
-&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
-&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/AngeloR/plain-hugo-theme /path/to/hugo/themes/plain/
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Edit your config.toml to add the following line:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theme &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;plain&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;If you do end up using it and come across any bugs, please let me know over on GitHub!&lt;/p&gt;
-&lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/AngeloR/plain-hugo-theme&#34;&gt;https://github.com/AngeloR/plain-hugo-theme&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/rfc/rfc7993.txt&#34;&gt;https://tools.ietf.org/rfc/rfc7993.txt&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;http://westleysz.com/&#34;&gt;http://westleysz.com/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://utteranc.es/&#34;&gt;https://utteranc.es/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <guid>https://xangelo.ca/posts/discovering-problems-as-manager/</guid>
+      <description></description>
     </item>
     
   </channel>

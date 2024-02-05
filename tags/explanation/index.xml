@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2011 - 2022</copyright>
-    <lastBuildDate>Tue, 20 Jun 2023 12:30:56 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2023 23:29:09 -0500</lastBuildDate>
     <atom:link href="https://xangelo.ca/tags/explanation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>You probably don&#39;t need NoSQL</title>
+      <link>https://xangelo.ca/posts/you_dont_need_nosql.md/</link>
+      <pubDate>Tue, 21 Nov 2023 23:29:09 -0500</pubDate>
+      <guid>https://xangelo.ca/posts/you_dont_need_nosql.md/</guid>
+      <description>Your decision to start with a NoSQL store is likely impeding you</description>
+    </item>
     <item>
       <title>Chrome HTTP Request stuck in &#34;Stalled&#34; State</title>
       <link>https://xangelo.ca/posts/chrome_request_stalled/</link>
