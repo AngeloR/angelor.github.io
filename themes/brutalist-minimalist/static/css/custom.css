@@ -1,0 +1,27 @@
+.breakdowns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.breakdowns > div {
+  max-width: 300px;
+  min-width: 100px;
+}
+
+.post-date {
+  text-align: right;
+  font-style: italic;
+}
+
+#nav-menu img {
+  vertical-align: text-top;
+}
+
+main {
+  max-width: 80ch;
+  margin: auto;
+}
+
+main img {
+  width: 100%;
+}
