@@ -68,5 +68,5 @@ It's not that I don't like this model, it's that I don't like the implicit natur
 
 ## Random Thoughts
   - I often send around rough drafts of these and one of the questions I got was "what about the STO model". The truth is the STO model is nothing more than a matrix org where the business unit leader is given a few more powers. Depending on how high up the STO is defined really just changes who reports to them - but the org remains matrix'd. 
-  - At around the same time the [OKR Video]([https://www.youtube.com/watch?v=mJB83EZtAjc](https://www.youtube.com/watch?v=mJB83EZtAjc)) at Google started to make the rounds and they seemed to go hand in hand. Taking your cross functional team, and giving them a single area of focus, allows for specialization. The long running team facilitated experimentation which fits perfectly into the realm of OKRs. This worked even better when viewed under the umbrella of agile. 
+  - At around the same time the [OKR Video](https://www.youtube.com/watch?v=mJB83EZtAjc) at Google started to make the rounds and they seemed to go hand in hand. Taking your cross functional team, and giving them a single area of focus, allows for specialization. The long running team facilitated experimentation which fits perfectly into the realm of OKRs. This worked even better when viewed under the umbrella of agile. 
 
