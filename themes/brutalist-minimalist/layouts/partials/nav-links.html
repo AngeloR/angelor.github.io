@@ -24,7 +24,6 @@
 */}}
 
 <a href="{{ "/"              | relURL}}">Home</a>
-{{ range .Site.Menus.main }}
-  <a href="{{ .URL | relURL }}">{{ .Name }}</a>
-{{ end }}
+<a href="{{ "/list"          | relURL}}">Archive</a>
+<a href="{{ "/pages/linkblog"          | relURL}}">Linkblog</a>
 <a href="{{ "/index.xml" | relURL }}"><img src="/icons/feed-icon-14x14.png"></a>

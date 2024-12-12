@@ -26,6 +26,7 @@
 {{ define "title" }}
 {{.Page.Title}} | {{.Site.Params.siteBasename}}
 {{ end }}
+{{ .Content }}
 {{ define "main" }}
 {{ range .Site.RegularPages.GroupByPublishDate "2006" }}
 <h2>{{- .Key -}}</h2>

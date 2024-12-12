@@ -22,14 +22,6 @@
    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    
 */}}
-{{range first 1 (where site.RegularPages "Type" "in" (slice "feature" "daily")) }}
-<section id="daily-post">
-  {{ with .Site.GetPage "pages/about" }}
-    {{ .Content }}
-  {{ end }}
-</section>
-<hr>
-{{end}}
 <h2>All Recent Posts</h2>
 <ul id="recent-posts">
 {{range first site.Params.blogListLength (where site.RegularPages "Type" "in" "posts") }}
