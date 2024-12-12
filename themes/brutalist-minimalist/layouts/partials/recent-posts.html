@@ -24,8 +24,9 @@
 */}}
 {{range first 1 (where site.RegularPages "Type" "in" (slice "feature" "daily")) }}
 <section id="daily-post">
-<h2>{{ .Title }}</h2>
-{{.Content}}
+  {{ with .Site.GetPage "pages/about" }}
+    {{ .Content }}
+  {{ end }}
 </section>
 <hr>
 {{end}}
@@ -35,40 +36,3 @@
 <li><a href="{{ .RelPermalink }}">{{.Title}}</a> ({{ .Date.Format "2006-01-02" }}) &mdash; <span class="post-summary">{{.Summary}}</span></li>
 {{end}}
 </ul>
-
-<hr>
-
-<div class="breakdowns">
-  <div>
-    <h2>Engineering Org</h2>
-    <ul>
-      {{range first site.Params.blogListLength (where site.RegularPages ".Params.tags" "intersect" (slice "engineering org" "engineering processes"))}}
-      <li><a href="{{ .RelPermalink }}">{{.Title}} &mdash; {{ .Date.Format "2006-01-02"}}</a></li>
-    {{end}}
-    </ul>
-  </div>
-  <div>
-    <h2>Technical Minutae</h2>
-    <ul>
-      {{range first site.Params.blogListLength (where site.RegularPages ".Params.tags" "intersect" (slice "code" "explanation" "architecture"))}}
-      <li><a href="{{ .RelPermalink }}">{{.Title}} &mdash; {{ .Date.Format "2006-01-02"}}</a></li>
-    {{end}}
-    </ul>
-  </div>
-  <div>
-    <h2>Projects</h2>
-    <ul>
-      {{range first site.Params.blogListLength (where site.RegularPages ".Params.tags" "intersect" (slice "project"))}}
-      <li><a href="{{ .RelPermalink }}">{{.Title}} &mdash; {{ .Date.Format "2006-01-02"}}</a></li>
-    {{end}}
-    </ul>
-  </div>
-  <div>
-    <h2>Daily Updates</h2>
-    <ul>
-      {{range first site.Params.blogListLength (where site.RegularPages "Type" "in" "daily")}}
-      <li><a href="{{ .RelPermalink }}">{{.Title}}</a></li>
-    {{end}}
-    </ul>
-  </div>
-</div>

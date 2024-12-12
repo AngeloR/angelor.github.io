@@ -14,3 +14,9 @@
 [submodule "themes/plain"]
 	path = themes/plain
 	url = git@github.com:AngeloR/plain-hugo-theme.git
+[submodule "themes/digitalgarden"]
+	path = themes/digitalgarden
+	url = https://github.com/apvarun/digital-garden-hugo-theme.git
+[submodule "themes/plain-hugo-theme"]
+	path = themes/plain-hugo-theme
+	url = git@github.com:AngeloR/plain-hugo-theme.git

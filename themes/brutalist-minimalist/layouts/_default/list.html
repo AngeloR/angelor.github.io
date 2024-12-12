@@ -27,11 +27,18 @@
 {{.Page.Title}} | {{.Site.Params.siteBasename}}
 {{ end }}
 {{ define "main" }}
-<h2>{{.Page.Title}}</h2>
-{{.Content}}
-<ul id="page-list">
-{{range .Pages }}
-<li class="page-list-item"><a href="{{ .RelPermalink }}">{{.Title}}</a> &mdash; <span class="page-summary">{{.Summary}}</span></li>
-{{end}}
+{{ range .Site.RegularPages.GroupByPublishDate "2006" }}
+<h2>{{- .Key -}}</h2>
+<ul>
+  {{- range .Pages -}}
+  {{ if and (not (in .Params.tags "daily")) (not (in .Params.tags "page")) }}
+    <li>
+        <a href = "{{- .RelPermalink -}}">
+        {{- .Title -}}
+      </a>
+    </li>
+  {{ end }}
+  {{- end -}}
 </ul>
+{{ end }}
 {{ end }}

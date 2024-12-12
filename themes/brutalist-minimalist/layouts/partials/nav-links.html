@@ -22,8 +22,9 @@
    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    
 */}}
+
 <a href="{{ "/"              | relURL}}">Home</a>
-<a href="{{ "tags/"          | relURL}}">All Categories</a>
-<a href="{{ "page/about"    | relURL}}">About</a>
-<a href="{{ "page/links"    | relURL}}">Links</a>
+{{ range .Site.Menus.main }}
+  <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+{{ end }}
 <a href="{{ "/index.xml" | relURL }}"><img src="/icons/feed-icon-14x14.png"></a>

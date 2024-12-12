@@ -26,16 +26,15 @@
 {{.Page.Title}} | {{.Site.Params.siteBasename}}
 {{ end }}
 {{ define "main" }}
-<h2>{{.Page.Title}}</h2>
+
+{{.Content}}
 {{ if .Params.tags }}
 <div class="tag-list">
   {{ range .Params.tags }}
   [ <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a> ]
   {{ end}}
 </div>
-
 {{ end}}
-{{.Content}}
 <div class="post-date">
   Posted {{ .Date.Format "Monday, January 02, 2006"}}
 </div>

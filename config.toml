@@ -13,18 +13,18 @@ rssLimit = 15
 [menu]
 [[menu.main]]
 name = 'About'
-pageRef = '/about'
+pageRef = '/pages/about'
 [[menu.main]]
 name = 'Linkblog'
-pageRef = '/linkblog'
+pageRef = '/pages/links'
 [[menu.main]]
-name = 'Categories'
-pageRef = '/categories'
+name = 'All Posts'
+pageRef = '/list'
 
 [params]
 subtitle = "Technical musings and other tidbits"
 siteBaseName = "Xangelo.ca"
-bloglistLength = 10
+bloglistLength = 15
 
 [markup]
 [markup.goldmark]
@@ -41,20 +41,7 @@ tabWidth = 2
     ordered = true
     startLevel = 2
 
-[mediaTypes]
-  [mediaTypes."text/gemini"]
-    suffixes = ["gmi"]
-
-[outputFormats]
-[outputFormats.Gemini]
-name = "GEMINI"
-mediaType = "text/gemini"
-isPlainText = true
-isHTML = false
-protocol = "gemini://"
-permalinkable = true
-path = "gemini/"
 
 [outputs]
-home = ["HTML", "RSS", "GEMINI"]
-page = ["HTML", "GEMINI"]
+home = ["HTML", "RSS"]
+page = ["HTML"]
