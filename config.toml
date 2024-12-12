@@ -1,7 +1,7 @@
 title = "Xangelo.ca"
 author = "Angelo R"
 copyright = "Copyright © 2011 - 2022"
-paginate = 15
+paginator.pagerSize = 15
 baseURL = "https://xangelo.ca"
 theme = "brutalist-minimalist"
 languageCode = "en-us"
@@ -9,17 +9,6 @@ relativeURLs = true
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 rssLimit = 15
-
-[menu]
-[[menu.main]]
-name = 'About'
-pageRef = '/pages/about'
-[[menu.main]]
-name = 'Linkblog'
-pageRef = '/pages/links'
-[[menu.main]]
-name = 'All Posts'
-pageRef = '/list'
 
 [params]
 subtitle = "Technical musings and other tidbits"
