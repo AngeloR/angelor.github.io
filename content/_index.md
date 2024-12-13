@@ -1,7 +1,7 @@
 ---
 tags:
   - publish
-title: index
+title: _index
 date: 2024-12-12T14:52:24.197Z
 lastmod: 2024-12-12T15:31:04.389Z
 ---
