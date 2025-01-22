@@ -4,7 +4,7 @@ tags:
   - page
 title: links
 date: 2024-12-09T19:01:16.962Z
-lastmod: 2024-12-12T04:36:10.397Z
+lastmod: 2025-01-22T15:44:41.731Z
 ---
 # Links
 
@@ -28,6 +28,6 @@ Dave has been involved in the creation of RSS, almost all of the surrounding too
 
 Zalaah is a pretty well known member of the Persistent Browser-based Gaming community. He’s got a bunch of different games out and still manages to find time to be very involved in the community. He has some really interesting posts on his blog about the approach he takes with various components of his PBBGs and the technical minutae around it.
 
-### Gaffer on Games - https://www.gafferongames.com
+### Gaffer on Games - https://www.gafferongames.com | https://mas-bandwidth.com/
 
 Glenn’s website is the primer on working on multiplayer networking for gaming. In addition to incredibly detailed posts about things like “Building reliability over UDP” or LERP/SLERPing. When I was first starting out building multiplayer systems in gaming his blog (and eventually the video posts) were absolutely vital to getting going. If you’re ever curious about that stuff I definitely recommend you take a peek at their site and take plenty of notes.
