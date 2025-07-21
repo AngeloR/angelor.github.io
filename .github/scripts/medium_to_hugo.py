@@ -30,6 +30,9 @@ for entry in feed.entries:
     post["draft"] = False
     post["medium_link"] = entry.link
 
+    # add a line to the bottom of the post to indicate that it's from Medium
+    post["content"] += "\n\n---\n\nThis was originally published on Medium - " + entry.link
+
     output_path = os.path.join(OUTPUT_DIR, f"{slug}.md")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(frontmatter.dumps(post))
