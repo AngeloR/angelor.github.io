@@ -9,9 +9,8 @@ title: AWS ElasticBeanstalk Gotcha's
 date: 2024-12-09T16:29:52.051Z
 lastmod: 2024-12-12T05:45:27.752Z
 ---
-# ElasticBeanstalk Gotchas
 
-I've been lucky and unlucky enough to work with AWS ElasticBeanstalk for a number of years  and here's a list of footguns.
+I've been lucky and unlucky enough to work with AWS ElasticBeanstalk for a number of years and here's a list of footguns.
 
 ## Degraded on 4xx Errors
 

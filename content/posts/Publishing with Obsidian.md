@@ -11,7 +11,6 @@ title: Publishing with Obsidian
 summary: Blogging with Obsidian
 lastmod: 2024-12-09T21:19:10.953Z
 ---
-# Publishing with Obsidian
 
 For the last couple years I've been been trending toward the idea that tools like https://remotestorage.io and https://5apps.com/ are actually not any better for owning your content than everything they purport to replace. Instead the true bastion of content owners is the lowly file that exists on their computer. While tools like RemoteStorage (and I'm definitely picking on them for no good reason) talk about freedom, really they're just pushing their vision of freedom on users. Freedom is really about making informed choices.
 

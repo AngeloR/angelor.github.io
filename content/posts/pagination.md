@@ -10,7 +10,6 @@ title: Understanding Pagination
 summary: Pagination techniques and trade-offs
 lastmod: 2025-02-14T15:45:12.879Z
 ---
-# Pagination
 
 Pagination is an interesting topic. Actually, to be fair, most topics are interesting topics once you make it past the surface. Pagination is no exception. The goals of pagination are simple: returning every since item in a list can be challenging along many axis, so it's easier to split that list into chunks and return the chunks.
 
@@ -33,28 +32,28 @@ There's trade-offs we can make here for sure. If you're using a relational datab
 
 ```typescript
 // Backend: Express.js + PostgreSQL
-import express from 'express';
-import { Pool } from 'pg';
+import express from "express";
+import { Pool } from "pg";
 
 const app = express();
 const pool = new Pool({
-  user: 'your_user',
-  host: 'your_host',
-  database: 'your_db',
-  password: 'your_password',
+  user: "your_user",
+  host: "your_host",
+  database: "your_db",
+  password: "your_password",
   port: 5432,
 });
 
-app.get('/items', async (req, res) => {
+app.get("/items", async (req, res) => {
   try {
     const limit = parseInt(req.query.limit as string) || 25;
     const offset = parseInt(req.query.offset as string) || 0;
-    
+
     const { rows } = await pool.query(
-      'SELECT * FROM items ORDER BY id ASC LIMIT $1 OFFSET $2',
+      "SELECT * FROM items ORDER BY id ASC LIMIT $1 OFFSET $2",
       [limit, offset]
     );
-    
+
     res.json({
       items: rows,
       pagination: {
@@ -63,23 +62,21 @@ app.get('/items', async (req, res) => {
         offset,
         nextOffset: offset + limit < count ? offset + limit : null,
         prevOffset: offset - limit >= 0 ? offset - limit : null,
-      }
+      },
     });
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
-
+app.listen(3000, () => console.log("Server running on port 3000"));
 ```
 
 ### Frontend Example
 
 ```tsx
-
 // Frontend: React + Fetch API
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface Item {
   id: number;
@@ -102,8 +99,8 @@ export default function PaginatedList() {
 
   useEffect(() => {
     fetch(`/items?limit=${limit}&offset=${offset}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setItems(data.items);
         setPagination(data.pagination);
       });
@@ -112,7 +109,7 @@ export default function PaginatedList() {
   return (
     <div>
       <ul>
-        {items.map(item => (
+        {items.map((item) => (
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>
@@ -133,7 +130,6 @@ export default function PaginatedList() {
     </div>
   );
 }
-
 ```
 
 ## Cursor Pagination
@@ -152,57 +148,57 @@ In the example below we are assuming that the cursor is a field called `created_
 
 ```typescript
 // Backend: Express.js + PostgreSQL (Cursor-Based Pagination)
-import express from 'express';
-import { Pool } from 'pg';
+import express from "express";
+import { Pool } from "pg";
 
 const app = express();
 const pool = new Pool({
-  user: 'your_user',
-  host: 'your_host',
-  database: 'your_db',
-  password: 'your_password',
+  user: "your_user",
+  host: "your_host",
+  database: "your_db",
+  password: "your_password",
   port: 5432,
 });
 
-app.get('/items', async (req, res) => {
+app.get("/items", async (req, res) => {
   try {
     const limit = parseInt(req.query.limit as string) || 25;
     const cursor = req.query.cursor as string | null;
-    
-    let query = 'SELECT * FROM items ORDER BY created_at ASC LIMIT $1';
+
+    let query = "SELECT * FROM items ORDER BY created_at ASC LIMIT $1";
     let params: any[] = [limit];
 
     if (cursor) {
-      query = 'SELECT * FROM items WHERE created_at > $1 ORDER BY created_at ASC LIMIT $2';
+      query =
+        "SELECT * FROM items WHERE created_at > $1 ORDER BY created_at ASC LIMIT $2";
       params = [cursor, limit];
     }
 
     const { rows } = await pool.query(query, params);
-    
-    const nextCursor = rows.length > 0 ? rows[rows.length - 1].created_at : null;
-    
+
+    const nextCursor =
+      rows.length > 0 ? rows[rows.length - 1].created_at : null;
+
     res.json({
       items: rows,
       pagination: {
         limit,
         nextCursor,
-      }
+      },
     });
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
-
-
+app.listen(3000, () => console.log("Server running on port 3000"));
 ```
 
 ### Frontend
 
 ```tsx
 // Frontend: React + Fetch API (Cursor-Based Pagination)
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface Item {
   id: number;
@@ -222,11 +218,13 @@ export default function PaginatedList() {
   const limit = 25;
 
   useEffect(() => {
-    const url = cursor ? `/items?limit=${limit}&cursor=${cursor}` : `/items?limit=${limit}`;
+    const url = cursor
+      ? `/items?limit=${limit}&cursor=${cursor}`
+      : `/items?limit=${limit}`;
     fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        setItems(prev => [...prev, ...data.items]);
+      .then((res) => res.json())
+      .then((data) => {
+        setItems((prev) => [...prev, ...data.items]);
         setPagination(data.pagination);
       });
   }, [cursor]);
@@ -234,7 +232,7 @@ export default function PaginatedList() {
   return (
     <div>
       <ul>
-        {items.map(item => (
+        {items.map((item) => (
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>
@@ -249,5 +247,4 @@ export default function PaginatedList() {
     </div>
   );
 }
-
 ```

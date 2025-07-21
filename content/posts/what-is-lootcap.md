@@ -9,7 +9,6 @@ tags:
   - publish
 lastmod: 2024-12-12T05:30:40.335Z
 ---
-## What is LootCap?
 
 Last week we ([Adam Cochran](https://twitter.com/AdamScochran) and myself) launched [LootCap](https://lootcap.com). The goal is to provide tracking on a new class of tokens called [Loot](https://medium.com/@adamscochran/what-are-loot-tokens-understanding-an-emerging-asset-class-380b0cc38749). It's been a few years since I used to work at Vault of Satoshi and since that time I fell a bit out of Crypto Currencies. I always felt that most of the buzz around them was focused on the tech or the coin itself. It never provided any value. It felt like most coins out there were focused on trying to re-create the trajectory of Bitcoin rather than trying to DO anything. Ethereum was different. It was different enough to force me to pay attention. It allows you to run [Smart Contracts](https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract). In recent years you've likely seen "Tokens" suddenly gain popularity. Well those are primarily powered by Ethereum. Again, however, it felt like tokens were just trying to recreate the Bitcoin boom.
 
@@ -80,16 +79,16 @@ The front-end for the app is actually just a SPA. We load some minimal HTML and 
 
 We are using a two different 3rd party libraries on the front-end.
 
-* Mvp.css - https://andybrewer.github.io/mvp/ - because we wanted a simple, classless, css framework as a base
-* BigNumber - https://mikemcl.github.io/bignumber.js - because dealing with crypto numbers in JS can be challenging.
+- Mvp.css - https://andybrewer.github.io/mvp/ - because we wanted a simple, classless, css framework as a base
+- BigNumber - https://mikemcl.github.io/bignumber.js - because dealing with crypto numbers in JS can be challenging.
 
 We aren't using React, and so for the times where we have to update the Dom we're using this function and interacting directly with the Element nodes.
 
 ```javascript
 const $ = (selector, root) => {
-    root = root || document;
-    return root.querySelectorAll(selector);
-}
+  root = root || document;
+  return root.querySelectorAll(selector);
+};
 ```
 
 We're also relying on `fetch` since all our endpoints are very simple `GET` based requests.
@@ -98,24 +97,23 @@ We are also using a very rudimentary SPA router that relies on css classes to de
 
 ```javascript
 function route() {
-    const routeTable = [
-        {name: 'route-name', route: REGEX_MATCH, handler: fn}
-    ];
-    $('.route.active')[0].classList.remove('active');
-    const requestedRoute = window.location.hash.split('#')[1] || '/';
+  const routeTable = [{ name: "route-name", route: REGEX_MATCH, handler: fn }];
+  $(".route.active")[0].classList.remove("active");
+  const requestedRoute = window.location.hash.split("#")[1] || "/";
 
-    if(!routeTable.some(route => {
-        if(route.route.test(requestedRoute)) {
-            if(route.handler)
-                route.handler(route.route.exec(requestedRoute));
-            $(`#route-${route.name}`)[0].classList.add('active');
-            return true;
-        }
-    })) {
-        // clear the info page
-        $('#route-info')[0].innerHTML = '';
-        $('.route.default')[0].classList.add('active');
-    }
+  if (
+    !routeTable.some((route) => {
+      if (route.route.test(requestedRoute)) {
+        if (route.handler) route.handler(route.route.exec(requestedRoute));
+        $(`#route-${route.name}`)[0].classList.add("active");
+        return true;
+      }
+    })
+  ) {
+    // clear the info page
+    $("#route-info")[0].innerHTML = "";
+    $(".route.default")[0].classList.add("active");
+  }
 }
 ```
 
@@ -139,8 +137,8 @@ So maybe we look at **SERVERLESS**
 
 The idea behind server less infrastructure is simply: You write apps that are designed as "functions". These functions are deployed and spun up/down as necessary. Scale becomes pretty straight-forward. The infrastructure is available, it's just a matter of
 
-* How much do you want to pay?
-* What's the cold-start time on your app?
+- How much do you want to pay?
+- What's the cold-start time on your app?
 
 The payment is pretty straight foward. Since these serverless tends to be small apps that cater well to "bursty" applications in terms of requests, they tend to be cheaper to run.
 
@@ -156,10 +154,10 @@ Oh My. I think CloudFlare Workers are the only TRUE serverless mechanism out the
 
 CloudFlare workers are essentially serverless functions.. except they run at every CloudFlare Point-of-Presence (PoP). They have milliseconds of cold-start time, and they run globally. They do have way more restrictions than traditional serverless offerings
 
-* 1MB compressed filesize
-* 50ms CPU time
-* max 30 workers
-* < 50 subrequests per worker (redirects count!)
+- 1MB compressed filesize
+- 50ms CPU time
+- max 30 workers
+- < 50 subrequests per worker (redirects count!)
 
 But I felt that if we COULD work within their limits, it would bring us closest to what we needed. They also offered an eventually consistent KV store that was accessible from the workers. Since our data was cached anyway, we didn't care about the eventual consistency - worst case we served stale data for a minute more than we expected.
 

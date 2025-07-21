@@ -10,7 +10,6 @@ title: What Canada Post Can Teach Us About Chesterton’s Fence
 summary: Why government services matter
 lastmod: 2024-12-17T04:23:18.636Z
 ---
-# What Canada Post Can Teach Us About Chesterton’s Fence
 
 When the Canada Post strike hit the headlines, I found myself scrolling through social media, sipping my morning coffee, and shaking my head at the comments. “Just get rid of Canada Post already,” one user declared, punctuating their argument with a digital shrug: “It’s useless these days.” Another chimed in, “Private companies do it better anyway.”
 
@@ -62,12 +61,12 @@ None of this is to say that Canada Post is perfect. Like any institution, it has
 
 Chesterton’s Fence teaches us that the past is worth understanding before we discard it. Canada Post, with all its quirks and inefficiencies, exists for a reason. It’s a reminder that some systems, however antiquated they may seem, are worth preserving—not because they’re perfect, but because they serve a purpose that private solutions often fail to replicate.
 
-***
+---
 
 One thing I'm trying to add for my blog posts is references to what I'm talking about
 
 **Further Reading:**\
-• G.K. Chesterton’s original,  "What's Wrong with the World": [Read Online](https://www.gutenberg.org/ebooks/1717)\
+• G.K. Chesterton’s original, "What's Wrong with the World": [Read Online](https://www.gutenberg.org/ebooks/1717)\
 • Understanding Chesterton’s Fence: [Link](https://fs.blog/chestertons-fence/)\
 • Canada Post’s mandate and role: [Government of Canada](https://laws-lois.justice.gc.ca/eng/acts/C-10/index.html)\
 • The Economic Role of Public Postal Services in Rural Areas: [Link](https://www.wider.unu.edu/)\
