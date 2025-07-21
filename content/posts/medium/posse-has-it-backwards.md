@@ -68,3 +68,7 @@ I’ve connected this to my github actions to run this script every 30 minutes t
 EPOSS isn’t the antithesis of POSSE, it’s an evoluion.
 
 ![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=ca9ab4d5b529)
+
+---
+
+This was originally published on Medium - https://medium.com/@xangelo/posse-has-it-backwards-ca9ab4d5b529

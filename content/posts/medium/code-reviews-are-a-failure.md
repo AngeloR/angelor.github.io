@@ -12,16 +12,16 @@ At some point things are going better than they were and this small group of eng
 
 We’ve all seen the reasons for Code Reviews:
 
-* Find bugs further downstream
-* Propagation of Knowledge
-* Team Ownership
-* Double check functionality/architecture
+- Find bugs further downstream
+- Propagation of Knowledge
+- Team Ownership
+- Double check functionality/architecture
 
 These are nonsense — Code Reviews in isolation almost always end up with the following results:
 
-* Reviews languishing in a “Ready for Review” state
-* Drastic code architecture changes
-* Being “Approved” based on social standing of the developer opening the request
+- Reviews languishing in a “Ready for Review” state
+- Drastic code architecture changes
+- Being “Approved” based on social standing of the developer opening the request
 
 Code Reviews are often seen as some kind of magic bullet to catching errors before they get merged into code bases. The ideal is that a developer gets a ticket, makes some code changes, and then shares those changes with everyone else on the team for feedback. The idea is that other developers, with perhaps more context, can catch potential issues or side-effects in the code that the developer doing the work may not have even known about.
 
@@ -61,7 +61,8 @@ Instead you end up open a code review that sits in review for days while enginee
 
 See the problem isn’t that the Code Review is bad — it’s that the Code Review is the first time anyone has actually looked at the code related to the problem.
 
-## The Solution to Code Reviews  
+## The Solution to Code Reviews
+
 There isnt one.
 
 All planning up front without a deadline isn’t helpful. All work without planning is pointless. But where your team draws the line between planning that’s “good enough” and the length of time attributed to feature development changes frequently. It changes based on team composition, it changes based on the company state, it changes based on the market your company operates in. The only thing that’s certain is that the amount of planning from feature to feature will be different.
@@ -74,11 +75,15 @@ Once the planning is done and a developer completes the code change, the Code Re
 
 Unit tests, Integration Tests, Synthetic/BlackBox Tests — all of these can help ease the time code spends stuck in code reviews. By minimizing the time spent in code reviews, and maximizing the time spent in planning instead we can achieve things like:
 
-* Actually find bugs further downstream and upstream
-* Propagation of Knowledge throughout the team
-* Team Ownership of a feature
-* Double check functionality/architecture
+- Actually find bugs further downstream and upstream
+- Propagation of Knowledge throughout the team
+- Team Ownership of a feature
+- Double check functionality/architecture
 
 How fun.
 
 ![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=36b72a659de4)
+
+---
+
+This was originally published on Medium - https://medium.com/@xangelo/posse-has-it-backwards-ca9ab4d5b529
