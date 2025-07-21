@@ -10,7 +10,6 @@ tags:
 summary: Setting up your own git repo browser
 lastmod: 2024-12-10T19:50:13.254Z
 ---
-# gitweb - a GitHub/GitLab alternative
 
 ## Owning Your Digital Space
 
@@ -39,12 +38,12 @@ gitweb is a very simple tool - it allows you to browse all the git repositories\
 within a specified folder. You simply install gitweb, point nginx over to it,\
 and edit a single configuration file. You immediately get
 
-* A browser for all local git projects
-* A tree view for your repos with raw file previews
-* Commit history w/ colorized diffs
-* Snapshot downloads
-* RSS feed tracking commit history
-* Search (with regex) throughout your repos
+- A browser for all local git projects
+- A tree view for your repos with raw file previews
+- Commit history w/ colorized diffs
+- Snapshot downloads
+- RSS feed tracking commit history
+- Search (with regex) throughout your repos
 
 For personal projects, or even for small collaborative projects gitweb provides\
 more than enough functionality.
@@ -116,15 +115,15 @@ up.
 # sets the title in the <title></title> html tag
 $site_name = "My Site";
 
-# by default the root of your gitweb is called "projects". 
-# I simply changed that to Home and explicitly set the url 
+# by default the root of your gitweb is called "projects".
+# I simply changed that to Home and explicitly set the url
 # that users get directed to when they click it
 $home_link_str = "Home";
 $home_link = "https://git.xangelo.ca";
 
-# There's a small "Header" section above the project listing 
-# that you can customize with whatever text you want. This 
-# allows you to specify an html  file that should be used 
+# There's a small "Header" section above the project listing
+# that you can customize with whatever text you want. This
+# allows you to specify an html  file that should be used
 # in that area
 $home_text = "/path/to/file.html";
 
@@ -135,6 +134,6 @@ $omit_owner = "1";
 
 ## Resources
 
-* Git Docs: https://git-scm.com/docs/gitweb.html
-* Gitweb Source: https://repo.or.cz/w/git.git/tree/HEAD:/gitweb/
-* My projects: https://git.xangelo.ca
+- Git Docs: https://git-scm.com/docs/gitweb.html
+- Gitweb Source: https://repo.or.cz/w/git.git/tree/HEAD:/gitweb/
+- My projects: https://git.xangelo.ca

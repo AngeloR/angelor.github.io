@@ -9,7 +9,6 @@ summary: How to implement a successful on-call process for the first time
 title: Designing On Call
 lastmod: 2024-12-10T19:47:03.143Z
 ---
-# Designing On-Call
 
 On-call is one of those things that all developers end up doing at some point. My goal isn't to discuss the merit of on-call, but rather what the point of on-call is and how to go about designing what “on-call” means at your company. I'm going to start at the very beginning because chances are you're already doing it wrong. I should also note that I'm looking at this specifically from a SaaS point of view.
 
@@ -54,11 +53,11 @@ When defining your “something” start with user flows. Look at your applicati
 
 Defining the "something" is relatively easy compared to defining "broken". We know a thing is broken if it's not starting, but:
 
-* What if it works but 1% of the requests are resulting in an error?
-* What if it works but 1% of the time it crashes and restarts?
-* What if it works but is very slow?
-* What if it works, is not slow, and doesn't crash, but your API docs don't match what the endpoint is returning?
-* What if it works, but your database is being crushed by a sudden increase in traffic?
+- What if it works but 1% of the requests are resulting in an error?
+- What if it works but 1% of the time it crashes and restarts?
+- What if it works but is very slow?
+- What if it works, is not slow, and doesn't crash, but your API docs don't match what the endpoint is returning?
+- What if it works, but your database is being crushed by a sudden increase in traffic?
 
 Defining our “something” first is important because it helps us to set bounds on what we consider “broke” and what is “degraded” and what is “fine”.
 
@@ -66,13 +65,13 @@ Perhaps we don't care if 1% of requests fail.. maybe we don't care if 0.1% of re
 
 Deciding 0.1% of errors is "broken" where your application is currently sitting at 1% may seem like a good thing. 0.1% is where we want to be and so letting devs know when that isn't the case is good. We can work toward 0.1%. But this involves much larger product considerations.
 
-* When these alerts happen overnight - are devs tasked with a complete resolution during work hours?
-* Does that mean feature work will suffer?
-* How will you buffer your sprint to make time for these interruptions?
-* Do you have the ability to buffer your sprint given product launch dates?
-* What happens when a dev is up all night dealing with issues, do they take the next day off?
-* Do you offload the task to a different team (Ops/Infra/SRE) since feature work is so important?
-* What happens when those teams get burnt out and leave?
+- When these alerts happen overnight - are devs tasked with a complete resolution during work hours?
+- Does that mean feature work will suffer?
+- How will you buffer your sprint to make time for these interruptions?
+- Do you have the ability to buffer your sprint given product launch dates?
+- What happens when a dev is up all night dealing with issues, do they take the next day off?
+- Do you offload the task to a different team (Ops/Infra/SRE) since feature work is so important?
+- What happens when those teams get burnt out and leave?
 
 On the flip side setting your alerts at 1% is accepting that this is the current state.. but now it becomes a decision on whether or not a 0.1% error rate is more important than the next feature you're supposed to get out.
 
@@ -149,8 +148,8 @@ In some cases simply restarting a process is enough to get things back to workin
 
 What you should NOT be required to do, is:
 
-* figure out where your application code is crashing
-* optimize that weird nested join that you're supposed to tackle next sprint
+- figure out where your application code is crashing
+- optimize that weird nested join that you're supposed to tackle next sprint
 
 Your job at 3 am is problem mitigation. Maybe nothing can be done except throw on a status message so that users know what's happening.
 

@@ -9,13 +9,12 @@ summary: An update to how I publish new posts
 title: Now Powered by Outlines
 lastmod: 2024-12-10T19:45:18.372Z
 ---
-# Now Powered by Outlines
 
 One of the things that I do every so often is completely re-write the backend of my blog. I've mostly hit upon a UI that I like, but I've swapped out the backend over the years between various custom iterations, wordpress, ghost, and now finally Hugo. This time, I've swapped out how I write my blog posts - but kept everything else the same.
 
 The current system allows me to write markdown in vim. I'm normally running `hugo serve -w` at the same time so I can watch the rendered version of what I'm doing as I go. It's sort of like a hacked-together live preview. It works well enough.
 
-However, for the last 10 years (maybe more?) I've been a huge fan of outliners. I original started with various projects by [Dave Winer](https://scripting.com) and I used almost everything he's written around them for a number of years. I've also tried tooling like [Workflowy](https://workflowy.com) and almost every other infinite-bullet-list tool that came after them. They were all.. fine? I had no real problems with them except that they never really stuck around for very long. They were in a tab in my browser, and my browser has like 100 tabs open at any given time. 
+However, for the last 10 years (maybe more?) I've been a huge fan of outliners. I original started with various projects by [Dave Winer](https://scripting.com) and I used almost everything he's written around them for a number of years. I've also tried tooling like [Workflowy](https://workflowy.com) and almost every other infinite-bullet-list tool that came after them. They were all.. fine? I had no real problems with them except that they never really stuck around for very long. They were in a tab in my browser, and my browser has like 100 tabs open at any given time.
 
 For the last 6 months or so, however, I've been working on my own outliner. It started as an in-browser tool... and I quickly moved it to an offline-first desktop app via [Tauri](https://tauri.app). Having it offline first meant a few big things.
 
@@ -27,10 +26,10 @@ Since I use this tool across operating systems all day long it slowly ended up b
 
 This first iteration uses a lot of hard-coded stuff.. and I'll probably take some time to iron out some of the edge cases around rendering.. but it honestly came together pretty quickly. Since every node in the outliner is markdown it was trivial to put it together. As of right now, I can write my blog post in my outliner, press `shift+p` and have it write out a markdown file to my local hugo instance.
 
-For now, I do some manual reviewing before officially publishing it. For now there's a few more usability things that need to be added like 
+For now, I do some manual reviewing before officially publishing it. For now there's a few more usability things that need to be added like
 
-* differentiating which posts are published vs. un-published
+- differentiating which posts are published vs. un-published
 
-* being able to 'unpublish' a node
+- being able to 'unpublish' a node
 
 But honestly? I'm kind of enjoying this right now.

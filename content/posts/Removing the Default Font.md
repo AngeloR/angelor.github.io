@@ -8,7 +8,6 @@ tags:
 summary: Where I spend too long talking about why I removed the default font temporarily
 lastmod: 2024-12-10T19:49:17.644Z
 ---
-# Removing the Default Font
 
 This is a small change that I've made to the site that I've actually been thinking about for quite some time. I've always had a monospaced font configured in my CSS, forcing all text into whatever the default monospace font on your system is.
 
@@ -26,7 +25,7 @@ In this image we can see how a monospace font is "set". Whenever a character app
 
 This is very cool stuff.
 
-Since each character has a bounding box that's the same size as every other character we actually run into a very specific instance of a cool typography side-effect known as [Rivers](https://en.wikipedia.org/wiki/River_\(typography\)). Each character aligns itself perfectly with the character above and below it, creating a giant grid of characters on your screen.
+Since each character has a bounding box that's the same size as every other character we actually run into a very specific instance of a cool typography side-effect known as [Rivers](<https://en.wikipedia.org/wiki/River_(typography)>). Each character aligns itself perfectly with the character above and below it, creating a giant grid of characters on your screen.
 
 But this isn't always the best for reading.
 

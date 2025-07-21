@@ -9,7 +9,6 @@ summary: Amplify has some odd docker limitations it doesn’t want to fix
 title: Amplify Docker Limitations
 lastmod: 2024-12-10T19:47:15.594Z
 ---
-# Amplify Docker Limitations
 
 I've recently had the chance to do some work with Amplify in AWS and I'm surprised how simultaneously feature rich and half baked it is. It seems if you're in to click-ops you'll be fine in Amplify until you hit a problem.
 
