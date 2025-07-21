@@ -1,0 +1,32 @@
+name: Sync Medium to Hugo
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "*/30 * * * *" # Runs every 30m
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install feedparser markdownify python-frontmatter requests
+
+      - name: Run sync script
+        run: python .github/scripts/medium_to_hugo.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Medium Sync Bot"
+          git config user.email "actions@github.com"
+          git add content/posts/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Sync new Medium posts"
+          git push
