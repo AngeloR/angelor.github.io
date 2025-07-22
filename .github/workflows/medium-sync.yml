@@ -1,7 +1,12 @@
 name: Sync Medium to Hugo
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force sync even if there are no changes"
+        required: false
+        default: false
   schedule:
     - cron: "*/30 * * * *" # Runs every 30m
 
@@ -23,14 +28,14 @@ jobs:
         run: pip install feedparser markdownify python-frontmatter requests
 
       - name: Run sync script
-        run: python .github/scripts/medium_to_hugo.py
+        run: python .github/scripts/medium_to_hugo.py --force ${{ inputs.force }}
 
       - name: Commit and push changes
         id: commit
         run: |
           git config user.name "Medium Sync Bot"
           git config user.email "actions@github.com"
-          git add content/posts/
+          git add content/posts/medium/
 
           # Check if there are any changes to commit
           if git diff --quiet && git diff --staged --quiet; then

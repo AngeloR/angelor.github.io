@@ -3,8 +3,8 @@ date: Mon, 21 Jul 2025 17:52:35 GMT
 draft: false
 medium_link: https://xangelo.medium.com/posse-has-it-backwards-ca9ab4d5b529?source=rss-d5a790d38792------2
 slug: posse-has-it-backwards
+summary: The Presentation of Self in Every Blog post
 title: POSSE Has it Backwards
-summary: The Presentation of Self in Every Blog Post
 ---
 
 I’ve been blogging for a number of years now, even though my website makes it seem like I stopped. You can check the wayback machine and see posts from [2011](https://web.archive.org/web/20110507234835/http://xangelo.ca) before composer was a thing in the PHP world, or you can jump back to [2005](https://web.archive.org/web/20050415040309/http://www.xangelo.com/) when I was more focused on the design of the website than the content itself. I’ve tried almost every blogging platform out there, and a few that never made it off my hard-drive.
@@ -25,7 +25,7 @@ I am not the same person I am on Facebook as I am on Mastodon.
 
 I am not the same person I am on Instagram as I am on Twitch.
 
-The truth is that I shift tone and intention in every room I am in, based on the room itself. Erving Goffman talks about this extensively in his book “**_The Presentation of Self in Everyday Life”;_** As the backdrop of our stage changes we present different sides of ourselves. This isn’t wrong or incorrect, and it isn’t being “fake”. This is the truth of who we are as people.
+The truth is that I shift tone and intention in every room I am in, based on the room itself. Erving Goffman talks about this extensively in his book “***The Presentation of Self in Everyday Life”;*** As the backdrop of our stage changes we present different sides of ourselves. This isn’t wrong or incorrect, and it isn’t being “fake”. This is the truth of who we are as people.
 
 The sorts of comments I leave on a LinkedIn post are vastly different from what I leave on X. They’re both facets of who I am, but they exist within the bounds of those systems. The systems inform how I interact with them.
 
@@ -59,16 +59,16 @@ Your website isn’t the orgin, it’s the destination. It’s a museum and coll
 
 The same tools that power POSSE can power EPOSS, you just need to point them the other way.
 
-For example, this post, even though it shows up on Medium, also appears on my website (https://xangelo.ca). It does this because Medium supports RSS and I can use that RSS feed to generate a post in markdown and feed it back to Hugo. This particular script looks at the RSS feed defined at RSS_URL and writes markdown versions of it to content/posts/medium so that I can track which posts are being imported: <https://github.com/AngeloR/angelor.github.io/blob/main/.github/scripts/medium_to_hugo.py>
+For example, this post, even though it shows up on Medium, also appears on my website (<https://xangelo.ca/posts/medium/posse-has-it-backwards/>). It does this because Medium supports RSS and I can use that RSS feed to generate a post in markdown and feed it back to Hugo. This particular script looks at the RSS feed defined at RSS\_URL and writes markdown versions of it to content/posts/medium so that I can track which posts are being imported: <https://github.com/AngeloR/angelor.github.io/blob/main/.github/scripts/medium_to_hugo.py>
 
-<https://medium.com/media/c7634bd7099d8b4a3c68e75789d29869/href>
+<script src="https://gist.github.com/AngeloR/cce5451ab00183e7dfeef5cc31ffefbe.js"></script>
 
 I’ve connected this to my github actions to run this script every 30 minutes to pull in new content from medium.
 
 EPOSS isn’t the antithesis of POSSE, it’s an evoluion.
 
-![](https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=ca9ab4d5b529)
+
 
 ---
 
-This was originally published on Medium - https://medium.com/@xangelo/posse-has-it-backwards-ca9ab4d5b529
+This was originally published on Medium - https://xangelo.medium.com/posse-has-it-backwards-ca9ab4d5b529?source=rss-d5a790d38792------2
