@@ -47,6 +47,8 @@ def resolve_medium_media_links(content):
 
 feed = feedparser.parse(RSS_URL)
 
+print(f"Parsing {RSS_URL}, {len(feed.entries)} posts")
+
 for entry in feed.entries:
     slug = slugify(entry.title)
     if slug in EXISTING_SLUGS:
