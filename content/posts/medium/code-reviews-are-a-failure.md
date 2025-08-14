@@ -3,17 +3,11 @@ date: Fri, 11 Feb 2022 04:34:25 GMT
 draft: false
 medium_link: https://xangelo.medium.com/code-reviews-are-a-failure-36b72a659de4?source=rss-d5a790d38792------2
 slug: code-reviews-are-a-failure
-summary: As a new startup with one or two engineers on staff, you’re very likely not
-  doing code reviews. Engineers at this stage have a very deep understanding of the
-  code — after all, they’ve probably written most of it. When it’s time for a new
-  feature, these initial developers know exactly how they’re going to implement it
-  given the architecture of their code base. Chances are, they keep their own work
-  in a branch, and open a Pull Request or Merge Request, but they aren’t asking someone
-  to take a look at it. Instead they’re making sure their changes work and they’re
-  merging it in themselves. Often they’ll do this many times a day as they crank out
-  features and bug fixes.
+summary: Code Reviews are nothing more than a half-hearted attempt to avoid planning
 title: Code Reviews are a Failure
 ---
+
+As a new startup with one or two engineers on staff, you’re very likely not doing code reviews. Engineers at this stage have a very deep understanding of the code — after all, they’ve probably written most of it. When it’s time for a new feature, these initial developers know exactly how they’re going to implement it given the architecture of their code base. Chances are, they keep their own work in a branch, and open a Pull Request or Merge Request, but they aren’t asking someone to take a look at it. Instead they’re making sure their changes work and they’re merging it in themselves. Often they’ll do this many times a day as they crank out features and bug fixes.
 
 At some point things are going better than they were and this small group of engineers start adding more! Now you have 5 or 6 engineers, all with varying familiarity of your code base. This is generally the first time Code Reviews come about — and normally for good reason. Often someone has pushed some code to production that has broken things and the developers take a step back and realize that maybe before they push code, it’s best if they have others review it. Perhaps bugs like this can be caught next time. And so they come up with rules and reasons for why they need Code Reviews. Non technical managers think “Ah, this won’t happen again — we’re instituting code reviews now!”
 
