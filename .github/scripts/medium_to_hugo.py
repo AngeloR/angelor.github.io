@@ -14,7 +14,7 @@ OUTPUT_DIR = "content/posts/medium"
 EXISTING_SLUGS = {f[:-3] for f in os.listdir(OUTPUT_DIR) if f.endswith(".md")}
 
 # default to false, but read from --force flag if it's set
-FORCE_REBUILD = len(sys.argv) > 1 and sys.argv[1] == "--force":
+FORCE_REBUILD = len(sys.argv) > 1 and sys.argv[1] == "--force"
 
 def slugify(title):
     return re.sub(r"[^\w-]", "", re.sub(r"\s+", "-", title.lower())).strip("-")
