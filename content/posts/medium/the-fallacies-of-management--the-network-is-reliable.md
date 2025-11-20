@@ -3,7 +3,7 @@ date: Wed, 13 Aug 2025 13:56:08 GMT
 draft: false
 medium_link: https://xangelo.medium.com/the-fallacies-of-management-the-network-is-reliable-89cd2c958f6c?source=rss-d5a790d38792------2
 slug: the-fallacies-of-management--the-network-is-reliable
-summary: 'Turns out management is closer to engineering than we let on'
+summary: '### The Fallacies of Management — The Network is Reliable'
 title: The Fallacies of Management — The Network is Reliable
 ---
 
