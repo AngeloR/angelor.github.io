@@ -61,7 +61,7 @@ The same tools that power POSSE can power EPOSS, you just need to point them the
 
 For example, this post, even though it shows up on Medium, also appears on my website (<https://xangelo.ca/posts/medium/posse-has-it-backwards/>). It does this because Medium supports RSS and I can use that RSS feed to generate a post in markdown and feed it back to Hugo. This particular script looks at the RSS feed defined at RSS\_URL and writes markdown versions of it to content/posts/medium so that I can track which posts are being imported: <https://github.com/AngeloR/angelor.github.io/blob/main/.github/scripts/medium_to_hugo.py>
 
-<https://medium.com/media/c7634bd7099d8b4a3c68e75789d29869/href>
+<script src="https://gist.github.com/AngeloR/cce5451ab00183e7dfeef5cc31ffefbe.js"></script>
 
 I’ve connected this to my github actions to run this script every 30 minutes to pull in new content from medium.
 
