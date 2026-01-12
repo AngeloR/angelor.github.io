@@ -4,6 +4,8 @@
   --accent: #0f2a57;
   --border: #d7d7d0;
   --muted: #606060;
+  --link: #0f2a57;
+  --link-hover: #1c3f73;
 }
 
 * {
@@ -184,9 +186,14 @@ body {
 }
 
 .post-content a {
-  color: var(--accent);
+  color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
+}
+
+.post-content a:hover,
+.post-content a:focus {
+  color: var(--link-hover);
 }
 
 .post-content pre {
