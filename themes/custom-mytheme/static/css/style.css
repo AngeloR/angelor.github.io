@@ -1,0 +1,240 @@
+:root {
+  --ink: #0f0f0f;
+  --paper: #fbfbf8;
+  --accent: #0f2a57;
+  --border: #d7d7d0;
+  --muted: #606060;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.8;
+}
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header,
+.site-footer,
+.page {
+  width: min(700px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 2.8rem 0 1.8rem;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--paper);
+}
+
+.site-title a {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.site-subtitle {
+  margin: 0.6rem 0 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.site-nav {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.1rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.page {
+  flex: 1;
+  padding: 2.5rem 0 3rem;
+  background-color: var(--paper);
+}
+
+.home-intro {
+  margin-bottom: 3rem;
+}
+
+.home-posts h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border-bottom: 1px solid var(--border);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.post-year {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+  display: block;
+  padding-bottom: 0.2rem;
+}
+
+.post-list li {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.post-date {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.post-list a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.post-list a:hover,
+.post-list a:focus {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.post-header h1 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.post-meta {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.post-tags {
+  margin-left: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--border);
+  margin-right: 0.4rem;
+}
+
+.post-content {
+  margin-top: 2rem;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  border-bottom: 1px solid var(--border);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.post-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.post-content pre {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: #0f0f0f;
+  color: #f2f2f2;
+  overflow-x: auto;
+}
+
+.post-content code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--border);
+  background: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
+.site-footer {
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border);
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  background-color: var(--paper);
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 16px;
+  }
+
+  .site-nav {
+    gap: 0.5rem 1rem;
+  }
+
+  .post-list li {
+    grid-template-columns: 1fr;
+  }
+}

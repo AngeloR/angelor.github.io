@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ if .Content }}
+    <section class="home-intro">
+      {{ .Content }}
+    </section>
+  {{ end }}
+  <section class="home-posts">
+    <h2>All Posts</h2>
+    {{ partial "post-list.html" . }}
+  </section>
+{{ end }}

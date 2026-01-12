@@ -1,0 +1,13 @@
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $posts = sort $posts "Date" "desc" }}
+{{ range $group := $posts.GroupByDate "2006" }}
+  <h3 class="post-year">{{ $group.Key }}</h3>
+  <ul class="post-list">
+    {{ range $group.Pages }}
+      <li>
+        <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

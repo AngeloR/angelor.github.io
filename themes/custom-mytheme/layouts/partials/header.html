@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="site-title">
+    <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  </div>
+  {{ with .Site.Params.subtitle }}
+    <p class="site-subtitle">{{ . }}</p>
+  {{ end }}
+  <nav class="site-nav" aria-label="Primary">
+    {{ with .Site.Menus.main }}
+      {{ range . }}
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{ end }}
+    {{ else }}
+      <a href="{{ "/" | relURL }}">Home</a>
+      {{ $pages := where .Site.RegularPages "Section" "pages" }}
+      {{ range $pages }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+      {{ with .Site.GetPage "/posts" }}
+        <a href="{{ .RelPermalink }}">Posts</a>
+      {{ end }}
+      {{ with .OutputFormats.Get "rss" }}
+        <a href="{{ .RelPermalink }}">RSS</a>
+      {{ end }}
+    {{ end }}
+  </nav>
+</header>
