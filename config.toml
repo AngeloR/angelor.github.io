@@ -3,7 +3,7 @@ author = "Angelo R"
 copyright = "Copyright © 2011 - 2022"
 paginator.pagerSize = 15
 baseURL = "https://xangelo.ca"
-theme = "brutalist-minimalist"
+theme = "custom-mytheme"
 languageCode = "en-us"
 relativeURLs = true
 enableInlineShortcodes = true
@@ -14,6 +14,24 @@ rssLimit = 15
 subtitle = "Technical musings and other tidbits"
 siteBaseName = "Xangelo.ca"
 bloglistLength = 15
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Links"
+    url = "/pages/links/"
+    weight = 3
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 4
+  [[menu.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 5
 
 [markup]
 [markup.goldmark]
