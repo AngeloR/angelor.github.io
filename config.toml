@@ -1,6 +1,5 @@
 title = "Xangelo.ca"
 author = "Angelo R"
-copyright = "Copyright © 2011 - 2022"
 paginator.pagerSize = 15
 baseURL = "https://xangelo.ca"
 theme = "custom-mytheme"
