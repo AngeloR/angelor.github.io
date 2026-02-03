@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 * * * *"
   workflow_call:
   workflow_dispatch:
 permissions:
@@ -43,6 +45,11 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      - name: Fetch Linkding bookmarks
+        env:
+          LINKDING_BASE_URL: ${{ secrets.LINKDING_BASE_URL }}
+          LINKDING_TOKEN: ${{ secrets.LINKDING_TOKEN }}
+        run: python3 scripts/fetch-linkding.py
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
@@ -72,4 +79,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
