@@ -62,9 +62,6 @@ def main():
 
     base_url = base_url.rstrip("/")
 
-    print(base_url)
-    print(token)
-
     existing = read_existing()
     last_sync = existing.get("last_sync")
     existing_items = {item["id"]: item for item in existing.get("bookmarks", []) if "id" in item}
