@@ -21,16 +21,20 @@ bloglistLength = 15
     weight = 1
   [[menu.main]]
     name = "Links"
-    url = "/pages/links/"
+    url = "/links/"
     weight = 3
+  [[menu.main]]
+    name = "Blogroll"
+    url = "/pages/blogroll/"
+    weight = 4
   [[menu.main]]
     name = "Posts"
     url = "/posts/"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "RSS"
     url = "/index.xml"
-    weight = 5
+    weight = 6
 
 [markup]
 [markup.goldmark]
