@@ -1,0 +1,95 @@
+{{ define "main" }}
+  <section class="list-header">
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}
+      <div class="list-content">
+        {{ .Content }}
+      </div>
+    {{ end }}
+  </section>
+  <section class="list-items">
+    {{ $linkding := .Site.Data.linkding }}
+    {{ if and $linkding $linkding.bookmarks }}
+      <ul class="post-list links-list">
+        {{ range $linkding.bookmarks }}
+          <li class="links-item">
+            {{ $target := .url }}
+            <div class="links-body">
+              <a class="link-title" href="{{ .url }}" rel="noopener" target="_blank">
+                {{ if .favicon_url }}
+                  <img class="link-favicon" src="{{ .favicon_url }}" alt="" loading="lazy" decoding="async">
+                {{ end }}
+                <span class="link-title-text">{{ .title }}</span>
+              </a>
+              {{ if .description }}
+                {{ if .preview_image_url }}
+                  <img class="link-preview" src="{{ .preview_image_url }}" alt="" loading="lazy" decoding="async">
+                {{ end }}
+              {{ end }}
+              {{ if .notes }}
+                <p class="link-notes">{{ .notes }}</p>
+              {{ end }}
+              {{ if .description }}
+                <p class="post-summary">{{ .description }}</p>
+              {{ end }}
+            </div>
+            <div class="links-footer">
+              <a class="link-source" href="{{ $target }}" rel="noopener" target="_blank">{{ $target }}</a>
+              {{ if .tag_names }}
+                <div class="link-tags">
+                  {{ range .tag_names }}
+                    <span class="link-tag">{{ . }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+              {{ if .date_added }}
+                <span class="post-date">{{ (time .date_added).Format "2006-01-02" }}</span>
+              {{ end }}
+            </div>
+          </li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      {{ $pages := .Pages.ByDate.Reverse }}
+      {{ $paginator := .Paginate $pages }}
+      <ul class="post-list links-list">
+        {{ range $paginator.Pages }}
+          <li class="links-item">
+            {{ $link := .Params.link }}
+            {{ $target := $link | default .RelPermalink }}
+            <div class="links-body">
+              {{ if $link }}
+                {{ $host := replaceRE "^https?://([^/]+).*$" "$1" $link }}
+                <a class="link-title" href="{{ $link }}" rel="noopener" target="_blank">
+                  <img class="link-favicon" src="https://www.google.com/s2/favicons?domain={{ $host }}&sz=32" alt="" loading="lazy" decoding="async">
+                  <span class="link-title-text">{{ .Title }}</span>
+                </a>
+              {{ else }}
+                <a class="link-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ end }}
+              {{ if .Content }}
+                {{ $summary := .Plain | replaceRE "\r+" " " | replaceRE "\n+" " " | truncate 260 }}
+                <p class="post-summary">{{ $summary }}</p>
+              {{ end }}
+            </div>
+            <div class="links-footer">
+              <a class="link-source" href="{{ $target }}" rel="noopener" target="_blank">{{ $target }}</a>
+              <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+            </div>
+          </li>
+        {{ end }}
+      </ul>
+      {{ if gt $paginator.TotalPages 1 }}
+        <nav class="pagination">
+          {{ if $paginator.HasPrev }}
+            <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">Newer</a>
+          {{ end }}
+          <span class="pagination-page">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+          {{ if $paginator.HasNext }}
+            <a class="pagination-next" href="{{ $paginator.Next.URL }}">Older</a>
+          {{ end }}
+        </nav>
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}

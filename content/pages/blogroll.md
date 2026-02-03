@@ -2,9 +2,9 @@
 tags:
   - publish
   - page
-title: Links
+title: Blogroll
 date: 2024-12-09T19:01:16.962Z
-lastmod: 2025-01-22T15:44:41.731Z
+lastmod: 2026-02-03T00:00:00.000Z
 ---
 
 Here's a collection of blogs that I enjoy and try and keep up with. They aren't listed in any particular order. I'm really looking to re-live the nostalgia of early webrings in the pre web2.0 era. In fact, at some point I'm going to have to move this blog off GitHub pages so that I can start experimenting with some of the IndieWeb functionality...
