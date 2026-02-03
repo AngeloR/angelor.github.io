@@ -90,6 +90,39 @@ body {
   margin-bottom: 3rem;
 }
 
+.list-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.list-title-row h1 {
+  margin: 0;
+}
+
+.list-rss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.list-rss svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.list-rss:hover,
+.list-rss:focus {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .home-posts h2 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
