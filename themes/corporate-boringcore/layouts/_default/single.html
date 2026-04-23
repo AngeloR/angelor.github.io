@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <article class="module post">
+    <div class="module-header">
+      <span class="module-icon">&#9632;</span>
+      {{ .Title }}
+    </div>
+    <div class="post-meta-bar">
+      <span class="meta-item">
+        <strong>Posted:</strong>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Monday, January 2, 2006" }}</time>
+      </span>
+      {{ if and .Lastmod (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}
+        <span class="meta-sep">|</span>
+        <span class="meta-item">
+          <strong>Updated:</strong> {{ .Lastmod.Format "2006-01-02" }}
+        </span>
+      {{ end }}
+      {{ with site.Params.author }}
+        <span class="meta-sep">|</span>
+        <span class="meta-item"><strong>Author:</strong> {{ . }}</span>
+      {{ end }}
+      <span class="meta-sep">|</span>
+      <span class="meta-item"><strong>Reading time:</strong> {{ .ReadingTime }} min</span>
+    </div>
+    <div class="module-body typography">
+      {{ .Content }}
+    </div>
+    <div class="module-footer post-footer">
+      {{ with .Params.tags }}
+        <div class="footer-tags">
+          <strong>Filed under:</strong>
+          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+      <div class="footer-nav">
+        {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}">&laquo; {{ .Title | truncate 38 }}</a>
+        {{ end }}
+        {{ if and .PrevInSection .NextInSection }} &nbsp;&middot;&nbsp; {{ end }}
+        {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}">{{ .Title | truncate 38 }} &raquo;</a>
+        {{ end }}
+      </div>
+    </div>
+  </article>
+{{ end }}

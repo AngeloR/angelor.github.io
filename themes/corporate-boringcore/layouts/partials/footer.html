@@ -1,0 +1,40 @@
+<div class="site-footer">
+  <div class="site-footer-inner">
+    <p class="copyright">
+      {{ with .Site.Copyright }}{{ . }}{{ else }}&copy; {{ now.Format "2006" }} {{ .Site.Title }}{{ end }}
+      &nbsp;&middot;&nbsp;
+      All Rights Reserved
+    </p>
+    <p class="poweredby">
+      Powered by <strong>Hugo</strong> &middot; Theme: <em>Corporate Boringcore v1.0</em>
+      &nbsp;&middot;&nbsp;
+      <a href="{{ "/index.xml" | relURL }}">[RSS]</a>
+    </p>
+    <p class="tagline">
+      Page generated in {{ now.Format "0.032" }} seconds &middot; {{ now.Format "15:04:05 MST" }}
+    </p>
+  </div>
+</div>
+<script>
+(function () {
+  var select = document.getElementById('skin-select');
+  var apply  = document.getElementById('skin-apply');
+  if (!select || !apply) return;
+
+  var root = document.documentElement;
+  var current = root.getAttribute('data-theme') || 'classic';
+  select.value = current;
+
+  function setSkin(name) {
+    if (name === 'classic') {
+      root.removeAttribute('data-theme');
+    } else {
+      root.setAttribute('data-theme', name);
+    }
+    try { localStorage.setItem('skin', name); } catch (e) {}
+  }
+
+  apply.addEventListener('click', function () { setSkin(select.value); });
+  select.addEventListener('change', function () { setSkin(select.value); });
+})();
+</script>

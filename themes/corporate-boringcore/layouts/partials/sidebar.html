@@ -1,0 +1,93 @@
+<aside class="sidebar">
+  <div class="module">
+    <div class="module-header">Recent Articles</div>
+    <div class="module-body">
+      <ul class="module-links">
+        {{ $recent := first 8 (where .Site.RegularPages "Section" "posts") }}
+        {{ range $recent }}
+          <li>&middot; <a href="{{ .RelPermalink }}">{{ .Title | truncate 48 }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="module-header">Recent Links</div>
+    <div class="module-body">
+      <ul class="module-links">
+        {{ $linkding := site.Data.linkding }}
+        {{ if and $linkding $linkding.bookmarks }}
+          {{ range first 6 $linkding.bookmarks }}
+            <li>&middot;
+              <a href="{{ .url }}" rel="noopener" target="_blank">{{ .title }}</a>
+            </li>
+          {{ end }}
+        {{ else }}
+          {{ $linkPages := where site.RegularPages "Section" "links" }}
+          {{ range first 6 ($linkPages.ByDate.Reverse) }}
+            {{ $target := .Params.link | default .RelPermalink }}
+            <li>&middot;
+              <a href="{{ $target }}"{{ if .Params.link }} rel="noopener" target="_blank"{{ end }}>{{ .Title }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+    <div class="module-footer">
+      <a href="{{ "/links/" | relURL }}">View all links &raquo;</a>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="module-header">Syndication</div>
+    <div class="module-body">
+      <ul class="module-links">
+        <li>
+          <span class="rss-badge">XML</span>
+          <a href="{{ "/index.xml" | relURL }}">Main Feed</a>
+        </li>
+        <li>
+          <span class="rss-badge">XML</span>
+          <a href="{{ "/links/index.xml" | relURL }}">Links Feed</a>
+        </li>
+      </ul>
+    </div>
+    <div class="module-footer">Updated {{ now.Format "2006-01-02" }}</div>
+  </div>
+
+  <div class="module">
+    <div class="module-header">Color Scheme</div>
+    <div class="module-body">
+      <div class="skin-switcher">
+        <label for="skin-select">Choose a style:</label>
+        <select id="skin-select" aria-label="Color scheme">
+          <option value="classic">Classic (default)</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="hacker">Hacker (green)</option>
+          <option value="amber">Amber CRT</option>
+        </select>
+        <button type="button" id="skin-apply">Set</button>
+        <span class="skin-note">Remembered on this device</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="module-header">Statistics</div>
+    <div class="module-body module-stats">
+      {{ $posts := where .Site.RegularPages "Section" "posts" }}
+      <p><strong>Articles:</strong> {{ len $posts }}</p>
+      <p><strong>First post:</strong>
+        {{ with (last 1 ($posts.ByDate)) }}
+          {{ range . }}{{ .Date.Format "2006-01-02" }}{{ end }}
+        {{ end }}
+      </p>
+      <p><strong>Latest post:</strong>
+        {{ with (first 1 ($posts.ByDate.Reverse)) }}
+          {{ range . }}{{ .Date.Format "2006-01-02" }}{{ end }}
+        {{ end }}
+      </p>
+    </div>
+  </div>
+</aside>

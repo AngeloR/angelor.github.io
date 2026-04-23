@@ -1,0 +1,17 @@
+{{ define "main" }}
+  {{ if .Content }}
+    <div class="module">
+      <div class="module-header">
+        <span class="module-icon">&#9658;</span>
+        Welcome to {{ .Site.Title }}
+      </div>
+      <div class="module-body typography">
+        {{ .Content }}
+      </div>
+      <div class="module-footer">
+        Last edited: {{ .Lastmod.Format "2006-01-02" }}
+      </div>
+    </div>
+  {{ end }}
+  {{ partial "post-list.html" . }}
+{{ end }}

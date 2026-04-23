@@ -1,0 +1,8 @@
+name = "corporate-boringcore"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "A mid-2000s corporate boringcore Hugo theme inspired by phpBB, Invision Power Board, and PHP-Nuke."
+min_version = "0.80.0"
+
+[author]
+  name = "Angelo Rodrigues"

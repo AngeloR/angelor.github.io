@@ -1,0 +1,26 @@
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-brand">
+      <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+      {{ with .Site.Params.subtitle }}
+        <p class="site-subtitle">&raquo; {{ . }}</p>
+      {{ end }}
+    </div>
+    <div class="masthead-meta">
+      <span class="masthead-welcome">Welcome, <strong>Guest</strong></span>
+      <span class="masthead-sep">|</span>
+      <span class="masthead-date">{{ now.Format "Mon, Jan 2, 2006" }}</span>
+    </div>
+  </div>
+</div>
+<div class="mainnav">
+  <ul class="mainnav-list">
+    {{ with .Site.Menus.main }}
+      {{ range . }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    {{ else }}
+      <li><a href="{{ "/" | relURL }}">Home</a></li>
+    {{ end }}
+  </ul>
+</div>

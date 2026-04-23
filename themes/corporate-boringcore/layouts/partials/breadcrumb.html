@@ -1,0 +1,21 @@
+<div class="breadcrumb">
+  <span class="breadcrumb-label">You are here:</span>
+  <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+  {{ if not .IsHome }}
+    {{ with .Section }}
+      &raquo; <a href="{{ printf "/%s/" . | relURL }}">{{ . | humanize | title }}</a>
+    {{ end }}
+    {{ if not .IsPage }}
+      {{ if and (not .IsHome) (not .Section) }}
+        &raquo; <span>{{ .Title }}</span>
+      {{ end }}
+    {{ end }}
+    {{ if .IsPage }}
+      &raquo; <span>{{ .Title }}</span>
+    {{ else if .Section }}
+      {{ if ne .Title (.Section | humanize | title) }}
+        {{/* list page with custom title */}}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>

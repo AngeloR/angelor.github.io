@@ -1,0 +1,39 @@
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $posts = sort $posts "Date" "desc" }}
+{{ range $group := $posts.GroupByDate "2006" }}
+  <div class="module">
+    <div class="module-header">
+      <span class="module-icon">&#9733;</span>
+      {{ $group.Key }} Archive
+      <span class="module-count">({{ len $group.Pages }} article{{ if ne (len $group.Pages) 1 }}s{{ end }})</span>
+    </div>
+    <div class="module-body">
+      <table class="listing">
+        <thead>
+          <tr>
+            <th class="col-date">Date</th>
+            <th class="col-title">Article</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $group.Pages }}
+            <tr>
+              <td class="col-date"><code>{{ .Date.Format "2006-01-02" }}</code></td>
+              <td class="col-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ with .Params.tags }}
+                  <span class="row-tags">
+                    {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
+                  </span>
+                {{ end }}
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    <div class="module-footer">
+      Showing {{ len $group.Pages }} of {{ len $group.Pages }} &middot; Sorted by date (desc)
+    </div>
+  </div>
+{{ end }}

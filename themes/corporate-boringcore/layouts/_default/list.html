@@ -1,0 +1,38 @@
+{{ define "main" }}
+  <div class="module">
+    <div class="module-header">
+      <span class="module-icon">&#9658;</span>
+      {{ .Title }}
+    </div>
+    {{ if .Content }}
+      <div class="module-body typography">
+        {{ .Content }}
+      </div>
+    {{ end }}
+    <div class="module-body">
+      {{ if eq .Section "posts" }}
+        {{ partial "post-list.html" . }}
+      {{ else }}
+        <table class="listing">
+          <thead>
+            <tr>
+              <th class="col-date">Date</th>
+              <th class="col-title">Entry</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .Pages.ByDate.Reverse }}
+              <tr>
+                <td class="col-date"><code>{{ .Date.Format "2006-01-02" }}</code></td>
+                <td class="col-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      {{ end }}
+    </div>
+    <div class="module-footer">
+      {{ len .Pages }} entr{{ if eq (len .Pages) 1 }}y{{ else }}ies{{ end }} total
+    </div>
+  </div>
+{{ end }}
